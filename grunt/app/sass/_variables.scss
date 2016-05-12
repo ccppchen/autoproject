@@ -1,0 +1,66 @@
+// 图片路径
+$imgBaseUrl: '../images';
+
+// 变量
+$primary: #0894ec;
+$danger: #ff0000;
+$dark: #444;
+$bg-colors: (
+			bg-color-primary:			$primary,
+			bg-color-danger:			$danger, 
+			bg-color-dark:				$dark);
+$colors: (
+			color-primary:				$primary,
+			color-danger:				$danger, 
+			color-dark:					$dark);
+$border-colors: (
+			border-color-primary:		$primary,
+			border-color-danger:		$danger, 
+			border-color-dark:			$dark);
+$sizes: (
+			button-small:				0.4375rem 1.125rem, 
+			button-middle:				1.375rem 1.875rem, 
+			button-big:					1.875rem 3.375rem);
+$font-sizes: (
+			font-size-small:			0.6875rem,
+			font-size-middle:			0.875rem,
+			font-size-big:				1.125rem);
+$border-radius: (
+			border-radius-small:		0.1875rem,
+			border-radius-middle:		0.25rem,
+			border-radius-big:			0.375rem);
+
+// 把可变的样式遍历出来
+@each $bg-color-name, $bg-color in $bg-colors {
+	%#{$bg-color-name} {
+		background-color: $bg-color;
+	}
+}
+@each $color-name, $color in $colors {
+	%#{$color-name} {
+		color: $color;
+	}
+}
+@each $color-name, $color in $border-colors {
+	%#{$color-name} {
+		color: $color;
+		border: 1px solid $color;
+	}
+}
+@each $size-name, $size in $sizes {
+	%#{$size-name} {
+		padding: $size;
+	}
+}
+@each $font-size-name, $size in $font-sizes {
+	%#{$font-size-name} {
+		font-size: $size;
+	}
+}
+@each $border-radius-name, $size in $border-radius {
+	%#{$border-radius-name} {
+		-webkit-border-radius: $size;
+		-moz-border-radius: $size;
+		border-radius: $size;
+	}
+}
