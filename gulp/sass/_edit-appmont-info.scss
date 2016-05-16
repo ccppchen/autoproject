@@ -1,0 +1,177 @@
+@import "compass";
+@import "bourbon/bourbon";
+@import "h5-btn";
+
+.bg-white{
+    background-color: #fff;
+}
+.master-wraper{
+    @include box-sizing(border-box);
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding-top: 2.9rem;
+}
+.bl-cell-padding{
+    padding: rem(30);
+    font-size: rem(28);
+    color: #000;
+    li{
+        margin-top: rem(16);
+        &:first-child:last-child,&:first-child{
+            margin-top: 0;
+        }
+    }
+    .cell-label{
+        color: #999;
+        width: rem(146);
+        float: left;
+    }
+    .cell-text{
+        color: #2ecc71;
+        margin-left: rem(140);
+        @include ellipsis();
+        display: block;
+    }
+    .cell-black{
+        color: #000;
+    }
+}
+.bl-cells-title{
+    line-height: rem(88);
+    height: rem(88);
+    font-size: rem(32);
+    color: #999999;
+    background-color: #efeff4;
+    padding: 0 rem(30);
+}
+.form-submit-btn{
+    @extend %block-btn-basic;
+    font-size: rem(32);
+    color: #ffffff;
+    height: rem(88);
+    line-height: rem(88);
+    margin: rem(80) rem(30) 0;
+    @include border-radius(rem(8));
+    width: auto;
+    background-color: #2ecc71;
+    &.btn-disabled{
+        background-color: #ccc;
+    }
+}
+.bl-cells {
+    background-color: #fff;
+    line-height: rem(48);
+    font-size: rem(28);
+    .bl-cell {
+        padding: rem(20) rem(30);
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        &:before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: auto;
+            height: 1px;
+            border-top: 1px solid #efefef;
+            color: #efefef;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            left: rem(30);
+            right: rem(30);
+        }
+        &:first-child:before {
+            display: none;
+        }
+        &:last-child:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: auto;
+            height: 1px;
+            border-bottom: 1px solid #efefef;
+            color: #efefef;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            left: rem(30);
+            right: rem(30);
+        }
+        .bl-cell-primary {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+        .bl-cell-right{
+            text-align: right;
+        }
+
+        .bl-cell-label {
+            display: block;
+            width: rem(175);
+            word-wrap: break-word;
+            word-break: break-all;
+            font-size: rem(28);
+            color: #333;
+            &.spec-label{
+                width: auto;
+            }
+        }
+
+
+        .bl-cell-input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            -webkit-appearance: none;
+            background-color: transparent;
+            font-size: inherit;
+            color: inherit;
+            height: rem(48);
+            line-height: rem(48);
+        }
+
+        .bl-cell-input::-webkit-outer-spin-button,
+        .bl-cell-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .checked-default{
+            display: inline-block;
+            @include box-sizing(border-box);
+            padding: rem(6) rem(24);
+            color: #333;
+            font-size: rem(28);
+            @include border-radius(rem(8));
+            border: 1px solid #efefef;
+            &:first-child{
+                margin-right: rem(18);
+            }
+            &.checked{
+                background-color: #2ecc71;
+                border-color: #2ecc71;
+                color: #fff;
+            }
+        }
+    }
+
+}
+
+
+
+

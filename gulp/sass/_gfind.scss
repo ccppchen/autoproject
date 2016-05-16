@@ -1,0 +1,144 @@
+@charset 'utf-8';
+@import "compass";
+@import "bourbon/bourbon";
+
+.emptymean-height{
+	height: rem(62);
+	background-color: #eee;
+}
+
+.stroll-head{
+	background-color: #e6133c;
+	height: rem(88);
+	overflow: hidden;
+	@include clearfix();
+	#touchslider li{
+		font-size: 0;
+	}
+	.stroll-icon-search{
+		background-image: inline-image('stroll-search.png');
+		background-size: contain;
+		float: right;
+		width: rem(30);
+		height: rem(30);
+		margin-top: rem(30);
+		margin-right: rem(36);
+	}
+	.stroll-con{
+		width: 60%;
+		margin: 0 auto;
+		padding: rem(14);
+		ul{
+			font-size: 0;
+			li{
+				width: 50%;
+				display: inline-block;
+				text-align: center;
+				height: rem(88 - 28);
+				line-height: rem(88 - 28);
+				&.selected{
+					a{
+						opacity: 1;
+						border-bottom: rem(4) solid #fff;
+					}
+				}
+				a{
+					color: #fff;
+					font-size: rem(32);
+					opacity: .5;
+					padding: rem(10) 1px;
+				}
+			}
+		}
+	}
+}
+
+.slide-img.stroll-slide .detailSliderStatus{
+	bottom: rem(14);
+	i{
+		width: rem(14);
+		height: rem(14);
+		background: #1a1a1a;
+		border: 0;
+		@include transition(width .5s ease-in-out);
+		&.sele{
+			background: #dc002f;
+			width: rem(28);
+			border-radius: rem(40);
+		}
+	}
+}
+
+.theme-wraper{
+	padding: rem(20) rem(10);
+	background-color: #fff;
+	.theme-title{
+		font-size: rem(24);
+		color: #333333;
+		padding: rem(15) rem(6);
+	}
+	ul{
+		@include clearfix;
+	}
+	li{
+		float: left;
+		padding: 0 rem(10);
+		width: 50%;
+		font-size: 0;
+		@include box-sizing(border-box);
+	}
+}
+
+.characte-service{
+	padding: rem(13) rem(20);
+}
+.cs-title{
+	font-size: rem(28);
+	line-height: rem(28);
+	color: #333;
+	padding-left: rem(18);
+	border-left: rem(4) solid #e6133c;
+}
+.characte-service-wraper{
+	ul{
+		@include clearfix;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		&:after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			height: 1px;
+			background: #e8e8e8;
+		}
+	}
+	li{
+		width: 25%;
+		float: left;
+		font-size: 0;
+		background-color: #fff;
+		text-align: center;
+		padding: rem(26) 0 rem(20) 0;
+		border-right: 1px solid #e8e8e8;
+		@include box-sizing(border-box);
+	}
+	.csw-title,.csw-text{
+		text-align: center;
+		line-height: rem(36);
+	}
+	.csw-title{
+		color: #333;
+		font-size: rem(28);
+	}
+	.csw-text{
+		color: #999;
+		font-size: rem(24);
+	}
+	.theme-img img{
+		height: rem(88);
+		width: auto;
+		margin: rem(20) auto 0;
+	}
+}

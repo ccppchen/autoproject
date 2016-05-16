@@ -1,0 +1,161 @@
+@charset 'UTF-8';
+@import "mixins";
+@import "h5-btn";
+
+.bl-btn-danger {
+    @extend %block-btn-basic;
+    font-size: rem(32);
+    color: #fff;
+    background-color: #e6133c;
+    @include border-radius(rem(8));
+    padding: rem(24) rem(8);
+    @include box-sizing(border-box);
+    @include ellipsis;
+    display: block;
+    width: auto;
+    margin: rem(60) rem(30) 0;
+}
+/* 充值成功 */
+.bl-pay {
+    padding-top: rem(60);
+    text-align: center;
+
+    .bl-icon-pay{
+    	width: rem(100);
+    	height: rem(100);
+    }
+    .bl-pay-title{
+    	font-size: rem(38);
+    	color: #3fb838;
+    	line-height: rem(70);
+    }
+    .pay-yen{
+        font-size: rem(48);
+        color: #333;
+        line-height: rem(90);
+        .yen{
+            font-size: rem(48);
+            margin-right: rem(6);
+        }
+    }
+    .bl-pay-area{
+        @include clearfix;
+        margin: rem(10) rem(30) 0;
+        border-top: 1px solid #e9e9e9;
+        border-bottom: 1px solid #e9e9e9;
+        height: rem(88);
+        line-height: rem(88);
+        font-size: rem(24);
+        color: #666;
+        .pay-area-hd{
+            float: left;
+        }
+        .pay-area-bd{
+            float: right;
+        }
+    }
+}
+
+/* 充值 */
+.recharge-main{
+    .current-balance{
+        padding: rem(30);
+        color: #333;
+        font-size: rem(28);
+        label{
+            float: left;
+            width: rem(138);
+        }
+        input{
+            max-width: 80%;
+            min-width: 60%;
+            width: calc( 100% - 4.3125rem );
+            border: none;
+            outline: 0;
+            color: #e6133c;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            line-height: inherit;
+            vertical-align: middle;
+            @extend %border-radius-middle;
+            &::-webkit-input-placeholder {
+              color: #bbb;
+              opacity: 1;
+              text-shadow: none;
+              -webkit-text-fill-color: initial;
+            }
+        }
+    }
+    .recharge-info{
+        padding: rem(30);
+        font-size: rem(24);
+        color: #666;
+        p,h6{
+            line-height: rem(38);
+            color: #666;
+        }
+    }
+    .recharge-btn-next{
+        @extend %block-btn-basic;
+        @include border-radius(rem(8));
+        display: block;
+        width: auto;
+        margin: rem(32) rem(30) 0;
+        padding: rem(20) rem(8);
+        font-size: rem(38);
+        background-color: #e6133c;
+        color: #fff;
+        &.btn-disabled{
+            background-color: #bbb;
+        }
+    }
+}
+
+/* 付款码 */
+.payment-main{
+    padding: rem(30);
+    text-align: center;
+    .payment-code{
+        font-weight: normal;
+        color: #333;
+        font-size: rem(60);
+        line-height: rem(80);
+    }
+    .code-reflash-text{
+        font-size: rem(28);
+        color: #999;
+        line-height: rem(48);
+    }
+    .payment-bar-code img{
+        width: rem(550);
+    }
+    .payment-er-code img{
+        width: rem(360);
+        margin-top: rem(60);
+        margin-bottom: rem(50);
+    }
+    @at-root .master-wraper .deductible{
+        @include clearfix;
+        height: rem(88);
+        line-height: rem(88);
+        padding: 0 rem(30);
+        background-color: #fff;
+        color: #999;
+        margin-top: rem(20);
+        font-size: rem(28);
+        .deductible-hd{
+            float: left;
+            span{
+                font-size: rem(28);
+            }
+        }
+        .deductible-bd{
+            float: right;
+            font-size: 0;
+            i.iconfont,span{
+                vertical-align: middle;
+            }
+        }
+    }
+}

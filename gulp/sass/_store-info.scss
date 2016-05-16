@@ -1,0 +1,98 @@
+@charset 'utf-8';
+@import "compass";
+@import "bourbon/bourbon";
+
+.bg-color-blue{
+	background-color: #3385ff;
+}
+.logis-detail,.o-t-contmsg{
+	margin-bottom: 0.625rem;
+}
+.logis-detail ul{
+	@include display(flex);
+	background-color: #fff;
+	margin-left: -0.3125rem;
+	margin-right: -0.3125rem;
+	// height: 6.125rem;
+	padding: 3.75rem 0 1.5625rem 0;
+}
+.logis-detail ul.logis-three{
+	margin-left: -1.25rem;
+	margin-right: -1.25rem;
+}
+.logis-detail ul li{
+	@include flex(1);
+	color: #ccc;
+	font-size: 0.875rem;
+	text-align: center;
+	position: relative;
+	@include align-self(center);
+	.arrive-time,.express-phone{
+		position: absolute;
+
+	}
+}
+.logis-detail ul li:before{
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: .5rem;
+	height: .5rem;
+	background-color: #ccc;
+	@include border-radius(10rem);
+	border: 0;
+	left: 50%;
+	top: -0.9rem;
+	@include prefixer(transform, translateX(-50%), webkit moz spec);
+	// border: 0.1875rem solid #fff;
+}
+.logis-detail ul li.logis-detail-first:before{
+	background-color: #52b63f;
+	border: 0.1875rem solid #a8da9f;
+	top: -1.05rem;
+}
+.logis-detail ul li:after{
+	content: '';
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	height: 0.125rem;
+	background-color: #eeeeee;
+	top: -.7rem;
+	left: 0;
+}
+.logis-detail ul li:first-child:after{
+	width: 50%;
+	left: calc( 50% );
+}
+.logis-detail ul li.logis-detail-first:after{
+	background-color: #52b63f;
+}
+.logis-detail ul li:last-child:after{
+	width: 50%;
+}
+
+.logis-song{
+	color: #52b63f;
+}
+
+.logis-detail ul li .arrive-time,.logis-detail ul li .express-phone{
+	font-size: 0.75rem;
+	width: 200%;
+	left: -50%;
+}
+.logis-detail ul li .arrive-time{
+	top: -2.6125rem;
+}
+.logis-detail ul li .arrive-time span{
+	background-color: #52b63f;
+	border-radius: 3.125rem;
+	color: #fff;
+	padding: 0.25rem 0.25rem;
+	font-size: 0.75rem;
+	border: 0.1875rem solid #cbe9c5;
+}
+.logis-detail ul li .express-phone{
+	bottom: -1.0rem;
+	color: #333333;
+}

@@ -1,0 +1,24 @@
+@import "bourbon/bourbon";
+@import "compass";
+@import "table-grid/index";
+
+.bg-white{
+    background-color: #fff;
+}
+.bg-eee{
+	background-color: #eee;
+}
+.red{
+	color: #e6133c!important;
+}
+.display-inline{
+	display: inline;
+}
+.master-wraper{
+    @include box-sizing(border-box);
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding-top: rem(92.8);
+}
