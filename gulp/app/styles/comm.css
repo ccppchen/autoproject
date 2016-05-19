@@ -1,4 +1,4 @@
-a {
+.a {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -22,6 +22,15 @@ a {
   -o-align-items: center;
   align-items: center;
   -ms-flex-align: center;
+}
+
+.content {
+  height: 4000px;
+}
+
+.footer {
+  height: 300px;
+  background-color: #ccc;
 }
 
 /*# sourceMappingURL=comm.css.map */

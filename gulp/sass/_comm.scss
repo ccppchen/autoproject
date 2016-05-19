@@ -1,7 +1,15 @@
 @import "bourbon/bourbon";
 
-a{
+.a{
 	@include display(flex);
 	@include justify-content(space-between); 
 	@include align-items(center);
+}
+
+.content{
+	height: 4000px;
+}
+.footer{
+	height: 300px;
+	background-color: #ccc;
 }
