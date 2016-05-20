@@ -1,0 +1,14 @@
+{
+  "name": "bl-bower",
+  "description": "bl-bower 百联js css包管理",
+  "main": "./app.js",
+  "keywords": [
+    "百联",
+    "前端bower"
+  ],
+  "authors": [
+    "chenpeng"
+  ],
+  "homepage": "https://github.com/bl-front-end/bl-bower.git",
+  "dependencies": {}
+}
