@@ -5,6 +5,8 @@ var pkg         = require("./package.json");
 var browserSync = require('browser-sync').create();
 var jshint      = require('gulp-jshint');
 var png         = require('imagemin-pngquant');
+var clean       = require('gulp-clean');
+
 
 var yeoman = {
   app: "app",
@@ -44,7 +46,9 @@ gulp.task('compass', function() {
       style: 'expanded',
       comments: true
     }))
-    .pipe(plugins.autoprefixer())
+    .pipe(plugins.autoprefixer({
+      browsers: [ '> 1%', 'Last 5 versions' ]
+    }));
 });
 
 gulp.task('compass-pro', function() {
@@ -56,16 +60,17 @@ gulp.task('compass-pro', function() {
       style: 'compressed',
       comments: true
     }))
-    .pipe(plugins.autoprefixer())
+    .pipe(plugins.autoprefixer({
+      browsers: [ '> 1%', 'Last 5 versions' ]
+    }))
     .pipe(plugins.header(banner))
-    .pipe(gulp.dest(yeoman.dist+'/styles'))
+    .pipe(gulp.dest(yeoman.dist+'/styles'));
 });
 
 // js合并压缩混淆
 gulp.task('js', function(){
   gulp.src([
-      "app/scripts/app.js",
-      "app/scripts/message.js"
+      "app/scripts/app.js"
     ])
     .pipe(jshint())
     .pipe(jshint.reporter())
@@ -73,13 +78,15 @@ gulp.task('js', function(){
     .pipe(plugins.uglify())
     .pipe(plugins.extReplace('.min.js'))
     .pipe(plugins.header(banner))
-    .pipe(gulp.dest(yeoman.dist))
+    .pipe(gulp.dest(yeoman.dist+'/scripts'))
 });
 
 // html压缩
 gulp.task('html', function () {
-    gulp.src(yeoman.app+'/*.html')
-    .pipe(plugins.minifyHtml())
+    gulp.src(yeoman.app+'/**/*.html')
+    .pipe(plugins.htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest(yeoman.dist));
 });
 
@@ -93,8 +100,14 @@ gulp.task('images', function () {
     .pipe(gulp.dest(yeoman.dist+'/images'));
 });
 
+// 删除dist
+gulp.task('clean', function(){
+  gulp.src('./'+yeoman.dist)
+  .pipe(clean({force: true}));
+});
+
 
 gulp.task('default', ['compass', 'watch', 'server']);
-gulp.task('build', ['compass-pro', 'js', 'html', 'images', 'server']);
+gulp.task('build', ['clean', 'compass-pro', 'js', 'html', 'images', 'server']);
 
 
