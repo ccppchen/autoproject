@@ -47,8 +47,10 @@ gulp.task('compass', function() {
       comments: true
     }))
     .pipe(plugins.autoprefixer({
-      browsers: [ '> 1%', 'Last 5 versions' ]
-    }));
+      browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
+      remove:true
+    }))
+    .pipe(gulp.dest(yeoman.app+'/styles'));
 });
 
 gulp.task('compass-pro', function() {
@@ -61,7 +63,8 @@ gulp.task('compass-pro', function() {
       comments: true
     }))
     .pipe(plugins.autoprefixer({
-      browsers: [ '> 1%', 'Last 5 versions' ]
+      browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
+      remove:true
     }))
     .pipe(plugins.header(banner))
     .pipe(gulp.dest(yeoman.dist+'/styles'));

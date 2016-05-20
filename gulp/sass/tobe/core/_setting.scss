@@ -6,7 +6,7 @@
 
 // 开关设置
 //-----------------------------------------------------	
-$lte7:                  true !default; //是否兼容ie6-7
+$lte7:                  false !default; //是否兼容ie6-7
 $filter:                false !default; //是否为ie6-8开启css3滤镜兼容，常用于渐变背景 
 $printStyleSwitch:      false !default; //是否开启打印样式
 
@@ -94,3 +94,7 @@ $zindexFixedTopbar:     1010 !default;
 $zindexTooltip:         1020 !default;
 $zindexAlert:           1030 !default;
 $zindexModal:           1100 !default;
+
+// rem
+//-----------------------------------------------------	
+$remBase:     32px!default;

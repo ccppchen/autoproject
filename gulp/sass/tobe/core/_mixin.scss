@@ -317,6 +317,11 @@
   @return ($px / $base) * 1em;
 }
 
+// px转rem
+@function rem($px, $remBase) {
+  @return ($px / $base) * 1rem;
+}
+
 // 为颜色添加白色，以百分比形式
 @function tint($color, $percent){
   @return mix(white, $color, $percent);
@@ -579,38 +584,3 @@
       }
     }
 }
-
-/*
-@mixin hairline($position, $color) in ($position = top) {
-  border-top: 1px solid $color;
-}
-@mixin hairline($position, $color) in ($position = left) {
-  border-left: 1px solid $color;
-}
-@mixin hairline($position, $color) in ($position = bottom) {
-  border-bottom: 1px solid $color;
-}
-@mixin hairline($position, $color) in ($position = right) {
-  border-right: 1px solid $color;
-}
-// For right and bottom
-@mixin hairline-remove($position) in not ($position = left) and not ($position = top) {
-  border-left: 0;
-  border-bottom: 0;
-}
-// For left and top
-@mixin hairline-remove($position) in not ($position = right) and not ($position = bottom) {
-  border-right: 0;
-  border-top: 0;
-}
-// For right and bottom
-@mixin hairline-color($position, $color) in not ($position = left) and not ($position = top) {
-  border-right-color: $color;
-  border-bottom-color: $color;
-}
-// For left and top
-@mixin hairline-color($position, $color) in not ($position = right) and not ($position = bottom) {
-  border-left-color: $color;
-  border-top-color: $color;
-}
-*/

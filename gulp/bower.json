@@ -1,0 +1,19 @@
+{
+  "name": "gulp",
+  "description": "bl",
+  "main": "",
+  "authors": [
+    "chenpeng"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bl",
+    "bower"
+  ],
+  "homepage": "https://github.com/ccppchen/autoproject",
+  "private": true,
+  "dependencies": {
+    "jquery-lazy": "^1.6.7",
+    "jquery": "1.7.2"
+  }
+}
