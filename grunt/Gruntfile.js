@@ -48,9 +48,9 @@ module.exports = function (grunt) {
             gruntfile: {
                 files: ['Gruntfile.js']
             },
-            "bower-install": {
+            bowerInstall: {
                 files: 'bower.json',
-                tasks: ['bower-install:app']
+                tasks: ['bowerInstall:app']
             },
             react: {
                 files: ['<%= yeoman.app %>/jsx/{,*/}*.jsx'],
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
         },
 
         // Automatically inject Bower components into the HTML file
-        "bower-install": {
+        bowerInstall: {
             app: {
                 html: '<%= yeoman.app %>/index.html',
                 ignorePath: '<%= yeoman.app %>/'
@@ -394,7 +394,7 @@ module.exports = function (grunt) {
             // 'react',
             'compass:dev',
             'concurrent:server',
-            'bower-install:app',
+            // 'bowerInstall:app',
             'autoprefixer',
             // 'connect:livereload',
             'browserSync:livereload',
@@ -407,7 +407,7 @@ module.exports = function (grunt) {
         'react',
         'compass:dev',
         'concurrent:test',
-        'bower-install:app',
+        'bowerInstall:app',
         'autoprefixer',
         'connect:test',
         'mocha'
@@ -419,7 +419,7 @@ module.exports = function (grunt) {
         'useminPrepare',
         'compass:dev',
         'concurrent:dist',
-        'bower-install:app',
+        'bowerInstall:app',
         'autoprefixer',
         'concat',
         'cssmin',

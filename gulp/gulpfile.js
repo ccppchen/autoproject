@@ -6,7 +6,7 @@ var browserSync = require('browser-sync').create();
 var jshint      = require('gulp-jshint');
 var png         = require('imagemin-pngquant');
 var clean       = require('gulp-clean');
-
+var connect     = require("gulp-connect");
 
 var yeoman = {
   app: "app",
@@ -33,6 +33,11 @@ gulp.task('server', ['compass'], function(){
 gulp.task('watch', function(){
   gulp.watch("sass/**/*.scss", ['compass']);
   gulp.watch([yeoman.app+'/*.html', yeoman.app+'/styles/**/*.css', yeoman.app+'/images/**/*']).on('change', browserSync.reload);
+});
+
+// 查看服务
+gulp.task('connect', function () {
+  connect.server();
 });
 
 // 编译sass
@@ -111,6 +116,6 @@ gulp.task('clean', function(){
 
 
 gulp.task('default', ['compass', 'watch', 'server']);
-gulp.task('build', ['clean', 'compass-pro', 'js', 'html', 'images', 'server']);
+gulp.task('build', ['clean', 'compass-pro', 'js', 'html', 'images', 'connect']);
 
 

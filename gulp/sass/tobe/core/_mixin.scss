@@ -318,8 +318,8 @@
 }
 
 // px转rem
-@function rem($px, $remBase) {
-  @return ($px / $base) * 1rem;
+@function rem($px, $remBase: $remBase) {
+  @return ($px / $remBase) * 1rem;
 }
 
 // 为颜色添加白色，以百分比形式
