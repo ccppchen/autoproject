@@ -12,6 +12,10 @@ var bowerFile   = require('main-bower-files');
 var uglify      = require('gulp-uglify');
 var extReplace  = require('gulp-ext-replace');
 var inject      = require('gulp-inject');
+var svgSymbols  = require('gulp-svg-symbols');
+var iconfontCss = require('gulp-iconfont-css-and-template');
+var iconfont    = require('gulp-iconfont');
+
 
 var yeoman = {
   app: "app",
@@ -22,8 +26,56 @@ var banner =
 "/** \n\
 * jQuery WeUI V" + pkg.version + " \n\
 * By 野草\n\
-* http://ccppchen.github.io/jquery-weui/\n \
+* http://ccppchen.github.io\n \
 */\n";
+
+// svg symbols 
+gulp.task('sprites', ['svgmin'], function () {
+  return gulp.src('app/svgmin/*.svg')
+    .pipe(svgSymbols({
+      fontSize:   16
+    }))
+    .pipe(gulp.dest('app/assets'));
+});
+
+// svgmin
+gulp.task('svgmin', function () {
+    gulp.src('svg/**/*.svg')
+      .pipe(plugins.svgmin({
+        plugins: [{
+            cleanupIDs: {
+                prefix: '',
+                minify: true
+            },
+            js2svg: {
+              pretty: true
+            }
+        }]
+      }))
+      .pipe(gulp.dest('app/svgmin/'));
+});
+
+// iconfont
+gulp.task('iconfont', ['svgmin'], function(){
+  gulp.src(['app/svgmin/**/*.svg'])
+     .pipe(iconfontCss({
+         glyphs:   null,
+         fontName: 'myfont',
+         cssClass: 'iconfont',
+         cssTargetPath: './icon.css'
+     }))
+     .pipe(iconfont({
+         fontName: 'myfont',
+         formats: ['ttf', 'eot', 'woff']
+     }))
+    .pipe(gulp.dest('app/styles/fonts'));
+});
+
+// 复制
+gulp.task('copy', function(){
+  gulp.src(yeoman.app+'/styles/fonts/**/*')
+    .pipe(gulp.dest(yeoman.dist+'/styles/fonts'))
+});
 
 // 监测文件改动并自动刷新
 gulp.task('server', ['compass'], function(){
@@ -132,7 +184,7 @@ gulp.task('ejs', function () {
     .pipe(gulp.dest(yeoman.app));
 });
 
-// 导出bower的主要文件
+// 导出bower的主要文件并且压缩js
 gulp.task('bower-js', function() {
     gulp.src(bowerFile())
       .pipe(gulp.dest(yeoman.dist+'/lib'))
@@ -159,7 +211,7 @@ gulp.task('bower-install', function(){
 });
 
 gulp.task('default', ['compass', 'watch', 'bower-install', 'server']);
-gulp.task('build', ['clean', 'bower-js', 'js', 'compass-pro', 'html', 'images', 'connect']);
+gulp.task('build', ['clean', 'bower-js', 'js', 'compass-pro', 'html', 'images', 'copy', 'connect']);
 
 
 
