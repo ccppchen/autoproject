@@ -1,0 +1,16 @@
+{
+  "name": "bl-js",
+  "description": "bl js",
+  "main": "",
+  "authors": [
+    "yuanchao"
+  ],
+  "keywords": [
+    "bl",
+    "bower"
+  ],
+  "homepage": "https://github.com/ccppchen/autoproject",
+  "dependencies": {
+    "jquery": "1.7.2"
+  }
+}

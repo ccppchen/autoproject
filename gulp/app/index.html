@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>reactLean</title>
+    <title>index</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <!-- inject:css -->
+    <!-- bower installed css files will go here... -->
+    <!-- endinject -->
+    <!-- my:css -->
+    <!-- built css files will go here... -->
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <!-- endbuild -->
+    <!-- my:css end -->
 </head>
 <body>
     <div class="content">
@@ -21,32 +21,12 @@
         <div class="box"></div>
     </div>
     <div class="footer"></div>
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/app.js -->
-    <script type="text/javascript" src="scripts/app.js"></script> 
-    <script type="text/javascript">
-        $(function(){
-            // 尾部距离页面顶部的距离
-            var footerScrollTop = $('.footer').offset().top;
-            // 屏幕高度
-            var winHeight = $(window).height();
-            $(window).on('scroll', function(event) {
-                var scrollTop = $(window).scrollTop();
-                console.log(scrollTop);
-                if (scrollTop >= footerScrollTop - winHeight ) {
-                    // 抵达尾部
-                    console.log(1);
-                } else {
-                    console.log(2);
-                }
-            });
-        });
-    </script>
-    <!-- endbuild -->
+    <!-- inject:js -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/jquery-lazy/jquery.lazy.js"></script>
+    <!-- endinject -->
+    <!-- my:js -->
+    <script type="text/javascript" src="scripts/app.min.js"></script>
+    <!-- my:js end -->
 </body>
 </html>

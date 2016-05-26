@@ -38,9 +38,12 @@ $btnBgGradientSwitch:    false !default;//是否启用渐变背景
 }
 
 // btn-size
-@mixin btn-size($padding:nth($btnNormalSize,1), $height:nth($btnNormalSize,2), $fontSize:nth($btnNormalSize,3), $formbtn: false){
+@mixin btn-size($padding:nth($btnNormalSize,1), $height:nth($btnNormalSize,2), $fontSize:nth($btnNormalSize,3), $btnBorderRadius:nth($btnNormalSize, 4), $formbtn: false){
   padding:0 $padding;
   font-size:$fontSize;
+  @if type-of($btnBorderRadius) == number {
+    border-radius: $btnBorderRadius;
+  }
 
   @if $formbtn{
     // form元素按钮（如button,input:submit），设置height来反应其高度
@@ -61,7 +64,7 @@ $btnBgGradientSwitch:    false !default;//是否启用渐变背景
     border-color:lighten($bgColor, 2%) darken($bgColor, 5%) darken($bgColor, 5%) lighten($bgColor, 2%);
   }
 
-  &:hover{
+  &:hover,&:active{
     background-color: darken($bgColor,5%);
     color:$textColor;
   }

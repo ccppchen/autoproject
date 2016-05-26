@@ -7,11 +7,16 @@ var jshint      = require('gulp-jshint');
 var png         = require('imagemin-pngquant');
 var clean       = require('gulp-clean');
 var connect     = require("gulp-connect");
+var ejs         = require("gulp-ejs");
+var bowerFile   = require('main-bower-files');
+var uglify      = require('gulp-uglify');
+var extReplace  = require('gulp-ext-replace');
+var inject      = require('gulp-inject');
 
 var yeoman = {
   app: "app",
   dist: "dist"
-}
+};
 
 var banner = 
 "/** \n\
@@ -32,7 +37,9 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch("sass/**/*.scss", ['compass']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/styles/**/*.css', yeoman.app+'/images/**/*']).on('change', browserSync.reload);
+  gulp.watch([yeoman.app+"/widget/**/*.html"], ['ejs']);
+  gulp.watch(yeoman.app+'/lib/**', ['bower-install']);
+  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/styles/**/*.css', yeoman.app+'/images/**/*', yeoman.app+'/lib/**']).on('change', browserSync.reload);
 });
 
 // 查看服务
@@ -44,12 +51,14 @@ gulp.task('connect', function () {
 gulp.task('compass', function() {
   return gulp.src("sass/**/*.scss")
     .pipe(plugins.compass({
-      config_file: './config.rb',
+      // config_file: './config.rb',
       css: yeoman.app+'/styles',
       sass: 'sass',
       image: yeoman.app+'/images',
       style: 'expanded',
-      comments: true
+      comments: false,
+      sourcemap: true,
+      environment: 'development'
     }))
     .pipe(plugins.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
@@ -63,9 +72,11 @@ gulp.task('compass-pro', function() {
     .pipe(plugins.compass({
       css: yeoman.dist+'/styles',
       sass: 'sass',
-      image: yeoman.app+'/images',
+      image: yeoman.dist+'/images',
       style: 'compressed',
-      comments: true
+      comments: false,
+      sourcemap: false,
+      environment: 'production'
     }))
     .pipe(plugins.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
@@ -76,22 +87,22 @@ gulp.task('compass-pro', function() {
 });
 
 // js合并压缩混淆
-gulp.task('js', function(){
-  gulp.src([
-      "app/scripts/app.js"
-    ])
-    .pipe(jshint())
-    .pipe(jshint.reporter())
-    .pipe(plugins.concat({ path: 'main.js'}))
-    .pipe(plugins.uglify())
-    .pipe(plugins.extReplace('.min.js'))
-    .pipe(plugins.header(banner))
-    .pipe(gulp.dest(yeoman.dist+'/scripts'))
-});
+//gulp.task('js', function(){
+//  gulp.src([
+//      'dist/lib/jquery.js',
+//      'dist/lib/jquery.lazy.js',
+//      'dist/lib/app.js'
+//    ])
+//    .pipe(plugins.concat({ path: 'vendor.js'}))
+//    .pipe(uglify())
+//    .pipe(plugins.header(banner))
+//    .pipe(extReplace('.min.js'))
+//    .pipe(gulp.dest(yeoman.dist+'/scripts/vendor'))
+//});
 
 // html压缩
 gulp.task('html', function () {
-    gulp.src(yeoman.app+'/**/*.html')
+    gulp.src([yeoman.app+'/**/*.html','!./'+yeoman.app+'/widget/*.html'])
     .pipe(plugins.htmlmin({
       collapseWhitespace: true
     }))
@@ -114,8 +125,41 @@ gulp.task('clean', function(){
   .pipe(clean({force: true}));
 });
 
+// ejs html模版引擎
+gulp.task('ejs', function () {
+  gulp.src([yeoman.app+"/widget/index.html"])
+    .pipe(ejs({}))
+    .pipe(gulp.dest(yeoman.app));
+});
 
-gulp.task('default', ['compass', 'watch', 'server']);
-gulp.task('build', ['clean', 'compass-pro', 'js', 'html', 'images', 'connect']);
+// 导出bower的主要文件
+gulp.task('bower-js', function() {
+    gulp.src(bowerFile())
+      .pipe(gulp.dest(yeoman.dist+'/lib'))
+      .pipe(plugins.concat({ path: 'vendor.js'}))
+      .pipe(uglify())
+      .pipe(plugins.header(banner))
+      .pipe(extReplace('.min.js'))
+      .pipe(gulp.dest(yeoman.dist+'/scripts/vendor'))
+});
+gulp.task('js', function(){
+  gulp.src([yeoman.app+'/scripts/**/*.js'])
+    .pipe(plugins.concat({ path: 'app.js' }))
+    .pipe(uglify())
+    .pipe(plugins.header(banner))
+    .pipe(extReplace('.min.js'))
+    .pipe(gulp.dest(yeoman.dist+'/scripts'))
+});
+
+// bower依赖注入
+gulp.task('bower-install', function(){
+  gulp.src([yeoman.app+'/index.html'])
+    .pipe(inject(gulp.src(bowerFile(), {read: false}), {relative: true}, {name: 'bower'}))
+    .pipe(gulp.dest(yeoman.app))
+});
+
+gulp.task('default', ['compass', 'watch', 'bower-install', 'server']);
+gulp.task('build', ['clean', 'bower-js', 'js', 'compass-pro', 'html', 'images', 'connect']);
+
 
 
