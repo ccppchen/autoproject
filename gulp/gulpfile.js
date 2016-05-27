@@ -22,14 +22,14 @@ var yeoman = {
   dist: "dist"
 };
 
-var banner = 
+var banner =
 "/** \n\
 * jQuery WeUI V" + pkg.version + " \n\
 * By 野草\n\
 * http://ccppchen.github.io\n \
 */\n";
 
-// svg symbols 
+// svg symbols
 gulp.task('sprites', ['svgmin'], function () {
   return gulp.src('app/svgmin/*.svg')
     .pipe(svgSymbols({
@@ -87,7 +87,7 @@ gulp.task('server', ['compass'], function(){
    });
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', ['compass'], function(){
   gulp.watch("sass/**/*.scss", ['compass']);
   gulp.watch([yeoman.app+"/widget/**/*.html"], ['ejs']);
   gulp.watch(yeoman.app+'/lib/**', ['bower-install']);
@@ -102,16 +102,24 @@ gulp.task('connect', function () {
 // 编译sass
 gulp.task('compass', function() {
   return gulp.src("sass/**/*.scss")
-    .pipe(plugins.compass({
-      // config_file: './config.rb',
-      css: yeoman.app+'/styles',
-      sass: 'sass',
-      image: yeoman.app+'/images',
-      style: 'expanded',
-      comments: false,
-      sourcemap: true,
-      environment: 'development'
+    .pipe(plugins.plumber({
+        errorHandler: function (error) {
+              console.log(error.message);
+              this.emit('end');
+          }
     }))
+    .pipe(plugins.compass({
+      // config_file: 'config.rb'
+      // image: yeoman.app+'/images',
+      // style: 'expanded',
+      // comments: true
+      // sourcemap: true,
+      // sourcemapPath: yeoman.app+'/styles',
+      css: yeoman.app+'/styles',
+      sass: 'app/sass'
+      // font: yeoman.app+'/styles/fonts'
+    }))
+    .pipe(plugins.plumber.stop())
     .pipe(plugins.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
       remove:true
@@ -121,15 +129,22 @@ gulp.task('compass', function() {
 
 gulp.task('compass-pro', function() {
   return gulp.src("sass/**/*.scss")
+    .pipe(plugins.plumber({
+        errorHandler: function (error) {
+              console.log(error.message);
+              this.emit('end');
+          }
+    }))
     .pipe(plugins.compass({
       css: yeoman.dist+'/styles',
-      sass: 'sass',
+      sass: yeoman.app+'sass',
       image: yeoman.dist+'/images',
       style: 'compressed',
       comments: false,
       sourcemap: false,
       environment: 'production'
     }))
+    .pipe(plugins.plumber.stop())
     .pipe(plugins.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
       remove:true
