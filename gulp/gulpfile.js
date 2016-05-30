@@ -118,10 +118,10 @@ gulp.task('compass', function() {
       sourcemap: true
     }))
     .pipe(plugins.plumber.stop())
-    // .pipe(plugins.autoprefixer({
-    //   browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ]
-    // }))
-    // .pipe(gulp.dest('app/styles'))
+    .pipe(plugins.autoprefixer({
+      browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ]
+    }))
+    .pipe(gulp.dest('app/styles'))
 });
 
 gulp.task('compass-pro', function() {

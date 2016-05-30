@@ -1,6 +1,6 @@
 @import "tobe/ext/btn";
 
-$btnSizeClass: (small rem(10) rem(42) rem(24) $smallRadius) (middle rem(24) rem(68) rem(32) $middleRadius) (large rem(28) rem(84) rem(48) $largeRadius);
+$btnSizeClass: (small rem(10) rem(42) rem(24)) (middle rem(10) rem(68) rem(32)) (large rem(10) rem(84) rem(48));
 $btnColorClass: (primary $primary #fff) (pink $pink #fff);
 @include btn-size-multi();
 @include btn-color-multi($btnColorClass);
@@ -13,6 +13,7 @@ $btnColorClass: (primary $primary #fff) (pink $pink #fff);
 	margin: 0 auto;
 	@include hairline(bottom);
 	@include hairline(top);
-	// @include hairline-color(bottom,red);
-	// @include hairline-remove(bootom);
+	.formbtn,.btn,.blockbtn{
+		margin: 10px 0;
+	}
 }

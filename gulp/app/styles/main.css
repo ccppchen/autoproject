@@ -146,6 +146,7 @@ textarea {
   font-size: 100%;
   margin: 0;
   vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button,
@@ -174,14 +175,14 @@ input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0;
 }
 
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -285,10 +286,8 @@ h5, h6 {
 
 a {
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
   color: #08c;
-}
-a:hover {
-  color: #006699;
 }
 
 input:-moz-placeholder,
@@ -318,7 +317,10 @@ textarea::-webkit-input-placeholder {
 .preloader {
   width: 20px;
   height: 20px;
-  transform-origin: 50%;
+  -webkit-transform-origin: 50%;
+  -ms-transform-origin: 50%;
+      transform-origin: 50%;
+  -webkit-animation: preloader-spin 1s steps(12, end) infinite;
   animation: preloader-spin 1s steps(12, end) infinite;
 }
 .preloader:after {
@@ -332,8 +334,15 @@ textarea::-webkit-input-placeholder {
   background-size: 100%;
 }
 
+@-webkit-keyframes preloader-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 @keyframes preloader-spin {
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -391,15 +400,27 @@ html {
   border: 0 none;
 }
 
-.btn {
+.blockbtn {
+  position: relative;
+  display: block;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn, .blockbtn {
   padding: 0 16px;
   font-size: 14px;
-  border-radius: 3px;
   line-height: 28px;
+}
+
+.btn {
   color: #333;
   background-color: #e6e6e6;
+  border-radius: 3px;
 }
-.btn:hover, .btn:active {
+.btn:active {
   background-color: #d9d9d9;
   color: #333;
 }
@@ -407,12 +428,22 @@ html {
 .formbtn {
   padding: 0 16px;
   font-size: 14px;
-  border-radius: 3px;
   height: 28px;
   color: #333;
   background-color: #e6e6e6;
+  border-radius: 3px;
 }
-.formbtn:hover, .formbtn:active {
+.formbtn:active {
+  background-color: #d9d9d9;
+  color: #333;
+}
+
+.blockbtn {
+  color: #333;
+  background-color: #e6e6e6;
+  border-radius: 3px;
+}
+.blockbtn:active {
   background-color: #d9d9d9;
   color: #333;
 }
@@ -420,42 +451,36 @@ html {
 .btn-small {
   padding: 0 0.3125rem;
   font-size: 0.75rem;
-  border-radius: 3px;
   line-height: 1.3125rem;
 }
 
 .formbtn-small {
   padding: 0 0.3125rem;
   font-size: 0.75rem;
-  border-radius: 3px;
   height: 1.3125rem;
 }
 
 .btn-middle {
-  padding: 0 0.75rem;
+  padding: 0 0.3125rem;
   font-size: 1rem;
-  border-radius: 8px;
   line-height: 2.125rem;
 }
 
 .formbtn-middle {
-  padding: 0 0.75rem;
+  padding: 0 0.3125rem;
   font-size: 1rem;
-  border-radius: 8px;
   height: 2.125rem;
 }
 
 .btn-large {
-  padding: 0 0.875rem;
+  padding: 0 0.3125rem;
   font-size: 1.5rem;
-  border-radius: 10px;
   line-height: 2.625rem;
 }
 
 .formbtn-large {
-  padding: 0 0.875rem;
+  padding: 0 0.3125rem;
   font-size: 1.5rem;
-  border-radius: 10px;
   height: 2.625rem;
 }
 
@@ -463,7 +488,19 @@ html {
   color: #fff;
   background-color: #0078E7;
 }
-.btn-primary:hover, .btn-primary:active {
+.btn-primary:active {
+  background-color: #006bce;
+  color: #fff;
+}
+
+.outline-primary {
+  color: #fff;
+  background-color: #0078E7;
+  border: 1px solid #0078E7;
+  background-color: transparent;
+  color: #242424;
+}
+.outline-primary:active {
   background-color: #006bce;
   color: #fff;
 }
@@ -472,7 +509,19 @@ html {
   color: #fff;
   background-color: #c3325f;
 }
-.btn-pink:hover, .btn-pink:active {
+.btn-pink:active {
+  background-color: #af2d55;
+  color: #fff;
+}
+
+.outline-pink {
+  color: #fff;
+  background-color: #c3325f;
+  border: 1px solid #c3325f;
+  background-color: transparent;
+  color: #242424;
+}
+.outline-pink:active {
   background-color: #af2d55;
   color: #fff;
 }
@@ -497,16 +546,22 @@ html {
   background-color: #ccc;
   display: block;
   z-index: 15;
-  transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .box:after {
-    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 3) {
   .box:after {
-    transform: scaleY(0.33);
+    -webkit-transform: scaleY(0.33);
+        -ms-transform: scaleY(0.33);
+            transform: scaleY(0.33);
   }
 }
 .box:before {
@@ -521,17 +576,24 @@ html {
   background-color: #ccc;
   display: block;
   z-index: 15;
-  transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+      -ms-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .box:before {
-    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 3) {
   .box:before {
-    transform: scaleY(0.33);
+    -webkit-transform: scaleY(0.33);
+        -ms-transform: scaleY(0.33);
+            transform: scaleY(0.33);
   }
 }
-
-/*# sourceMappingURL=main.css.map */
+.box .formbtn, .box .btn, .box .blockbtn {
+  margin: 10px 0;
+}

@@ -36,7 +36,7 @@ $msgClassSwitch:             true false false false !default; //错误 成功 �
 // 配色方案，包括文本色，背景色，边框颜色
 @mixin message-skin($textColor, $bgColor, $borderColor ){
     background-color:$bgColor;
-    border:2px solid $borderColor;
+    border:1px solid $borderColor;
     color: $textColor;
 
     a{

@@ -258,6 +258,7 @@ textarea {
     font-size: 100%; // 2
     margin: 0; // 3
     vertical-align: baseline; // 4
+    -webkit-tap-highlight-color: transparent;
     @if $lte7 {
         *vertical-align: middle; // 4
     }
@@ -434,6 +435,7 @@ h5,h6 {
 // links 
 a{
   text-decoration:none;
+  -webkit-tap-highlight-color: transparent;
   @if length($linkColor) > 1{
       color:nth($linkColor,1);
       &:hover{
@@ -441,9 +443,6 @@ a{
       }
   } @else {
     color:$linkColor;
-    &:hover{
-      color:darken($linkColor,10%);
-    }
   }
 }
 
