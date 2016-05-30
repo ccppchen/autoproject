@@ -19,7 +19,8 @@ var iconfont    = require('gulp-iconfont');
 
 var yeoman = {
   app: "app",
-  dist: "dist"
+  dist: "dist",
+  sass: 'sass'
 };
 
 var banner =
@@ -88,8 +89,7 @@ gulp.task('server', ['compass'], function(){
 });
 
 gulp.task('watch', ['compass'], function(){
-  gulp.watch("sass/**/*.scss", ['compass']);
-  gulp.watch([yeoman.app+"/widget/**/*.html"], ['ejs']);
+  gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
   gulp.watch(yeoman.app+'/lib/**', ['bower-install']);
   gulp.watch([yeoman.app+'/*.html', yeoman.app+'/styles/**/*.css', yeoman.app+'/images/**/*', yeoman.app+'/lib/**']).on('change', browserSync.reload);
 });
@@ -101,7 +101,7 @@ gulp.task('connect', function () {
 
 // 编译sass
 gulp.task('compass', function() {
-  return gulp.src("sass/**/*.scss")
+  return gulp.src(yeoman.sass+"/**/*.scss")
     .pipe(plugins.plumber({
         errorHandler: function (error) {
               console.log(error.message);
@@ -109,26 +109,23 @@ gulp.task('compass', function() {
           }
     }))
     .pipe(plugins.compass({
-      // config_file: 'config.rb'
-      // image: yeoman.app+'/images',
-      // style: 'expanded',
-      // comments: true
-      // sourcemap: true,
-      // sourcemapPath: yeoman.app+'/styles',
-      css: yeoman.app+'/styles',
-      sass: 'app/sass'
-      // font: yeoman.app+'/styles/fonts'
+      image:    'app/images',
+      css:      'app/styles',
+      sass:     yeoman.sass,
+      font:     'app/styles/fonts',
+      style:    'expanded',
+      comments:  true,
+      sourcemap: true
     }))
     .pipe(plugins.plumber.stop())
-    .pipe(plugins.autoprefixer({
-      browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
-      remove:true
-    }))
-    .pipe(gulp.dest(yeoman.app+'/styles'));
+    // .pipe(plugins.autoprefixer({
+    //   browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ]
+    // }))
+    // .pipe(gulp.dest('app/styles'))
 });
 
 gulp.task('compass-pro', function() {
-  return gulp.src("sass/**/*.scss")
+  return gulp.src(yeoman.sass+"/**/*.scss")
     .pipe(plugins.plumber({
         errorHandler: function (error) {
               console.log(error.message);
@@ -137,7 +134,7 @@ gulp.task('compass-pro', function() {
     }))
     .pipe(plugins.compass({
       css: yeoman.dist+'/styles',
-      sass: yeoman.app+'sass',
+      sass: yeoman.sass,
       image: yeoman.dist+'/images',
       style: 'compressed',
       comments: false,
@@ -147,7 +144,7 @@ gulp.task('compass-pro', function() {
     .pipe(plugins.plumber.stop())
     .pipe(plugins.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
-      remove:true
+      remove: true
     }))
     .pipe(plugins.header(banner))
     .pipe(gulp.dest(yeoman.dist+'/styles'));

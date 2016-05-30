@@ -294,6 +294,7 @@ input[type="submit"] {
     @if $lte7 {
         *overflow: visible; // 4
     }
+    outline: 0; // 5
 }
 
 // Re-set default cursor for disabled elements

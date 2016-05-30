@@ -10,11 +10,11 @@
  * components 样式
  * -------------------------------------------------
 */
-/* preloader */
-// @import "tobe/components/preloader";
+@import "tobe/components/preloader";
 
 /* -------------------------------------------------
  * main 样式
  * -------------------------------------------------
 */
+@import "tobe/core/rem";
 @import "testBtn";

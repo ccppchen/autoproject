@@ -9,8 +9,8 @@
 //----------------------------------
 $btnBaseClass:           btn !default; //按钮的基本class
 $btnFormBaseClass:       formbtn !default; //form中input和button元素按钮的class
-$btnNormalSize:          16px 28px 14px 3px !default; //默认按钮的左右padding，高度，字体大小，圆角
-$btnSizeClass:           () !default; //(small 5px 21px 12px) 每个括号为一组，里面四个参数分别为：class 左右padding，高度，字体大小
+$btnNormalSize:          16px 28px 14px $smallRadius !default; //默认按钮的左右padding，高度，字体大小，圆角
+$btnSizeClass:           () !default; //(small 5px 21px 12px 3px) 每个括号为一组，里面四个参数分别为：class 左右padding，高度，字体大小, 圆角
 $btnColorClass:          () !default; //(primary $primary #fff) 每个括号为一组，里面三个参数分别为：class 背景色 文本色
 
 // 开关按钮
@@ -102,20 +102,19 @@ $btnBgGradientSwitch:    false !default;//是否启用渐变背景
 
 // 如果输出多个大小按钮，则直接调用下面的mixin
 // @include btn-size-multi();
-@mixin btn-size-multi($sizeLists: $btnSizeClass, $btnFormBool: false){
+@mixin btn-size-multi($sizeLists: $btnSizeClass){
   @each $size in $sizeLists{
     $class:     nth($size, 1);
     $padding:   nth($size, 2);
     $height:    nth($size, 3);
     $fontSize:  nth($size, 4);
+    $btnRadius:  nth($size, 5);
 
     .#{$btnBaseClass}-#{$class}{
-      @include btn-size($padding, $height, $fontSize);
+      @include btn-size($padding, $height, $fontSize, $btnRadius);
     }
-    @if $btnFormBool {
-      .#{$btnFormBaseClass}-#{$class}{
-        @include btn-size($padding, $height, $fontSize, true);
-      }
+    .#{$btnFormBaseClass}-#{$class}{
+      @include btn-size($padding, $height, $fontSize, $btnRadius, true);
     }
   }
 }
@@ -127,9 +126,9 @@ $btnBgGradientSwitch:    false !default;//是否启用渐变背景
 
 // 如果输出单个颜色按钮，直接调用btn-color
 // @include btn-color($bgColor,$textColor);
-.#{$btnBaseClass}-primary {
-  @include btn-color($primary, #fff);
-}
+// .#{$btnBaseClass}-primary {
+//   @include btn-color($primary, #fff);
+// }
 
 //如果输出至少两个不同颜色按钮，则调用下面的mixin
 // @include btn-color-multi();

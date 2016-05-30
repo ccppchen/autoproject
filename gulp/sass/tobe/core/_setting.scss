@@ -23,7 +23,12 @@ $fontHeiTi:             "SimHei"; //黑体
 
 // 元素上下间距
 //-----------------------------------------------------	
-$baseGap:               20px !default;
+$hGap:               .625rem !default;
+
+
+// 元素左右间距
+//-----------------------------------------------------	
+$vGap:               .9375rem !default; 
 
 
 // 基本颜色
@@ -83,8 +88,11 @@ $infoColor:                  #205791 #D5EDF8 #92CAE4 !default;
 
 // radius
 //-----------------------------------------------------	
-$baseRadius:            5px !default;
 $smallRadius:           3px !default;
+$baseRadius:            6px !default;
+$middleRadius:          8px !default;
+$largeRadius:           10px !default;
+$roundRadius:           50% !default;
 
 
 // z-index
