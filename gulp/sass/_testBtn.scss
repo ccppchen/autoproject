@@ -1,7 +1,7 @@
 @import "tobe/ext/btn";
 
 $btnSizeClass: (small rem(10) rem(42) rem(24)) (middle rem(10) rem(68) rem(32)) (large rem(10) rem(84) rem(48));
-$btnColorClass: (primary $primary #fff) (pink $pink #fff);
+$btnColorClass: (primary $primary #fff) (black $black #fff) (gray-darker $grayDarker #fff) (gray-dark $grayDark #fff) (gray $gray #fff) (gray-light $grayLight #333) (red $red #fff) (blue $blue #fff) (blue-dark $blueDark #fff) (orange $orange #fff) (green $green #fff) (yellow $yellow #fff) (pink $pink #fff) (purple $purple #fff);
 @include btn-size-multi();
 @include btn-color-multi($btnColorClass);
 
