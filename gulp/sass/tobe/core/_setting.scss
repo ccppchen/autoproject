@@ -13,7 +13,7 @@ $printStyleSwitch:      false !default; //是否开启打印样式
 
 // font相关
 //-----------------------------------------------------	
-$baseFontSize:          14px !default;
+$baseFontSize:          0.875rem !default;
 $baseLineHeight:        1.5 !default;
 $baseFontFamily:        "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
 $fontCn:                "SimSun"; //宋体
@@ -76,16 +76,6 @@ $textColor:             $grayDarker !default;
 $placeholder:           true $gray !default;
 
 
-// 交互配色
-// 警告，错误，成功，提示
-//-----------------------------------------------------	
-// 每个变量都有三个颜色值，分别为：文本色，背景色，边框色
-$warningColor:               #514721 #FFF6BF #FFD324 !default;
-$errorColor:                 #8A1F11 #FBE3E4 #FBC2C4 !default;
-$successColor:               #264409 #E6EFC2 #C6D880 !default;
-$infoColor:                  #205791 #D5EDF8 #92CAE4 !default;
-
-
 // radius
 //-----------------------------------------------------	
 $smallRadius:           3px !default;
@@ -95,13 +85,35 @@ $largeRadius:           10px !default;
 $roundRadius:           50% !default;
 
 
-// z-index
+// bar
 //-----------------------------------------------------	
-$zindexDropdown:        1000 !default;
-$zindexFixedTopbar:     1010 !default;
-$zindexTooltip:         1020 !default;
-$zindexAlert:           1030 !default;
-$zindexModal:           1100 !default;
+$bar-title-font-size:             1.0625rem !default;
+$headings-font-weight:            500 !default;
+
+$bar-padding-portrait:            0.3125rem !default;
+$button-bar-button-padding:       3px !default;
+$button-bar-button-font-size:     0.875rem !default;
+$button-bar-button-icon-size:     1.25rem !default;
+$button-large-icon-size:          2.0rem !default;
+
+$bar-height:                      2.75rem !default;
+$bar-footer-height:               2.75rem !default;
+$bar-subheader-height:            2.75rem !default;
+$bar-subfooter-height:            2.75rem !default;
+
+$bar-light-bg:                    $white !default;
+$bar-light-text:                  #444 !default;
+$bar-light-border:                #ddd !default;
+$bar-light-active-bg:             #fafafa !default;
+$bar-light-active-border:         #ccc !default;
+
+$bar-default-bg:				  #f5f5f5 !default;
+$bar-default-border:              #ddd;
+
+$z-index-bar-title:               0 !default;
+$z-index-bar-button:              1 !default;
+$z-index-bar:  					  1001 !default; 
+
 
 // rem
 //-----------------------------------------------------	

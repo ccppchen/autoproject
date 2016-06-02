@@ -90,7 +90,7 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', ['compass'], function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
-  gulp.watch(yeoman.app+'/lib/**', ['bower-install']);
+  gulp.watch(yeoman.app+'/lib/**/*', ['bower-install']);
   gulp.watch([yeoman.app+'/*.html', yeoman.app+'/styles/**/*.css', yeoman.app+'/images/**/*', yeoman.app+'/lib/**']).on('change', browserSync.reload);
 });
 
@@ -217,7 +217,7 @@ gulp.task('js', function(){
 
 // bower依赖注入
 gulp.task('bower-install', function(){
-  gulp.src([yeoman.app+'/index.html'])
+  gulp.src([yeoman.app+'/*.html'])
     .pipe(inject(gulp.src(bowerFile(), {read: false}), {relative: true}, {name: 'bower'}))
     .pipe(gulp.dest(yeoman.app))
 });
