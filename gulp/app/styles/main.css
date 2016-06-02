@@ -475,6 +475,9 @@ textarea::-webkit-input-placeholder {
 .bar .button.back-button.active, .bar .button.back-button.activated {
   opacity: 0.2;
 }
+.bar .button.pull-right.subheader-btn {
+  right: 1.375rem;
+}
 .bar .button-bar > .button,
 .bar .buttons > .button {
   line-height: 2.75rem;
@@ -739,6 +742,7 @@ textarea::-webkit-input-placeholder {
 .everyday-rush-purchase .top-banner {
   position: relative;
   z-index: 1;
+  margin-top: 2.75rem;
 }
 .everyday-rush-purchase .top-banner .banner-text {
   position: absolute;
@@ -1144,4 +1148,465 @@ textarea::-webkit-input-placeholder {
   background-color: #ff355c;
   border-color: #ff355c;
   color: #fff;
+}
+
+/* -------------------------------------------------
+ * btn scss
+ * -------------------------------------------------
+*/
+.btn, .formbtn {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  border: 0 none;
+}
+
+.blockbtn {
+  position: relative;
+  display: block;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn, .blockbtn {
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+}
+
+.btn {
+  color: #333;
+  background-color: #e6e6e6;
+  border-radius: 3px;
+}
+.btn:active {
+  background-color: #d9d9d9;
+  color: #333;
+}
+
+.formbtn {
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  height: 1.75rem;
+  color: #333;
+  background-color: #e6e6e6;
+  border-radius: 3px;
+}
+.formbtn:active {
+  background-color: #d9d9d9;
+  color: #333;
+}
+
+.blockbtn {
+  color: #333;
+  background-color: #e6e6e6;
+  border-radius: 3px;
+}
+.blockbtn:active {
+  background-color: #d9d9d9;
+  color: #333;
+}
+
+.btn-small {
+  padding: 0 0.3125rem;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+}
+
+.formbtn-small {
+  padding: 0 0.3125rem;
+  font-size: 0.75rem;
+  height: 1.3125rem;
+}
+
+.btn-middle {
+  padding: 0 0.3125rem;
+  font-size: 1rem;
+  line-height: 2.125rem;
+}
+
+.formbtn-middle {
+  padding: 0 0.3125rem;
+  font-size: 1rem;
+  height: 2.125rem;
+}
+
+.btn-large {
+  padding: 0 0.3125rem;
+  font-size: 1.5rem;
+  line-height: 2.625rem;
+}
+
+.formbtn-large {
+  padding: 0 0.3125rem;
+  font-size: 1.5rem;
+  height: 2.625rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0078E7;
+}
+.btn-primary:active {
+  background-color: #006bce;
+  color: #fff;
+}
+
+.outline-primary {
+  color: #fff;
+  background-color: #0078E7;
+  border: 1px solid #0078E7;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-primary:active {
+  background-color: #006bce;
+  color: #fff;
+}
+
+.btn-black {
+  color: #fff;
+  background-color: #000;
+}
+.btn-black:active {
+  background-color: black;
+  color: #fff;
+}
+
+.outline-black {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-black:active {
+  background-color: black;
+  color: #fff;
+}
+
+.btn-gray-darker {
+  color: #fff;
+  background-color: #333;
+}
+.btn-gray-darker:active {
+  background-color: #262626;
+  color: #fff;
+}
+
+.outline-gray-darker {
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #333;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-gray-darker:active {
+  background-color: #262626;
+  color: #fff;
+}
+
+.btn-gray-dark {
+  color: #fff;
+  background-color: #999;
+}
+.btn-gray-dark:active {
+  background-color: #8c8c8c;
+  color: #fff;
+}
+
+.outline-gray-dark {
+  color: #fff;
+  background-color: #999;
+  border: 1px solid #999;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-gray-dark:active {
+  background-color: #8c8c8c;
+  color: #fff;
+}
+
+.btn-gray {
+  color: #fff;
+  background-color: #ccc;
+}
+.btn-gray:active {
+  background-color: #bfbfbf;
+  color: #fff;
+}
+
+.outline-gray {
+  color: #fff;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-gray:active {
+  background-color: #bfbfbf;
+  color: #fff;
+}
+
+.btn-gray-light {
+  color: #333;
+  background-color: #f5f5f5;
+}
+.btn-gray-light:active {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+.outline-gray-light {
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  background-color: transparent;
+  color: black;
+}
+.outline-gray-light:active {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+.btn-red {
+  color: #fff;
+  background-color: #cc3300;
+}
+.btn-red:active {
+  background-color: #b32d00;
+  color: #fff;
+}
+
+.outline-red {
+  color: #fff;
+  background-color: #cc3300;
+  border: 1px solid #cc3300;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-red:active {
+  background-color: #b32d00;
+  color: #fff;
+}
+
+.btn-blue {
+  color: #fff;
+  background-color: #00A3CF;
+}
+.btn-blue:active {
+  background-color: #008fb6;
+  color: #fff;
+}
+
+.outline-blue {
+  color: #fff;
+  background-color: #00A3CF;
+  border: 1px solid #00A3CF;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-blue:active {
+  background-color: #008fb6;
+  color: #fff;
+}
+
+.btn-blue-dark {
+  color: #fff;
+  background-color: #0064cd;
+}
+.btn-blue-dark:active {
+  background-color: #0058b4;
+  color: #fff;
+}
+
+.outline-blue-dark {
+  color: #fff;
+  background-color: #0064cd;
+  border: 1px solid #0064cd;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-blue-dark:active {
+  background-color: #0058b4;
+  color: #fff;
+}
+
+.btn-orange {
+  color: #fff;
+  background-color: #F47837;
+}
+.btn-orange:active {
+  background-color: #f3681f;
+  color: #fff;
+}
+
+.outline-orange {
+  color: #fff;
+  background-color: #F47837;
+  border: 1px solid #F47837;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-orange:active {
+  background-color: #f3681f;
+  color: #fff;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #51B148;
+}
+.btn-green:active {
+  background-color: #499f41;
+  color: #fff;
+}
+
+.outline-green {
+  color: #fff;
+  background-color: #51B148;
+  border: 1px solid #51B148;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-green:active {
+  background-color: #499f41;
+  color: #fff;
+}
+
+.btn-yellow {
+  color: #fff;
+  background-color: #ffc40d;
+}
+.btn-yellow:active {
+  background-color: #f3b700;
+  color: #fff;
+}
+
+.outline-yellow {
+  color: #fff;
+  background-color: #ffc40d;
+  border: 1px solid #ffc40d;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-yellow:active {
+  background-color: #f3b700;
+  color: #fff;
+}
+
+.btn-pink {
+  color: #fff;
+  background-color: #c3325f;
+}
+.btn-pink:active {
+  background-color: #af2d55;
+  color: #fff;
+}
+
+.outline-pink {
+  color: #fff;
+  background-color: #c3325f;
+  border: 1px solid #c3325f;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-pink:active {
+  background-color: #af2d55;
+  color: #fff;
+}
+
+.btn-purple {
+  color: #fff;
+  background-color: #7a43b6;
+}
+.btn-purple:active {
+  background-color: #6e3ca3;
+  color: #fff;
+}
+
+.outline-purple {
+  color: #fff;
+  background-color: #7a43b6;
+  border: 1px solid #7a43b6;
+  background-color: transparent;
+  color: #262626;
+}
+.outline-purple:active {
+  background-color: #6e3ca3;
+  color: #fff;
+}
+
+.content {
+  padding: 0.625rem 0.9375rem;
+}
+
+.box {
+  position: relative;
+  margin: 0 auto;
+}
+.box:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .box:after {
+    -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .box:after {
+    -webkit-transform: scaleY(0.33);
+        -ms-transform: scaleY(0.33);
+            transform: scaleY(0.33);
+  }
+}
+.box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: auto;
+  right: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 0%;
+      -ms-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .box:before {
+    -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .box:before {
+    -webkit-transform: scaleY(0.33);
+        -ms-transform: scaleY(0.33);
+            transform: scaleY(0.33);
+  }
+}
+.box .formbtn, .box .btn, .box .blockbtn {
+  margin: 10px 0;
 }

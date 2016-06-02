@@ -142,6 +142,10 @@
     &.back-button.activated {
       opacity: 0.2;
     }
+
+    &.pull-right.subheader-btn{
+      right: rem(44);
+    }
   }
 
   .button-bar > .button,
