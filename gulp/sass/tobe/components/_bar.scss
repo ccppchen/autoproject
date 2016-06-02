@@ -38,6 +38,12 @@
     background-size: 100% 1px;
     background-repeat: no-repeat;
   }
+
+  // a z－index
+  .forwork{
+    z-index: 2;
+  }
+
   // bar light类型 后续继续添加
   &.bar-light {
     @include bar-style($bar-light-bg, $bar-light-border, $bar-light-text);
@@ -143,8 +149,12 @@
       opacity: 0.2;
     }
 
-    &.pull-right.subheader-btn{
+    &.pull-right.subheader-right{
       right: rem(44);
+    }
+
+    &.subheader-left{
+      vertical-align: top;
     }
   }
 
