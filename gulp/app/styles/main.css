@@ -391,6 +391,9 @@ textarea::-webkit-input-placeholder {
     background-repeat: no-repeat;
   }
 }
+.bar .forwork {
+  z-index: 2;
+}
 .bar.bar-light {
   border-color: #ddd;
   background-color: #fff;
@@ -475,8 +478,11 @@ textarea::-webkit-input-placeholder {
 .bar .button.back-button.active, .bar .button.back-button.activated {
   opacity: 0.2;
 }
-.bar .button.pull-right.subheader-btn {
+.bar .button.pull-right.subheader-right {
   right: 1.375rem;
+}
+.bar .button.subheader-left {
+  vertical-align: top;
 }
 .bar .button-bar > .button,
 .bar .buttons > .button {
@@ -1541,6 +1547,7 @@ textarea::-webkit-input-placeholder {
 
 .content {
   padding: 0.625rem 0.9375rem;
+  margin-top: 2.75rem;
 }
 
 .box {
