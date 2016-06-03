@@ -312,11 +312,6 @@ textarea::-webkit-input-placeholder {
   color: #ccc;
 }
 
-body, .bar {
-  max-width: 750px;
-  margin: 0 auto;
-}
-
 /* -------------------------------------------------
  * components 样式
  * -------------------------------------------------
@@ -715,11 +710,6 @@ body, .bar {
  * main 样式
  * -------------------------------------------------
 */
-.rush-purchase-time, .top-link {
-  max-width: 750px;
-  margin: 0 auto;
-}
-
 .bottom-margin-normal {
   margin-bottom: 0.625rem;
 }
