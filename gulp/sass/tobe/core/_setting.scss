@@ -87,14 +87,14 @@ $roundRadius:           50% !default;
 
 // bar
 //-----------------------------------------------------	
-$bar-title-font-size:             1.0625rem !default;
-$headings-font-weight:            500 !default;
-
+$bar-title-font-size:             18px !default;
+$bar-button-font-size:            16px !default;
+$bar-button-padding:       		  0px !default;
+$headings-font-weight:            400 !default;
 $bar-padding-portrait:            0.3125rem !default;
-$button-bar-button-padding:       3px !default;
-$button-bar-button-font-size:     0.875rem !default;
-$button-bar-button-icon-size:     1.25rem !default;
-$button-large-icon-size:          2.0rem !default;
+
+$bar-button-icon-size:     		  16px !default;
+$button-large-icon-size:          20px !default;
 
 $bar-height:                      2.75rem !default;
 $bar-footer-height:               2.75rem !default;

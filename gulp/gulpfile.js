@@ -15,7 +15,7 @@ var inject      = require('gulp-inject');
 var svgSymbols  = require('gulp-svg-symbols');
 var iconfontCss = require('gulp-iconfont-css-and-template');
 var iconfont    = require('gulp-iconfont');
-
+var cache       = require('gulp-cache');
 
 var yeoman = {
   app: "app",
@@ -42,17 +42,19 @@ gulp.task('sprites', ['svgmin'], function () {
 // svgmin
 gulp.task('svgmin', function () {
     gulp.src('svg/**/*.svg')
-      .pipe(plugins.svgmin({
-        plugins: [{
-            cleanupIDs: {
-                prefix: '',
-                minify: true
-            },
-            js2svg: {
-              pretty: true
-            }
-        }]
-      }))
+      .pipe(cache(
+        plugins.svgmin({
+            plugins: [{
+                cleanupIDs: {
+                    prefix: '',
+                    minify: true
+                },
+                js2svg: {
+                  pretty: true
+                }
+            }]
+          })
+      ))
       .pipe(gulp.dest('app/svgmin/'));
 });
 
@@ -88,7 +90,7 @@ gulp.task('server', ['compass'], function(){
    });
 });
 
-gulp.task('watch', ['compass'], function(){
+gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
   gulp.watch(yeoman.app+'/lib/**/*', ['bower-install']);
   gulp.watch([yeoman.app+'/*.html', yeoman.app+'/styles/**/*.css', yeoman.app+'/images/**/*', yeoman.app+'/lib/**']).on('change', browserSync.reload);
@@ -176,10 +178,15 @@ gulp.task('html', function () {
 // image压缩
 gulp.task('images', function () {
     gulp.src(yeoman.app+'/images/**/*')
-    .pipe(plugins.imagemin({
-        progressive: true,
-        use: [png()]
-    }))
+    .pipe(cache(
+      plugins.imagemin({
+            optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+            progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+            interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+            multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
+            use: [png()]
+        })
+    ))
     .pipe(gulp.dest(yeoman.dist+'/images'));
 });
 

@@ -1,0 +1,18 @@
+{
+  "name": "bl-flexbox",
+  "homepage": "https://github.com/bl-front-end/bl-flexbox",
+  "description": "",
+  "main": "grd.css",
+  "license": "MIT",
+  "version": "0.2.0",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.0",
+    "commit": "1ed1a72b09a2673f9c1d12d9d88cbcda8019d505"
+  },
+  "_source": "https://github.com/bl-front-end/bl-flexbox.git",
+  "_target": "^0.2.0",
+  "_originalSource": "bl-flexbox",
+  "_direct": true
+}

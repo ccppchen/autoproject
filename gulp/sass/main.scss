@@ -11,7 +11,7 @@
  * -------------------------------------------------
 */
 @import "tobe/components/preloader";
-@import "tobe/components/bar";
+@import "tobe/components/bar2";
 
 /* -------------------------------------------------
  * iconfont 样式
@@ -25,3 +25,13 @@
 */
 @import "buy";
 @import "testBtn";
+
+#wrap{
+	-webkit-box-lines: multiple;
+	-moz-box-lines: multiple;
+	box-lines: multiple;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
