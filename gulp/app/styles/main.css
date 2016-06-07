@@ -3,6 +3,84 @@
  * base 样式
  * -------------------------------------------------
 */
+.bar-header, .bar-footer, .bar-header .bar-left, .bar-header .bar-right, .bar-header .button, .bar-footer .bar-left, .bar-footer .bar-right, .bar-footer .button, .bar-header .title, .bar-footer .title {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.bar-header, .bar-footer, .bar-header .bar-left, .bar-header .bar-right, .bar-header .button, .bar-footer .bar-left, .bar-footer .bar-right, .bar-footer .button, .bar-header .title, .bar-footer .title {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  -ms-grid-row-align: center;
+      align-items: center;
+  -ms-flex-align: center;
+}
+
+.bar-header .bar-right, .bar-footer .bar-right {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+}
+
+.bar-header .title, .bar-footer .title {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+
+.bar-header .bar-right, .bar-footer .bar-right {
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
+}
+
+.bar-header, .bar-footer {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+}
+
 article,
 aside,
 details,
@@ -353,17 +431,12 @@ textarea::-webkit-input-placeholder {
  * --------------------------------------------------
  */
 .bar {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
   position: fixed;
+  top: 0;
   right: 0;
   left: 0;
   z-index: 1001;
@@ -391,9 +464,6 @@ textarea::-webkit-input-placeholder {
     background-repeat: no-repeat;
   }
 }
-.bar .forwork {
-  z-index: 2;
-}
 .bar.bar-light {
   border-color: #ddd;
   background-color: #f5f5f5;
@@ -404,26 +474,19 @@ textarea::-webkit-input-placeholder {
 .bar.bar-light .title {
   color: #444;
 }
-.bar.bar-light.bar-footer {
-  background-image: -webkit-linear-gradient(top, #ddd, #ddd 50%, transparent 50%);
-  background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%);
-}
 .bar .title {
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden;
-  margin: 0 0.625rem;
+  left: 10%;
+  right: 10%;
+  height: 100%;
   min-width: 1.875rem;
-  height: 2.75rem;
+  max-width: 80%;
+  overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1.0625rem;
-  font-weight: 500;
-  line-height: 2.75rem;
+  font-size: 18px;
+  font-weight: 400;
 }
 .bar .title.title-left {
   text-align: left;
@@ -435,170 +498,21 @@ textarea::-webkit-input-placeholder {
   color: inherit;
 }
 .bar .button {
-  z-index: 1;
-  padding: 0 3px;
+  padding: 0 0px;
   min-width: initial;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 2.75rem;
+  font-size: 16px;
   border: 0;
+  background-color: transparent;
 }
-.bar .button.button-icon:before,
-.bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {
-  padding-right: 2px;
-  padding-left: 2px;
-  font-size: 1.25rem;
-  line-height: 2.75rem;
-}
-.bar .button.button-icon {
-  font-size: 1.0625rem;
-}
-.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
-  vertical-align: top;
-  font-size: 2rem;
-  line-height: 2.75rem;
-}
-.bar .button.button-clear {
-  padding-right: 2px;
-  padding-left: 2px;
-  font-weight: 300;
-  font-size: 1.0625rem;
-}
-.bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
-  font-size: 2rem;
-  line-height: 2.75rem;
-}
-.bar .button.back-button {
-  display: block;
-  margin-right: 0.3125rem;
-  padding: 0;
-  white-space: nowrap;
-  font-weight: 400;
-}
-.bar .button.back-button.active, .bar .button.back-button.activated {
-  opacity: 0.2;
-}
-.bar .button.pull-right.subheader-right {
-  right: 1.375rem;
-}
-.bar .button.subheader-left {
-  vertical-align: top;
-}
-.bar .button-bar > .button,
-.bar .buttons > .button {
-  line-height: 2.75rem;
-}
-.bar .button-bar + .button,
-.bar .button + .button-bar {
-  margin-left: 0.3125rem;
-}
-.bar .buttons,
-.bar .buttons.primary-buttons,
-.bar .buttons.secondary-buttons {
-  display: inherit;
-}
-.bar .buttons span {
-  display: inline-block;
-}
-.bar .buttons-left span {
-  margin-right: 0.3125rem;
-  display: inherit;
-}
-.bar .buttons-right span {
-  margin-left: 0.3125rem;
-  display: inherit;
-}
-.bar .title + .button:last-child,
-.bar > .button + .button:last-child,
-.bar > .button.pull-right,
-.bar .buttons.pull-right,
-.bar .title + .buttons {
-  position: absolute;
-  top: 0;
-  right: 0.3125rem;
-  bottom: 0;
+.bar .button .iconfont {
+  font-size: 16px;
 }
 
-.bar-light .button {
-  border-color: #ddd;
-  background-color: #f5f5f5;
-  color: #444;
+.bar-header .bar-left, .bar-header .bar-right, .bar-footer .bar-left, .bar-footer .bar-right {
+  font-size: 0;
 }
-.bar-light .button:hover {
-  color: #444;
-  text-decoration: none;
-}
-.bar-light .button.active, .bar-light .button.activated, .bar-light .button:active {
-  border-color: #ccc;
-  background-color: #fafafa;
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-.bar-light .button.button-clear {
-  border-color: transparent;
-  background: none;
-  box-shadow: none;
-  color: #444;
-  font-size: 1.0625rem;
-}
-.bar-light .button.button-icon {
-  border-color: transparent;
-  background: none;
-}
-
-.bar-header {
-  top: 0;
-  border-top-width: 0;
-  border-bottom-width: 1px;
-}
-.bar-header.has-tabs-top {
-  border-bottom-width: 0px;
-  background-image: none;
-}
-
-.tabs-top .bar-header {
-  border-bottom-width: 0px;
-  background-image: none;
-}
-
-.bar-footer {
-  bottom: 0;
-  border-top-width: 1px;
-  border-bottom-width: 0;
-  background-position: top;
-  height: 2.75rem;
-}
-
-.bar-tabs {
-  padding: 0;
-}
-
-.bar-subheader {
-  top: 2.75rem;
-  display: block;
-  height: 2.75rem;
-}
-
-.bar-subfooter {
-  bottom: 2.75rem;
-  display: block;
-  height: 2.75rem;
-}
-
-.nav-bar-block {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1001;
-}
-
-.bar .back-button.hide,
-.bar .buttons .hide {
-  display: none;
-}
-
-.nav-bar-tabs-top .bar {
-  background-image: none;
+.bar-header .bar-left, .bar-header .bar-right, .bar-header .button, .bar-footer .bar-left, .bar-footer .bar-right, .bar-footer .button {
+  height: 100%;
 }
 
 /* -------------------------------------------------
@@ -1599,4 +1513,14 @@ textarea::-webkit-input-placeholder {
 }
 .box .formbtn, .box .btn, .box .blockbtn {
   margin: 10px 0;
+}
+
+#wrap {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }

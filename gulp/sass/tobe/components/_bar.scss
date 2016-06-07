@@ -96,7 +96,8 @@
     min-width: initial;
     font-weight: 400;
     font-size: $button-bar-button-font-size;
-    line-height: $bar-height;
+    height: $bar-height;
+    // line-height: $bar-height;
     border: 0;
 
     &.button-icon:before,
