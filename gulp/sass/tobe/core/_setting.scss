@@ -96,29 +96,24 @@ $bar-button-font-size-iphone6p:	  16px !default;
 $bar-title-font-size:             16px !default;
 $bar-button-font-size:            14px !default;
 
-$bar-title-font-size-iphone5:	  15px !default;
-$bar-button-font-size-iphone5:	  13px !default;
+$bar-title-font-size-iphone5:	  15px !default;  //标题字号
+$bar-button-font-size-iphone5:	  13px !default;  //左右按钮的字号
 
-$bar-button-padding:       		  0px !default;
-$headings-font-weight:            400 !default;
-$bar-padding-portrait:            0.5625rem !default;
+$bar-button-padding:       		  0px !default;	//左右按钮的左右内边距
+$bar-title-font-weight:           400 !default;	//标题文字fontWeight
+$bar-padding-portrait:            0.5625rem !default;  //bar的左右内边距
 
-$bar-button-icon-size:     		  14px !default;
-$button-large-icon-size:          20px !default;
+$bar-height:                      2.75rem !default;  //header-bar的高度
+$bar-footer-height:               2.75rem !default;  //footer-bar的高度
+$bar-subheader-height:            2.75rem !default;  //subheader-bar的高度
+$bar-subfooter-height:            2.75rem !default;  //subfooter-bar的高度
 
-$bar-height:                      2.75rem !default;
-$bar-footer-height:               2.75rem !default;
-$bar-subheader-height:            2.75rem !default;
-$bar-subfooter-height:            2.75rem !default;
+$bar-light-bg:                    $grayLight !default;  //bar-light背景色
+$bar-light-text:                  #444 !default;  //bar-light-text   标题文字颜色
+$bar-light-border:                #ddd !default;  //bar下边框色
 
-$bar-light-bg:                    $grayLight !default;
-$bar-light-text:                  #444 !default;
-$bar-light-border:                #ddd !default;
-$bar-light-active-bg:             #fafafa !default;
-$bar-light-active-border:         #ccc !default;
-
-$bar-default-bg:				  #f5f5f5 !default;
-$bar-default-border:              #ddd;
+$bar-default-bg:				  #f5f5f5 !default;  //bar默认背景色
+$bar-default-border:              #ddd;  //bar默认下边框色
 
 $z-index-bar-title:               0 !default;
 $z-index-bar-button:              1 !default;

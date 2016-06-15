@@ -504,9 +504,6 @@ textarea::-webkit-input-placeholder {
   border: 0;
   background-color: transparent;
 }
-.bar .button .iconfont {
-  font-size: 14px;
-}
 
 .bar-header .bar-left, .bar-header .bar-right, .bar-footer .bar-left, .bar-footer .bar-right {
   font-size: 0;
