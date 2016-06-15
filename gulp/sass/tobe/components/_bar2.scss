@@ -120,4 +120,54 @@
 
   }
 }
+@include iphone5(){
+  .bar{
+    .title{
+      font-size: $bar-title-font-size-iphone5;
+    }
+    .button{
+      font-size: $bar-button-font-size-iphone5;
+    }
+  }
+}
+@include iphone6p(){
+  .bar{
+    .title{
+      font-size: $bar-title-font-size-iphone6p;
+    }
+    .button{
+      font-size: $bar-button-font-size-iphone6p;
+    }
+  }
+}
+@include ipad(){
+  .bar{
+    .title{
+      font-size: $bar-title-font-size-ipad;
+    }
+    .button{
+      font-size: $bar-button-font-size-ipad;
+    }
+  }
+}
+@include screen(414px, 640px){
+  .bar{
+    .title{
+      font-size: $bar-title-font-size-ipad;
+    }
+    .button{
+      font-size: $bar-button-font-size-ipad;
+    }
+  }
+}
+@include min-screen(768px){
+  .bar{
+    .title{
+      font-size: $bar-title-font-size-ipad;
+    }
+    .button{
+      font-size: $bar-button-font-size-ipad;
+    }
+  }
+}
 

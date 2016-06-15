@@ -87,13 +87,23 @@ $roundRadius:           50% !default;
 
 // bar
 //-----------------------------------------------------	
-$bar-title-font-size:             18px !default;
-$bar-button-font-size:            16px !default;
+$bar-title-font-size-ipad:	  	  1rem !default;
+$bar-button-font-size-ipad:	  	  0.875rem !default;
+
+$bar-title-font-size-iphone6p:	  20px !default;
+$bar-button-font-size-iphone6p:	  16px !default;
+
+$bar-title-font-size:             16px !default;
+$bar-button-font-size:            14px !default;
+
+$bar-title-font-size-iphone5:	  15px !default;
+$bar-button-font-size-iphone5:	  13px !default;
+
 $bar-button-padding:       		  0px !default;
 $headings-font-weight:            400 !default;
-$bar-padding-portrait:            0.3125rem !default;
+$bar-padding-portrait:            0.5625rem !default;
 
-$bar-button-icon-size:     		  16px !default;
+$bar-button-icon-size:     		  14px !default;
 $button-large-icon-size:          20px !default;
 
 $bar-height:                      2.75rem !default;
