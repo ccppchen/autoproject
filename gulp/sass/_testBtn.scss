@@ -6,7 +6,7 @@ $btnColorClass: (primary $primary #fff) (black $black #fff) (gray-darker $grayDa
 @include btn-color-multi($btnColorClass);
 
 .content{
-	padding: $hGap $vGap;
+	// padding: $hGap $vGap;
 	margin-top: rem(88);
 }
 .box{

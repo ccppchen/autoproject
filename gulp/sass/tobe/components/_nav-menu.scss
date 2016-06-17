@@ -1,0 +1,22 @@
+/* menu */
+/* 
+Emmet 写法
+.nav-menu.Grid>(a.item-menu.Cell.Cell-fill>img+div.item-p{内容内容})*4
+*/
+.nav-menu{
+	padding: rem(22) 0;
+	.item-menu{
+		text-align: center;
+		img{
+			width: rem(107);
+			height: rem(107);
+		}
+	}
+	.item-p{
+		margin-top: rem(8);
+		font-size: rem(24);
+		padding: 0 rem(5);
+		color: $graylikver;
+		@include ellipsis();
+	}
+}

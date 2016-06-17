@@ -126,6 +126,14 @@
   @extend %ellipsis-basic;
   width:$width;
 }
+@mixin clamp($num: 2) {
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: $num;
+}
 
 // Opacity
 // lte8使用filter兼容
