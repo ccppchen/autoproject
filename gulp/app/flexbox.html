@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>index</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="lib/bl-flexbox/grd.css">
+    <link rel="stylesheet" href="lib/Swiper/dist/css/swiper.css">
+    <!-- endinject -->
+    <!-- my:css -->
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <style type="text/css" media="screen">
+        .Grid{
+            margin: 1rem;
+            padding: .5rem;
+            min-height: 200px;
+            border: 1px solid #ccc;
+        }
+        .Cell{
+            padding: 0rem;
+            border: 1px dashed #ccc;
+            text-align: center;
+        }
+        .select-sm{
+            width: 100%;
+            height: 100%;
+            border: 1px solid green;
+        }
+    </style>
+    <!-- my:css end -->
+</head>
+
+<body ontouchstart="">
+    <!-- header start -->
+    <header class="bar bar-header bar-light">
+        <a href="index.html" class="bar-left">
+            <button class="button iconfont iconfont-arrow-back"></button>
+            <button class="button">首页</button>
+        </a>
+        <h1 class="title">前端模块化</h1>
+        <a href="buy.html" class="bar-right">
+            <button class="button">天天抢购</button>
+            <button class="button iconfont iconfont-arrow-go"></button>
+        </a>
+    </header>
+    <!-- header end -->
+    <div class="content">
+        <div>
+            <button id="add" class="btn" type="button">Add item</button>
+            <button id="remove" class="btn" type="button">Remove item</button>
+            <select id="align-items" class="formbtn">
+              <option value="" selected>-垂直居中</option>
+              <option value="Grid-top">-top</option>
+              <option value="Grid-middle">-middle</option>
+              <option value="Grid-bottom">-bottom</option>
+              <option value="Grid-stretch">-stretch</option>
+              <option value="Grid-baseline">-baseline</option>
+            </select>
+            <select id="justify-content" class="formbtn">
+              <option value="" selected>-水平居中</option>
+              <option value="Grid-left">-left</option>
+              <option value="Grid-center">-center</option>
+              <option value="Grid-right">-right</option>
+              <option value="Grid-between">-between</option>
+              <option value="Grid-around">-around</option>
+            </select>
+        </div>
+        <div class="Grid" id="grid"></div>
+        <template id="template-cell">
+          <div class="Cell" contenteditable>
+            <select class="select-sm">
+              <option value="" selected>-</option>
+              <option value="Cell-fill">Cell-fill</option>
+              <option value="Cell-1of12">Cell-1of12</option>
+              <option value="Cell-2of12">Cell-2of12</option>
+              <option value="Cell-3of12">Cell-3of12</option>
+              <option value="Cell-4of12">Cell-4of12</option>
+              <option value="Cell-5of12">Cell-5of12</option>
+              <option value="Cell-6of12">Cell-6of12</option>
+              <option value="Cell-7of12">Cell-7of12</option>
+              <option value="Cell-8of12">Cell-8of12</option>
+              <option value="Cell-9of12">Cell-9of12</option>
+              <option value="Cell-10of12">Cell-10of12</option>
+              <option value="Cell-11of12">Cell-11of12</option>
+              <option value="Cell-12of12">Cell-12of12</option>
+            </select>
+          </div>
+        </template>
+        <div class="Grid Grid-center Grid-middle" id="wrap">
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+        </div>
+        <div class="Grid Grid-middle Grid-between">
+            <!-- <div class="Cell Cell-12of12">12</div> -->
+            <div class="Cell Cell-3of12">1</div>
+            <div class="Cell Cell-3of12">1</div>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <!-- inject:js -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/Swiper/dist/js/swiper.js"></script>
+    <script src="lib/jquery-lazy/jquery.lazy.js"></script>
+    <!-- endinject -->
+    <!-- my -->
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript">
+        (function () { var script = document.createElement('script'); script.src="http://192.168.1.103:8000/eruda.js"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+          var grid = document.querySelector('#grid');
+          var align = document.querySelector('#align-items');
+          var justify = document.querySelector('#justify-content');
+
+          function onGridChange() {
+            grid.className = `Grid ${align.value} ${justify.value}`;
+          }
+          align.addEventListener('change', onGridChange);
+          justify.addEventListener('change', onGridChange);
+
+          var template = document.querySelector('#template-cell');
+          var add = document.querySelector('#add');
+          var remove = document.querySelector('#remove');
+
+          add.addEventListener('click', function() {
+            var cell = document.importNode(template.content, true);
+            var select = cell.querySelector('select');
+            grid.appendChild(cell);
+            select.addEventListener('change', function() {
+              select.parentNode.className = `Cell ${select.value}`;
+            });
+          });
+
+          remove.addEventListener('click', function() {
+            if (grid.children.length) {
+              grid.children[grid.children.length - 1].remove();
+            }
+          });
+
+          add.click();
+          add.click();
+        });
+        
+
+    </script>
+    <!-- my end -->
+</body>
+
+</html>

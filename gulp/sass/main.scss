@@ -10,8 +10,10 @@
  * components 样式
  * -------------------------------------------------
 */
+@import "tobe/ext/input";
 @import "tobe/components/preloader";
 @import "tobe/components/bar";
+@import "tobe/components/nav-menu";
 
 /* -------------------------------------------------
  * iconfont 样式
@@ -20,8 +22,9 @@
 @import "icon";
 
 /* -------------------------------------------------
- * main 样式
+ * 各个页面的样式
  * -------------------------------------------------
 */
 @import "buy";
 @import "testBtn";
+@import "bl-index";

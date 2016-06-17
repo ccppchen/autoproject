@@ -1,8 +1,16 @@
 // 加载提示
 
 .preloader {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  &.middle{
+    width: 30px;
+    height: 30px;
+  }
+  &.big{
+    width: 45px;
+    height: 45px;
+  }
   -webkit-transform-origin: 50%;
           transform-origin: 50%;
   -webkit-animation: preloader-spin 1s steps(12, end) infinite;
