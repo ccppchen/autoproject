@@ -11,7 +11,7 @@ $btnBaseClass:           btn !default; //按钮的基本class
 $blockBtnBaseClass:      blockbtn !default; //块状按钮的基本class
 $outlineBtnBaseClass:    outline !default; //outline按钮的基本class
 $btnFormBaseClass:       formbtn !default; //form中input和button元素按钮的class
-$btnNormalSize:          .5rem 1.75rem 0.875rem !default; //默认按钮的左右padding，高度，字体大小，圆角
+$btnNormalSize:          .16rem .56rem .28rem !default; //默认按钮的左右padding，高度，字体大小，圆角
 $btnSizeClass:           () !default; //(small 5px 21px 12px 3px) 每个括号为一组，里面四个参数分别为：class 左右padding，高度，字体大小, 圆角
 $btnColorClass:          () !default; //(primary $primary #fff) 每个括号为一组，里面三个参数分别为：class 背景色 文本色
 

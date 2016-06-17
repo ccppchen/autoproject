@@ -93,7 +93,7 @@ gulp.task('server', ['compass'], function(){
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
   gulp.watch(yeoman.app+'/lib/**/*', ['bower-install']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/styles/**/*.css', yeoman.app+'/images/**/*', yeoman.app+'/lib/**']).on('change', browserSync.reload);
+  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/scripts/**/*.js', yeoman.app+'/styles/**/*.css', yeoman.app+'/lib/**']).on('change', browserSync.reload);
 });
 
 // 查看服务

@@ -26,7 +26,7 @@ $white:#fff;
 }
 
 %flex-box {
-    @include display-flex(flex);
+    @include display(flex);
     @include justify-content(space-between);
     @include align-items(center);
 }
@@ -115,7 +115,7 @@ $white:#fff;
     }
     .rush-purchase-goods ul {
         padding: rem(10);
-        // @include display-flex(flex);
+        // @include display(flex);
         background-color: #f8f8f8;
         // @include flex-wrap(wrap);
         @include clearfix();
@@ -201,7 +201,7 @@ $white:#fff;
         text-decoration: underline;
         font-size: rem(24);
         color: #8b001b;
-        @include display-flex(flex);
+        @include display(flex);
         @include align-items(center);
         @include justify-content(center);
         img {
@@ -296,7 +296,7 @@ $white:#fff;
         padding: rem(10) 0 rem(30) 0;
         background-color: #F8F8F8;
         font-size: rem(24);
-        @include display-flex(flex);
+        @include display(flex);
         @include align-items(center);
         @include justify-content(center);
     }
@@ -341,7 +341,7 @@ $white:#fff;
             width: 20%;
             float: left;
             line-height: rem(82);
-            @include display-flex(flex);
+            @include display(flex);
             @include justify-content(center);
             @include align-items(center);
             font-size: rem(24);

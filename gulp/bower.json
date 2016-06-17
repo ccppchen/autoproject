@@ -15,6 +15,7 @@
   "dependencies": {
     "jquery-lazy": "^1.6.7",
     "jquery": "1.7.2",
-    "bl-flexbox": "^0.6.0"
+    "bl-flexbox": "^0.6.0",
+    "Swiper": "swiper#^3.3.1"
   }
 }

@@ -126,6 +126,14 @@
   @extend %ellipsis-basic;
   width:$width;
 }
+@mixin clamp($num: 2) {
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: $num;
+}
 
 // Opacity
 // lte8使用filter兼容
@@ -479,9 +487,13 @@
         z-index: 15;
         transform-origin: 50% 0%;
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+          -webkit-transform: scaleY(0.5);
+          -moz-transform: scaleY(0.5);
           transform: scaleY(0.5);
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+            -webkit-transform: scaleY(0.33);
+            -moz-transform: scaleY(0.33);
             transform: scaleY(0.33);
         }
     }
@@ -502,10 +514,14 @@
         z-index: 15;
         transform-origin: 0% 50%;
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-            transform: scaleY(0.5);
+            -webkit-transform: scaleX(0.5);
+            -moz-transform: scaleX(0.5);
+            transform: scaleX(0.5);
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-            transform: scaleY(0.33);
+            -webkit-transform: scaleX(0.33);
+            -moz-transform: scaleX(0.33);
+            transform: scaleX(0.33);
         }
     }
   }
@@ -525,9 +541,13 @@
         z-index: 15;
         transform-origin: 50% 100%;
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+            -webkit-transform: scaleY(0.5);
+            -moz-transform: scaleY(0.5);
             transform: scaleY(0.5);
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+            -webkit-transform: scaleY(0.33);
+            -moz-transform: scaleY(0.33);
             transform: scaleY(0.33);
         }
     }
@@ -548,10 +568,14 @@
         z-index: 15;
         transform-origin: 100% 50%;
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-            transform: scaleY(0.5);
+            -webkit-transform: scaleX(0.5);
+            -moz-transform: scaleX(0.5);
+            transform: scaleX(0.5);
         }
         @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-            transform: scaleY(0.33);
+            -webkit-transform: scaleX(0.33);
+            -moz-transform: scaleX(0.33);
+            transform: scaleX(0.33);
         }
     }
   }

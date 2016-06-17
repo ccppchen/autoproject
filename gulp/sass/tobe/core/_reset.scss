@@ -7,7 +7,11 @@
 // normalize
 // http://necolas.github.io/normalize.css/
 //-----------------------------------------------------
-
+*,*:before,*:after{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 // HTML5 display definitions
 //-------------------------------------
 
@@ -31,10 +35,6 @@ audio,
 canvas,
 video {
     display: inline-block;
-    @if $lte7 {
-        *display: inline;
-        *zoom: 1;
-    }
 }
 
 // 1. Prevents modern browsers from displaying 'audio' without controls
@@ -59,11 +59,9 @@ audio:not([controls]) {
 // 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
 // www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
 html {
-    @if $lte7 {
-        font-size: 100%; // 1
-    }
-    -webkit-text-size-adjust: 100%; // 2
-    -ms-text-size-adjust: 100%; // 2
+    -webkit-text-size-adjust: 100%; // 3
+    -moz-text-size-adjust: 100%; // 2
+    text-size-adjust: 100%; // 1
 }
 
 // Addresses font-family inconsistency between 'textarea' and other form elements.
@@ -104,12 +102,6 @@ strong {
     font-weight: bold;
 }
 
-@if $lte7 {
-    blockquote {
-        margin: 1em 40px;
-    }
-}
-
 // Addresses styling not present in S5, Chrome
 dfn {
     font-style: italic;
@@ -128,9 +120,6 @@ kbd,
 pre,
 samp {
     font-family: monospace, serif;
-    @if $lte7 {
-        _font-family: 'courier new', monospace;
-    }
     font-size: 1em;
 }
 
@@ -146,15 +135,6 @@ q {
     quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-// 1. Addresses CSS quotes not supported in IE6/7
-// 2. Addresses quote property not supported in S4
-//------------------------
-// 1
-@if $lte7 {
-    q {
-        quotes: none;
-    }
-}
 // 2
 q:before,
 q:after {
@@ -183,44 +163,11 @@ sub {
     bottom: -0.25em;
 }
 
-// Lists
-//------------------------
-@if $lte7 {
-    // Addresses margins set differently in IE6/7
-    dl,
-    ol,
-    ul {
-        margin: 1em 0;
-    }
-    dd {
-        margin: 0 0 0 40px;
-    }
-    // Addresses paddings set differently in IE6/7
-    ol,
-    ul {
-        padding: 0 0 0 40px;
-    }
-    // Corrects list images handled incorrectly in IE7
-    nav {
-        ul,
-        ol {
-          list-style-image: none;
-        }
-    }  
-}
-
-
 // Embedded content
 //------------------------
 // 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
 // 2. Improves image quality when scaled in IE7
 // code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
-img {
-    border: 0; // 1
-    @if $lte7 {
-        -ms-interpolation-mode: bicubic; // 2
-    }
-}
 // Corrects overflow displayed oddly in IE9
 svg:not(:root) {
     overflow: hidden;
@@ -241,9 +188,6 @@ legend {
     border: 0; // 1
     padding: 0; // 2
     white-space: normal; // 3
-    @if $lte7 {
-        *margin-left: -7px; // 4
-    }
 }
 
 // 1. Correct font family not being inherited in all browsers.
@@ -257,11 +201,9 @@ textarea {
     font-family: inherit; // 1
     font-size: 100%; // 2
     margin: 0; // 3
-    vertical-align: baseline; // 4
+    line-height: inherit;
+    outline: 0;
     -webkit-tap-highlight-color: transparent;
-    @if $lte7 {
-        *vertical-align: middle; // 4
-    }
 }
 
 // Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
@@ -292,9 +234,6 @@ input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button; // 2
     cursor: pointer; // 3
-    @if $lte7 {
-        *overflow: visible; // 4
-    }
     outline: 0; // 5
 }
 
@@ -312,10 +251,6 @@ input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box; // 1
     padding: 0; // 2
-    @if $lte7 {
-        *height: 13px; // 3
-        *width: 13px; // 3
-    }
 }
 
 // 1. Addresses appearance set to searchfield in S5, Chrome
@@ -380,22 +315,17 @@ html {
   -ms-text-size-adjust: 100%; 
 }
 body { 
+  font-family: $tmallFont;
   font-size: $baseFontSize;
   line-height: $baseLineHeight; 
   color:$textColor;
   background-color:$bodyBgColor;
 }
-body, 
-button, 
-input, 
-select, 
-textarea{
-  font-family: $baseFontFamily;
-}
 img {
   vertical-align: middle;
   width: 100%;
   height: auto;
+  border: 0;
 }
 textarea {
   resize: vertical;
@@ -451,96 +381,10 @@ a{
 // 表单placeholder样式
 // 注意不可联合申明，否则无效
 @if nth($placeholder,1) {
-  // Firefox 4-18
-  input:-moz-placeholder,
-  textarea:-moz-placeholder { 
-    color: nth($placeholder,2); 
-  } 
-  // Firefox 19+
-  input::-moz-placeholder,
-  textarea::-moz-placeholder{
-    color: nth($placeholder,2); 
-  } 
-  // Internet Explorer 10+
-  input:-ms-input-placeholder,
-  textarea:-ms-input-placeholder{
-    color: nth($placeholder,2); 
-  } 
   // Safari and Chrome
   input::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder{ 
-    color: nth($placeholder,2); 
+    color: nth($placeholder,2);
   } 
 }
 
-
-// 打印样式
-// 通过变量$printStyleSwitch来设置是否输出
-// 来自于html5 boilerplate:http://html5boilerplate.com/
-//-----------------------------------------------------  
-@if $printStyleSwitch {
-  @media print {
-      * {
-          background: transparent !important;
-          color: #000 !important; // Black prints faster: h5bp.com/s
-          box-shadow: none !important;
-          text-shadow: none !important;
-      }
-
-      a,
-      a:visited {
-          text-decoration: underline;
-      }
-
-      a[href]:after {
-          content: " (" attr(href) ")";
-      }
-
-      abbr[title]:after {
-          content: " (" attr(title) ")";
-      }
-
-      // Don't show links for images, or javascript/internal links
-
-      .ir a:after,
-      a[href^="javascript:"]:after,
-      a[href^="#"]:after {
-          content: "";
-      }
-
-      pre,
-      blockquote {
-          border: 1px solid #999;
-          page-break-inside: avoid;
-      }
-
-      thead {
-          display: table-header-group; // h5bp.com/t
-      }
-
-      tr,
-      img {
-          page-break-inside: avoid;
-      }
-
-      img {
-          max-width: 100% !important;
-      }
-
-      @page {
-          margin: 0.5cm;
-      }
-
-      p,
-      h2,
-      h3 {
-          orphans: 3;
-          widows: 3;
-      }
-
-      h2,
-      h3 {
-          page-break-after: avoid;
-      }
-  }
-}

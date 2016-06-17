@@ -5,9 +5,9 @@
  */
 
 .bar {
-  @include display-flex();
   @include user-select(none);
   position: fixed;
+  top: 0;
   right: 0;
   left: 0;
   z-index: $z-index-bar;
@@ -39,33 +39,21 @@
     background-repeat: no-repeat;
   }
 
-  // a z－index
-  .forwork{
-    z-index: 2;
-  }
-
   // bar light类型 后续继续添加
   &.bar-light {
     @include bar-style($bar-light-bg, $bar-light-border, $bar-light-text);
-    &.bar-footer{
-      background-image: linear-gradient(180deg, $bar-light-border, $bar-light-border 50%, transparent 50%);
-    }
   }
 
   // Title inside of a bar is centered
   .title {
     position: absolute;
-
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: $z-index-bar-title;
-    overflow: hidden;
-
-    margin: 0 0.625rem;
+    left: 10%;
+    right: 10%;
+    height: 100%;
 
     min-width: 1.875rem;
-    height: $bar-height;
+    max-width: 80%;
+    overflow: hidden;
 
     text-align: center;
 
@@ -74,9 +62,7 @@
     white-space: nowrap;
 
     font-size: $bar-title-font-size;
-    font-weight: $headings-font-weight;
-
-    line-height: $bar-height;
+    font-weight: $bar-title-font-weight;
 
     &.title-left {
       text-align: left;
@@ -91,181 +77,49 @@
   }
 
   .button {
-    z-index: $z-index-bar-button;
-    padding: 0 $button-bar-button-padding;
+    padding: 0 $bar-button-padding;
     min-width: initial;
-    font-weight: 400;
-    font-size: $button-bar-button-font-size;
-    height: $bar-height;
-    // line-height: $bar-height;
+    font-size: $bar-button-font-size;
     border: 0;
-
-    &.button-icon:before,
-    .icon:before,
-    &.icon:before,
-    &.icon-left:before,
-    &.icon-right:before {
-      padding-right: 2px;
-      padding-left: 2px;
-      font-size: $button-bar-button-icon-size;
-      line-height: $bar-height;
-    }
-
-    &.button-icon {
-      font-size: $bar-title-font-size;
-      .icon:before,
-      &:before,
-      &.icon-left:before,
-      &.icon-right:before {
-        vertical-align: top;
-        font-size: $button-large-icon-size;
-        line-height: $bar-height;
-      }
-    }
-    &.button-clear {
-      padding-right: 2px;
-      padding-left: 2px;
-      font-weight: 300;
-      font-size: $bar-title-font-size;
-
-      .icon:before,
-      &.icon:before,
-      &.icon-left:before,
-      &.icon-right:before {
-        font-size: $button-large-icon-size;
-        line-height: $bar-height;
-      }
-    }
-
-    &.back-button {
-      display: block;
-      margin-right: 0.3125rem;
-      padding: 0;
-      white-space: nowrap;
-      font-weight: 400;
-    }
-
-    &.back-button.active,
-    &.back-button.activated {
-      opacity: 0.2;
-    }
-
-    &.pull-right.subheader-right{
-      right: rem(44);
-    }
-
-    &.subheader-left{
-      vertical-align: top;
-    }
+    background-color: transparent;
   }
+}
 
-  .button-bar > .button,
-  .buttons > .button {
-    line-height: $bar-height;
+.bar-header,.bar-footer{
+  @extend %Grid;
+  @extend %Grid-middle;
+  @extend %Grid-between;
+  .bar-left,.bar-right{
+    font-size: 0;
+    z-index: $z-index-bar-button;
   }
-
-  .button-bar + .button,
-  .button + .button-bar {
-    margin-left: 0.3125rem;
+  .bar-left,.bar-right,.button{
+    @extend %Grid;
+    @extend %Grid-middle;
+    height: 100%;
   }
-
-  // Android 4.4 messes with the display property
-  .buttons,
-  .buttons.primary-buttons,
-  .buttons.secondary-buttons {
-    display: inherit;
+  .title{
+    @extend %Grid;
+    @extend %Grid-center;
+    @extend %Grid-middle;
   }
-  .buttons span {
-    display: inline-block;
+  .bar-right{
+    @extend %Grid-left;
   }
-  .buttons-left span {
-    margin-right: 0.3125rem;
-    display: inherit;
-  }
-  .buttons-right span {
-    margin-left: 0.3125rem;
-    display: inherit;
-  }
-
-  // Place the last button in a bar on the right of the bar
-  .title + .button:last-child,
-  > .button + .button:last-child,
-  > .button.pull-right,
-  .buttons.pull-right,
-  .title + .buttons {
-    position: absolute;
-    top: 0;
-    right: 0.3125rem;
-    bottom: 0;
+  .bar-right{
+    @extend %Grid-right;
   }
 
 }
 
 // Default styles for buttons inside of styled bars  后续继续添加
 .bar-light {
-  .button {
-    @include button-style($bar-light-bg, $bar-light-border, $bar-light-active-bg, $bar-light-active-border, $bar-light-text);
-    @include button-clear($bar-light-text, $bar-title-font-size);
+  .button{
+
   }
 }
 
-// Header at top
-.bar-header {
-  top: 0;
-  border-top-width: 0;
-  border-bottom-width: 1px;
-  &.has-tabs-top{
-    border-bottom-width: 0px;
-    background-image: none;
-  }
-}
-.tabs-top .bar-header{
-  border-bottom-width: 0px;
-  background-image: none;
-}
-
-// Footer at bottom
-.bar-footer {
-  bottom: 0;
-  border-top-width: 1px;
-  border-bottom-width: 0;
-  background-position: top;
-
-  height: $bar-footer-height;
-}
-
-// Don't render padding if the bar is just for tabs
-.bar-tabs {
-  padding: 0;
-}
-
-.bar-subheader {
-  top: $bar-height;
-  display: block;
-
-  height: $bar-subheader-height;
-}
-.bar-subfooter {
-  bottom: $bar-footer-height;
-  display: block;
-
-  height: $bar-subfooter-height;
-}
-
-.nav-bar-block {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: $z-index-bar;
-}
-
-.bar .back-button.hide,
-.bar .buttons .hide {
-  display: none;
-}
-
-.nav-bar-tabs-top .bar {
-  background-image: none;
+.content{
+  margin-top: $bar-height;
 }
 

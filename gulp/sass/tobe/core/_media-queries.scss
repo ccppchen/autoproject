@@ -194,6 +194,33 @@
   }
 }
 
+// iphone-6p
+//-----------------------------------------------------
+
+@mixin iphone6p($orientation: all)
+{
+  $deviceMinWidth: 414px;
+  $deviceMaxWidth: 736px;
+  $devicePixelRatio: 3;
+
+  @if $orientation == all
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-device-pixel-ratio: $devicePixelRatio)
+    {
+      @content;
+    }
+  }
+  @else
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (orientation:#{$orientation})
+    {
+      @content;
+    }
+  }
+}
+
 // ipads (all)
 //-----------------------------------------------------
 
