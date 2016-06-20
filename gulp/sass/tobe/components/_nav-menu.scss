@@ -11,6 +11,10 @@ Emmet 写法
 			width: rem(107);
 			height: rem(107);
 		}
+		.lazy-box{
+			background-image: none;
+			background-color: transparent;
+		}
 	}
 	.item-p{
 		margin-top: rem(8);

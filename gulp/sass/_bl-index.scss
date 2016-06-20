@@ -1,6 +1,36 @@
 /* 
 	common
  */
+ .lazy-box{
+ 	position: relative;
+ 	background: #FFF url(../images/default-img.png) no-repeat center center;
+ 	&:after{
+ 		content:'';
+        display:block;
+        padding-top:100%;
+ 	}
+ 	&.half:after{
+       padding-top:50%;
+ 	}
+ 	&.half-light:after{
+ 		padding-top: 55.019305%;
+ 	}
+ 	&.six:after{
+ 		padding-top: 66.6666666666666667%;
+ 	}
+ 	&.three:after{
+ 		padding-top: 37.037037%;
+ 	}
+ 	&.o-one:after{
+ 		padding-top: 111.111111111111111%;
+ 	}
+ 	.lazy{
+ 		position: absolute;
+ 		left: 50%;
+ 		top: 50%;
+ 		transform: translate3d(-50%, -50%, 0);
+ 	}
+ }
  .color-red{
  	color: $red;
  }
@@ -162,10 +192,8 @@
 	width: 100%;
     height: auto;
 	.item-scroll{
-		text-align: center;
 		font-size: rem(28);
 		background: #fff;
-		width: rem(208);
 		/* Center slide text vertically */
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -179,6 +207,7 @@
 		-ms-flex-align: center;
 		-webkit-align-items: center;
 		align-items: center;
+		
 	}
 }
 

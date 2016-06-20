@@ -579,6 +579,10 @@ Emmet 写法
   width: 1.07rem;
   height: 1.07rem;
 }
+.nav-menu .item-menu .lazy-box {
+  background-image: none;
+  background-color: transparent;
+}
 .nav-menu .item-p {
   margin-top: 0.08rem;
   font-size: 0.24rem;
@@ -1602,6 +1606,38 @@ Emmet 写法
 /* 
 	common
  */
+.lazy-box {
+  position: relative;
+  background: #FFF url(../images/default-img.png) no-repeat center center;
+}
+.lazy-box:after {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+.lazy-box.half:after {
+  padding-top: 50%;
+}
+.lazy-box.half-light:after {
+  padding-top: 55.019305%;
+}
+.lazy-box.six:after {
+  padding-top: 66.6666666666666667%;
+}
+.lazy-box.three:after {
+  padding-top: 37.037037%;
+}
+.lazy-box.o-one:after {
+  padding-top: 111.111111111111111%;
+}
+.lazy-box .lazy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+
 .color-red {
   color: #e6133c;
 }
@@ -1869,10 +1905,8 @@ Emmet 写法
   height: auto;
 }
 .shop-container .item-scroll {
-  text-align: center;
   font-size: 0.28rem;
   background: #fff;
-  width: 2.08rem;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
