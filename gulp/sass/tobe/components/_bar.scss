@@ -24,6 +24,8 @@
 
   background-color: $bar-default-bg;
 
+  @include transition(background-color .3s linear);
+
   /* border-width: 1px will actually create 2 device pixels on retina */
   /* this nifty trick sets an actual 1px border on hi-res displays */
   background-size: 0;
@@ -82,32 +84,45 @@
     font-size: $bar-button-font-size;
     border: 0;
     background-color: transparent;
+    &:active{
+      opacity: .6;
+    }
   }
 }
 
 .bar-header,.bar-footer{
-  @extend %Grid;
-  @extend %Grid-middle;
-  @extend %Grid-between;
+  // @extend %Grid;
+  // @extend %Grid-middle;
+  // @extend %Grid-between;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(space-between);
   .bar-left,.bar-right{
     font-size: 0;
     z-index: $z-index-bar-button;
   }
   .bar-left,.bar-right,.button{
-    @extend %Grid;
-    @extend %Grid-middle;
+    // @extend %Grid;
+    // @extend %Grid-middle;
+    @include display(flex);
+    @include align-items(center);
     height: 100%;
   }
   .title{
-    @extend %Grid;
-    @extend %Grid-center;
-    @extend %Grid-middle;
+    // @extend %Grid;
+    // @extend %Grid-center;
+    // @extend %Grid-middle;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
   }
   .bar-right{
-    @extend %Grid-left;
+    // @extend %Grid-left;
+    @include justify-content(flex-start);
   }
   .bar-right{
-    @extend %Grid-right;
+    // @extend %Grid-right;
+    @include justify-content(flex-end);
   }
 
 }
@@ -120,6 +135,13 @@
 }
 
 .content{
-  margin-top: $bar-height;
+  position: absolute;
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+  top: $bar-height;
+  left: 0;
+  right: 0;
 }
 
