@@ -14,7 +14,6 @@
   "private": true,
   "dependencies": {
     "bl-flexbox": "^0.6.0",
-    "Swiper": "swiper#^3.3.1",
     "zepto": "^1.1.6",
     "zepto.lazyload.js": "^0.0.1"
   }
