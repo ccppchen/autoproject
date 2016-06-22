@@ -14,12 +14,15 @@ body,.bar{
 
 .loading-logo{
 	width: rem(280);
-	height: auto;
+	height: rem(280);
 	margin: 0 auto;
 	position: absolute;
 	top: 28%;
 	left: 50%;
 	transform: translate3d(-50%, 0, 0);
+	background-image: inline-image('../images/logo.png');
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .loading-foot{

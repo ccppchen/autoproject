@@ -20,90 +20,10 @@
 }
 
 
-.iconfont-add-b:before {
+.iconfont-class:before {
 	content: "\E001";
 }
 
-.iconfont-arrow-back:before {
-	content: "\E002";
-}
-
-.iconfont-arrow-down:before {
-	content: "\E003";
-}
-
-.iconfont-arrow-go:before {
-	content: "\E004";
-}
-
-.iconfont-arrow-right:before {
-	content: "\E005";
-}
-
-.iconfont-checked-fill:before {
-	content: "\E006";
-}
-
-.iconfont-checked:before {
-	content: "\E007";
-}
-
-.iconfont-class:before {
-	content: "\E008";
-}
-
-.iconfont-close-fill:before {
-	content: "\E009";
-}
-
-.iconfont-close-outline:before {
-	content: "\E00A";
-}
-
-.iconfont-close-round:before {
-	content: "\E00B";
-}
-
-.iconfont-minus:before {
-	content: "\E00C";
-}
-
-.iconfont-more-h:before {
-	content: "\E00D";
-}
-
-.iconfont-more-v:before {
-	content: "\E00E";
-}
-
-.iconfont-no:before {
-	content: "\E00F";
-}
-
-.iconfont-ok:before {
-	content: "\E010";
-}
-
-.iconfont-plus:before {
-	content: "\E011";
-}
-
-.iconfont-radio-fill:before {
-	content: "\E012";
-}
-
-.iconfont-radio:before {
-	content: "\E013";
-}
-
-.iconfont-refresh:before {
-	content: "\E014";
-}
-
-.iconfont-search:before {
-	content: "\E015";
-}
-
 .iconfont-shop-car:before {
-	content: "\E016";
+	content: "\E002";
 }

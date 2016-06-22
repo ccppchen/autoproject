@@ -7,10 +7,30 @@
     <title>index</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript">
+        /*======================================================
+        ************   remjs   ************
+        ======================================================*/
+        (function (){
+          var _self = this;
+          _self.width = 750; //设置默认最大宽度
+          _self.fontSize = 100; //默认字体大小
+          _self.widthProportion = function() {
+              var p1 = (document.getElementsByTagName("html")[0].offsetWidth) / _self.width;
+              var p = p1.toFixed(6);
+              return p > 1 ? 1 : p < 0.42667 ? 0.42667 : p;
+          };
+          _self.changePage = function() {
+              document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + _self.widthProportion() * _self.fontSize + "px !important");
+          }
+          _self.changePage();
+          window.addEventListener("resize", function() {
+              _self.changePage();
+          }, false);
+        }());
+    </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="lib/bl-flexbox/grd.css">
     <!-- endinject -->
     <!-- my:css -->
     <!-- built css files will go here... -->
@@ -19,16 +39,23 @@
 </head>
 
 <body ontouchstart="">
-    
+    <!-- 启动页 -->
+    <div class="bl-ctn-loading redbg">
+        <div class="loading-logo"></div>
+        <p class="yellowLight loading-foot">WWW.BL.COM</p>
+        <div class="prompt-loading white">
+            <div class="preloader middle white"></div>加载中
+        </div>
+    </div>
     <!-- header start -->
     <header class="bar bar-header bar-light rgbbg">
-        <a href="flexbox.html" class="bar-left">
+        <a href="index.html" class="bar-left">
             <div class="logo-button"></div>
         </a>
         <h1 class="title index-title">
             <div class="title-input">
                 <form action="" method="get" accept-charset="utf-8">
-                    <input class="input-control" type="search" placeholder="搜索你想找的商品">
+                    <div class="input-control" type="search" placeholder="搜索你想找的商品">搜索你想找的商品</div>
                 </form>
             </div>
         </h1>
@@ -40,86 +67,51 @@
     <!-- header end -->
     <div class="content">
         <!-- Swiper -->
-        <div class="swiper-container swiper-banner">
+        <div class="swiper-container" id="touchSlide">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a href="javascript:;"><img data-src="images/index/banners/banners_1-750x240q40.jpg" class="swiper-lazy" alt=""/></a>
+                    <a href="javascript:;"><img _src="images/index/banners/banners_1-750x240q40.jpg" alt=""/></a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="javascript:;"><img data-src="images/index/banners/ia_10001-750x240q40.jpg" class="swiper-lazy" alt=""/></a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="javascript:;"><img data-src="images/index/banners/ia_10002-750x240q40.jpg" class="swiper-lazy" alt=""/></a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="javascript:;"><img data-src="images/index/banners/ia_10003-750x240q40.jpg" class="swiper-lazy" alt=""/></a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="javascript:;"><img data-src="images/index/banners/ia_10004-750x240q40.jpg" class="swiper-lazy" alt=""/></a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="javascript:;"><img data-src="images/index/banners/ia_10005-750x240q40.jpg" class="swiper-lazy" alt=""/></a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="javascript:;"><img data-src="images/index/banners/ia_10006-750x240q40.jpg" class="swiper-lazy" alt=""/></a>
+                    <a href="javascript:;"><img _src="images/index/banners/ia_10001-750x240q40.jpg" alt=""/></a>
                 </div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination outline-white"></div>
+            <div class="swiper-pagination">
+                <ul></ul>
+            </div>
         </div>
         <!-- Swiper end -->
 
         <!-- menu -->
         <div class="nav-menu Grid">
-            <a href="javascript:;" class="item-menu Cell Cell-fill">
-                <div class="lazy-box"><img class="lazy" src="images/default-img.png" data-original="images/index/menu_1.png" alt=""></div><div class="item-p">逛百联</div>
+            <div class="item-menu Cell">
+            <a href="javascript:;">
+                <img src="images/index/menu_1.png" alt=""><div class="item-p">逛百联</div>
             </a>
-            <a href="javascript:;" class="item-menu Cell Cell-fill">
-                <div class="lazy-box"><img class="lazy" src="images/default-img.png" data-original="images/index/menu_2.png" alt=""></div><div class="item-p">我的订单</div>
+            </div>
+            <div class="item-menu Cell">
+            <a href="javascript:;">
+                <img src="images/index/menu_2.png" alt=""><div class="item-p">我的订单</div>
             </a>
-            <a href="javascript:;" class="item-menu Cell Cell-fill">
-                <div class="lazy-box"><img class="lazy" src="images/default-img.png" data-original="images/index/menu_3.png" alt=""></div><div class="item-p">签到有奖</div>
+            </div>
+            <div class="item-menu Cell">
+            <a href="javascript:;">
+                <img src="images/index/menu_3.png" alt=""><div class="item-p">签到有奖</div>
             </a>
-            <a href="javascript:;" class="item-menu Cell Cell-fill">
-                <div class="lazy-box"><img class="lazy" src="images/default-img.png" data-original="images/index/menu_4.png" alt=""></div><div class="item-p">类目</div>
+            </div>
+            <div class="item-menu Cell">
+            <a href="javascript:;">
+                <img src="images/index/menu_4.png" alt=""><div class="item-p">类目</div>
             </a>
-            <a href="javascript:;" class="item-menu Cell Cell-fill">
-                <div class="lazy-box"><img class="lazy" src="images/default-img.png" data-original="images/index/menu_5.png" alt=""></div><div class="item-p">百宝箱</div>
+            </div>
+            <div class="item-menu Cell">
+            <a href="javascript:;">
+                <img src="images/index/menu_5.png" alt=""><div class="item-p">百宝箱</div>
             </a>
+            </div>
         </div>
         <!-- menu end -->
-        
-        <!-- 天天抢购 -->
-        <!-- Swiper -->
-        <div class="swiper-scroll swiper-container">
-           <ul class="swiper-wrapper shop-container">
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10012-450x500q40.jpg" alt=""></a>
-                </li>
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10010-450x500q40.jpg" alt=""></a>
-                </li>
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10011-450x500q40.jpg" alt=""></a>
-                </li>
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10010-450x500q40.jpg" alt=""></a>
-                </li>
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10012-450x500q40.jpg" alt=""></a>
-                </li>
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10011-450x500q40.jpg" alt=""></a>
-                </li>
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10010-450x500q40.jpg" alt=""></a>
-                </li>
-                <li class="swiper-slide item-scroll bdr">
-                    <a href="javascript:;"><img class="swiper-lazy" src="images/default-img.png" data-src="images/index/ia_10011-450x500q40.jpg" alt=""></a>
-                </li>
-            </ul>
-        </div>
-        <!-- end -->
+
         <!-- adv -->
         <ul class="Grid room-2" style="background-color: transparent;">
             <li class="Cell Cell-fill"><a href="javascript:;"><div class="lazy-box half-light"><img class="lazy" data-original="images/index/bltohome-518x258q30.jpg" alt=""></div></a></li>
@@ -140,12 +132,11 @@
                 <li class="Cell Cell-fill"><a href="javascript:;"><div class="lazy-box"><img class="lazy" data-original="images/index/ia_10007-675x450q40.jpg" alt=""></div></a></li>
             </ul>
         </div>
+
         <div class="floor-container">
             <div class="room-title bdb">
-                <a href="javascript:;">
-                    <h4>精品馆</h4>
-                    <a href="javascript:;" class="arrow-right">更多</a>
-                </a>
+                <h4>精品馆</h4>
+                <a href="javascript:;" class="arrow-right">更多</a>
             </div>
             <ul class="Grid bdb">
                 <li class="Cell Cell-fill bdr"><a href="javascript:;"><div class="lazy-box"><img class="lazy" data-original="images/index/ia_10003-450x504q40.jpg" alt=""></div></a></li>
@@ -158,10 +149,8 @@
         </div>
         <div class="floor-container">
             <div class="room-title bdb">
-                <a href="javascript:;">
-                    <h4>数码馆</h4>
-                    <a href="javascript:;" class="arrow-right">更多</a>
-                </a>
+                <h4>数码馆</h4>
+                <a href="javascript:;" class="arrow-right">更多</a>
             </div>
             <ul class="Grid bdb">
                 <li class="Cell Cell-fill bdr"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10010-450x500q40.jpg" alt=""></div></a></li>
@@ -194,10 +183,8 @@
         <!-- 商品列表 -->
         <div class="floor-container">
             <div class="room-title bdb">
-                <a href="javascript:;">
-                    <h4>猜你喜欢</h4>
-                    <a href="javascript:;" class="arrow-right">更多</a>
-                </a>
+                <h4>猜你喜欢</h4>
+                <a href="javascript:;" class="arrow-right">更多</a>
             </div>
             <ul class="Grid shop-blod bdb">
                 <li class="Cell Cell-fill bdr">
@@ -338,15 +325,6 @@
         <div class="lazy-box half"><img class="lazy" src="" data-original="images/5.jpg" alt=""></div>
     </div>
     <div class="footer"></div>
-    
-    <!-- 启动页 -->
-    <div class="bl-ctn-loading redbg">
-        <img class="loading-logo" src="images/logo.png" alt="">
-        <p class="yellowLight loading-foot">WWW.BL.COM</p>
-        <div class="prompt-loading white">
-            <div class="preloader middle white"></div>加载中
-        </div>
-    </div>
     <!-- inject:js -->
     <script src="lib/zepto/zepto.min.js"></script>
     <script src="lib/zepto.lazyload.js/zepto.lazyload.js"></script>
@@ -354,13 +332,13 @@
     <!-- my -->
     <script type="text/javascript">
         // (function () { var script = document.createElement('script'); script.src="eruda.js"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
-    </script> 
-    <script type="text/javascript" src="scripts/zepto.touchslider.js"></script>
+    </script>
+    <script type="text/javascript" src="scripts/touchslider.js"></script>
     <script type="text/javascript">
         Zepto(function($){
 
             $(document).on('touchmove',function(e){
-                    e.preventDefault();
+                e.preventDefault();
             });
 
             $("img.lazy").lazyload();
@@ -373,8 +351,22 @@
                     $('.bar').css('background-color', '');
                 };
             });
-            
 
+            
+            TouchSlide({
+                slideCell:"#touchSlide",
+                titCell:".swiper-pagination ul",
+                mainCell:".swiper-wrapper",
+                effect:"left",
+                autoPlay: true,
+                delayTime: 300,
+                interTime: 2000,
+                autoPage:true,
+                startFun: function(i,c){
+                    var selfAttr = $('.swiper-wrapper .swiper-slide').eq(i).find('img');
+                    selfAttr.attr('src', selfAttr.attr('_src'));
+                }
+            });
         });
         window.onload = function(){
             $('.bl-ctn-loading').hide();
