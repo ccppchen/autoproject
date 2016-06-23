@@ -308,8 +308,7 @@ table {
 
 // 根据使用习惯，对normalize上进行补充
 //----------------------------------------------------- 
-html { 
-  overflow-y: scroll; 
+html {
   -webkit-overflow-scrolling: touch; 
   -webkit-text-size-adjust: 100%; 
   -ms-text-size-adjust: 100%; 

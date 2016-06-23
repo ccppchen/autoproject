@@ -114,8 +114,8 @@
 
         <!-- adv -->
         <ul class="Grid room-2" style="background-color: transparent;">
-            <li class="Cell Cell-fill"><a href="javascript:;"><div class="lazy-box half-light"><img class="lazy" data-original="images/index/bltohome-518x258q30.jpg" alt=""></div></a></li>
-            <li class="Cell Cell-fill"><a href="javascript:;"><div class="lazy-box half-light"><img class="lazy" data-original="images/index/globshop-518x285q40.jpg" alt=""></div></a></li>
+            <li class="Cell Cell-fill"><a href="javascript:;"><img src="images/index/bltohome-518x258q30.jpg" alt=""></a></li>
+            <li class="Cell Cell-fill"><a href="javascript:;"><img src="images/index/globshop-518x285q40.jpg" alt=""></a></li>
         </ul>
         <div class="floor-container">
             <div class="room-title bdb">
@@ -123,13 +123,13 @@
                 <a href="javascript:;" class="arrow-right">更多</a>
             </div>
             <ul class="Grid bdb">
-                <li class="Cell Cell-fill bdr"><a href="javascript:;"><div class="lazy-box six"><img class="lazy" data-original="images/index/ia_10001-675x450q40.jpg" alt=""></div></a></li>
-                <li class="Cell Cell-fill"><a href="javascript:;"><div class="lazy-box six"><img class="lazy" data-original="images/index/ia_10001-675x450q40.jpg" alt=""></div></a></li>
+                <li class="Cell Cell-fill bdr"><a href="javascript:;"><img src="images/index/ia_10001-675x450q40.jpg" alt=""></a></li>
+                <li class="Cell Cell-fill"><a href="javascript:;"><img src="images/index/ia_10001-675x450q40.jpg" alt=""></a></li>
             </ul>
             <ul class="Grid bdb">
-                <li class="Cell Cell-fill bdr"><a href="javascript:;"><div class="lazy-box"><img class="lazy" data-original="images/index/ia_10006-675x450q40.jpg" alt=""></div></a></li>
-                <li class="Cell Cell-fill bdr"><a href="javascript:;"><div class="lazy-box"><img class="lazy" data-original="images/index/ia_10002-450x504q40.jpg" alt=""></div></a></li>
-                <li class="Cell Cell-fill"><a href="javascript:;"><div class="lazy-box"><img class="lazy" data-original="images/index/ia_10007-675x450q40.jpg" alt=""></div></a></li>
+                <li class="Cell Cell-fill bdr"><a href="javascript:;"><img src="images/index/ia_10006-675x450q40.jpg" alt=""></a></li>
+                <li class="Cell Cell-fill bdr"><a href="javascript:;"><img src="images/index/ia_10002-450x504q40.jpg" alt=""></a></li>
+                <li class="Cell Cell-fill"><a href="javascript:;"><img src="images/index/ia_10007-675x450q40.jpg" alt=""></a></li>
             </ul>
         </div>
 
@@ -337,7 +337,7 @@
     <script type="text/javascript">
         Zepto(function($){
 
-            $(document).on('touchmove',function(e){
+            $(document).on('touchMove',function(e){
                 e.preventDefault();
             });
 
@@ -367,11 +367,16 @@
                     selfAttr.attr('src', selfAttr.attr('_src'));
                 }
             });
+
+            $(window).on('load', function(event) {
+                $('.bl-ctn-loading').hide();
+                $(document).off('touchMove');
+            });
+
+            
         });
-        window.onload = function(){
-            $('.bl-ctn-loading').hide();
-            $(document).off('touchmove');
-        };
+
+        
     </script>
     <!-- my end -->
 </body>
