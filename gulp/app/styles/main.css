@@ -225,7 +225,6 @@ table {
 }
 
 html {
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -443,6 +442,7 @@ body, .bar {
 }
 .bar .title {
   position: absolute;
+  top: 0;
   left: 10%;
   right: 10%;
   height: 100%;
