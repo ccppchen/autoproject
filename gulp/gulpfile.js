@@ -230,7 +230,7 @@ gulp.task('bower-install', function(){
 });
 
 gulp.task('default', ['compass', 'watch', 'bower-install', 'server']);
-gulp.task('build', ['clean', 'bower-js', 'js', 'compass-pro', 'html', 'images', 'copy', 'connect']);
+gulp.task('build', ['clean', 'bower-js', 'js', 'compass-pro', 'html', 'images']);
 
 
 

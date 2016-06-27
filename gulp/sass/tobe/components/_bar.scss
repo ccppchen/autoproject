@@ -129,20 +129,17 @@
 }
 
 // Default styles for buttons inside of styled bars  后续继续添加
-.bar-light {
-  .button{
+// .bar-light {
+//   .button{
 
-  }
-}
+//   }
+// }
 
 .content{
-  position: absolute;
   width: 100%;
   max-width: 750px;
   min-width: 320px;
   margin: 0 auto;
-  top: $bar-height;
-  left: 0;
-  right: 0;
+  padding-top: $bar-height;
 }
 
