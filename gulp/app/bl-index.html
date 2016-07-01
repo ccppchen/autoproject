@@ -33,8 +33,8 @@
     <!-- bower installed css files will go here... -->
     <!-- endinject -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
     <!-- endinject -->
 </head>
 
@@ -346,7 +346,7 @@
         </div>
         <!-- app download -->
         <div id="app-download">
-            <a href="http://app.bl.com"><img src="images/app-download.png" height="110" width="750"></a>
+            <a href="http://app.bl.com"><img src="css/i/app-download.png"></a>
             <a href="javascript:;" class="close"></a>
         </div>
     </div>
@@ -433,7 +433,7 @@
                      $(window).on("scroll scrollEnd",function() {
                          var d = $(window).scrollTop(),
                          e = $(window).height();
-                         e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-60px");
+                         e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-100%");
                     });
                  }
                  
@@ -466,8 +466,7 @@
                             // 为了测试，延迟1秒加载
                             setTimeout(function(){
                                 $('.recommend-list').append(result);
-                                // $("img.lazy").lazyload();
-                            },1000);
+                            },300);
                         },
                         error: function(xhr, type){
                             alert('Ajax error!');
