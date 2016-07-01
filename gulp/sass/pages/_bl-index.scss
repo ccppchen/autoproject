@@ -45,15 +45,12 @@
     font-size: 0;
     margin-bottom: rem(20);
     background-color: #fff;
+    .grid{
+    	position: relative;
+    	@include hairline(bottom, #e4e4e4);
+    }
  }
- .bdr{
- 	position: relative;
- 	@include hairline(right, #e4e4e4);
- }
- .bdb{
- 	position: relative;
- 	@include hairline(bottom, #e4e4e4);
- }
+
  .shop-listText{
  	color: $grayDarker;
  	font-size: rem(28);
@@ -66,6 +63,7 @@
  	font-size: rem(28);
  	vertical-align: middle;
  	padding: rem(8) 0;
+ 	font-family: helvetica;
  }
 
   /* loading */
@@ -107,8 +105,7 @@
 	margin-left: .05rem;
 }
 .bar--padding .button{
-	padding: 0 .1rem;
-	font-size: .42rem;
+	margin: 0 .1rem;
 }
 .bar .title.index-title{
 	left: 20%;
@@ -150,33 +147,31 @@
 	margin: rem(20) 0;
 	padding: 0 rem(10);
 	background-color: #fff;
-	.Cell a{
+	.cell a{
 		display: block;
 		padding: 0 rem(10);
 	}
 }
 
-.room-1-2{
-	border-top: 1px solid #e0e0e0;
-	border-bottom: 1px solid #e0e0e0;
-}
-.room-title{
+.recommend-title{
 	padding: rem(12) rem(20);
 	@include display(flex);
 	@include justify-content(space-between);
 	font-size: rem(24);
+	@include hairline(bottom, #e4e4e4);
+	position: relative;
 	&.room-flash{ padding-left: 0;}
 	a{
 		color: $grayDarker;
 	}
 	h4{
-		&:before{
-			content: '';
+		@include display(flex);
+		@include justify-content(center);
+		@include align-items(center);
+		.lef-red{
 			width: 2px;
 			height: rem(24);
-			float: left;
 			background-color: $red;
-			margin-top: rem(6);
 			margin-right: rem(10);
 		}
 		font-size: rem(24);
@@ -185,7 +180,7 @@
 	}
 }
 .shop-blod{
-	.Cell{
+	.cell{
 		padding: 0 rem(20);
 	}
 }
@@ -208,12 +203,16 @@
 		font-size: rem(28);
 		background-color: transparent;
 		padding-left: 30px;
+		line-height: normal;
+		&::-webkit-input-placeholder{
+			line-height: normal;
+		}
 	}
 }
 .half-width{
 	width: rem(20);
 }
-.search-list .Grid{
+.search-list .grid{
 	background-color: #f4f4f4;
 	height: rem(90);
 	border-bottom: 1px solid #ddd;
@@ -235,9 +234,9 @@
 
 .footer {
 	.sublogin{
-		background-image: inline-image("../images/user.png");
+		background-image: inline-image("../images/base64/user.png");
 		background-repeat: no-repeat;
-		background-size: contain;
+		background-size: rem(42);
 		background-position: rem(10) center;
 		padding-left: rem(60);
 		line-height: rem(40);
@@ -245,6 +244,8 @@
 			font-size: rem(24);
 			color: #fe5d4c;
 			padding: 0 rem(12);
+			display: inline-block;
+			line-height: rem(40);
 		}
 	}
 	.platforms{
@@ -283,6 +284,7 @@
 	    height: 50%;
     }
 }
+
 
 
 

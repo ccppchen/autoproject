@@ -94,35 +94,44 @@ module.exports = function (grunt) {
         },
 
         browserSync: {
+            // options: {
+            //   notify: false,
+            //   background: true,
+            //   watchOptions: {
+            //     ignored: ''
+            //   }
+            // },
+            // livereload: {
+            //   options: {
+            //     files: [
+            //       '<%= yeoman.app %>/*.html',
+            //       '.tmp/styles/{,*/}*.css',
+            //       '<%= yeoman.app %>/scripts/{,*/}*.js',
+            //       '<%= yeoman.app %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
+            //     ],
+            //     port: 9000,
+            //     server: {
+            //       baseDir: ['.tmp', '<%= yeoman.app %>']
+            //       // routes: {
+            //       //   '/bower_components': './bower_components'
+            //       // }
+            //     }
+            //   }
+            // },
+            // dist: {
+            //   options: {
+            //     background: false,
+            //     server: '<%= yeoman.dist %>'
+            //   }
+            // }
             options: {
-              notify: false,
-              background: true,
-              watchOptions: {
-                ignored: ''
-              }
-            },
-            livereload: {
-              options: {
-                files: [
-                  '<%= yeoman.app %>/*.html',
-                  '.tmp/styles/{,*/}*.css',
-                  '<%= yeoman.app %>/scripts/{,*/}*.js',
-                  '<%= yeoman.app %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
-                ],
-                port: 9000,
+                // bsFiles: {
+                //     src : 'assets/css/style.css'
+                // },
                 server: {
-                  baseDir: ['.tmp', '<%= yeoman.app %>']
-                  // routes: {
-                  //   '/bower_components': './bower_components'
-                  // }
-                }
-              }
-            },
-            dist: {
-              options: {
-                background: false,
-                server: '<%= yeoman.dist %>'
-              }
+                    baseDir: "./"
+                },
+                proxy: "localhost:80/h5-dev/h5-html"
             }
         },
 
@@ -363,6 +372,14 @@ module.exports = function (grunt) {
             }
         },
 
+        img_find_and_copy: {
+            resources: {
+                files: {
+                    'build': ['sample.css']
+                }
+            }
+        },
+
         
 
         // Run some tasks in parallel to speed up build process
@@ -430,8 +447,10 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
-        'test',
-        'build'
+        // 'newer:jshint',
+        // 'test',
+        // 'build'
+        'browserSync',
+        'watch'
     ]);
 };

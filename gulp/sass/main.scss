@@ -1,29 +1,24 @@
 @charset "utf-8";
-
+@import "tobe/function";
 /* -------------------------------------------------
- * base 样式
+ * ext 扩展样式
  * -------------------------------------------------
 */
-@import "tobe/base";
-@import "comm";
+@import "tobe/ext/comm";
+@import "tobe/ext/input";
+@import "tobe/ext/dropload";
 
 /* -------------------------------------------------
  * components 样式
  * -------------------------------------------------
 */
-@import "tobe/ext/input";
-@import "tobe/components/preloader";
-@import "tobe/components/bar";
-@import "tobe/components/nav-menu";
-@import "tobe/components/flex";
-@import "tobe/components/overflow-scroll";
-// @import "tobe/components/balloon";
+@import "tobe/components/components-base";
 
 /* -------------------------------------------------
  * iconfont 样式
  * -------------------------------------------------
 */
-@import "icon";
+// @import "icon";
 
 /* -------------------------------------------------
  * 各个页面的样式
@@ -31,4 +26,4 @@
 */
 // @import "buy";
 // @import "testBtn";
-@import "bl-index";
+@import "pages/bl-index";
