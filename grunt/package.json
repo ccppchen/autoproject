@@ -1,14 +1,13 @@
 {
   "name": "reactlean",
   "version": "0.0.1",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.2.0",
     "grunt-bower-install": "^0.5.2",
     "grunt-browser-sync": "^2.2.0",
+    "grunt-collect-css-images": "^0.1.2",
     "grunt-concurrent": "~0.3.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-compass": "^0.5.0",
@@ -21,6 +20,7 @@
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.5.2",
+    "grunt-img-find-and-copy": "^1.0.1",
     "grunt-mocha": "~0.4.0",
     "grunt-newer": "~0.5.4",
     "grunt-react": "^0.12.2",

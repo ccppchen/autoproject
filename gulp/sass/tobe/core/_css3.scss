@@ -605,7 +605,7 @@ $prefixNo:                    true !default;
   @if $prefixForMicrosoft {
     display: -ms-flexbox; // IE 10
   }
-  display: box;
+  
 }
 
 @mixin box-orient($orient: inline-axis) {
@@ -677,7 +677,7 @@ $prefixNo:                    true !default;
     // 2009
     display: -webkit-box;
     display: -moz-box;
-    display: box;
+    
 
     // 2012
     display: -webkit-flex;
