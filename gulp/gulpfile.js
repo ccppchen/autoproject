@@ -25,7 +25,7 @@ var yeoman = {
 
 var banner =
 "/** \n\
-* jQuery WeUI V" + pkg.version + " \n\
+* jQuery extend V" + pkg.version + " \n\
 * By 野草\n\
 * http://ccppchen.github.io\n \
 */\n";
@@ -112,7 +112,7 @@ gulp.task('compass', function() {
     }))
     .pipe(plugins.compass({
       image:    'app/images',
-      css:      'app/styles',
+      css:      'app/css',
       sass:     yeoman.sass,
       style:    'compressed',
       comments:  true,
@@ -122,7 +122,7 @@ gulp.task('compass', function() {
     .pipe(plugins.autoprefixer({
       browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ]
     }))
-    .pipe(gulp.dest('app/styles'))
+    .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('compass-pro', function() {
@@ -134,7 +134,7 @@ gulp.task('compass-pro', function() {
           }
     }))
     .pipe(plugins.compass({
-      css: yeoman.dist+'/styles',
+      css: yeoman.dist+'/css',
       sass: yeoman.sass,
       image: yeoman.app+'/images',
       style: 'compressed',
@@ -151,20 +151,6 @@ gulp.task('compass-pro', function() {
     .pipe(gulp.dest(yeoman.dist+'/styles'));
 });
 
-// js合并压缩混淆
-//gulp.task('js', function(){
-//  gulp.src([
-//      'dist/lib/jquery.js',
-//      'dist/lib/jquery.lazy.js',
-//      'dist/lib/app.js'
-//    ])
-//    .pipe(plugins.concat({ path: 'vendor.js'}))
-//    .pipe(uglify())
-//    .pipe(plugins.header(banner))
-//    .pipe(extReplace('.min.js'))
-//    .pipe(gulp.dest(yeoman.dist+'/scripts/vendor'))
-//});
-
 // html压缩
 gulp.task('html', function () {
     gulp.src([yeoman.app+'/**/*.html','!./'+yeoman.app+'/widget/*.html'])
@@ -176,10 +162,10 @@ gulp.task('html', function () {
 
 // image压缩
 gulp.task('images', function () {
-    gulp.src([yeoman.app+'/images/**/*', '!./app/images/base64'])
+    gulp.src([yeoman.app+'/css/i/**/*', '!./app/images/base64'])
     .pipe(cache(
       plugins.imagemin({
-            optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+            optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
             interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
             multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
@@ -225,7 +211,7 @@ gulp.task('js', function(){
 gulp.task('bower-install', function(){
   gulp.src([yeoman.app+'/*.html'])
     .pipe( inject( gulp.src(bowerFile(), {read: false}), {starttag:'<!-- bower:{{ext}} -->', relative: true} ) )
-    .pipe(inject( gulp.src(['app/scripts/**/*.js', 'app/styles/*.css'], {read: false}), {relative: true}, {name: 'inject'} ))
+    .pipe(inject( gulp.src(['app/scripts/**/*.js', 'app/css/*.css'], {read: false}), {relative: true, name: 'inject'} ))
     .pipe(gulp.dest(yeoman.app))
 });
 gulp.task('inject', ['js','bower-js'], function(){
