@@ -71,6 +71,13 @@ input,
 select,
 textarea {
     font-family: sans-serif;
+    text-rendering: optimizeLegibility;
+    /* 1 */
+    -webkit-font-smoothing: antialiased;
+    /* 2 */
+    -moz-osx-font-smoothing: grayscale;
+    /* 3 Default: auto */
+    -moz-font-feature-settings: "liga", "kern";
 }
 
 // Addresses margins handled incorrectly in IE6/7
@@ -338,28 +345,6 @@ ul,ol{
   list-style: none outside none;
 }
 
-// hn
-h1,h2,h3{
-  line-height: 2;
-  font-weight: normal;
-}
-h1 {
-  font-size:$baseFontSize * 1.5;
-}
-h2 {
-  font-size:$baseFontSize * 1.3;
-}
-h3 {
-  font-size:$baseFontSize * 1.17;
-}
-h4 { 
-  font-size:$baseFontSize;
-}
-h5,h6 {
-  font-size:$baseFontSize * 0.85;
-  text-transform:uppercase;
-}
-
 // links 
 a{
   text-decoration:none;
@@ -384,3 +369,51 @@ a{
   } 
 }
 
+// old reset
+.show-bg-msg{
+  border-radius:.25rem;
+  text-align:center;
+  line-height:1.75rem;
+  color:#ffffff;
+  background-color:rgba(0,0,0,.7);
+  width:10rem;
+  position:fixed;
+  width:80%;
+  left:10%;
+  top:50%;
+  font-size:.6rem;
+  z-index:9999;
+  display:none;
+  padding:.5rem 1.8rem;
+  margin:0px;
+}
+a:hover,
+a:focus {
+  color: #095f8a;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 1px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+// hn
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 100%;
+}
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.25em;
+}
+/* Description lists */
+dt {
+  font-weight: bold;
+}

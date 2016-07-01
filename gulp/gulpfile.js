@@ -7,7 +7,6 @@ var jshint      = require('gulp-jshint');
 var png         = require('imagemin-pngquant');
 var clean       = require('gulp-clean');
 var connect     = require("gulp-connect");
-var ejs         = require("gulp-ejs");
 var bowerFile   = require('main-bower-files');
 var uglify      = require('gulp-uglify');
 var extReplace  = require('gulp-ext-replace');
