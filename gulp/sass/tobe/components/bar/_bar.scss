@@ -92,9 +92,6 @@
 }
 
 .bar-header,.bar-footer{
-  // @extend %Grid;
-  // @extend %Grid-middle;
-  // @extend %Grid-between;
   @include display(flex);
   @include align-items(center);
   @include justify-content(space-between);
@@ -103,27 +100,14 @@
     z-index: $z-index-bar-button;
   }
   .bar-left,.bar-right,.button{
-    // @extend %Grid;
-    // @extend %Grid-middle;
     @include display(flex);
     @include align-items(center);
     height: 100%;
   }
   .title{
-    // @extend %Grid;
-    // @extend %Grid-center;
-    // @extend %Grid-middle;
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
-  }
-  .bar-right{
-    // @extend %Grid-left;
-    @include justify-content(flex-start);
-  }
-  .bar-right{
-    // @extend %Grid-right;
-    @include justify-content(flex-end);
   }
 
 }
@@ -137,7 +121,7 @@
 
 .content{
   width: 100%;
-  max-width: 750px;
+  // max-width: 750px;
   min-width: 320px;
   margin: 0 auto;
   padding-top: $bar-height;

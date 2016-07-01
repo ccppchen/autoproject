@@ -5,6 +5,57 @@ body,.bar{
 	margin: 0 auto;
 }
 
+// rmb
+.price-rmb{
+	font-family: arial;
+	color: #e6133c;
+	font-style: normal;
+	margin-right: 3px;
+	font-size: rem(28);
+}
+// 边框类
+.bdr{
+	position: relative;
+	@include hairline(right, #e4e4e4);
+	// border-right: 1px solid #e4e4e4;
+}
+.bdb{
+	position: relative;
+	@include hairline(bottom, #e4e4e4);
+	// border-bottom: 1px solid #e4e4e4;
+}
+.bd-v{
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+}
+.floor-container{
+	.grid{
+		position: relative;
+		@include hairline(bottom, #e4e4e4);
+	}
+	.cell{
+		position: relative;
+		@include hairline(right, #e4e4e4);
+		&:last-child{
+			@include hairline-remove(right);
+		}
+	}
+
+}
+// 图标base64类
+.icon{
+	width: rem(42);
+	height: rem(42);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.icon-class{
+	background-image: inline-image("base64/class.png");
+}
+.icon-shop-car{
+	background-image: inline-image("base64/shop-car.png");
+}
 // 颜色类和背景颜色类
  .color-red{
  	color: $red!important;
@@ -29,7 +80,7 @@ body,.bar{
 	top: 28%;
 	left: 50%;
 	transform: translate3d(-50%, 0, 0);
-	background-image: inline-image('../images/logo.png');
+	background-image: inline-image('../images/base64/logo.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 }
@@ -66,7 +117,7 @@ body,.bar{
 // 懒加载
 .lazy-box{
 	position: relative;
-	background: #FFF url(../images/default-img.png) no-repeat center center;
+	background: #FFF inline-image("../images/base64/default-img.png") no-repeat center center;
 	&:after{
 		content:'';
        display:block;

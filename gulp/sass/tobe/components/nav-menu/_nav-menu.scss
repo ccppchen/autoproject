@@ -5,7 +5,9 @@ Emmet 写法
 */
 .nav-menu{
 	padding: rem(22) 0;
+	@include display(flex);
 	.item-menu{
+		@include flex(1);
 		text-align: center;
 		img{
 			width: rem(107);
