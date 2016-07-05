@@ -19,6 +19,7 @@
     $.fn.lazyload = function(options) {
         var elements = this;
         var $container;
+        var eLnow = Date.now();
         var settings = {
             threshold       : 0,
             failure_limit   : 0,
@@ -31,6 +32,43 @@
             load            : null,
             placeholder     : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
         };
+        /*事件节流*/
+        var eLnow = Date.now();
+
+        var EvalLazy = (function() { 
+            var timer, running;
+            var unblock = function() {
+                running = false;
+            };
+            var run = function() {
+                clearTimeout(timer);
+                //执行加载图片动作
+                update();
+                setTimeout(unblock);
+            };
+            return {
+                debounce: function() {
+                    clearTimeout(timer);
+                    running = true;
+                    timer = setTimeout(run, 66);
+                },
+                throttled: function() { 
+                    var delay;
+                    if (!running) {
+                        running = true;
+                        clearTimeout(timer);
+                        delay = Date.now() - eLnow;
+                        if (delay > 300) {
+                            delay = 9;
+                        } else {
+                            delay = 99;
+                        }
+                        timer = setTimeout(run, delay);
+                    }
+                }
+            } 
+        })();
+        /*end*/
 
         function update() {
             var counter = 0;
@@ -78,8 +116,9 @@
         /* Fire one scroll event per scroll. Not one scroll event per image. */
         if (0 === settings.event.indexOf("scroll")) {
             $container.bind(settings.event, function() {
-                return update();
+                return EvalLazy.throttled();
             });
+            // EvalLazy.throttled();
         }
 
         this.each(function() {
@@ -217,26 +256,5 @@
 
         return fold >= $(element).offset().left + settings.threshold + $(element).width();
     };
-
-    // $.inviewport = function(element, settings) {
-    //      return !$.rightoffold(element, settings) && !$.leftofbegin(element, settings) &&
-    //             !$.belowthefold(element, settings) && !$.abovethetop(element, settings);
-    // };
-
-    /* Custom selectors for your convenience.   */
-    /* Use as $("img:below-the-fold").something() or */
-    /* $("img").filter(":below-the-fold").something() which is faster */
-
-    // $.extend($.expr[":"], {
-    //     "below-the-fold" : function(a) { return $.belowthefold(a, {threshold : 0}); },
-    //     "above-the-top"  : function(a) { return !$.belowthefold(a, {threshold : 0}); },
-    //     "right-of-screen": function(a) { return $.rightoffold(a, {threshold : 0}); },
-    //     "left-of-screen" : function(a) { return !$.rightoffold(a, {threshold : 0}); },
-    //     "in-viewport"    : function(a) { return $.inviewport(a, {threshold : 0}); },
-    //     /* Maintain BC for couple of versions. */
-    //     "above-the-fold" : function(a) { return !$.belowthefold(a, {threshold : 0}); },
-    //     "right-of-fold"  : function(a) { return $.rightoffold(a, {threshold : 0}); },
-    //     "left-of-fold"   : function(a) { return !$.rightoffold(a, {threshold : 0}); }
-    // });
 
 })($, window, document);

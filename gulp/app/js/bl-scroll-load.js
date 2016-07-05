@@ -4,15 +4,11 @@
 ;(function($){
 	$.fn.scrollLoad = function(opts){
 		var defaults = {
-			lazy: 		true,
 			sucback: 	function(){}
 		};
 		$.extend(defaults, opts);
 
 		var _init = function(){
-			if (defaults.lazy) {
-				$("img.lazy").lazyload();
-			};
 			//真实内容的高度
 			var pageHeight = Math.max(document.body.scrollHeight,document.body.offsetHeight);
 			//视窗的高度

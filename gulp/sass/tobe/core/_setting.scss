@@ -126,3 +126,8 @@ $z-index-bar:  					  1001 !default;
 // rem
 //-----------------------------------------------------	
 $remBase:     100!default;
+
+// switch
+//-----------------------------------------------------	
+$switchColorClass:     (danger, #ff0000) (primary, $primary) (pink, $pink) (orange, $orange) (purple, $purple);
+

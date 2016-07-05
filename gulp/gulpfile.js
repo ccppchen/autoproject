@@ -31,11 +31,11 @@ var banner =
 
 // svg symbols
 gulp.task('sprites', ['svgmin'], function () {
-  return gulp.src('app/svgmin/*.svg')
+  return gulp.src(yeoman.app+'/svgmin/*.svg')
     .pipe(svgSymbols({
       fontSize:   16
     }))
-    .pipe(gulp.dest('app/assets'));
+    .pipe(gulp.dest(yeoman.app+'/assets'));
 });
 
 // svgmin
@@ -54,12 +54,12 @@ gulp.task('svgmin', function () {
             }]
           })
       ))
-      .pipe(gulp.dest('app/svgmin/'));
+      .pipe(gulp.dest(yeoman.app+'/svgmin/'));
 });
 
 // iconfont
 gulp.task('iconfont', ['svgmin'], function(){
-  gulp.src(['app/svgmin/**/*.svg'])
+  gulp.src([yeoman.app+'/svgmin/**/*.svg'])
      .pipe(iconfontCss({
          glyphs:   null,
          fontName: 'myfont',
@@ -70,7 +70,7 @@ gulp.task('iconfont', ['svgmin'], function(){
          fontName: 'myfont',
          formats: ['ttf', 'eot', 'woff']
      }))
-    .pipe(gulp.dest('app/styles/fonts'));
+    .pipe(gulp.dest(yeoman.app+'/styles/fonts'));
 });
 
 // 复制
@@ -92,7 +92,7 @@ gulp.task('server', ['compass'], function(){
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
   gulp.watch(yeoman.app+'/lib/**/*', ['bower-install']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/scripts/**/*.js', yeoman.app+'/styles/**/*.css', yeoman.app+'/lib/**']).on('change', browserSync.reload);
+  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/**']).on('change', browserSync.reload);
 });
 
 // 查看服务
@@ -110,8 +110,8 @@ gulp.task('compass', function() {
           }
     }))
     .pipe(plugins.compass({
-      image:    'app/images',
-      css:      'app/css',
+      image:    yeoman.app+'/images',
+      css:      yeoman.app+'/css',
       sass:     yeoman.sass,
       style:    'compressed',
       comments:  true,
@@ -121,7 +121,7 @@ gulp.task('compass', function() {
     .pipe(plugins.autoprefixer({
       browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ]
     }))
-    .pipe(gulp.dest('app/css'))
+    .pipe(gulp.dest(yeoman.app+'/css'))
 });
 
 gulp.task('compass-pro', function() {
@@ -147,7 +147,7 @@ gulp.task('compass-pro', function() {
       remove: true
     }))
     .pipe(plugins.header(banner))
-    .pipe(gulp.dest(yeoman.dist+'/styles'));
+    .pipe(gulp.dest(yeoman.dist+'/css'));
 });
 
 // html压缩
@@ -171,20 +171,13 @@ gulp.task('images', function () {
             use: [png()]
         })
     ))
-    .pipe(gulp.dest(yeoman.dist+'/images'));
+    .pipe(gulp.dest(yeoman.dist+'/css/i'));
 });
 
 // 删除dist
 gulp.task('clean', function(){
   gulp.src('./'+yeoman.dist)
   .pipe(clean({force: true}));
-});
-
-// ejs html模版引擎
-gulp.task('ejs', function () {
-  gulp.src([yeoman.app+"/widget/index.html"])
-    .pipe(ejs({}))
-    .pipe(gulp.dest(yeoman.app));
 });
 
 // 导出bower的主要文件并且压缩js
@@ -198,25 +191,25 @@ gulp.task('bower-js', function() {
       .pipe(gulp.dest(yeoman.dist+'/scripts/vendor'))
 });
 gulp.task('js', function(){
-  gulp.src([yeoman.app+'/scripts/**/*.js'])
+  gulp.src([yeoman.app+'/js/**/*.js'])
     .pipe(plugins.concat({ path: 'app.js' }))
     .pipe(uglify())
     .pipe(plugins.header(banner))
     .pipe(extReplace('.min.js'))
-    .pipe(gulp.dest(yeoman.dist+'/scripts'))
+    .pipe(gulp.dest(yeoman.dist+'/js'))
 });
 
 // bower依赖注入
 gulp.task('bower-install', function(){
   gulp.src([yeoman.app+'/*.html'])
     .pipe( inject( gulp.src(bowerFile(), {read: false}), {starttag:'<!-- bower:{{ext}} -->', relative: true} ) )
-    .pipe(inject( gulp.src(['app/scripts/**/*.js', 'app/css/*.css'], {read: false}), {relative: true, name: 'inject'} ))
+    .pipe(inject( gulp.src([yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css'], {read: false}), {relative: true, name: 'inject'} ))
     .pipe(gulp.dest(yeoman.app))
 });
 gulp.task('inject', ['js','bower-js'], function(){
   gulp.src([yeoman.dist+'/*.html'])
-    .pipe( inject( gulp.src(yeoman.dist+'/scripts/vendor/*.js'), {relative: true, starttag: '<!-- bower:{{ext}} -->'} ) )
-    .pipe( inject( gulp.src(yeoman.dist+'/scripts/*.js'), {relative: true} ) )
+    .pipe( inject( gulp.src(yeoman.dist+'/js/vendor/*.js'), {relative: true, starttag: '<!-- bower:{{ext}} -->'} ) )
+    .pipe( inject( gulp.src(yeoman.dist+'/js/*.js'), {relative: true} ) )
     .pipe(gulp.dest(yeoman.dist))
 });
 
