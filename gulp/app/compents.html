@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>index</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script type="text/javascript">
+        /*======================================================
+        ************   remjs   ************
+        ======================================================*/
+        (function (){
+          var _self = this;
+          _self.width = 750; //设置默认最大宽度
+          _self.fontSize = 100; //默认字体大小
+          _self.widthProportion = function() {
+              var p1 = (document.getElementsByTagName("html")[0].offsetWidth) / _self.width;
+              var p = p1.toFixed(6);
+              return p > 1 ? 1 : p < 0.42667 ? 0.42667 : p;
+          };
+          _self.changePage = function() {
+              document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + _self.widthProportion() * _self.fontSize + "px !important");
+          }
+          _self.changePage();
+          window.addEventListener("resize", function() {
+              _self.changePage();
+          }, false);
+        }());
+    </script>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="//cdn.bootcss.com/prism/9000.0.1/themes/prism-okaidia.min.css" rel="stylesheet">
+</head>
+
+<body ontouchstart="">
+
+    <!-- switch -->
+    <h3>switch</h3>
+    <pre><code class="language-markup">label.switch>input+span+span.bg</code></pre>
+    <div style="margin: 30px auto; height: 50px;">
+        <label class="switch">
+          <input type="checkbox" checked="checked">
+          <span></span>
+          <span class="bg"></span>
+        </label>
+        <label class="switch switch-danger">
+          <input type="checkbox" checked="checked">
+          <span></span>
+          <span class="bg"></span>
+        </label>
+        <label class="switch switch-primary">
+          <input type="checkbox" checked="checked">
+          <span></span>
+          <span class="bg"></span>
+        </label>
+        <label class="switch switch-pink">
+          <input type="checkbox" checked="checked">
+          <span></span>
+          <span class="bg"></span>
+        </label>
+        <label class="switch switch-orange">
+          <input type="checkbox" checked="checked">
+          <span></span>
+          <span class="bg"></span>
+        </label>
+        <label class="switch switch-purple">
+          <input type="checkbox" checked="checked">
+          <span></span>
+          <span class="bg"></span>
+        </label>
+    </div>
+    <script src="//cdn.bootcss.com/prism/9000.0.1/prism.min.js"></script>
+</body>
+
+</html>

@@ -32,6 +32,9 @@ $hGap:               .4rem !default;
 $vGap:               .4rem !default; 
 
 
+// margin-bottom
+$baseGap:			10px;
+
 // 基本颜色
 // color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
 // lighten($color, $amount)
@@ -64,10 +67,10 @@ $primary:               #0078E7 !default;//主色
 //-----------------------------------------------------	
 // 如果只有一个值则滑过的值为这个值的darken 5%，如果
 // 有两个值则第二个值为滑过的值
-$linkColor:             #08c !default;
+$linkColor:             #0e90d2 !default;
 
 
-// scaffolding
+// scaffolding body背景颜色，文字颜色
 //-----------------------------------------------------	
 $bodyBgColor:           #eee !default;
 $textColor:             $grayDarker !default;
@@ -123,3 +126,8 @@ $z-index-bar:  					  1001 !default;
 // rem
 //-----------------------------------------------------	
 $remBase:     100!default;
+
+// switch
+//-----------------------------------------------------	
+$switchColorClass:     (danger, #ff0000) (primary, $primary) (pink, $pink) (orange, $orange) (purple, $purple);
+

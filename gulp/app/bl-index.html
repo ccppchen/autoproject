@@ -82,7 +82,7 @@
             <!-- Swiper end -->
 
             <!-- menu -->
-            <div class="nav-menu">
+            <nav class="nav-menu">
                 <div class="item-menu">
                     <a href="javascript:;">
                         <img src="images/index/menu_1.png" alt=""><div class="item-p">逛百联</div>
@@ -108,11 +108,11 @@
                         <img src="images/index/menu_5.png" alt=""><div class="item-p">百宝箱</div>
                     </a>
                 </div>
-            </div>
+            </nav>
             <!-- menu end -->
 
             <!-- adv -->
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="grid">
                     <div class="cell cell04"><a href="javascript:;" title=""><img src="images/index/blflash-311x476q40.jpg" alt=""></a></div>
                     <div class="cell cell06">
@@ -120,9 +120,9 @@
                         <div><a href="javascript:;" title=""><img src="images/index/blflash2-437x238q40.jpg" alt=""></a></div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title room-flash">
                     <h4><div class="lef-red"></div>天天抢购</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -189,9 +189,9 @@
                         <div class="color-red ovfs-money">￥4.95</div>
                     </li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>生活馆</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -205,9 +205,9 @@
                     <div class="cell"><a href="javascript:;"><img src="images/index/ia_10002-450x504q40.jpg" alt=""></a></div>
                     <div class="cell"><a href="javascript:;"><img src="images/index/ia_10007-675x450q40.jpg" alt=""></a></div>
                 </div>
-            </div>
+            </section>
 
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>精品馆</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -220,8 +220,8 @@
                 <ul class="grid">
                     <li class="cell"><a href="javascript:;"><div class="lazy-box three"><img class="lazy" data-original="images/index/ia_10009-1350x500q40.jpg" alt=""></div></a></li>
                 </ul>
-            </div>
-            <div class="floor-container">
+            </section>
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>数码馆</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -231,11 +231,11 @@
                     <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10011-450x500q40.jpg" alt=""></div></a></div>
                     <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10012-450x500q40.jpg" alt=""></div></a></div>
                 </div>
-            </div>
+            </section>
             <!-- adv end -->
-
+            
             <!-- 商品列表 -->
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>热门推荐</h4>
                     <a href="javascript:;" class="arrow-right color-red">登录之后，更加准确</a>
@@ -327,10 +327,11 @@
                     </li>
                 </ul>
                 <div class="dropload-down"><div class="dropload-load"><span class="loading"></span>加载中...</div></div>
-            </div>
+            </section>
 
         </div>
-        <div class="footer">
+        
+        <footer class="footer">
             <div class="sublogin">
                 <a href="javascript:;">登录</a><a href="javascript:;">注册</a>
             </div>
@@ -343,7 +344,7 @@
                 <div class="copyright">Copyright © 2016 百联 bl.com 版权所有</div>
             </div>
             
-        </div>
+        </footer>
         <!-- app download -->
         <div id="app-download">
             <a href="http://app.bl.com"><img src="css/i/app-download.png"></a>
@@ -380,6 +381,11 @@
                 e.preventDefault();
             });
             FastClick.attach(document.body);
+
+            $(window).on('load', function(event) {
+                $('.bl-ctn-loading').hide();
+                $(document).off('touchmove');
+            });
 
             $("img.lazy").lazyload();
             $(".ovfs img.lazy").lazyload({
@@ -442,7 +448,6 @@
              /* 返回顶部js end */
 
             /*滑动加载*/
-            /*end*/
             $.fn.scrollLoad({
                 lazy: true,
                 sucback: function(){
@@ -463,9 +468,10 @@
                                                 +'</a>'
                                             +'</li>';
                             }
-                            // 为了测试，延迟1秒加载
+                            // 为了测试，延迟加载
                             setTimeout(function(){
                                 $('.recommend-list').append(result);
+                                $("img.lazy").lazyload();
                             },300);
                         },
                         error: function(xhr, type){
@@ -474,13 +480,8 @@
                     });
                 }
             });
+            /*end*/
 
-            $(window).on('load', function(event) {
-                $('.bl-ctn-loading').hide();
-                $(document).off('touchmove');
-            });
-
-            
         });
 
         

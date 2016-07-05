@@ -71,6 +71,13 @@ input,
 select,
 textarea {
     font-family: sans-serif;
+    text-rendering: optimizeLegibility;
+    /* 1 */
+    -webkit-font-smoothing: antialiased;
+    /* 2 */
+    -moz-osx-font-smoothing: grayscale;
+    /* 3 Default: auto */
+    -moz-font-feature-settings: "liga", "kern";
 }
 
 // Addresses margins handled incorrectly in IE6/7
@@ -338,28 +345,6 @@ ul,ol{
   list-style: none outside none;
 }
 
-// hn
-h1,h2,h3{
-  line-height: 2;
-  font-weight: normal;
-}
-h1 {
-  font-size:$baseFontSize * 1.5;
-}
-h2 {
-  font-size:$baseFontSize * 1.3;
-}
-h3 {
-  font-size:$baseFontSize * 1.17;
-}
-h4 { 
-  font-size:$baseFontSize;
-}
-h5,h6 {
-  font-size:$baseFontSize * 0.85;
-  text-transform:uppercase;
-}
-
 // links 
 a{
   text-decoration:none;
@@ -383,4 +368,3 @@ a{
     color: nth($placeholder,2);
   } 
 }
-
