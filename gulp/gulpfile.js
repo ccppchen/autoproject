@@ -1,9 +1,8 @@
 'use strict';
 var gulp        = require('gulp');
-var plugins     = require('gulp-load-plugins')();
+var $           = require('gulp-load-plugins')();
 var pkg         = require("./package.json");
 var browserSync = require('browser-sync').create();
-var jshint      = require('gulp-jshint');
 var png         = require('imagemin-pngquant');
 var clean       = require('gulp-clean');
 var connect     = require("gulp-connect");
@@ -42,7 +41,7 @@ gulp.task('sprites', ['svgmin'], function () {
 gulp.task('svgmin', function () {
     gulp.src('svg/**/*.svg')
       .pipe(cache(
-        plugins.svgmin({
+        $.svgmin({
             plugins: [{
                 cleanupIDs: {
                     prefix: '',
@@ -75,8 +74,8 @@ gulp.task('iconfont', ['svgmin'], function(){
 
 // 复制
 gulp.task('copy', function(){
-  gulp.src(yeoman.app+'/styles/fonts/**/*')
-    .pipe(gulp.dest(yeoman.dist+'/styles/fonts'))
+  gulp.src(yeoman.app+'/css/fonts/**/*')
+    .pipe(gulp.dest(yeoman.dist+'/css/fonts'))
 });
 
 // 监测文件改动并自动刷新
@@ -103,36 +102,38 @@ gulp.task('connect', function () {
 // 编译sass
 gulp.task('compass', function() {
   return gulp.src(yeoman.sass+"/**/*.scss")
-    .pipe(plugins.plumber({
+    .pipe($.plumber({
         errorHandler: function (error) {
               console.log(error.message);
               this.emit('end');
           }
     }))
-    .pipe(plugins.compass({
+    .pipe($.sourcemaps.init())
+    .pipe($.compass({
       image:    yeoman.app+'/images',
       css:      yeoman.app+'/css',
       sass:     yeoman.sass,
-      style:    'compressed',
-      comments:  true,
       sourcemap: true
     }))
-    .pipe(plugins.plumber.stop())
-    .pipe(plugins.autoprefixer({
-      browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ]
-    }))
+    .pipe($.sourcemaps.write())
+
     .pipe(gulp.dest(yeoman.app+'/css'))
+    .pipe($.autoprefixer({
+      browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
+      cascade: true,
+      remove: true
+    }))
 });
 
 gulp.task('compass-pro', function() {
   return gulp.src(yeoman.sass+"/**/*.scss")
-    .pipe(plugins.plumber({
+    .pipe($.plumber({
         errorHandler: function (error) {
               console.log(error.message);
               this.emit('end');
           }
     }))
-    .pipe(plugins.compass({
+    .pipe($.compass({
       css: yeoman.dist+'/css',
       sass: yeoman.sass,
       image: yeoman.app+'/images',
@@ -141,19 +142,19 @@ gulp.task('compass-pro', function() {
       sourcemap: false,
       environment: 'production'
     }))
-    .pipe(plugins.plumber.stop())
-    .pipe(plugins.autoprefixer({
+    .pipe($.plumber.stop())
+    .pipe($.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
       remove: true
     }))
-    .pipe(plugins.header(banner))
+    .pipe($.header(banner))
     .pipe(gulp.dest(yeoman.dist+'/css'));
 });
 
 // html压缩
 gulp.task('html', function () {
     gulp.src([yeoman.app+'/**/*.html','!./'+yeoman.app+'/widget/*.html'])
-    .pipe(plugins.htmlmin({
+    .pipe($.htmlmin({
       collapseWhitespace: true
     }))
     .pipe(gulp.dest(yeoman.dist));
@@ -163,7 +164,7 @@ gulp.task('html', function () {
 gulp.task('images', function () {
     gulp.src([yeoman.app+'/css/i/**/*', '!./app/images/base64'])
     .pipe(cache(
-      plugins.imagemin({
+      $.imagemin({
             optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
             interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
@@ -184,17 +185,17 @@ gulp.task('clean', function(){
 gulp.task('bower-js', function() {
     gulp.src(bowerFile())
       .pipe(gulp.dest(yeoman.dist+'/lib'))
-      .pipe(plugins.concat({ path: 'vendor.js'}))
+      .pipe($.concat({ path: 'vendor.js'}))
       .pipe(uglify())
-      .pipe(plugins.header(banner))
+      .pipe($.header(banner))
       .pipe(extReplace('.min.js'))
-      .pipe(gulp.dest(yeoman.dist+'/scripts/vendor'))
+      .pipe(gulp.dest(yeoman.dist+'/js/vendor'))
 });
 gulp.task('js', function(){
   gulp.src([yeoman.app+'/js/**/*.js'])
-    .pipe(plugins.concat({ path: 'app.js' }))
+    .pipe($.concat({ path: 'app.js' }))
     .pipe(uglify())
-    .pipe(plugins.header(banner))
+    .pipe($.header(banner))
     .pipe(extReplace('.min.js'))
     .pipe(gulp.dest(yeoman.dist+'/js'))
 });

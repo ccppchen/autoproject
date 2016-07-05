@@ -25,7 +25,8 @@
     "gulp-iconfont-css-and-template": "^1.0.31",
     "gulp-iconfont": "^8.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-cache": "^0.4.5"
+    "gulp-cache": "^0.4.5",
+    "gulp-sourcemaps": "^1.6.0"
   },
   "engines": {
     "node": ">=0.8.0"
