@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>html5</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript">
+    /*======================================================
+                ************   remjs   ************
+                ======================================================*/
+    (function() {
+        var _self = this;
+        _self.width = 750; //设置默认最大宽度
+        _self.fontSize = 100; //默认字体大小
+        _self.widthProportion = function() {
+            var p1 = (document.getElementsByTagName("html")[0].offsetWidth) / _self.width;
+            var p = p1.toFixed(6);
+            return p > 1 ? 1 : p < 0.42667 ? 0.42667 : p;
+        };
+        _self.changePage = function() {
+            document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + _self.widthProportion() * _self.fontSize + "px !important");
+        }
+        _self.changePage();
+        window.addEventListener("resize", function() {
+            _self.changePage();
+        }, false);
+    }());
+    </script>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/newbase.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+    <link rel="stylesheet" href="css/distribution.css">
+    <!-- endinject -->
+</head>
+
+<body ontouchstart="">
+    <!-- header start -->
+    <header class="bar bar-header bar-dark">
+        <div class="bar-left">
+            <a href="javascript:history.go(-1)" class="button iconfont iconfont-arrow-back"></a>
+        </div>
+        <div class="bar-right">
+            <a href="javascript:;" title="" class="button iconfont iconfont-more-v"></a>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- content -->
+    <div class="content">
+        <!-- <div class="dist-title">物流配送状态</div> -->
+        <div class="list-between distr-flo">
+            <div class="list-item">
+                <div class="list-left">配送方式</div>
+                <div class="list-right" id="distriWay">
+                    <div class="list-right">
+                        <input type="radio" name="arrived" class="check-input check-red" checked="checked">
+                        <label>物流配送</label>
+                    </div>
+                    <div class="w24"></div>
+                    <div class="list-right">
+                        <input type="radio" name="arrived" class="check-input check-red" id="store">
+                        <label>门店自提</label>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item h120 js-toggle" style="display:none;">
+                <div class="list-left">自提地址</div>
+                <div class="list-right">
+                    <a href="javascript:;" class="dist-spec arrow-right">
+                        <div class="tar">快客陕南店</div>
+                        <div class="detail-addre">陕西南路286号(快客收银台)</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="h120"></div>
+        <button class="blockbtn distr-btn btn-red">选好了</button>
+        <button class="blockbtn distr-btn btn-disabled" disabled="disabled">选好了</button>
+    </div>
+    <!-- content end -->
+    <script type="text/javascript" src="js/vendor/vendor.min.js"></script>
+    <script type="text/javascript">
+        Zepto(function($){
+            $('#distriWay .list-right').on('touchstart', function(){
+                $(this).children('.check-input').prop('checked', 'checked');
+                if ( $('#store').is(':checked') ) {
+                    $('.js-toggle').show();
+                } else{
+                    $('.js-toggle').hide();
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>

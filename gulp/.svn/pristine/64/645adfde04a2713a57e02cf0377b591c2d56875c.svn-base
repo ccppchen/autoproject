@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>index</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script type="text/javascript">
+        /*======================================================
+        ************   remjs   ************
+        ======================================================*/
+        (function (){
+          var _self = this;
+          _self.width = 750; //设置默认最大宽度
+          _self.fontSize = 100; //默认字体大小
+          _self.widthProportion = function() {
+              var p1 = (document.getElementsByTagName("html")[0].offsetWidth) / _self.width;
+              var p = p1.toFixed(6);
+              return p > 1 ? 1 : p < 0.42667 ? 0.42667 : p;
+          };
+          _self.changePage = function() {
+              document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + _self.widthProportion() * _self.fontSize + "px !important");
+          }
+          _self.changePage();
+          window.addEventListener("resize", function() {
+              _self.changePage();
+          }, false);
+        }());
+    </script>
+    <!-- bower:css -->
+    <!-- bower installed css files will go here... -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endinject -->
+</head>
+
+<body ontouchstart="">
+    <div class="view">
+        <!-- 启动页 -->
+        <div class="bl-ctn-loading redbg">
+            <div class="loading-logo"></div>
+            <p class="yellowLight loading-foot">WWW.BL.COM</p>
+            <div class="prompt-loading white">
+                <div class="preloader middle white"></div>加载中
+            </div>
+        </div>
+        <!-- header start -->
+        <header class="bar bar-header bar-light">
+            <div href="index.html" class="bar-left">
+                <div class="logo-button"></div>
+            </div>
+            <h1 class="title index-title">
+                <div class="title-input">
+                    <div class="input-control">搜索你想找的商品</div>
+                </div>
+            </h1>
+            <div class="bar-right bar--padding">
+                <a href="index.html" class="button color-red icon icon-class"></a>
+                <a href="index.html" class="button color-red icon icon-shop-car"></a>
+            </div>
+        </header>
+        <!-- header end -->
+        <div class="content">
+            <!-- Swiper -->
+            <div class="swiper-container" id="touchSlide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="javascript:;"><img src="images/index/banners/banners_1-750x240q40.jpg" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:;"><img src="images/index/banners/ia_10001-750x240q40.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="swiper-pagination">
+                    <ul></ul>
+                </div>
+            </div>
+            <!-- Swiper end -->
+
+            <!-- menu -->
+            <div class="nav-menu">
+                <div class="item-menu">
+                    <a href="javascript:;">
+                        <img src="images/index/menu_1.png" alt=""><div class="item-p">逛百联</div>
+                    </a>
+                </div>
+                <div class="item-menu">
+                    <a href="javascript:;">
+                        <img src="images/index/menu_2.png" alt=""><div class="item-p">我的订单</div>
+                    </a>
+                </div>
+                <div class="item-menu">
+                    <a href="javascript:;">
+                        <img src="images/index/menu_3.png" alt=""><div class="item-p">签到有奖</div>
+                    </a>
+                </div>
+                <div class="item-menu">
+                    <a href="javascript:;">
+                        <img src="images/index/menu_4.png" alt=""><div class="item-p">类目</div>
+                    </a>
+                </div>
+                <div class="item-menu">
+                    <a href="javascript:;">
+                        <img src="images/index/menu_5.png" alt=""><div class="item-p">百宝箱</div>
+                    </a>
+                </div>
+            </div>
+            <!-- menu end -->
+
+            <!-- adv -->
+            <div class="floor-container">
+                <div class="grid">
+                    <div class="cell cell04"><a href="javascript:;" title=""><img src="images/index/blflash-311x476q40.jpg" alt=""></a></div>
+                    <div class="cell cell06">
+                        <div class="bdb"><a href="javascript:;" title=""><img src="images/index/blflash-437x238q40.jpg" alt=""></a></div>
+                        <div><a href="javascript:;" title=""><img src="images/index/blflash2-437x238q40.jpg" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floor-container">
+                <div class="recommend-title room-flash">
+                    <h4><div class="lef-red"></div>天天抢购</h4>
+                    <a href="javascript:;" class="arrow-right">更多</a>
+                </div>
+                <ul class="ovfs hide-scrollbar">
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                    <li class="ovfs-item">
+                        <div class="lazy-box">
+                            <a href="javascript:;"><img class="lazy" data-original="images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                        </div>
+                        <div class="color-red ovfs-money">￥4.95</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="floor-container">
+                <div class="recommend-title">
+                    <h4><div class="lef-red"></div>生活馆</h4>
+                    <a href="javascript:;" class="arrow-right">更多</a>
+                </div>
+                <div class="grid">
+                    <div class="cell"><a href="javascript:;"><img src="images/index/ia_10001-675x450q40.jpg" alt=""></a></div>
+                    <div class="cell"><a href="javascript:;"><img src="images/index/ia_10001-675x450q40.jpg" alt=""></a></div>
+                </div>
+                <div class="grid">
+                    <div class="cell"><a href="javascript:;"><img src="images/index/ia_10006-450x450q40.jpg" alt=""></a></div>
+                    <div class="cell"><a href="javascript:;"><img src="images/index/ia_10002-450x504q40.jpg" alt=""></a></div>
+                    <div class="cell"><a href="javascript:;"><img src="images/index/ia_10007-675x450q40.jpg" alt=""></a></div>
+                </div>
+            </div>
+
+            <div class="floor-container">
+                <div class="recommend-title">
+                    <h4><div class="lef-red"></div>精品馆</h4>
+                    <a href="javascript:;" class="arrow-right">更多</a>
+                </div>
+                <div class="grid">
+                    <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10003-450x504q40.jpg" alt=""></div></a></div>
+                    <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10004-450x500q40.jpg" alt=""></div></a></div>
+                    <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10005-450x500q40.jpg" alt=""></div></a></div>
+                </div>
+                <ul class="grid">
+                    <li class="cell"><a href="javascript:;"><div class="lazy-box three"><img class="lazy" data-original="images/index/ia_10009-1350x500q40.jpg" alt=""></div></a></li>
+                </ul>
+            </div>
+            <div class="floor-container">
+                <div class="recommend-title">
+                    <h4><div class="lef-red"></div>数码馆</h4>
+                    <a href="javascript:;" class="arrow-right">更多</a>
+                </div>
+                <div class="grid">
+                    <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10010-450x500q40.jpg" alt=""></div></a></div>
+                    <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10011-450x500q40.jpg" alt=""></div></a></div>
+                    <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10012-450x500q40.jpg" alt=""></div></a></div>
+                </div>
+            </div>
+            <!-- adv end -->
+
+            <!-- 商品列表 -->
+            <div class="floor-container">
+                <div class="recommend-title">
+                    <h4><div class="lef-red"></div>热门推荐</h4>
+                    <a href="javascript:;" class="arrow-right color-red">登录之后，更加准确</a>
+                </div>
+                <ul class="recommend-list">
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10049_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10050_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10051_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10052_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10053_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10054_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10055_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10056_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10057_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10058_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10059_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                    <li class="recommend-item">
+                        <a href="javascript:;">
+                            <div class="lazy-box"><img class="lazy" data-original="images/index/goods/ia_10060_200x200q40.jpg" alt=""></div>
+                            <div class="shop-listText">雅美娜家用智能语音制氧机 老人吸氧机 便携氧气机</div>
+                            <span class="color-red shop-price">￥780.00</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="dropload-down"><div class="dropload-load"><span class="loading"></span>加载中...</div></div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="sublogin">
+                <a href="javascript:;">登录</a><a href="javascript:;">注册</a>
+            </div>
+            <div class="platforms">
+                <div class="grid">
+                    <div class="cell tac"><a href>触屏版</a></div>
+                    <div class="cell tac"><a href>手机版</a></div>
+                    <div class="cell tac"><a href="http://www.bl.com">电脑版</a></div>
+                </div>
+                <div class="copyright">Copyright © 2016 百联 bl.com 版权所有</div>
+            </div>
+            
+        </div>
+        <!-- app download -->
+        <div id="app-download">
+            <a href="http://app.bl.com"><img src="images/app-download.png" height="110" width="750"></a>
+            <a href="javascript:;" class="close"></a>
+        </div>
+    </div>
+    <div class="search-list" hidden>
+        <div class="grid grid-middle">
+            <form class="form-control" action="" method="get" accept-charset="utf-8">
+                <input type="search" class="input" placeholder="搜索你想找的商品">
+            </form>
+            <div class="cancle-search">取消</div>
+        </div>
+        <div class="search-con">
+            <div class="search-title">热门搜索</div>
+        </div>
+        
+    </div>
+
+    <!-- app download -->
+    <!-- bower:js -->
+    <script src="scripts/vendor/vendor.min.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="scripts/app.min.js"></script>
+    <!-- endinject -->
+    <script type="text/javascript">
+        Zepto(function($){
+
+            $(document).on('touchmove',function(e){
+                e.preventDefault();
+            });
+            FastClick.attach(document.body);
+
+            $("img.lazy").lazyload();
+            $(".ovfs img.lazy").lazyload({
+                container: '.ovfs'
+            });
+            $('#app-download .close').click(function(event) {
+                $('#app-download').hide();
+            });
+            
+            TouchSlide({
+                slideCell: "#touchSlide",
+                titCell: ".swiper-pagination ul",
+                mainCell: ".swiper-wrapper",
+                effect: "leftLoop",
+                autoPlay: true,
+                delayTime: 300,
+                interTime: 2000,
+                autoPage: true
+            });
+
+            $('.title-input .input-control').on('click', function(e) {
+                e.preventDefault;
+                $('.view').hide();
+                $('.search-list').show();
+                // $('.form-control .input').focus();
+            });
+
+            $('.search-list .cancle-search').on('click', function(e) {
+                e.preventDefault;
+                $('.search-list').hide();
+                $('.view').show();
+            });
+            /* 返回顶部 js start */
+             function chinaz(){
+                 this.init();
+             }
+             chinaz.prototype = {
+                 constructor: chinaz,
+                 init: function(){       
+                     this._initBackTop();
+                 },  
+                 _initBackTop: function(){
+                     var $backTop = this.$backTop = $('<div class="cp-gotop"></div>');
+                     $('body').append($backTop);
+                     
+                     $backTop.on('click', function(){
+                         $("html,body").scrollTop(0);
+                     })
+
+                     var timmer = null;
+                     $(window).on("scroll scrollEnd",function() {
+                         var d = $(window).scrollTop(),
+                         e = $(window).height();
+                         e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-60px");
+                    });
+                 }
+                 
+             }
+             var chinaz = new chinaz();
+             /* 返回顶部js end */
+
+            /*滑动加载*/
+            /*end*/
+            $.fn.scrollLoad({
+                lazy: true,
+                sucback: function(){
+                    $.ajax({
+                        type: 'GET',
+                        url: 'json/more.json',
+                        dataType: 'json',
+                        success: function(data){
+                            var result = '';
+                            for(var i = 0; i < data.lists.length; i++){
+                                result +=  '<li class="recommend-item">'
+                                                +'<a href="javascript:;">'
+                                                    +'<div class="lazy-box">'
+                                                        +'<img class="lazy" data-original="'+data.lists[i].pic+'" alt="">'
+                                                    +'</div>'
+                                                    +'<div class="shop-listText">'+data.lists[i].title+'</div>'
+                                                    +'<span class="color-red shop-price"><i class="price-rmb">¥</i>780.00</span>'
+                                                +'</a>'
+                                            +'</li>';
+                            }
+                            // 为了测试，延迟1秒加载
+                            setTimeout(function(){
+                                $('.recommend-list').append(result);
+                                // $("img.lazy").lazyload();
+                            },1000);
+                        },
+                        error: function(xhr, type){
+                            alert('Ajax error!');
+                        }
+                    });
+                }
+            });
+
+            $(window).on('load', function(event) {
+                $('.bl-ctn-loading').hide();
+                $(document).off('touchmove');
+            });
+
+            
+        });
+
+        
+    </script>
+    <!-- my end -->
+</body>
+
+</html>

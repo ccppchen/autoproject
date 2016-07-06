@@ -1,0 +1,54 @@
+@charset "utf-8"; //china
+@import "tobe/function";
+$btnColorClass: (red $red #fff) (blueLight $blueLight #fff);
+/* -------------------------------------------------
+ * ext 扩展样式
+ * -------------------------------------------------
+*/
+@import "tobe/ext/comm";
+@import "tobe/ext/btn";
+
+/* -------------------------------------------------
+ * components 样式
+ * -------------------------------------------------
+*/
+@import "tobe/components/bar/bar";
+@import "tobe/components/list-between/list-between";
+
+@include btn-color-multi();
+
+.check-input{
+	@extend %check-input;
+}
+.bar .button.iconfont-more-v{
+	@extend %iconfont-more-v;
+}
+
+.distr-flo{
+	margin-top: rem(20);
+}
+.dist-spec{
+	color: #333;
+	@extend %arrow-right;
+	background-position: right top;
+	.detail-addre{
+		font-size: rem(20);
+		color: $grayDark;
+		line-height: 1;
+		margin-top: rem(10);
+	}
+}
+.distr-btn{
+	font-size: rem(40);
+	color: #fff;
+	line-height: rem(100);
+	width: 100%;
+	&.btn-disabled,&:disabled{
+		@extend %btn-disabled;
+		&:active{
+			background-color: none;
+			color: #aaa;
+		}
+	}
+}
+

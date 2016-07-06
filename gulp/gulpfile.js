@@ -5,7 +5,6 @@ var pkg         = require("./package.json");
 var browserSync = require('browser-sync').create();
 var png         = require('imagemin-pngquant');
 var clean       = require('gulp-clean');
-var connect     = require("gulp-connect");
 var bowerFile   = require('main-bower-files');
 var uglify      = require('gulp-uglify');
 var extReplace  = require('gulp-ext-replace');
@@ -69,13 +68,13 @@ gulp.task('iconfont', ['svgmin'], function(){
          fontName: 'myfont',
          formats: ['ttf', 'eot', 'woff']
      }))
-    .pipe(gulp.dest(yeoman.app+'/styles/fonts'));
+    .pipe(gulp.dest(yeoman.app+'/sass/fonts'));
 });
 
 // 复制
 gulp.task('copy', function(){
-  gulp.src(yeoman.app+'/css/fonts/**/*')
-    .pipe(gulp.dest(yeoman.dist+'/css/fonts'))
+  gulp.src([yeoman.app+'/images/**/*', '!./app/images/base64/*'])
+    .pipe(gulp.dest(yeoman.dist+'/images'))
 });
 
 // 监测文件改动并自动刷新
@@ -90,32 +89,26 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
-  gulp.watch(yeoman.app+'/lib/**/*', ['bower-install']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/**']).on('change', browserSync.reload);
+  gulp.watch(yeoman.app+'/lib/*', ['bower-install']);
+  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/*']).on('change', browserSync.reload);
 });
 
-// 查看服务
-gulp.task('connect', function () {
-  connect.server();
-});
 
 // 编译sass
 gulp.task('compass', function() {
-  return gulp.src(yeoman.sass+"/**/*.scss")
+  return gulp.src([yeoman.sass+"/**/*.scss", "!./sass/tobe/**/_*.scss"])
     .pipe($.plumber({
         errorHandler: function (error) {
               console.log(error.message);
               this.emit('end');
           }
     }))
-    .pipe($.sourcemaps.init())
     .pipe($.compass({
       image:    yeoman.app+'/images',
       css:      yeoman.app+'/css',
       sass:     yeoman.sass,
       sourcemap: true
     }))
-    .pipe($.sourcemaps.write())
 
     .pipe(gulp.dest(yeoman.app+'/css'))
     .pipe($.autoprefixer({
@@ -147,7 +140,7 @@ gulp.task('compass-pro', function() {
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
       remove: true
     }))
-    .pipe($.header(banner))
+    // .pipe($.header(banner))
     .pipe(gulp.dest(yeoman.dist+'/css'));
 });
 
@@ -159,7 +152,11 @@ gulp.task('html', function () {
     }))
     .pipe(gulp.dest(yeoman.dist));
 });
-
+gulp.task('html-php', function(){
+  gulp.src(yeoman.app+'/*.html')
+  .pipe(extReplace('.php'))
+  .pipe(gulp.dest(yeoman.dist))
+});
 // image压缩
 gulp.task('images', function () {
     gulp.src([yeoman.app+'/css/i/**/*', '!./app/images/base64'])
@@ -184,19 +181,19 @@ gulp.task('clean', function(){
 // 导出bower的主要文件并且压缩js
 gulp.task('bower-js', function() {
     gulp.src(bowerFile())
-      .pipe(gulp.dest(yeoman.dist+'/lib'))
+      .pipe(gulp.dest('./bower-js'))
       .pipe($.concat({ path: 'vendor.js'}))
       .pipe(uglify())
-      .pipe($.header(banner))
+      // .pipe($.header(banner))
       .pipe(extReplace('.min.js'))
       .pipe(gulp.dest(yeoman.dist+'/js/vendor'))
 });
 gulp.task('js', function(){
-  gulp.src([yeoman.app+'/js/**/*.js'])
-    .pipe($.concat({ path: 'app.js' }))
+  gulp.src([yeoman.app+'/js/*.js'])
+    // .pipe($.concat({ path: 'app.js' }))
     .pipe(uglify())
-    .pipe($.header(banner))
-    .pipe(extReplace('.min.js'))
+    // .pipe($.header(banner))
+    // .pipe(extReplace('.min.js'))
     .pipe(gulp.dest(yeoman.dist+'/js'))
 });
 
@@ -214,8 +211,8 @@ gulp.task('inject', ['js','bower-js'], function(){
     .pipe(gulp.dest(yeoman.dist))
 });
 
-gulp.task('default', ['compass', 'watch', 'bower-install', 'server']);
-gulp.task('build', ['clean', 'bower-js', 'js', 'compass-pro', 'html', 'images', 'inject']);
+gulp.task('default', ['compass', 'watch', 'server']);
+gulp.task('build', ['bower-js', 'compass-pro', 'js', 'images', 'copy', 'html-php']);
 
 
 
