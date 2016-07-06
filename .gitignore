@@ -4,3 +4,5 @@
 */lib
 **/*/.sass-cache
 **/*/.tmp
+**/*/.svn
+**/*/.DS_Store
