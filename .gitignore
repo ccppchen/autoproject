@@ -1,5 +1,6 @@
 */node_modules
 */dist
 */bower_compment
+*/lib
 **/*/.sass-cache
 **/*/.tmp
