@@ -139,10 +139,10 @@ $abledHoverSwitch:       false !default; //是否启用hover
     $height:    nth($size, 3);
     $fontSize:  nth($size, 4);
 
-    .#{$btnBaseClass}-#{$class}{
+    .#{$btnBaseClass}-#{"" + $class}{
       @include btn-size($padding, $height, $fontSize);
     }
-    .#{$btnFormBaseClass}-#{$class}{
+    .#{$btnFormBaseClass}-#{"" + $class}{
       @include btn-size($padding, $height, $fontSize, true);
     }
   }
@@ -167,10 +167,10 @@ $abledHoverSwitch:       false !default; //是否启用hover
     $bgColor:    nth($color,2);
     $textColor:  nth($color,3);
 
-    .#{$btnBaseClass}-#{$class}{
+    .#{$btnBaseClass}-#{"" + $class}{
       @include btn-color($bgColor,$textColor);
     }
-    .#{$outlineBtnBaseClass}-#{$class}{
+    .#{$outlineBtnBaseClass}-#{"" + $class}{
       @include btn-color($bgColor,$textColor, true);
     }
   }

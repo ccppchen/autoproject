@@ -64,6 +64,7 @@
     </div>
     <!-- content end -->
     <script type="text/javascript" src="js/vendor/vendor.min.js"></script>
+    <script type="text/javascript" src="js/comm.js"></script>
     <script type="text/javascript">
     Zepto(function($) {
         $(window).on('scroll scrollEnd', function() {
@@ -71,7 +72,7 @@
             if (scrollTop > $('.bar-header').height()) {
                 $('.bar-header').removeClass('bar-transparent').addClass('bar-white');
             } else {
-                $('.bar-header').addClass('bar-transparent')
+                $('.bar-header').removeClass('bar-white').addClass('bar-transparent')
             };
         });
     });

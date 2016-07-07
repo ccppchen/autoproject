@@ -72,7 +72,7 @@
     $class:        nth($color,1);
     $bgColor:      nth($color,2);
 
-    .switch.switch-#{$class} input:checked ~ span.bg{
+    .switch.switch-#{"" + $class} input:checked ~ span.bg{
       @include switch-color($bgColor);
     }
   }

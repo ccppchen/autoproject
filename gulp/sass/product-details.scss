@@ -13,3 +13,6 @@
 @import "tobe/components/bar/bar";
 
 /* comm */
+.gotop{
+	@extend %gotop;
+}
