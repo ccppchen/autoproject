@@ -52,23 +52,23 @@ gulp.task('svgmin', function () {
             }]
           })
       ))
-      .pipe(gulp.dest(yeoman.app+'/svgmin/'));
+      .pipe(gulp.dest('svgmin'));
 });
 
 // iconfont
 gulp.task('iconfont', ['svgmin'], function(){
-  gulp.src([yeoman.app+'/svgmin/**/*.svg'])
+  gulp.src(['svgmin/**/*.svg'])
      .pipe(iconfontCss({
          glyphs:   null,
-         fontName: 'myfont',
+         fontName: 'blfont',
          cssClass: 'iconfont',
-         cssTargetPath: './icon.css'
+         cssTargetPath: './icons.css'
      }))
      .pipe(iconfont({
-         fontName: 'myfont',
-         formats: ['ttf', 'eot', 'woff']
+         fontName: 'blfont',
+         formats: ['ttf']
      }))
-    .pipe(gulp.dest(yeoman.app+'/sass/fonts'));
+    .pipe(gulp.dest('sass/fonts'));
 });
 
 // 复制
@@ -104,7 +104,7 @@ gulp.task('compass', function() {
           }
     }))
     .pipe($.compass({
-      image:    yeoman.app+'/images',
+      image:    yeoman.sass,
       css:      yeoman.app+'/css',
       sass:     yeoman.sass,
       sourcemap: true
@@ -129,7 +129,7 @@ gulp.task('compass-pro', function() {
     .pipe($.compass({
       css: yeoman.dist+'/css',
       sass: yeoman.sass,
-      image: yeoman.app+'/images',
+      image: yeoman.sass,
       style: 'compressed',
       comments: false,
       sourcemap: false,
@@ -152,9 +152,9 @@ gulp.task('html', function () {
     }))
     .pipe(gulp.dest(yeoman.dist));
 });
-gulp.task('html-php', function(){
+gulp.task('html', function(){
   gulp.src(yeoman.app+'/*.html')
-  .pipe(extReplace('.php'))
+  // .pipe(extReplace('.php'))
   .pipe(gulp.dest(yeoman.dist))
 });
 // image压缩
@@ -191,7 +191,7 @@ gulp.task('bower-js', function() {
 gulp.task('js', function(){
   gulp.src([yeoman.app+'/js/*.js'])
     // .pipe($.concat({ path: 'app.js' }))
-    .pipe(uglify())
+    // .pipe(uglify())
     // .pipe($.header(banner))
     // .pipe(extReplace('.min.js'))
     .pipe(gulp.dest(yeoman.dist+'/js'))
@@ -211,8 +211,18 @@ gulp.task('inject', ['js','bower-js'], function(){
     .pipe(gulp.dest(yeoman.dist))
 });
 
+// ftp
+gulp.task('ftp', function(){
+  gulp.src([yeoman.dist+'/**/*', '!./.svn/**/*'])
+    .pipe($.ftp({
+      host: "10.201.128.236",
+      user: "h5ftp",
+      pass: "h5ftp"
+    }))
+});
+
 gulp.task('default', ['compass', 'watch', 'server']);
-gulp.task('build', ['bower-js', 'compass-pro', 'js', 'images', 'copy', 'html-php']);
+gulp.task('build', ['bower-js', 'compass-pro', 'js', 'images', 'copy', 'html', 'ftp']);
 
 
 

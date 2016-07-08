@@ -1,33 +1,32 @@
 @charset "utf-8";
-@import "tobe/function";
-$btnColorClass: (green $green #fff) (blueLight $blueLight #fff);
-/* -------------------------------------------------
- * ext 扩展样式
- * -------------------------------------------------
-*/
+@import "tobe/base";
 @import "tobe/ext/comm";
-@import "tobe/ext/btn";
 
-/* -------------------------------------------------
- * components 样式
- * -------------------------------------------------
-*/
 @import "tobe/components/bar/bar";
 
+// 按钮
+@import "tobe/ext/btn";
+$btnColorClass: (red $red #fff) (blueLight $blueLight #fff) (green $green #fff);
 @include btn-color-multi();
+
+.gotop{
+	@extend %gotop;
+}
 .tab-group{
 	@extend %tab-group;
-}
-.bar-footer.nopadding{
-	@extend %bar-footer.nopadding;
 }
 .arrow-white-right{
 	@extend %arrow-white-right;
 }
-.gotop{
-	@extend %gotop;
-}
 
+.bar {
+	&.bar-lightWhite {
+    @include bar-style(#f5f5f5, #dedede, #333333);
+    .button{
+      color: #000000;
+    }
+  }
+}
 .graphic{
 	height: rem(130);
 	text-align: center;
@@ -40,10 +39,7 @@ $btnColorClass: (green $green #fff) (blueLight $blueLight #fff);
 }
 .graphic-next-step{
 	height: rem(100);
-	.tab-con{
+	.tab-con.arrow-white-right{
 		padding-right: rem(62);
-	}
-	.tab-item{
-		
 	}
 }

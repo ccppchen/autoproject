@@ -569,7 +569,7 @@
     }
 }
 // background方法解决0.5px边框问题
-@mixin hairb($pos, $color) {
+@mixin hair($pos, $color) {
   border: none;
   background-image: linear-gradient(0deg, $color, $color 50%, transparent 50%);
   background-position: $pos;

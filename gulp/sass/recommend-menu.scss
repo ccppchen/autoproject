@@ -1,0 +1,173 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/ext/comm";
+
+@import "tobe/components/bar/bar";
+
+.tag{
+	@extend %tag;
+}
+.gotop{
+	@extend %gotop;
+}
+
+.bar {
+	&.bar-white {
+    @include bar-style($white, transparent, #333);
+    .button{
+      color: #333333;
+    }
+  }
+}
+
+.menu-rec{
+	position: relative;
+	.menu-info{
+		position: absolute;
+		bottom: rem(28);
+		padding: 0 rem(20);
+		@extend %max-width;
+		@include display(flex);
+		@include justify-content(space-between);
+		.menu-infoleft{
+			font-size: rem(42);
+			color: #ffffff;
+			font-weight: bold;
+			line-height: 1.2;
+			.tag{
+				@include transform(scale(.9,.9));
+				display: inline-block;
+				margin: 0 0 0 rem(16);
+			}
+		}
+		.menu-inforight{
+			color: #cccccc;
+			font-size: rem(24);
+			background: inline-image("base64/find.png") no-repeat left center / rem(30) auto;
+			padding-left: rem(40);
+			@include align-self(flex-end);
+		}
+	}
+
+}
+
+.menu-text{
+	padding: rem(20) rem(40);
+	font-size: rem(28);
+	color: #666666;
+}
+
+.list-ingredients{
+	padding: 0 rem(20);
+	.ingredients-title{
+		text-align: center;
+		padding: rem(36) 0;
+		.foot-menulist{
+			padding-left: rem(48);
+			background: inline-image("base64/foot-menulist.png") no-repeat left center / rem(38) auto;
+		}
+		.cook-method{
+			padding-left: rem(48);
+			background: inline-image("base64/cook-method.png") no-repeat left center / rem(38) auto;
+		}
+	}
+	.list-detail{
+		font-size: 0;
+		.ingre-name,.ingre-use{
+			display: inline-block;
+			width: 50%;
+			font-size: rem(28);
+			color: #666666;
+		}
+		li{
+			padding: rem(20);
+			&:nth-child(odd){
+				background-color: #f6f6f6;
+			}
+		}
+	}
+
+	.cook-method{
+		margin-top: - rem(20);
+		li{
+			position: relative;
+			padding: rem(20);
+			margin-bottom: rem(20);
+			@include hair(bottom, #e7e7e7);
+			background-origin: padding-box;
+			&:last-child{
+				background-image: none;
+				margin-bottom: 0;
+			}
+		}
+		.step-tag{
+			position: absolute;
+			left: 0;
+			top: rem(30);
+			width: rem(74);
+			height: rem(50);
+			line-height: rem(50);
+			background-color: #131414;
+			font-size: rem(32);
+			color: #ffffff;
+			text-align: center;
+			&:after{
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: - rem(20);
+				width: 0; 
+				height: 0; 
+				border-top: rem(20) solid #8c8c8c; 
+				border-left: rem(20) solid transparent; 
+			}
+		}
+		.step-text{
+			margin-top: rem(20);
+			font-size: rem(32);
+			color: #666666;
+		}
+	}
+}
+
+.rec-ings{
+	background-color: #f1f1f1;
+	padding: 0 rem(20);
+	margin-top: - rem(20);
+	margin-bottom: rem(50);
+	.rec-ings-title{
+		padding: rem(24) 0;
+		@extend %comm-flex;
+		@include justify-content(center);
+		h4{
+			font-weight: bold;
+			font-size: rem(32);
+			color: #333333;
+			margin: 0 rem(26);
+		}
+	}
+	.rec-ings-see{
+		padding: rem(20);
+		background-color: #ffffff;
+		text-align: center;
+		.arrow-right-green{
+			color: $green;
+			background: inline-image("base64/arrow-back-green.png") no-repeat right center / rem(30) rem(30);
+			padding-right: rem(52);
+			font-size: rem(40);
+		}
+	}
+	.rec-ings-bann{
+		border: 1px solid #dddddd;
+	}
+}
+
+.small-line{
+	width: rem(35);
+	height: 1px;
+	background-color: #b8b7b6;
+	display: inline-block;
+}
+
+
+

@@ -1,34 +1,20 @@
 @charset "utf-8";
-@import "tobe/function";
-/* -------------------------------------------------
- * ext 扩展样式
- * -------------------------------------------------
-*/
+@import "tobe/base";
 @import "tobe/ext/comm";
-@import "tobe/ext/btn";
 
-/* -------------------------------------------------
- * components 样式
- * -------------------------------------------------
-*/
 @import "tobe/components/bar/bar";
 @import "tobe/components/list-between/list-between";
 
-/* comm */
+// 按钮
+@import "tobe/ext/btn";
+$btnColorClass: (red $red #fff) (blueLight $blueLight #fff) (green $green #fff);
+@include btn-color-multi();
+
 .check-input{
 	@extend %check-input;
 }
-.arrow-default{
-	@extend %arrow-default;
-}
 .arrow-right{
 	@extend %arrow-right;
-}
-.arrow-down{
-	@extend %arrow-down;
-}
-.arrow-up{
-	@extend %arrow-up;
 }
 .lazy-box{
 	@extend %lazy-box;
@@ -80,7 +66,7 @@
 
 %default-list{
 	padding: 0 rem(30);
-	@include hairb(top, #e9e9e9);
+	@include hair(top, #e9e9e9);
 }
 .list-good{
 	@extend %default-list;

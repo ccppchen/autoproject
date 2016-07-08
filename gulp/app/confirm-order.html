@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -16,37 +16,17 @@
     <meta name="description" content="">
     <meta name="Keywords" content="">
     <script type="text/javascript">
-    /*======================================================
-            ************   remjs   ************
-            ======================================================*/
-    (function() {
-        var _self = this;
-        _self.width = 750; //设置默认最大宽度
-        _self.fontSize = 100; //默认字体大小
-        _self.widthProportion = function() {
-            var p1 = (document.getElementsByTagName("html")[0].offsetWidth) / _self.width;
-            var p = p1.toFixed(6);
-            return p > 1 ? 1 : p < 0.42667 ? 0.42667 : p;
-        };
-        _self.changePage = function() {
-            document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + _self.widthProportion() * _self.fontSize + "px !important");
-        }
-        _self.changePage();
-        window.addEventListener("resize", function() {
-            _self.changePage();
-        }, false);
-    }());
+    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
     </script>
-    <link rel="stylesheet" href="css/newbase.css">
+    <link rel="stylesheet" type="text/css" href="css/confirm-order.css">
     <link rel="stylesheet" type="text/css" href="css/icons.css">
-    <link rel="stylesheet" href="css/confirm-order.css">
 </head>
 
 <body ontouchstart="">
     <!-- header start -->
     <header class="bar bar-header bar-light">
         <a href="javascript:history.go(-1)" class="bar-left">
-            <div class="button iconfont iconfont-arrow-back"></div>
+            <div class="button iconfont arrow-back"></div>
         </a>
         <h1 class="title index-title">
             确认订单
@@ -301,24 +281,8 @@
             <button type="button" class="btn btn-green">提交订单</button>
         </div>
     </footer>
-    <script type="text/javascript" src="js/vendor/vendor.min.js"></script>
-    <script type="text/javascript">
-        Zepto(function($){
-            // 图片懒加载
-            $("img.lazy").lazyload();
-            // 点击收起和显示
-            $('.click-up').on('touchstart click', function() {
-                $(this).children('span').toggleClass('toggle-css');
-                if ($(this).children('span').is('.toggle-css')) {
-                    $(this).children('span').html('点击收起');
-                    $(this).siblings('.list-good').children('ul').removeClass('good-close');
-                }else{
-                    $(this).children('span').html('点击显示全部');
-                    $(this).siblings('.list-good').children('ul').addClass('good-close');
-                }
-            });
-        });
-    </script>
+    <script defer async type="text/javascript" src="js/vendor/vendor.min.js"></script>
+    <script defer async type="text/javascript" src="js/confirm-order.js"></script>
 </body>
 
 </html>

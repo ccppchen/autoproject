@@ -45,10 +45,6 @@
   &.bar-light {
     @include bar-style($bar-light-bg, $bar-light-border, $bar-light-text);
   }
-  &.bar-white {
-    @include bar-style($bar-light-bg, $bar-light-border, $bar-light-text);
-    background-image: none;
-  }
   &.bar-dark {
     @include bar-style($dark, $dark, $white);
     .button{
@@ -57,6 +53,7 @@
   }
   &.bar-transparent{
     @include bar-style(transparent, transparent, #333);
+    background-image: none;
     .button{
       color: #fff;
     }
@@ -144,12 +141,4 @@
 
 //   }
 // }
-
-.content{
-  width: 100%;
-  // max-width: 750px;
-  min-width: 320px;
-  margin: 0 auto;
-  padding-top: $bar-height;
-}
 
