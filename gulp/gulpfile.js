@@ -187,6 +187,7 @@ gulp.task('images', function () {
             use: [png()]
         })
     ))
+    // .pipe($.webp())
     .pipe(gulp.dest(yeoman.dist+'/css/i'));
 });
 

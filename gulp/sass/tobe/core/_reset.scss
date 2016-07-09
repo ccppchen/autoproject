@@ -11,7 +11,6 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
 }
 // HTML5 display definitions
 //-------------------------------------
@@ -202,6 +201,8 @@ legend {
 // 2. Corrects font size not being inherited in all browsers
 // 3. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
 // 4. Improves appearance and consistency in all browsers
+a,
+img,
 button,
 input,
 select,
@@ -212,7 +213,9 @@ label {
     margin: 0; // 3
     line-height: inherit;
     outline: 0;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color:transparent;
+    outline:medium none;
 }
 
 // Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
@@ -241,7 +244,7 @@ button,
 html input[type="button"], // 1
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; // 2
+    -webkit-appearance: none; // 2
     cursor: pointer; // 3
     outline: 0; // 5
 }
@@ -315,9 +318,15 @@ table {
 // 根据使用习惯，对normalize上进行补充
 //----------------------------------------------------- 
 html {
+  /* 弹性滑动 */
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%; 
-  -ms-text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%;
+  /*去除长按a链接弹框*/
+  -webkit-touch-callout:none;
+  /* 禁止选中内容 user-select-none: none; */
+  -webkit-user-select-none: none;
+  user-select-none: none;
 }
 body { 
   font-family: $tmallFont;
@@ -331,6 +340,8 @@ img {
   width: 100%;
   height: auto;
   border: 0;
+  /* 禁止拷贝图片 */
+  -webkit-touch-callout: none;
 }
 textarea {
   resize: vertical;
@@ -342,8 +353,6 @@ h1,h2,h3,h4,h5,h6,p,figure,form {
 ul,ol,li,dl,dd{
   margin: 0;
   padding:0;
-}
-ul,ol{
   list-style: none outside none;
 }
 
