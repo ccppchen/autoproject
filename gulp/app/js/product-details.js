@@ -4,9 +4,9 @@ Zepto(function($) {
         var d = percent > 1 ? 1 : percent;
         $('.bar-header').css('backgroundColor', 'rgba(245,245,245, '+d+')' );
         if (d >= 1) {
-            $('.bar-header .button').css('color', '#000');
+            $('.bar-header .button').css('color', '#000').removeClass('bor-radius');;
         }else {
-            $('.bar-header .button').css('color', '#fff');
+            $('.bar-header .button').css('color', '#fff').addClass('bor-radius');
         };
     });
 

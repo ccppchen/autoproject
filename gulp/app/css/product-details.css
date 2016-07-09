@@ -1,4 +1,18 @@
 @charset "UTF-8";
+.button.bor-radius .iconfont {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -375,6 +389,19 @@ textarea::-webkit-input-placeholder {
 /* --------------------------------------------------
  * 非输出
  */
+.button.bor-radius .iconfont {
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 0.48rem;
+  height: 0.48rem;
+  background-color: #cccccc;
+  border-radius: 100px;
+}
+
+.button.bor-radius .iconfont.arrow-back:before {
+  margin-left: -2px;
+}
+
 .bar, .content {
   width: 100%;
   max-width: 750px;

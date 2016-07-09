@@ -8,6 +8,12 @@
 .gotop{
 	@extend %gotop;
 }
+.button.bor-radius{
+	@extend %button.bor-radius;
+}
+.button.bor-radius .iconfont{
+	@extend %button.bor-radius;
+}
 .product-detail {
 	text-align: center;
 	background-color: #fff;
