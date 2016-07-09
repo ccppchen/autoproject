@@ -29,12 +29,8 @@
     "gulp-inject": "^4.1.0",
     "gulp-ftp": "^1.1.0",
     "gulp-uncss": "^1.0.5",
-<<<<<<< HEAD
-    "gulp-cssnano": "^2.1.2"
-=======
     "gulp-cssnano": "^2.1.2",
     "gulp-webp": "^2.3.0"
->>>>>>> vegetables
   },
   "engines": {
     "node": ">=0.8.0"
