@@ -50,7 +50,7 @@ chinaz.prototype = {
         })
 
         var timmer = null;
-        $(window).on("scroll scrollEnd", function() {
+        $(window).on("scroll touchmove", function() {
             var d = $(window).scrollTop(),
                 e = $(window).height();
             e < d ? $backTop.css("bottom", "1.42rem") : $backTop.css("bottom", "-100%");

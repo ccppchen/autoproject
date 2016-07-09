@@ -17,7 +17,6 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
 }
 
 article,
@@ -159,6 +158,8 @@ legend {
   white-space: normal;
 }
 
+a,
+img,
 button,
 input,
 select,
@@ -170,6 +171,8 @@ label {
   line-height: inherit;
   outline: 0;
   -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  outline: medium none;
 }
 
 button,
@@ -186,7 +189,7 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
+  -webkit-appearance: none;
   cursor: pointer;
   outline: 0;
 }
@@ -236,9 +239,15 @@ table {
 }
 
 html {
+  /* 弹性滑动 */
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  /*去除长按a链接弹框*/
+  -webkit-touch-callout: none;
+  /* 禁止选中内容 user-select-none: none; */
+  -webkit-user-select-none: none;
+  user-select-none: none;
 }
 
 body {
@@ -254,6 +263,8 @@ img {
   width: 100%;
   height: auto;
   border: 0;
+  /* 禁止拷贝图片 */
+  -webkit-touch-callout: none;
 }
 
 textarea {
@@ -267,9 +278,6 @@ h1, h2, h3, h4, h5, h6, p, figure, form {
 ul, ol, li, dl, dd {
   margin: 0;
   padding: 0;
-}
-
-ul, ol {
   list-style: none outside none;
 }
 

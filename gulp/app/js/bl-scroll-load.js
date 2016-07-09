@@ -20,6 +20,6 @@
 			}
 		};
 
-		$(document).on("scroll",$(window), _init);
+		$(document).on("scroll touchmove",$(window), _init);
 	};
 })(window.jQuery || window.Zepto);

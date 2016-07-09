@@ -1,5 +1,5 @@
 Zepto(function($) {
-    $(window).on('scroll scrollEnd', function() {
+    $(window).on('scroll touchmove', function() {
         var percent = $(window).scrollTop() / $('.bar-header').height();
         var d = percent > 1 ? 1 : percent;
         $('.bar-header').css('backgroundColor', 'rgba(245,245,245, '+d+')' );
