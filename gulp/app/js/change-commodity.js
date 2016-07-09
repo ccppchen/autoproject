@@ -36,9 +36,12 @@ Zepto(function($){
 			$('.commodity-content').trigger('apperBottom');
 		}, 300);
 	});
-
+	$(window).one('touchmove', function(event) {
+		event.preventDefault();
+		/* Act on the event */
+	});
 	// 关闭遮罩
-	$('.cmiknow, document').on('touchstart click', function(event) {
+	$('.cmiknow').on('touchstart click', function(event) {
 		$('.modal-mask').fadeOut('fast', function() {
 			// ...
 		});
