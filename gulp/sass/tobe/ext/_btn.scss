@@ -103,19 +103,16 @@ $abledHoverSwitch:       false !default; //是否启用hover
   @extend %btn-basic;
   @extend %btn-size;
   @include btn-color;
-  @include border-radius($smallRadius);
 }
 .#{$btnFormBaseClass}{
   @extend %btn-basic;
   @include btn-size($formbtn: true);
   @include btn-color;
-  @include border-radius($smallRadius);
 }
 .#{$blockBtnBaseClass}{
   @extend %block-btn-basic;
   @extend %btn-size;
   @include btn-color;
-  @include border-radius($smallRadius);
 }
 
 // 如果启用渐变背景，引入%btn-gradient；
@@ -142,10 +139,10 @@ $abledHoverSwitch:       false !default; //是否启用hover
     $height:    nth($size, 3);
     $fontSize:  nth($size, 4);
 
-    .#{$btnBaseClass}-#{$class}{
+    .#{$btnBaseClass}-#{"" + $class}{
       @include btn-size($padding, $height, $fontSize);
     }
-    .#{$btnFormBaseClass}-#{$class}{
+    .#{$btnFormBaseClass}-#{"" + $class}{
       @include btn-size($padding, $height, $fontSize, true);
     }
   }
@@ -170,10 +167,10 @@ $abledHoverSwitch:       false !default; //是否启用hover
     $bgColor:    nth($color,2);
     $textColor:  nth($color,3);
 
-    .#{$btnBaseClass}-#{$class}{
+    .#{$btnBaseClass}-#{"" + $class}{
       @include btn-color($bgColor,$textColor);
     }
-    .#{$outlineBtnBaseClass}-#{$class}{
+    .#{$outlineBtnBaseClass}-#{"" + $class}{
       @include btn-color($bgColor,$textColor, true);
     }
   }

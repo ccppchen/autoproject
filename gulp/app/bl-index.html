@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -7,35 +7,18 @@
     <title>index</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
     <script type="text/javascript">
-        /*======================================================
-        ************   remjs   ************
-        ======================================================*/
-        (function (){
-          var _self = this;
-          _self.width = 750; //设置默认最大宽度
-          _self.fontSize = 100; //默认字体大小
-          _self.widthProportion = function() {
-              var p1 = (document.getElementsByTagName("html")[0].offsetWidth) / _self.width;
-              var p = p1.toFixed(6);
-              return p > 1 ? 1 : p < 0.42667 ? 0.42667 : p;
-          };
-          _self.changePage = function() {
-              document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + _self.widthProportion() * _self.fontSize + "px !important");
-          }
-          _self.changePage();
-          window.addEventListener("resize", function() {
-              _self.changePage();
-          }, false);
-        }());
+     (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
     </script>
-    <!-- bower:css -->
-    <!-- bower installed css files will go here... -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endinject -->
+    <link rel="stylesheet" type="text/css" href="css/bl-index.css">
 </head>
 
 <body ontouchstart="">
@@ -82,7 +65,7 @@
             <!-- Swiper end -->
 
             <!-- menu -->
-            <div class="nav-menu">
+            <nav class="nav-menu">
                 <div class="item-menu">
                     <a href="javascript:;">
                         <img src="images/index/menu_1.png" alt=""><div class="item-p">逛百联</div>
@@ -108,11 +91,11 @@
                         <img src="images/index/menu_5.png" alt=""><div class="item-p">百宝箱</div>
                     </a>
                 </div>
-            </div>
+            </nav>
             <!-- menu end -->
 
             <!-- adv -->
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="grid">
                     <div class="cell cell04"><a href="javascript:;" title=""><img src="images/index/blflash-311x476q40.jpg" alt=""></a></div>
                     <div class="cell cell06">
@@ -120,9 +103,9 @@
                         <div><a href="javascript:;" title=""><img src="images/index/blflash2-437x238q40.jpg" alt=""></a></div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title room-flash">
                     <h4><div class="lef-red"></div>天天抢购</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -189,9 +172,9 @@
                         <div class="color-red ovfs-money">￥4.95</div>
                     </li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>生活馆</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -205,9 +188,9 @@
                     <div class="cell"><a href="javascript:;"><img src="images/index/ia_10002-450x504q40.jpg" alt=""></a></div>
                     <div class="cell"><a href="javascript:;"><img src="images/index/ia_10007-675x450q40.jpg" alt=""></a></div>
                 </div>
-            </div>
+            </section>
 
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>精品馆</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -220,8 +203,8 @@
                 <ul class="grid">
                     <li class="cell"><a href="javascript:;"><div class="lazy-box three"><img class="lazy" data-original="images/index/ia_10009-1350x500q40.jpg" alt=""></div></a></li>
                 </ul>
-            </div>
-            <div class="floor-container">
+            </section>
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>数码馆</h4>
                     <a href="javascript:;" class="arrow-right">更多</a>
@@ -231,11 +214,11 @@
                     <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10011-450x500q40.jpg" alt=""></div></a></div>
                     <div class="cell"><a href="javascript:;"><div class="lazy-box o-one"><img class="lazy" data-original="images/index/ia_10012-450x500q40.jpg" alt=""></div></a></div>
                 </div>
-            </div>
+            </section>
             <!-- adv end -->
-
+            
             <!-- 商品列表 -->
-            <div class="floor-container">
+            <section class="floor-container">
                 <div class="recommend-title">
                     <h4><div class="lef-red"></div>热门推荐</h4>
                     <a href="javascript:;" class="arrow-right color-red">登录之后，更加准确</a>
@@ -327,10 +310,11 @@
                     </li>
                 </ul>
                 <div class="dropload-down"><div class="dropload-load"><span class="loading"></span>加载中...</div></div>
-            </div>
+            </section>
 
         </div>
-        <div class="footer">
+        
+        <footer class="footer">
             <div class="sublogin">
                 <a href="javascript:;">登录</a><a href="javascript:;">注册</a>
             </div>
@@ -343,10 +327,10 @@
                 <div class="copyright">Copyright © 2016 百联 bl.com 版权所有</div>
             </div>
             
-        </div>
+        </footer>
         <!-- app download -->
         <div id="app-download">
-            <a href="http://app.bl.com"><img src="images/app-download.png" height="110" width="750"></a>
+            <a href="http://app.bl.com"><img src="css/i/app-download.png"></a>
             <a href="javascript:;" class="close"></a>
         </div>
     </div>
@@ -365,13 +349,11 @@
 
     <!-- app download -->
     <!-- bower:js -->
-    <script src="lib/zepto/zepto.min.js"></script>
-    <script src="lib/zepto.lazyload.js/zepto.lazyload.js"></script>
-    <script src="lib/fastclick/lib/fastclick.js"></script>
+    <script src="js/vendor/vendor.min.js"></script>
     <!-- endinject -->
     <!-- inject:js -->
-    <script src="scripts/bl-scroll-load.js"></script>
-    <script src="scripts/touchslider.js"></script>
+    <script src="js/bl-scroll-load.js"></script>
+    <script src="js/touchslider.js"></script>
     <!-- endinject -->
     <script type="text/javascript">
         Zepto(function($){
@@ -380,6 +362,11 @@
                 e.preventDefault();
             });
             FastClick.attach(document.body);
+
+            $(window).on('load', function(event) {
+                $('.bl-ctn-loading').hide();
+                $(document).off('touchmove');
+            });
 
             $("img.lazy").lazyload();
             $(".ovfs img.lazy").lazyload({
@@ -433,7 +420,7 @@
                      $(window).on("scroll scrollEnd",function() {
                          var d = $(window).scrollTop(),
                          e = $(window).height();
-                         e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-60px");
+                         e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-100%");
                     });
                  }
                  
@@ -442,7 +429,6 @@
              /* 返回顶部js end */
 
             /*滑动加载*/
-            /*end*/
             $.fn.scrollLoad({
                 lazy: true,
                 sucback: function(){
@@ -463,11 +449,11 @@
                                                 +'</a>'
                                             +'</li>';
                             }
-                            // 为了测试，延迟1秒加载
+                            // 为了测试，延迟加载
                             setTimeout(function(){
                                 $('.recommend-list').append(result);
-                                // $("img.lazy").lazyload();
-                            },1000);
+                                $("img.lazy").lazyload();
+                            },300);
                         },
                         error: function(xhr, type){
                             alert('Ajax error!');
@@ -475,13 +461,8 @@
                     });
                 }
             });
+            /*end*/
 
-            $(window).on('load', function(event) {
-                $('.bl-ctn-loading').hide();
-                $(document).off('touchmove');
-            });
-
-            
         });
 
         

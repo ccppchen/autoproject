@@ -25,7 +25,12 @@
     "gulp-iconfont-css-and-template": "^1.0.31",
     "gulp-iconfont": "^8.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-cache": "^0.4.5"
+    "gulp-cache": "^0.4.5",
+    "gulp-inject": "^4.1.0",
+    "gulp-ftp": "^1.1.0",
+    "gulp-uncss": "^1.0.5",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-webp": "^2.3.0"
   },
   "engines": {
     "node": ">=0.8.0"

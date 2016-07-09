@@ -32,6 +32,9 @@ $hGap:               .4rem !default;
 $vGap:               .4rem !default; 
 
 
+// margin-bottom
+$baseGap:			10px;
+
 // 基本颜色
 // color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
 // lighten($color, $amount)
@@ -40,6 +43,7 @@ $vGap:               .4rem !default;
 // mix($color1, $color2[, $amount])
 //-----------------------------------------------------	
 $black:                 #000 !default;
+$dark:					#1c1b1f !default;
 $grayDarker:            #333 !default;
 $graylikver:            #666 !default;
 $grayDark:              #999 !default;
@@ -50,10 +54,11 @@ $white:                 #fff !default;
 $red:                   #e6133c !default;
 $blue:                  #00A3CF !default;
 $blueDark:              #0064cd !default;
+$blueLight:				#0093ad !default;
 $orange:                #F47837 !default;
-$green:                 #51B148 !default;
+$green:                 #5ea300 !default;
 $yellow:                #ffc40d !default;
-$yellowLight:			#ecc56a !default;
+$yellowLight:			#feefb8 !default;
 $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
 
@@ -64,10 +69,10 @@ $primary:               #0078E7 !default;//主色
 //-----------------------------------------------------	
 // 如果只有一个值则滑过的值为这个值的darken 5%，如果
 // 有两个值则第二个值为滑过的值
-$linkColor:             #08c !default;
+$linkColor:             #0e90d2 !default;
 
 
-// scaffolding
+// scaffolding body背景颜色，文字颜色
 //-----------------------------------------------------	
 $bodyBgColor:           #eee !default;
 $textColor:             $grayDarker !default;
@@ -101,7 +106,7 @@ $bar-button-font-size-iphone5:	  .3rem !default;  //左右按钮的字号
 
 $bar-button-padding:       		  0px !default;	//左右按钮的左右内边距
 $bar-title-font-weight:           400 !default;	//标题文字fontWeight
-$bar-padding-portrait:            0.15rem !default;  //bar的左右内边距
+$bar-padding-portrait:            0.2rem !default;  //bar的左右内边距
 
 $bar-height:                      .88rem !default;  //header-bar的高度
 $bar-footer-height:               .88rem !default;  //footer-bar的高度
@@ -123,3 +128,8 @@ $z-index-bar:  					  1001 !default;
 // rem
 //-----------------------------------------------------	
 $remBase:     100!default;
+
+// switch
+//-----------------------------------------------------	
+$switchColorClass:     (danger, #ff0000) (primary, $primary) (pink, $pink) (orange, $orange) (purple, $purple);
+

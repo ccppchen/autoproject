@@ -1,0 +1,172 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/ext/comm";
+
+@import "tobe/components/bar/bar";
+@import "tobe/components/list-between/list-between";
+
+// 按钮
+@import "tobe/ext/btn";
+$btnColorClass: (red $red #fff) (blueLight $blueLight #fff) (green $green #fff);
+@include btn-color-multi();
+
+.check-input{
+	@extend %check-input;
+}
+.arrow-right{
+	@extend %arrow-right;
+}
+.lazy-box{
+	@extend %lazy-box;
+}
+
+.tip{
+	padding: rem(22) rem(30);
+	background-color: $yellowLight;
+	.tip-text{
+		font-size: rem(21);
+		background: inline-image("base64/icon-tip.png") no-repeat left center / rem(24) rem(24);
+		padding-left: rem(36);
+	}
+}
+
+.address{
+	@include display(flex);
+	padding: rem(30);
+	@at-root .address-icon{
+		width: rem(38);
+		background: inline-image("base64/address-icon.png") no-repeat left top / rem(38) rem(38);
+	}
+	.address-icon{
+		margin-right: rem(12);
+	}
+	.address-main{
+		@include flex(1);
+		line-height: 1.2;
+		.address-owner{
+			font-weight: bold;
+			margin-bottom: rem(20);
+			color: #000;
+		}
+		.address-phone{
+			margin-left: rem(24);
+		}
+		.address-detail{
+			font-size: rem(24);
+		}
+	}
+}
+.address-line{
+	background: #fff inline-image("base64/color-line.png") repeat-x; 
+	height: 2px;
+	background-size: auto 2px;
+	border-right: 4px solid #fff;
+	border-left: 2px solid #fff;
+}
+
+%default-list{
+	padding: 0 rem(30);
+	@include hair(top, #e9e9e9);
+}
+.list-good{
+	@extend %default-list;
+	ul{
+		&.good-close{
+			max-height: rem(308);
+			overflow: hidden;
+		}
+		margin-left: - rem(20);
+		padding-bottom: rem(18);
+		@include clearfix();
+		li{
+			margin: rem(18) 0 0 rem(20);
+			padding: rem(10);
+			width: rem(208);
+			float: left;
+			background-color: #f7f7f7;
+		}
+		.good-name{
+			font-size: rem(20);
+			@include ellipsis;
+			padding: rem(14) rem(2);
+			text-align: center;
+		}
+	}
+}
+
+.click-up{
+	@extend %default-list;
+	@extend %comm-flex;
+	@include justify-content(center);
+	width: 100%;
+	height: rem(88);
+	text-align: center;
+	span{
+		color: $grayDark;
+		background: inline-image("base64/down.png") no-repeat right center / rem(16) auto;
+		padding-right: rem(25);
+		&.toggle-css{
+			background: inline-image("base64/up.png") no-repeat right center / rem(16) auto;
+		}
+	}
+}
+
+.region-total{
+	padding: rem(20) rem(30);
+	line-height: normal;
+	.region-detail{
+		@extend %comm-flex;
+		@include justify-content(space-between);
+		padding: rem(6) 0;
+		font-size: rem(28);
+		&.detail{
+			font-size: rem(24);
+		}
+	}
+}
+
+.bar-footer.nopadding{
+	padding: 0;
+}
+.address-footer{
+	background-color: #474747;
+	width: 100%;
+	padding: rem(20) rem(30);
+	.address-con{
+		background: inline-image("base64/white-address-icon.png") no-repeat left center / auto rem(30);
+		padding-left: rem(35);
+		color: #dddddd;
+		font-size: rem(24);
+		@include ellipsis;
+	}
+}
+
+.submit-order{
+	@extend %comm-flex;
+	.order-balance{
+		@include flex(1);
+		height: 100%;
+		text-align: right;
+		padding: 0 rem(20);
+		.bold-balance{
+			font-size: rem(34);
+		}
+		.color-green{
+			.small-rmb{
+				font-size: rem(28);
+				color: $green;
+				font-weight: bold;
+			}
+		}
+	}
+	.btn{
+		@extend %btn-basic;
+		@include btn-size(2px, rem(100), rem(36), true);
+		&.btn-green{
+			@include btn-color($green, #fff);
+		}
+		width: rem(260);
+	}
+}
+
+

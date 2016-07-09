@@ -2,7 +2,7 @@
 //-----------------------------------------------------
 // table scss
 //-----------------------------------------------------
-
+@import "../function";
 // thanks:https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_tables.scss
 
 // 变量
@@ -22,10 +22,10 @@ $tableResetSwitch:               true !default;//是否已经有了table的重�
 $tableBorderSwitch:              true !default;
 $tableListSwitch:                false !default;
 $tableColThSwitch:               false !default;
-$tableRadiusSwitch:              false !default;
-$tableLineSwitch:                false !default;
-$tableStripedSwitch:             false !default;
-$tableHoverSwitch:               false !default;
+$tableRadiusSwitch:              true !default;
+$tableLineSwitch:                true !default;
+$tableStripedSwitch:             true !default;
+$tableHoverSwitch:               true !default;
 $tableCondensedSwitch:           false !default;
 $tableStatusSwitch:              false !default;
 
@@ -132,6 +132,8 @@ $tableStatusSwitch:              false !default;
 .table {
   width: 100%;
   margin-bottom: $baseGap;
+  border-collapse: collapse;
+  border-spacing: 0;
 
   @if not $tableResetSwitch{
     border-collapse: collapse;

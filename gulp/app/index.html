@@ -1,123 +1,274 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>index</title>
-    <meta name="description" content="">
+    <title>引导</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endinject -->
-    <!-- my:css -->
-    <!-- built css files will go here... -->
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <!-- my:css end -->
+    <!-- 1.移动端手机号码识别（IOS）和邮箱识别（Android）, 地址 -->
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <!-- 2.禁止百度转码， 告诉搜索引擎页面适合移动端浏览 -->
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <!-- 3. 启用 WebApp 全屏模式（IOS） -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <!-- 4. 设置状态栏的背景颜色（IOS） -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- 5. 添加主屏后的APP图标（盗用美团的图） -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="http://ms0.meituan.net/touch/img/startup/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="http://ms0.meituan.net/touch/img/startup/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="http://ms0.meituan.net/touch/img/startup/apple-touch-icon-196x196-precomposed.png">
+    <!-- 6. 禁止浏览器从本机缓存中访问内容，意味着不能脱机浏览 -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <!-- 7. 网站描述和关键词 （SEO） -->
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <style type="text/css">
+    .table {
+        width: 100%;
+        margin-bottom: 10px;
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+    
+    .table th,
+    .table td {
+        padding: 8px
+    }
+    
+    .table thead th {
+        text-align: left
+    }
+    
+    .table-fixed {
+        table-layout: fixed
+    }
+    
+    .table-border th,
+    .table-border td {
+        border: 1px solid #ccc
+    }
+    
+    .table-line th,
+    .table-line td {
+        border-top: 1px solid #ccc
+    }
+    
+    .table-line thead:first-child tr:first-child th,
+    .table-line thead:first-child tr:first-child td {
+        border-top: 0
+    }
+    
+    .table-radius {
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-collapse: separate;
+        border-radius: 6px
+    }
+    
+    .table-radius th,
+    .table-radius td {
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc
+    }
+    
+    .table-radius thead:first-child tr:first-child>th:first-child,
+    .table-radius tbody:first-child tr:first-child>td:first-child,
+    .table-radius tbody:first-child tr:first-child>th:first-child {
+        border-top-left-radius: 6px
+    }
+    
+    .table-radius thead:first-child tr:first-child>th:last-child,
+    .table-radius tbody:first-child tr:first-child>td:last-child,
+    .table-radius tbody:first-child tr:first-child>th:last-child {
+        border-top-right-radius: 6px
+    }
+    
+    .table-radius thead:last-child tr:last-child>th:first-child,
+    .table-radius tbody:last-child tr:last-child>td:first-child,
+    .table-radius tbody:last-child tr:last-child>th:first-child,
+    .table-radius tfoot:last-child tr:last-child>td:first-child,
+    .table-radius tfoot:last-child tr:last-child>th:first-child {
+        border-bottom-left-radius: 6px
+    }
+    
+    .table-radius thead:last-child tr:last-child>th:last-child,
+    .table-radius tbody:last-child tr:last-child>td:last-child,
+    .table-radius tbody:last-child tr:last-child>th:last-child,
+    .table-radius tfoot:last-child tr:last-child>td:last-child,
+    .table-radius tfoot:last-child tr:last-child>th:last-child {
+        border-bottom-right-radius: 6px
+    }
+    
+    .table-radius tfoot+tbody:last-child tr:last-child td:first-child {
+        border-bottom-left-radius: 6px
+    }
+    
+    .table-radius tfoot+tbody:last-child tr:last-child td:last-child {
+        border-bottom-right-radius: 6px
+    }
+    
+    .table-radius caption+thead tr:first-child th:first-child,
+    .table-radius caption+tbody tr:first-child td:first-child,
+    .table-radius colgroup+thead tr:first-child th:first-child,
+    .table-radius colgroup+tbody tr:first-child td:first-child {
+        border-top-left-radius: 6px
+    }
+    
+    .table-radius caption+thead tr:first-child th:last-child,
+    .table-radius caption+tbody tr:first-child td:last-child,
+    .table-radius colgroup+thead tr:first-child th:last-child,
+    .table-radius colgroup+tbody tr:first-child td:last-child {
+        border-top-right-radius: 6px
+    }
+    
+    .table-striped tbody>tr:nth-child(even)>td {
+        background-color: #f9f9f9
+    }
+    
+    .table-hover tbody tr:hover>td {
+        background-color: #e9f5ff;
+    }
+    </style>
 </head>
 
 <body ontouchstart="">
-    <svg xmlns="http://www.w3.org/2000/svg" style="width:0; height:0; visibility:hidden; display: none;">
-        <symbol id="icon-searcher" viewBox="0 0 64 64">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M63.2 63.1c-1.1 1.1-2.9 1.1-4 0L42.3 46.3C37.8 49.8 32.2 52 26 52 11.6 52 0 40.4 0 26S11.6 0 26 0s26 11.6 26 26c0 6.1-2.1 11.8-5.7 16.2l16.9 16.9c1.1 1.1 1.1 2.9 0 4zM48 26c0-12.1-9.8-22-22-22S4 13.9 4 26s9.8 22 22 22 22-9.8 22-22z" />
-        </symbol>
-        <symbol id="icon-setting" viewBox="0 0 64 64">
-            <path d="M53 39c3.9 0 7-3.1 7-7s-3.1-7-7-7h-1.2c-.2-.7-.5-1.4-.8-2l.9-.9c1.3-1.3 2-3.1 2-4.9 0-1.9-.7-3.6-2-4.9-1.3-1.3-3.1-2-4.9-2-1.9 0-3.6.7-4.9 2l-1.1.8c-.7-.3-1.3-.6-2-.8V11c0-3.9-3.1-7-7-7s-7 3.1-7 7v1.2c-.7.2-1.4.5-2 .8l-.9-.9c-1.3-1.3-3.1-2-4.9-2-1.9 0-3.6.7-4.9 2-1.3 1.3-2 3.1-2 4.9 0 1.9.7 3.6 2 4.9l.9.9c-.3.7-.6 1.3-.8 2H11c-3.9 0-7 3.1-7 7s3.1 7 7 7h1.2c.2.7.5 1.4.8 2l-.9.9c-1.3 1.3-2 3.1-2 4.9 0 1.9.7 3.6 2 4.9 1.3 1.3 3.1 2 4.9 2 1.9 0 3.6-.7 4.9-2l.9-.9c.7.3 1.3.6 2 .8V53c0 3.9 3.1 7 7 7s7-3.1 7-7v-1.2c.7-.2 1.4-.5 2-.8l.9.9c1.3 1.3 3.1 2 4.9 2 1.9 0 3.6-.7 4.9-2 1.3-1.3 2-3.1 2-4.9 0-1.9-.7-3.6-2-4.9l-.6-1.1c.3-.7.6-1.3.8-2H53zm-3.7 5.4c.7.7 1 1.5 1 2.5 0 .9-.4 1.8-1 2.5-1.3 1.3-3.6 1.3-4.9 0l-2.7-2.7-1.2.6c-1.2.7-2.4 1.2-3.8 1.5l-1.3.4V53c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5v-3.8l-1.3-.4c-1.3-.4-2.6-.9-3.8-1.5l-1.2-.6-2.7 2.7c-1.3 1.3-3.6 1.3-4.9 0-.7-.7-1-1.5-1-2.5 0-.9.4-1.8 1-2.5l2.7-2.7-.6-1.2c-.6-1.2-1.2-2.4-1.5-3.8l-.4-1.3H11c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5h3.8l.4-1.3c.4-1.3.9-2.6 1.5-3.8l.6-1.2-2.7-2.7c-.7-.7-1-1.5-1-2.5s.4-1.8 1-2.5c1.3-1.3 3.6-1.3 4.9 0l2.7 2.7 1.2-.6c1.2-.7 2.4-1.2 3.8-1.5l1.3-.4V11c0-1.9 1.6-3.5 3.5-3.5s3.5 1.6 3.5 3.5v3.8l1.3.4c1.3.4 2.6.9 3.8 1.5l1.2.6 2.7-2.7c1.3-1.3 3.6-1.3 4.9 0 .7.7 1 1.5 1 2.5s-.4 1.8-1 2.5l-2.7 2.7.6 1.2c.7 1.2 1.2 2.4 1.5 3.8l.4 1.3H53c1.9 0 3.5 1.6 3.5 3.5s-1.6 3.5-3.5 3.5h-3.8l-.4 1.3c-.4 1.3-.9 2.6-1.5 3.8l-.6 1.2 2.6 2.5zM32 21.5c-5.8 0-10.5 4.7-10.5 10.5S26.2 42.5 32 42.5 42.5 37.8 42.5 32 37.8 21.5 32 21.5zM32 39c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z" />
-        </symbol>
-    </svg>
-    <!-- header start -->
-    <header class="bar bar-header bar-light">
-        <a href="flexbox.html" class="bar-left">
-            <button class="button iconfont iconfont-arrow-back"></button>
-            <button class="button">盒子布局</button>
-        </a>
-        <h1 class="title">前端模块化前端模块化</h1>
-        <a href="buy.html" class="bar-right">
-            <button class="button">天天抢购</button>
-            <button class="button iconfont iconfont-arrow-go"></button>
-        </a>
-    </header>
-    <!-- header end -->
-    <div class="content">
-        <svg role="img" class="icon-searcher" style="width: 20px;height: 20px;">
-            <use xlink:href="#icon-searcher"></use>
-        </svg>
-        <svg role="img" class="icon-setting" style="width: 20px;height: 20px;">
-            <use xlink:href="#icon-setting"></use>
-        </svg>
-        <div class="preloader big"></div>
-        <div class="box">
-            <a href="javascript:;" class="btn btn-small btn-primary">btn-small</a>
-            <a href="javascript:;" class="btn btn-primary">btn</a>
-            <a href="javascript:;" class="btn btn-middle btn-primary">btn-middle</a>
-            <a href="javascript:;" class="btn btn-large btn-primary">btn-large</a>
-
-            <a href="javascript:;" class="btn btn-small outline-primary">btn-small</a>
-            <a href="javascript:;" class="btn outline-primary">btn</a>
-            <a href="javascript:;" class="btn btn-middle outline-primary">btn-middle</a>
-            <a href="javascript:;" class="btn btn-large outline-primary">btn-large</a>
-            
-            <a href="javascript:;" class="blockbtn btn-small btn-pink" title="">block-btn</a>
-            <a href="javascript:;" class="blockbtn btn-pink" title="">block-btn</a>
-            <a href="javascript:;" class="blockbtn btn-middle btn-pink" title="">block-btn</a>
-            <a href="javascript:;" class="blockbtn btn-large btn-pink" title="">block-btn</a>
-
-            <a href="javascript:;" class="blockbtn btn-small outline-pink" title="">block-btn</a>
-            <a href="javascript:;" class="blockbtn outline-pink" title="">block-btn</a>
-            <a href="javascript:;" class="blockbtn btn-middle outline-pink" title="">block-btn</a>
-            <a href="javascript:;" class="blockbtn btn-large outline-pink" title="">block-btn</a>
-
-            <a href="javascript:;" class="blockbtn btn-primary" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-pink" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-black" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-gray-dark" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-gray-darker" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-gray" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-gray-light" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-red" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-blue" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-blue-dark" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-orange" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-green" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-yellow" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-pink" title="">block-btn-color</a>
-            <a href="javascript:;" class="blockbtn btn-purple" title="">block-btn-color</a>
-
-            <a href="javascript:;" class="btn btn-small btn-pink">btn-small</a>
-            <a href="javascript:;" class="btn btn-pink">btn</a>
-            <a href="javascript:;" class="btn btn-middle btn-pink">btn-middle</a>
-            <a href="javascript:;" class="btn btn-large btn-pink">btn-large</a>
-            
-            <input type="submit" class="formbtn formbtn-small btn-pink" value="input-small">
-            <input type="submit" class="formbtn btn-pink" value="input-normal">
-            <input type="submit" class="formbtn formbtn-middle btn-pink" value="input-middle">
-            <input type="submit" class="formbtn formbtn-large btn-pink" value="input-large">
-        </div>
-        <div class="Grid Grid-center Grid-middle">
-            <img class="Cell-3of12 Cell" src="images/5.jpg" height="200" width="400" alt="">你好你好沙沙沙沙sass 说
-        </div>
-    </div>
-    <div class="footer"></div>
-    <!-- inject:js -->
-    <script src="scripts/bl-scroll-load.js"></script>
-    <script src="scripts/touchslider.js"></script>
-    <!-- endinject -->
-    <!-- my -->
-    <script type="text/javascript">
-        (function () { var script = document.createElement('script'); script.src="http://localhost:8000/eruda.js"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
-    </script>
-    <script type="text/javascript" src="scripts/app.js"></script>
-    <script type="text/javascript" src="scripts/preloadImg.js"></script>
-    <script type="text/javascript">
-        window.onload = function(){
-            preloadimages(['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg','images/5.jpg', 'images/new_store/everybanner.png', 'images/new_store/goods-e.png']).done(function(images){
-                console.log(images);
-            });
-        };
-    </script>
-    <!-- my end -->
+    <table class="table table-border table-hover table-striped">
+        <caption>百联商城H5模版</caption>
+        <thead>
+            <tr>
+                <td style="width: 10%;">版本</td>
+                <td style="width: 10%;">编号</td>
+                <td style="width: 40%;">名称</td>
+                <td style="width: 20%;">负责人</td>
+                <td style="width: 20%;">产品经理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>v1.1</td>
+                <td>1</td>
+                <td>
+                    <a href="template.html">模版</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>2</td>
+                <td>
+                    <a href="compents.html">组件</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>3</td>
+                <td>
+                    <a href="confirm-order.html">蔬菜随心订-确认订单</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>4</td>
+                <td>
+                    <a href="graphic-details.html">蔬菜随心订-图文详情</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>5</td>
+                <td>
+                    <a href="distribution.html">蔬菜随心订-选择配送方式</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>6</td>
+                <td>
+                    <a href="product-details.html">蔬菜随心订-商品详情</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>7</td>
+                <td>
+                    <a href="bl-index.html">h5新首页</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>8</td>
+                <td>
+                    <a href="package-introduction.html">蔬菜随心订-套餐介绍</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>9</td>
+                <td>
+                    <a href="confirm-order-unpay.html">蔬菜随心订-订单详情未支付</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>10</td>
+                <td>
+                    <a href="change-commodity.html">蔬菜随心订-更换商品</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>11</td>
+                <td>
+                    <a href="search.html">更换商品-搜索-空</a>
+                </td>
+                <td>马莉华</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>12</td>
+                <td>
+                    <a href="search1.html">更换商品-搜索-结果</a>
+                </td>
+                <td>马莉华</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v1.1</td>
+                <td>13</td>
+                <td>
+                    <a href="recommend-menu.html">蔬菜随心订-当季推荐菜谱</a>
+                </td>
+                <td>陈鹏</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>

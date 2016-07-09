@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/ext/comm";
+
+@import "tobe/components/bar/bar";
+
+// 按钮
+@import "tobe/ext/btn";
+$btnColorClass: (red $red #fff) (blueLight $blueLight #fff) (green $green #fff);
+@include btn-color-multi();
+
+.gotop{
+	@extend %gotop;
+}
+.tab-group{
+	@extend %tab-group;
+}
+.arrow-white-right{
+	@extend %arrow-white-right;
+}
+
+.bar {
+	&.bar-lightWhite {
+    @include bar-style(#f5f5f5, #dedede, #333333);
+    .button{
+      color: #000000;
+    }
+  }
+}
+.graphic{
+	height: rem(130);
+	text-align: center;
+	.tab-con{
+		color: #fff;
+		display: inline-block;
+		line-height: 1;
+		font-size: rem(36);
+	}
+}
+.graphic-next-step{
+	height: rem(100);
+	.tab-con.arrow-white-right{
+		padding-right: rem(62);
+	}
+}

@@ -1,0 +1,45 @@
+ @charset "utf-8";
+ 
+ #touchSlide{
+ 	position: relative;
+ 	width: 100%;
+ 	overflow: hidden;
+ }
+ .swiper-slide a{
+ 	display: block;
+ }
+ .swiper-wrapper{
+ 	.swiper-slide{
+ 		position: relative;
+ 	}
+ }
+ .swiper-pagination{
+ 	position: absolute;
+ 	bottom: rem(16);
+ 	left: 50%;
+ 	@include transform(translate3d(-50%, 0, 0));
+ 	li {
+ 	    display: inline-block;
+ 	    width: rem(18);
+ 	    height: rem(18);
+ 	    @include border-radius(20px);
+ 	    text-indent: -9999px;
+ 	    overflow: hidden;
+ 	    margin: 0 rem(8);
+ 	    border: 1px solid #fff;
+ 	    background-color: transparent;
+ 	    &.on{
+ 	    	background:#fff;
+ 	    }
+ 	}
+ 	&.pagination-green{
+ 		li{
+ 			background-color: #ddd;
+ 			border: 0;
+ 			&.on{
+ 				background-color: $green;
+ 			}
+ 		}
+ 	}
+
+}

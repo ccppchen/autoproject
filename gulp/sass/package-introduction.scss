@@ -1,0 +1,76 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/ext/comm";
+@import "tobe/ext/touchSlide";
+
+@import "tobe/components/bar/bar";
+
+@import "tobe/ext/btn";
+$btnColorClass: (red $red #fff) (green $green #fff);
+@include btn-color-multi();
+
+.gotop{
+	@extend %gotop;
+}
+.tag{
+	@extend %tag;
+}
+.tab-group{
+	@extend %tab-group;
+}
+.arrow-white-right{
+	@extend %arrow-white-right;
+}
+.product-detail {
+	text-align: center;
+	background-color: #fff;
+	&.product-end:after{
+		content: '- END -';
+		height: rem(100);
+		line-height: rem(100);
+		color: #bbb;
+	}
+}
+.product-detail-name{
+	text-align: center;
+	padding: rem(44) 0;
+	h2{
+		font-size: .36rem;
+		color: #333;
+		font-weight: bold;
+	}
+	p{
+		color: #999;
+		font-size: rem(28);
+		margin-top: rem(8);
+	}
+}
+.graphic-next-step{
+	height: rem(100);
+	.tab-con.arrow-white-right{
+		padding-right: rem(62);
+	}
+}
+.package-intro-name{
+	padding: rem(20) 0;
+	p{
+		color: #999999;
+		font-size: rem(28);
+	}
+	.product-balance{
+		font-weight: bold;
+		font-size: rem(46);
+		.small-rmb{
+			font-size: rem(28);
+		}
+	}
+}
+.package-intro{
+	margin: 0 rem(20);
+	padding: rem(20) 0;
+	background-color: #ffffff;
+	color: #999999;
+	text-align: left;
+	@include hair(top, #e7e7e7);
+	background-origin: padding-box;
+}

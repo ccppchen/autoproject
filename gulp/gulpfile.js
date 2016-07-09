@@ -1,13 +1,10 @@
 'use strict';
 var gulp        = require('gulp');
-var plugins     = require('gulp-load-plugins')();
+var $           = require('gulp-load-plugins')();
 var pkg         = require("./package.json");
 var browserSync = require('browser-sync').create();
-var jshint      = require('gulp-jshint');
 var png         = require('imagemin-pngquant');
 var clean       = require('gulp-clean');
-var connect     = require("gulp-connect");
-var ejs         = require("gulp-ejs");
 var bowerFile   = require('main-bower-files');
 var uglify      = require('gulp-uglify');
 var extReplace  = require('gulp-ext-replace');
@@ -25,25 +22,25 @@ var yeoman = {
 
 var banner =
 "/** \n\
-* jQuery WeUI V" + pkg.version + " \n\
+* jQuery extend V" + pkg.version + " \n\
 * By 野草\n\
 * http://ccppchen.github.io\n \
 */\n";
 
 // svg symbols
 gulp.task('sprites', ['svgmin'], function () {
-  return gulp.src('app/svgmin/*.svg')
+  return gulp.src(yeoman.app+'/svgmin/*.svg')
     .pipe(svgSymbols({
       fontSize:   16
     }))
-    .pipe(gulp.dest('app/assets'));
+    .pipe(gulp.dest(yeoman.app+'/assets'));
 });
 
 // svgmin
 gulp.task('svgmin', function () {
     gulp.src('svg/**/*.svg')
       .pipe(cache(
-        plugins.svgmin({
+        $.svgmin({
             plugins: [{
                 cleanupIDs: {
                     prefix: '',
@@ -55,29 +52,29 @@ gulp.task('svgmin', function () {
             }]
           })
       ))
-      .pipe(gulp.dest('app/svgmin/'));
+      .pipe(gulp.dest('svgmin'));
 });
 
 // iconfont
 gulp.task('iconfont', ['svgmin'], function(){
-  gulp.src(['app/svgmin/**/*.svg'])
+  gulp.src(['svgmin/**/*.svg'])
      .pipe(iconfontCss({
          glyphs:   null,
-         fontName: 'myfont',
+         fontName: 'blfont',
          cssClass: 'iconfont',
-         cssTargetPath: './icon.css'
+         cssTargetPath: './icons.css'
      }))
      .pipe(iconfont({
-         fontName: 'myfont',
-         formats: ['ttf', 'eot', 'woff']
+         fontName: 'blfont',
+         formats: ['ttf']
      }))
-    .pipe(gulp.dest('app/styles/fonts'));
+    .pipe(gulp.dest('sass/tobe/fonts'));
 });
 
 // 复制
 gulp.task('copy', function(){
-  gulp.src(yeoman.app+'/styles/fonts/**/*')
-    .pipe(gulp.dest(yeoman.dist+'/styles/fonts'))
+  gulp.src([yeoman.app+'/images/**/*', '!./app/images/base64/*'])
+    .pipe(gulp.dest(yeoman.dist+'/images'))
 });
 
 // 监测文件改动并自动刷新
@@ -92,101 +89,106 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
-  gulp.watch(yeoman.app+'/lib/**/*', ['bower-install']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/scripts/**/*.js', yeoman.app+'/styles/**/*.css', yeoman.app+'/lib/**']).on('change', browserSync.reload);
+  gulp.watch(yeoman.app+'/lib/*', ['bower-install']);
+  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/*']).on('change', browserSync.reload);
 });
 
-// 查看服务
-gulp.task('connect', function () {
-  connect.server();
-});
 
 // 编译sass
 gulp.task('compass', function() {
-  return gulp.src(yeoman.sass+"/**/*.scss")
-    .pipe(plugins.plumber({
+  return gulp.src([yeoman.sass+"/**/*.scss", "!./sass/tobe/**/_*.scss"])
+    .pipe($.plumber({
         errorHandler: function (error) {
               console.log(error.message);
               this.emit('end');
           }
     }))
-    .pipe(plugins.compass({
-      image:    'app/images',
-      css:      'app/styles',
+    .pipe($.compass({
+      image:    yeoman.sass,
+      css:      yeoman.app+'/css',
       sass:     yeoman.sass,
-      style:    'compressed',
-      comments:  true,
       sourcemap: true
     }))
-    .pipe(plugins.plumber.stop())
-    .pipe(plugins.autoprefixer({
-      browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ]
+
+    .pipe(gulp.dest(yeoman.app+'/css'))
+    .pipe($.autoprefixer({
+      browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
+      cascade: true,
+      remove: true
     }))
-    .pipe(gulp.dest('app/styles'))
 });
 
 gulp.task('compass-pro', function() {
   return gulp.src(yeoman.sass+"/**/*.scss")
-    .pipe(plugins.plumber({
+    .pipe($.plumber({
         errorHandler: function (error) {
               console.log(error.message);
               this.emit('end');
           }
     }))
-    .pipe(plugins.compass({
-      css: yeoman.dist+'/styles',
+    .pipe($.compass({
+      css: yeoman.dist+'/css',
       sass: yeoman.sass,
-      image: yeoman.app+'/images',
+      image: yeoman.sass,
       style: 'compressed',
       comments: false,
       sourcemap: false,
       environment: 'production'
     }))
-    .pipe(plugins.plumber.stop())
-    .pipe(plugins.autoprefixer({
+    .pipe($.plumber.stop())
+    .pipe($.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
       remove: true
     }))
-    .pipe(plugins.header(banner))
-    .pipe(gulp.dest(yeoman.dist+'/styles'));
+    .pipe($.cssnano({
+      removeAll: true,
+      discardDuplicates: true,
+      convertValues: true,
+      colormin: true,
+      discardEmpty: true,
+      discardOverridden: true,
+      discardUnused: true,
+      mergeLonghand: true,
+      mergeRules: true,
+      minifyFontValues: true,
+      minifySelectors: true,
+      orderedValues: true,
+      reducePositions: true,
+      reduceTimingFunctions: true,
+      reduceTransforms: true,
+      uniqueSelectors: true
+    }))
+    // .pipe($.header(banner))
+    .pipe(gulp.dest(yeoman.dist+'/css'));
 });
-
-// js合并压缩混淆
-//gulp.task('js', function(){
-//  gulp.src([
-//      'dist/lib/jquery.js',
-//      'dist/lib/jquery.lazy.js',
-//      'dist/lib/app.js'
-//    ])
-//    .pipe(plugins.concat({ path: 'vendor.js'}))
-//    .pipe(uglify())
-//    .pipe(plugins.header(banner))
-//    .pipe(extReplace('.min.js'))
-//    .pipe(gulp.dest(yeoman.dist+'/scripts/vendor'))
-//});
 
 // html压缩
 gulp.task('html', function () {
     gulp.src([yeoman.app+'/**/*.html','!./'+yeoman.app+'/widget/*.html'])
-    .pipe(plugins.htmlmin({
+    .pipe($.htmlmin({
       collapseWhitespace: true
     }))
     .pipe(gulp.dest(yeoman.dist));
 });
-
+gulp.task('html', function(){
+  gulp.src(yeoman.app+'/*.html')
+  // .pipe(extReplace('.php'))
+  .pipe(gulp.dest(yeoman.dist))
+});
 // image压缩
 gulp.task('images', function () {
-    gulp.src([yeoman.app+'/images/**/*', '!./app/images/base64'])
+    gulp.src([yeoman.app+'/css/i/**/*', '!./app/images/base64'])
     .pipe(cache(
-      plugins.imagemin({
-            optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+      $.imagemin({
+            optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
             interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
             multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
             use: [png()]
         })
     ))
-    .pipe(gulp.dest(yeoman.dist+'/images'));
+    // .pipe($.webp())
+    .pipe(gulp.dest(yeoman.dist+'/css/i'));
 });
 
 // 删除dist
@@ -195,48 +197,75 @@ gulp.task('clean', function(){
   .pipe(clean({force: true}));
 });
 
-// ejs html模版引擎
-gulp.task('ejs', function () {
-  gulp.src([yeoman.app+"/widget/index.html"])
-    .pipe(ejs({}))
-    .pipe(gulp.dest(yeoman.app));
-});
-
 // 导出bower的主要文件并且压缩js
 gulp.task('bower-js', function() {
     gulp.src(bowerFile())
-      .pipe(gulp.dest(yeoman.dist+'/lib'))
-      .pipe(plugins.concat({ path: 'vendor.js'}))
+      .pipe(gulp.dest('./bower-js'))
+      .pipe($.concat({ path: 'vendor.js'}))
       .pipe(uglify())
-      .pipe(plugins.header(banner))
+      // .pipe($.header(banner))
       .pipe(extReplace('.min.js'))
-      .pipe(gulp.dest(yeoman.dist+'/scripts/vendor'))
+      .pipe(gulp.dest(yeoman.dist+'/js/vendor'))
 });
 gulp.task('js', function(){
-  gulp.src([yeoman.app+'/scripts/**/*.js'])
-    .pipe(plugins.concat({ path: 'app.js' }))
-    .pipe(uglify())
-    .pipe(plugins.header(banner))
-    .pipe(extReplace('.min.js'))
-    .pipe(gulp.dest(yeoman.dist+'/scripts'))
+  gulp.src([yeoman.app+'/js/*.js'])
+    // .pipe($.concat({ path: 'app.js' }))
+    // .pipe(uglify())
+    // .pipe($.header(banner))
+    // .pipe(extReplace('.min.js'))
+    .pipe(gulp.dest(yeoman.dist+'/js'))
 });
 
 // bower依赖注入
 gulp.task('bower-install', function(){
   gulp.src([yeoman.app+'/*.html'])
     .pipe( inject( gulp.src(bowerFile(), {read: false}), {starttag:'<!-- bower:{{ext}} -->', relative: true} ) )
-    .pipe(inject( gulp.src(['app/scripts/**/*.js', 'app/styles/*.css'], {read: false}), {relative: true}, {name: 'inject'} ))
+    .pipe(inject( gulp.src([yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css'], {read: false}), {relative: true, name: 'inject'} ))
     .pipe(gulp.dest(yeoman.app))
 });
 gulp.task('inject', ['js','bower-js'], function(){
   gulp.src([yeoman.dist+'/*.html'])
-    .pipe( inject( gulp.src(yeoman.dist+'/scripts/vendor/*.js'), {relative: true, starttag: '<!-- bower:{{ext}} -->'} ) )
-    .pipe( inject( gulp.src(yeoman.dist+'/scripts/*.js'), {relative: true} ) )
+    .pipe( inject( gulp.src(yeoman.dist+'/js/vendor/*.js'), {relative: true, starttag: '<!-- bower:{{ext}} -->'} ) )
+    .pipe( inject( gulp.src(yeoman.dist+'/js/*.js'), {relative: true} ) )
     .pipe(gulp.dest(yeoman.dist))
 });
 
-gulp.task('default', ['compass', 'watch', 'bower-install', 'server']);
-gulp.task('build', ['clean', 'bower-js', 'js', 'compass-pro', 'html', 'images', 'inject']);
+// ftp
+gulp.task('ftp', function(){
+  gulp.src([yeoman.dist+'/**/*', '!./.svn/**/*'])
+    .pipe($.ftp({
+      host: "10.201.128.236",
+      user: "h5ftp",
+      pass: "h5ftp"
+    }))
+});
+
+gulp.task('cssnano', function(){
+  return gulp.src('app/css/vetage.css')
+          .pipe($.cssnano({
+            removeAll: true,
+            discardDuplicates: true,
+            convertValues: true,
+            colormin: true,
+            discardEmpty: true,
+            discardOverridden: true,
+            discardUnused: true,
+            mergeLonghand: true,
+            mergeRules: true,
+            minifyFontValues: true,
+            minifySelectors: true,
+            orderedValues: true,
+            reducePositions: true,
+            reduceTimingFunctions: true,
+            reduceTransforms: true,
+            uniqueSelectors: true
+          }))
+          // .pipe($.header(banner))
+          .pipe(gulp.dest(yeoman.dist+'/css'));
+});
+
+gulp.task('default', ['compass', 'watch', 'server']);
+gulp.task('build', ['bower-js', 'compass-pro', 'js', 'images', 'copy', 'html', 'ftp']);
 
 
 

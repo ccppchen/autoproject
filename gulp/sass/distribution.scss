@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/ext/comm";
+
+@import "tobe/components/bar/bar";
+@import "tobe/components/list-between/list-between";
+// 按钮
+@import "tobe/ext/btn";
+$btnColorClass: (red $red #fff) (green $green #fff);
+@include btn-color-multi();
+
+.btn-disabled{
+	@extend %btn-disabled;
+}
+.check-input{
+	@extend %check-input;
+}
+.distr-flo{
+	margin-top: rem(20);
+}
+.dist-spec{
+	color: #333;
+	background-position: right top;
+	.detail-addre{
+		font-size: rem(20);
+		color: $grayDark;
+		line-height: 1;
+		margin-top: rem(10);
+	}
+}
+.distr-btn{
+	font-size: rem(40);
+	line-height: rem(100);
+	width: 100%;
+	&.btn-disabled,&:disabled{
+		&:active{
+			background-color: none;
+			color: #aaa;
+		}
+	}
+}
+

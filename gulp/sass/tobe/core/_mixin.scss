@@ -568,7 +568,20 @@
       }
     }
 }
-
+// background方法解决0.5px边框问题
+@mixin hair($pos, $color) {
+  border: none;
+  background-image: linear-gradient(0deg, $color, $color 50%, transparent 50%);
+  background-position: $pos;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  @if $pos != left and $pos != right {
+    background-size: 100% 1px;
+  }
+  @if $pos != top and $pos != bottom {
+    background-size: 1px 100%;
+  }
+}
 // @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 //     transform: scaleY(0.5);
 // }
@@ -644,4 +657,66 @@
       color: #fff;
     }
   }
+}
+
+
+// Add `.grid` for sthe table
+%table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+// Add `.col` for the table cells, or columns
+%table-col {
+  display: table-cell;
+}
+
+// Padded columns
+%table-padded {
+  margin-left:  -1rem;
+  margin-right: -1rem;
+}
+%table-padded .table {
+  border-spacing: 1rem 0;
+}
+
+%col-1 { width: 8.333333%; }
+%col-2 { width: 16.666667%; }
+%col-3 { width: 25%; }
+%col-4 { width: 33.333333%; }
+%col-5 { width: 41.666667%; }
+%col-6 { width: 50%; }
+%col-7 { width: 58.333333%; }
+%col-8 { width: 66.666667%; }
+%col-9 { width: 75%; }
+%col-10 { width: 83.333333%; }
+%col-11 { width: 91.666667%; }
+
+
+// Vertically center grid content
+//
+// Requires content within the column to be inline or inline-block.
+
+%table-align-middle .table-col {
+  vertical-align: middle;
+}
+
+
+//
+// Reverse column sorting
+//
+
+%table-reverse {
+  direction: rtl;
+}
+
+%table-reverse .col {
+  direction: ltr;
+}
+
+// comm flex
+%comm-flex{
+  @include display(flex);
+  @include align-items(center);
 }
