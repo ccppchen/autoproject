@@ -68,7 +68,7 @@ gulp.task('iconfont', ['svgmin'], function(){
          fontName: 'blfont',
          formats: ['ttf']
      }))
-    .pipe(gulp.dest('sass/fonts'));
+    .pipe(gulp.dest('sass/tobe/fonts'));
 });
 
 // 复制
@@ -139,6 +139,24 @@ gulp.task('compass-pro', function() {
     .pipe($.autoprefixer({
       browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
       remove: true
+    }))
+    .pipe($.cssnano({
+      removeAll: true,
+      discardDuplicates: true,
+      convertValues: true,
+      colormin: true,
+      discardEmpty: true,
+      discardOverridden: true,
+      discardUnused: true,
+      mergeLonghand: true,
+      mergeRules: true,
+      minifyFontValues: true,
+      minifySelectors: true,
+      orderedValues: true,
+      reducePositions: true,
+      reduceTimingFunctions: true,
+      reduceTransforms: true,
+      uniqueSelectors: true
     }))
     // .pipe($.header(banner))
     .pipe(gulp.dest(yeoman.dist+'/css'));
@@ -219,6 +237,30 @@ gulp.task('ftp', function(){
       user: "h5ftp",
       pass: "h5ftp"
     }))
+});
+
+gulp.task('cssnano', function(){
+  return gulp.src('app/css/vetage.css')
+          .pipe($.cssnano({
+            removeAll: true,
+            discardDuplicates: true,
+            convertValues: true,
+            colormin: true,
+            discardEmpty: true,
+            discardOverridden: true,
+            discardUnused: true,
+            mergeLonghand: true,
+            mergeRules: true,
+            minifyFontValues: true,
+            minifySelectors: true,
+            orderedValues: true,
+            reducePositions: true,
+            reduceTimingFunctions: true,
+            reduceTransforms: true,
+            uniqueSelectors: true
+          }))
+          // .pipe($.header(banner))
+          .pipe(gulp.dest(yeoman.dist+'/css'));
 });
 
 gulp.task('default', ['compass', 'watch', 'server']);
