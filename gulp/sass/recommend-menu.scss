@@ -55,6 +55,18 @@
 	padding: rem(20) rem(40);
 	font-size: rem(28);
 	color: #666666;
+	position: relative;
+	&:after{
+		content: '';
+		position: absolute;
+		top: - rem(10);
+		left: rem(64);
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 rem(10) rem(10) rem(10);
+		border-color: transparent transparent #ffffff transparent;
+	}
 }
 
 .list-ingredients{
