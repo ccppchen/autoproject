@@ -3,16 +3,23 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>商品详情</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="mobile">
     <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="css/i/apple-touch/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="css/i/apple-touch/icon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="css/i/apple-touch/icon-196.png">
     <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
     <meta name="description" content="">
     <meta name="Keywords" content="">
     <script type="text/javascript">
@@ -24,14 +31,21 @@
     <!-- endinject -->
 </head>
 
-<body ontouchstart="">
+<body>
     <!-- header start -->
     <header class="bar bar-header bar-transparent">
         <div class="bar-left">
-            <a href="javascript:history.go(-1)" class="button iconfont arrow-back"></a>
+            <a href="javascript:history.go(-1)" class="button bor-radius">
+                <div class="iconfont arrow-back"></div>
+            </a>
         </div>
+        <h1 class="title hide">
+            商品详情
+        </h1>
         <div class="bar-right">
-            <a href="javascript:;" class="button iconfont more-v"></a>
+            <a href="javascript:;" class="button bor-radius">
+                <div class="iconfont more-v"></div>
+            </a>
         </div>
     </header>
     <!-- header end -->
@@ -65,7 +79,10 @@
     <!-- Swiper end -->
     <div class="product-detail">
         <div class="package-intro-name">
-            <h2>- 崇明生态大番茄<span class="tag bg-green">套餐</span>-</h2>
+            <h2>
+                <span class="package-intitle">- 崇明生态大番茄 you know you can you know you can </span>
+                <span class="tag bg-green">套餐</span>-
+            </h2>
             <p>重新定义绿色</p>
             <div class="product-balance color-green">
                 <span class="small-rmb color-green">¥</span>
@@ -87,8 +104,8 @@
     <footer>
 
 
-    <script defer async type="text/javascript" src="js/vendor/vendor.min.js"></script>
-    <script defer async type="text/javascript" src="js/touchslider.js"></script>
+    <script type="text/javascript" src="js/vendor/vendor.min.js"></script>
+    <script type="text/javascript" src="js/touchslider.js"></script>
 
     <script defer async type="text/javascript" src="js/comm.js"></script>
     <script defer async type="text/javascript" src="js/product-details.js"></script>

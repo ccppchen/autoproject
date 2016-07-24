@@ -69,7 +69,7 @@ $primary:               #0078E7 !default;//主色
 //-----------------------------------------------------	
 // 如果只有一个值则滑过的值为这个值的darken 5%，如果
 // 有两个值则第二个值为滑过的值
-$linkColor:             #0e90d2 !default;
+$linkColor:             #333333 !default;
 
 
 // scaffolding body背景颜色，文字颜色
@@ -99,14 +99,14 @@ $bar-title-font-size-ipad:	  	  .36rem !default;
 $bar-button-font-size-ipad:	  	  .3rem !default;
 
 $bar-title-font-size:             .36rem !default;
-$bar-button-font-size:            .3rem !default;
+$bar-button-font-size:            .38rem !default;
 
 $bar-title-font-size-iphone5:	  .34rem !default;  //标题字号
 $bar-button-font-size-iphone5:	  .3rem !default;  //左右按钮的字号
 
-$bar-button-padding:       		  0px !default;	//左右按钮的左右内边距
+$bar-button-padding:       		  .2rem !default;	//左右按钮的左右内边距
 $bar-title-font-weight:           400 !default;	//标题文字fontWeight
-$bar-padding-portrait:            0.2rem !default;  //bar的左右内边距
+$bar-padding-portrait:            0 !default;  //bar的左右内边距
 
 $bar-height:                      .88rem !default;  //header-bar的高度
 $bar-footer-height:               .88rem !default;  //footer-bar的高度

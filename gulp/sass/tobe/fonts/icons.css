@@ -28,14 +28,30 @@
 	content: "\E002";
 }
 
-.more-v:before {
+.error:before {
 	content: "\E003";
 }
 
-.search:before {
+.ihome:before {
 	content: "\E004";
 }
 
-.shop-car:before {
+.isearch:before {
 	content: "\E005";
+}
+
+.iuser:before {
+	content: "\E006";
+}
+
+.more-v:before {
+	content: "\E007";
+}
+
+.search:before {
+	content: "\E008";
+}
+
+.shop-car:before {
+	content: "\E009";
 }

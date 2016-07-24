@@ -5,8 +5,10 @@ Zepto(function($) {
         $('.bar-header').css('backgroundColor', 'rgba(245,245,245, ' + d + ')');
         if (d >= 1) {
             $('.bar-header .button').css('color', '#000').removeClass('bor-radius');
+            $('.title').css('opacity', 1);
         } else {
             $('.bar-header .button').css('color', '#fff').addClass('bor-radius');
+            $('.title').css('opacity', 0);
         };
     });
 

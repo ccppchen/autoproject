@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>组件</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="css/i/apple-touch/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="css/i/apple-touch/icon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196" href="css/i/apple-touch/icon-196.png">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript">
+    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(1);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
+    </script>
+    <link href="//cdn.bootcss.com/highlight.js/9.5.0/styles/monokai-sublime.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/components.css">
+    <link rel="stylesheet" type="text/css" href="../css/icons.css">
+    <style type="text/css" media="screen">
+    .floor {
+        margin: .18rem auto;
+    }
+    
+    pre {
+        font-size: 14px;
+        margin: 0;
+        line-height: normal;
+    }
+    
+    h3 {
+        text-align: center;
+        font-size: .45rem;
+    }
+    .use{
+        padding: 0 20px;
+    }
+    .ext{font-size: .3rem;}
+    body{
+        padding: 10px;
+    }
+    </style>
+    <script type="text/javascript" src="../js/vendor/vendor.min.js"></script>
+</head>
+
+<body>
+    <!-- switch -->
+    <h3 id="switch">switch</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">     @import "tobe/components/switch/switch";
+</code>
+    <strong class="ext">扩展）!</strong>如果以下颜色没有， 自行调用下面mixin, {$class}处命名改按钮颜色名称，$bgColor处填写背景颜色值
+<code class="scss">    .switch.switch-{$class} input:checked ~ span.bg{
+      @include switch-color($bgColor);
+    }
+</code>
+    2.html结构如下
+<code class="html">    &lt; 默认样式 &gt;
+    &lt;label class="switch">
+        &lt;input type="checkbox" checked="checked">
+        &lt;span>&lt;/span>
+        &lt;span class="bg">&lt;/span>
+    &lt;/label>
+
+    &lt; 其他按钮样式 &gt;
+    &lt;label class="switch switch-danger">
+        &lt;input type="checkbox" checked="checked">
+        &lt;span>&lt;/span>
+        &lt;span class="bg">&lt;/span>
+    &lt;/label>
+</code>
+</pre>
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <label class="switch">
+            <input type="checkbox" checked="checked">
+            <span></span>
+            <span class="bg"></span>
+        </label>
+        <label class="switch switch-danger">
+            <input type="checkbox" checked="checked">
+            <span></span>
+            <span class="bg"></span>
+        </label>
+        <label class="switch switch-primary">
+            <input type="checkbox" checked="checked">
+            <span></span>
+            <span class="bg"></span>
+        </label>
+        <label class="switch switch-pink">
+            <input type="checkbox" checked="checked">
+            <span></span>
+            <span class="bg"></span>
+        </label>
+        <label class="switch switch-orange">
+            <input type="checkbox" checked="checked">
+            <span></span>
+            <span class="bg"></span>
+        </label>
+        <label class="switch switch-purple">
+            <input type="checkbox" checked="checked">
+            <span></span>
+            <span class="bg"></span>
+        </label>
+    </div>
+
+    <!-- bar -->
+    <h3 id="bar">bar</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/bar/bar";
+</code>
+    <strong class="ext">扩展）!</strong>如果以下颜色没有， 自行调用下面mixin, {$class}处命名bar名称，$bgColor处填写背景颜色值，$border-color处填写下边框颜色值（如果没有边框色，值跟背景色一致），$color处填写标题颜色
+<code class="scss">    .bar.{$class} {
+      @include bar-style($bg-color, $border-color, $color);
+    }
+</code>
+    2.html结构如下
+<code class="html">    标题1
+    &lt;header class="bar bar-header bar-light">
+      &lt;div class="bar-left">
+          &lt;a href="javascript:history.go(-1)" class="button">
+              &lt;div class="iconfont arrow-back">&lt;/div>
+          &lt;/a>
+      &lt;/div>
+      &lt;h1 class="title">
+          标题1
+      &lt;/h1>
+      &lt;div class="bar-right">
+          &lt;a href="javascript:;" class="button iconfont more-v">&lt;/a>
+      &lt;/div>
+    &lt;/header>
+
+    标题2
+    &lt;header class="bar bar-header bar-dark">
+      &lt;div class="bar-left">
+          &lt;a href="javascript:history.go(-1)" class="button">
+              &lt;div class="iconfont arrow-back">&lt;/div>返回
+          &lt;/a>
+      &lt;/div>
+      &lt;h1 class="title">
+          标题2
+      &lt;/h1>
+      &lt;div class="bar-right">
+          &lt;a href="javascript:;" class="button iconfont error">&lt;/a>
+          &lt;a href="javascript:;" class="button iconfont more-v">&lt;/a>
+      &lt;/div>
+    &lt;/header>
+
+    标题3
+    &lt;header class="bar bar-header bar-light">
+      &lt;div class="bar-left">
+          &lt;a href="javascript:history.go(-1)" class="button">
+              &lt;div class="iconfont arrow-back">&lt;/div>
+          &lt;/a>
+          &lt;a href="javascript:history.go(-1)" class="button">
+              &lt;div class="iconfont error">&lt;/div>
+          &lt;/a>
+      &lt;/div>
+      &lt;h1 class="title">
+          标题3
+      &lt;/h1>
+      &lt;div class="bar-right">
+          &lt;a href="javascript:;" class="button iconfont more-v">&lt;/a>
+      &lt;/div>
+    &lt;/header>
+
+    标题4
+    &lt;header class="bar bar-header bar-transparent">
+      &lt;div class="bar-left">
+          &lt;a href="javascript:history.go(-1)" class="button iconfont arrow-back">&lt;/a>
+      &lt;/div>
+      &lt;h1 class="title">
+          标题4
+      &lt;/h1>
+      &lt;div class="bar-right">
+      &lt;/div>
+    &lt;/header>
+</code>
+</pre>
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <header class="bar bar-header bar-light" style="position: relative">
+            <div class="bar-left">
+                <a href="javascript:history.go(-1)" class="button">
+                    <div class="iconfont arrow-back"></div>
+                </a>
+            </div>
+            <h1 class="title">
+                标题1
+            </h1>
+            <div class="bar-right">
+                <a href="javascript:;" class="button iconfont more-v"></a>
+            </div>
+        </header>
+        <header class="bar bar-header bar-dark" style="position: relative">
+            <div class="bar-left">
+                <a href="javascript:history.go(-1)" class="button">
+                    <div class="iconfont arrow-back"></div>返回
+                </a>
+            </div>
+            <h1 class="title">
+                标题2
+            </h1>
+            <div class="bar-right">
+                <a href="javascript:;" class="button iconfont error"></a>
+                <a href="javascript:;" class="button iconfont more-v"></a>
+            </div>
+        </header>
+        <header class="bar bar-header bar-light" style="position: relative">
+            <div class="bar-left">
+                <a href="javascript:history.go(-1)" class="button">
+                    <div class="iconfont arrow-back"></div>
+                </a>
+                <a href="javascript:history.go(-1)" class="button">
+                    <div class="iconfont error"></div>
+                </a>
+            </div>
+            <h1 class="title">
+                标题3
+            </h1>
+            <div class="bar-right">
+                <a href="javascript:;" class="button iconfont more-v"></a>
+            </div>
+        </header>
+        <header class="bar bar-header bar-transparent" style="position: relative">
+            <div class="bar-left">
+                <a href="javascript:history.go(-1)" class="button iconfont arrow-back"></a>
+            </div>
+            <h1 class="title">
+                标题4
+            </h1>
+            <div class="bar-right">
+            </div>
+        </header>
+    </div>
+
+    <!-- list-between -->
+    <h3 id="list-between">list-between</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/list-between/list-between";
+</code>
+    <strong class="ext">扩展）!</strong>下面预览除本组件还用到两个扩展（1.向右的灰色尖头，2.绿色选择按钮），扩展的样式不多，暂时全都放在ext/_comm.scss文件中，非输出型的，要用需要用@extend方法调用，选择按钮默认是绿色样式如需添加，自行调用 check-color($bgColor), $checkColor处填命名颜色名称，$bgColor处填写背景颜色
+<code class="scss">    /* 调用1.向右的灰色尖头方法 */
+    .arrow-right{
+        @extend %arrow-right;
+    }
+    /* 调用2.绿色选择按钮 */
+    .arrow-right{
+        @extend %arrow-right;
+    }
+    /* 调用其他颜色的选择按钮mixin  */
+    .check-input.{$checkColor}:checked {
+        @include check-color($bgColor);
+    }
+</code>
+    2.html结构如下
+<code class="html">    &lt;!-- list-between -->
+    &lt;div class="list-between">
+        &lt;div class="list-item">
+            &lt;div class="list-left">支付方式&lt;/div>
+            &lt;div class="list-right arrow-right">在线支付&lt;/div>
+        &lt;/div>
+        &lt;div class="list-item">
+            &lt;div class="list-left">优惠券&lt;/div>
+            &lt;div class="list-right arrow-right disable-color">无可用&lt;/div>
+        &lt;/div>
+        &lt;div class="list-item">
+            &lt;div class="list-left">
+                &lt;input type="radio" name="deduction" class="check-input check-red" id="integral" checked="checked">
+                &lt;label for="integral">20积分可抵扣0.2元&lt;/label>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="list-item">
+            &lt;div class="list-left">
+                &lt;input type="radio" name="deduction" class="check-input check-red" id="ecp">
+                &lt;label for="ecp">ECP账户可抵2998.48元&lt;/label>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="list-item">
+            &lt;div class="list-left">
+                &lt;input type="radio" class="check-input" id="other" checked="checked">
+                &lt;label for="other">其他账户可抵2998.48元&lt;/label>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <div class="list-between">
+            <div class="list-item">
+                <div class="list-left">支付方式</div>
+                <div class="list-right arrow-right">在线支付</div>
+            </div>
+            <div class="list-item">
+                <div class="list-left">优惠券</div>
+                <div class="list-right arrow-right disable-color">无可用</div>
+            </div>
+            <div class="list-item">
+                <div class="list-left">
+                    <input type="radio" name="deduction" class="check-input check-red" id="integral" checked="checked">
+                    <label for="integral">20积分可抵扣0.2元</label>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-left">
+                    <input type="radio" name="deduction" class="check-input check-red" id="ecp">
+                    <label for="ecp">ECP账户可抵2998.48元</label>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-left">
+                    <input type="radio" class="check-input" id="other" checked="checked">
+                    <label for="other">其他账户可抵2998.48元</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- nav -->
+    <h3 id="nav">nav</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/nav/nav";
+</code>
+    2.在页面js文件中引入下面这段
+<code class="javascript">    //nav
+    $('.j-nav').on('click', function(event) {
+        $(this).toggleClass('show-nav');
+        $(this).siblings('.j-navcontent').toggleClass('show-navcontent')
+    });
+</code>
+    <strong class="ext">扩展）!</strong>
+</pre>
+    3.html结构如下
+<pre>
+<code class="html">    /* nav */
+    &lt;header class="bar bar-header bar-light">
+        &lt;a href="javascript:history.go(-1)" class="bar-left">
+            &lt;div class="button iconfont arrow-back">&lt;/div>
+        &lt;/a>
+        &lt;h1 class="title index-title">
+            确认订单
+        &lt;/h1>
+        /* 关键代码 start */
+        &lt;div class="j-nav">
+            &lt;div class="button iconfont more-v">&lt;/div>
+            &lt;div class="button iconfont error">&lt;/div>
+        &lt;/div>
+        &lt;nav class="j-navcontent">
+            &lt;ul class="ul-nav">
+                &lt;li>&lt;a href="javascript:;">&lt;i class="iconfont ihome">&lt;/i>&lt;p>首页&lt;/p>&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="javascript:;">&lt;i class="iconfont isearch">&lt;/i>&lt;p>搜索&lt;/p>&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="javascript:;">&lt;i class="iconfont class">&lt;/i>&lt;p>分类&lt;/p>&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="javascript:;">&lt;i class="iconfont shop-car">&lt;/i>&lt;p>购物车&lt;/p>&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="javascript:;">&lt;i class="iconfont iuser">&lt;/i>&lt;p>我的i百联&lt;/p>&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+        /* 关键代码 end */
+    &lt;/header>
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <header class="bar bar-header bar-dark" style="position: relative;">
+            <a href="javascript:history.go(-1)" class="bar-left">
+                <div class="button iconfont arrow-back"></div>
+            </a>
+            <h1 class="title index-title">
+                确认订单
+            </h1>
+            <div class="j-nav">
+                <div class="button iconfont more-v"></div>
+                <div class="button iconfont error"></div>
+            </div>
+            <nav class="j-navcontent">
+                <ul class="ul-nav">
+                    <li><a href="javascript:;"><i class="iconfont ihome"></i><p>首页</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont isearch"></i><p>搜索</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont class"></i><p>分类</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont shop-car"></i><p>购物车</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont iuser"></i><p>我的i百联</p></a></li>
+                </ul>
+            </nav>
+        </header>
+        <script type="text/javascript">
+            Zepto(function($){
+                $('.j-nav').on('click', function(event) {
+                    $(this).toggleClass('show-nav');
+                    $(this).siblings('.j-navcontent').toggleClass('show-navcontent')
+                });
+            });
+        </script>
+    </div>
+    
+    <!-- nav-menu --> 
+    <h3>nav-menu</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/nav-menu/nav-menu";
+</code>
+    <strong class="ext">扩展）!</strong>
+    2.html结构如下
+<code class="html">    /* nav-menu */
+    &lt;div class="nav-menu">
+        &lt;div class="item-menu">
+            &lt;a href="javascript:;">
+                &lt;img src="../images/index/menu_1.png" alt="">&lt;div class="item-p">逛百联&lt;/div>
+            &lt;/a>
+        &lt;/div>
+        &lt;div class="item-menu">
+            &lt;a href="javascript:;">
+                &lt;img src="../images/index/menu_2.png" alt="">&lt;div class="item-p">我的订单&lt;/div>
+            &lt;/a>
+        &lt;/div>
+        &lt;div class="item-menu">
+            &lt;a href="javascript:;">
+                &lt;img src="../images/index/menu_3.png" alt="">&lt;div class="item-p">签到有奖&lt;/div>
+            &lt;/a>
+        &lt;/div>
+        &lt;div class="item-menu">
+            &lt;a href="javascript:;">
+                &lt;img src="../images/index/menu_4.png" alt="">&lt;div class="item-p">类目&lt;/div>
+            &lt;/a>
+        &lt;/div>
+        &lt;div class="item-menu">
+            &lt;a href="javascript:;">
+                &lt;img src="../images/index/menu_5.png" alt="">&lt;div class="item-p">百宝箱&lt;/div>
+            &lt;/a>
+        &lt;/div>
+    &lt;/div>
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <div class="nav-menu">
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="../images/index/menu_1.png" alt=""><div class="item-p">逛百联</div>
+                </a>
+            </div>
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="../images/index/menu_2.png" alt=""><div class="item-p">我的订单</div>
+                </a>
+            </div>
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="../images/index/menu_3.png" alt=""><div class="item-p">签到有奖</div>
+                </a>
+            </div>
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="../images/index/menu_4.png" alt=""><div class="item-p">类目</div>
+                </a>
+            </div>
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="../images/index/menu_5.png" alt=""><div class="item-p">百宝箱</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- overflow-scroll  -->
+    <h3>overflow-scroll</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/overflow-scroll/overflow-scroll";
+</code>
+    <strong class="ext">扩展）!</strong> 加上hide-scrollbar这个类隐藏滚动条， 默认子元素ovfs-item固定宽度rem(208) 有有边框，如不需要，请用css覆盖即可，
+    2.html结构如下
+<code class="html">    /* ovfs */
+    &lt;ul class="ovfs hide-scrollbar">
+        &lt;li class="ovfs-item">时鲜(99)&lt;/li>
+        &lt;li class="ovfs-item">菌菇类(99)&lt;/li>
+        &lt;li class="ovfs-item">根芹类(99)&lt;/li>
+        &lt;li class="ovfs-item">茄果类(99)&lt;/li>
+        &lt;li class="ovfs-item">叶菜类(99)&lt;/li>
+        &lt;li class="ovfs-item">生态蔬菜类(99)&lt;/li>
+    &lt;/ul>
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <div class="demo">
+            <ul class="ovfs hide-scrollbar">
+                <li class="ovfs-item icon-seasonal active">时鲜(99)</li>
+                <li class="ovfs-item icon-truffle">菌菇类(99)</li>
+                <li class="ovfs-item icon-celeriac">根芹类(99)</li>
+                <li class="ovfs-item icon-eggplant">茄果类(99)</li>
+                <li class="ovfs-item icon-leafy-vegetables">叶菜类(99)</li>
+                <li class="ovfs-item icon-ecological-vegetable">生态蔬菜类(99)</li>
+            </ul>
+        </div>
+        <br />
+        <ul class="ovfs" id="ovfs">
+            <li class="ovfs-item">
+                <div class="lazy-box">
+                    <a href="javascript:;"><img class="lazy" data-original="../images/index/ia_10006-450x450q40.jpg" alt="" src="../images/index/ia_10006-450x450q40.jpg"></a>
+                </div>
+                <div class="color-red ovfs-money">￥4.95</div>
+            </li>
+            <li class="ovfs-item">
+                <div class="lazy-box">
+                    <a href="javascript:;"><img class="lazy" data-original="../images/index/ia_10006-450x450q40.jpg" alt="" src="../images/index/ia_10006-450x450q40.jpg"></a>
+                </div>
+                <div class="color-red ovfs-money">￥4.95</div>
+            </li>
+            <li class="ovfs-item">
+                <div class="lazy-box">
+                    <a href="javascript:;"><img class="lazy" data-original="../images/index/ia_10006-450x450q40.jpg" alt="" src="../images/index/ia_10006-450x450q40.jpg"></a>
+                </div>
+                <div class="color-red ovfs-money">￥4.95</div>
+            </li>
+            <li class="ovfs-item">
+                <div class="lazy-box">
+                    <a href="javascript:;"><img class="lazy" data-original="../images/index/ia_10006-450x450q40.jpg" alt="" src="../images/index/ia_10006-450x450q40.jpg"></a>
+                </div>
+                <div class="color-red ovfs-money">￥4.95</div>
+            </li>
+            <li class="ovfs-item">
+                <div class="lazy-box">
+                    <a href="javascript:;"><img class="lazy" data-original="../images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                </div>
+                <div class="color-red ovfs-money">￥4.95</div>
+            </li>
+            <li class="ovfs-item">
+                <div class="lazy-box">
+                    <a href="javascript:;"><img class="lazy" data-original="../images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                </div>
+                <div class="color-red ovfs-money">￥4.95</div>
+            </li>
+            <li class="ovfs-item">
+                <div class="lazy-box">
+                    <a href="javascript:;"><img class="lazy" data-original="../images/index/ia_10006-450x450q40.jpg" alt=""></a>
+                </div>
+                <div class="color-red ovfs-money">￥4.95</div>
+            </li>
+        </ul>
+        <script type="text/javascript">
+            Zepto(function($){
+                $("img.lazy").lazyload();
+                $(".ovfs img.lazy").lazyload({
+                    container: '#ovfs'
+                });
+            });
+        </script>
+    </div>
+
+    <!-- preloader  -->
+    <h3>preloader</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/preloader/preloader";
+</code>
+    <strong class="ext">扩展）!</strong>默认有三个尺寸，分别分类了三个类，默认是最小的, 中等的加上.middle, 最大的加上.big, 颜色方面目前有下面两种，灰色和白色， 默认灰色， 白色需要加上white类
+    2.html结构如下
+<code class="html">    /* preloader */
+    &lt;div class="preloader">&lt;/div>
+    &lt;div class="preloader middle">&lt;/div>
+    &lt;div class="preloader big">&lt;/div>
+    &lt;div style="background: black;">
+        &lt;div class="preloader white">&lt;/div>
+        &lt;div class="preloader white middle">&lt;/div>
+        &lt;div class="preloader white big">&lt;/div>
+    &lt;/div>
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor" style="text-align: center;">
+        <div class="preloader"></div>
+        <div class="preloader middle"></div>
+        <div class="preloader big"></div>
+        <div style="background: black;">
+            <div class="preloader white"></div>
+            <div class="preloader white middle"></div>
+            <div class="preloader white big"></div>
+        </div>
+    </div>
+
+    <!-- triangle -->
+    <h3>triangle css三角形</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中调用下面mixin,// 三个参数分别是，三角形方向，大小，颜色
+<code class="css">    .triangle{
+        @include triangle(left, 10px, red);
+    }
+    .triangleright{
+        @include triangle(right, 10px, red);
+    }
+    .triangletop{
+        @include triangle(top, 10px, red);
+    }
+    .trianglebottom{
+        @include triangle(bottom, 10px, red);
+    }
+</code>
+    <strong class="ext">扩展）!</strong>
+    2.html结构如下
+<code class="html">    &lt;div class="triangle"></div>
+    &lt;div class="trianglebottom">&lt;/div>
+    &lt;div class="triangleright">&lt;/div>
+    &lt;div class="triangletop">&lt;/div>
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <div class="trianglebottom"></div>
+        <div class="triangle"></div>
+        <div class="triangleright"></div>
+        <div class="triangletop"></div>
+    </div>
+
+    <!-- 商品列表pic-list --> 
+    <h3>pic-list</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中调用下面mixin,// 里面4个参数分别为：外盒子类名，想要几列，背景色，间隙, 内盒子类名. 默认参数分别是（pic-list，2，transparent，.2rem，list-bg）
+<code class="scss">    @include pic-list();
+    @include pic-list(pic-list-three, 3, #ffffff, .2rem, list-bg);
+</code>
+    <strong class="ext">扩展）!</strong>
+    2.html结构如下
+<code class="html">    //2列
+    &lt;div class="pic-list">
+        &lt;ul>
+            &lt;li>
+                &lt;div class="list-bg">
+                    &lt;a href="javascript:;" title="">
+                        &lt;div class="lazy-box">
+                            &lt;img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                        &lt;/div>
+                        &lt;div class="cwrap-name">百联财理全球购 588型(电子卡)&lt;/div>
+                    &lt;/a>
+                &lt;/div>
+                &lt;div class="cwrap-price">
+                    &lt;span class="small-rmb">¥&lt;/span>199.0
+                    &lt;a href="javascript:;" class="card-shop">&lt;/a>
+                &lt;/div>
+            &lt;/li>
+            &lt;li>
+                &lt;div class="list-bg">
+                    &lt;a href="javascript:;" title="">
+                        &lt;div class="lazy-box">
+                            &lt;img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                        &lt;/div>
+                        &lt;div class="cwrap-name">百联财理全球购 588型(电子卡)&lt;/div>
+                        &lt;div class="cwrap-lowg">无货&lt;/div>
+                    &lt;/a>
+                &lt;/div>
+                &lt;div class="cwrap-price">
+                    &lt;span class="small-rmb">¥&lt;/span>199.0
+                    &lt;a href="javascript:;" class="card-shop">&lt;/a>
+                &lt;/div>
+            &lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    //3列
+    &lt;div class="pic-list-three">
+        &lt;ul>
+            &lt;li>
+                &lt;div class="list-bg">
+                    &lt;a href="javascript:;" title="">
+                        &lt;div class="lazy-box">
+                            &lt;img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                        &lt;/div>
+                        &lt;div>百联财理全球购 588型(电子卡)&lt;/div>
+                    &lt;/a>
+                &lt;/div>
+            &lt;/li>
+            &lt;li>
+                &lt;div class="list-bg">
+                    &lt;a href="javascript:;" title="">
+                        &lt;div class="lazy-box">
+                            &lt;img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                        &lt;/div>
+                        &lt;div>百联财理全球购 588型(电子卡)&lt;/div>
+                    &lt;/a>
+                &lt;/div>
+            &lt;/li>
+            &lt;li>
+                &lt;div class="list-bg">
+                    &lt;a href="javascript:;" title="">
+                        &lt;div class="lazy-box">
+                            &lt;img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                        &lt;/div>
+                        &lt;div>百联财理全球购 588型(电子卡)&lt;/div>
+                    &lt;/a>
+                &lt;/div>
+            &lt;/li>
+        &lt;/ul>
+    &lt;/div>
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        <p class="use">2列</p>
+        <div class="pic-list">
+            <ul>
+                <li>
+                    <div class="list-bg cwrap-img">
+                        <a href="javascript:;" title="">
+                            <div class="lazy-box">
+                                <img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                            </div>
+                            <div class="cwrap-name">百联财理全球购 588型(电子卡)</div>
+                        </a>
+                    </div>
+                    <div class="cwrap-price">
+                        <span class="small-rmb">¥</span>199.0
+                        <a href="javascript:;" class="card-shop"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg cwrap-img">
+                        <a href="javascript:;" title="">
+                            <div class="lazy-box">
+                                <img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                            </div>
+                            <div class="cwrap-name">百联财理全球购 588型(电子卡)</div>
+                        </a>
+                    </div>
+                    <div class="cwrap-price">
+                        <span class="small-rmb">¥</span>199.0
+                        <a href="javascript:;" class="card-shop"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <p class="use">3列</p>
+        <div class="pic-list-three">
+            <ul>
+                <li>
+                    <div class="list-bg">
+                        <a href="javascript:;" title="">
+                            <div class="lazy-box">
+                                <img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                            </div>
+                            <div>百联财理全球购 588型(电子卡)</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <a href="javascript:;" title="">
+                            <div class="lazy-box">
+                                <img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                            </div>
+                            <div>百联财理全球购 588型(电子卡)</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <a href="javascript:;" title="">
+                            <div class="lazy-box">
+                                <img class="lazy" src="../images/giftcard-theme/group.png" alt="" src="images/giftcard-theme/group.png">
+                            </div>
+                            <div>百联财理全球购 588型(电子卡)</div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="//cdn.bootcss.com/highlight.js/9.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
+<!-- 
+    list-between 
+    <h3>list-between</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/list-between/list-between";
+</code>
+    <strong class="ext">扩展）!</strong>
+    2.html结构如下
+<code class="html">
+
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        
+    </div>
+
+ -->

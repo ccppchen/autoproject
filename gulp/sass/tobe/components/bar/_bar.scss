@@ -109,10 +109,8 @@
 }
 
 .bar-header{
-  @include display(flex);
-}
-.bar-header{
   @include justify-content(space-between);
+  @include display(flex);
   .bar-left,.bar-right{
     font-size: 0;
     z-index: $z-index-bar-button;
@@ -121,6 +119,11 @@
     @include display(flex);
     @include align-items(center);
     height: 100%;
+  }
+  .bar-left,.bar-right{
+    > .button + .button{
+      padding-left: 0;
+    }
   }
   .title{
     @include display(flex);

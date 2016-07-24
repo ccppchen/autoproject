@@ -3,28 +3,35 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>当季推荐菜谱</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="mobile">
     <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="css/i/apple-touch/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="css/i/apple-touch/icon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="css/i/apple-touch/icon-196.png">
     <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
     <meta name="description" content="">
     <meta name="Keywords" content="">
     <script type="text/javascript">
-    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
+    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(1);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
     </script>
     <!-- inject:css -->
     <link rel="stylesheet" type="text/css" href="css/icons.css">
     <link rel="stylesheet" type="text/css" href="css/recommend-menu.css">
     <!-- endinject -->
-</head>
+</head> 
 
-<body ontouchstart="">
+<body>
     <!-- header start -->
     <header class="bar bar-header bar-white">
         <div class="bar-left">
@@ -33,9 +40,19 @@
         <h1 class="title index-title">
             当季推荐菜谱
         </h1>
-        <div class="bar-right">
-            <a href="javascript:;" class="button iconfont more-v"></a>
+        <div class="j-nav">
+            <div class="button iconfont more-v"></div>
+            <div class="button iconfont error"></div>
         </div>
+        <nav class="j-navcontent">
+            <ul class="ul-nav">
+                <li><a href="javascript:;"><i class="iconfont ihome"></i><p>首页</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont isearch"></i><p>搜索</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont class"></i><p>分类</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont shop-car"></i><p>购物车</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont iuser"></i><p>我的i百联</p></a></li>
+            </ul>
+        </nav>
     </header>
     <!-- header end -->
     <!-- content -->
@@ -45,10 +62,10 @@
                 <div class="menu-img"><img src="images/recommend-menu/foot-menu_02.jpg" title="" alt=""></div>
                 <div class="menu-info">
                     <div class="menu-infoleft">
-                        <span class="tag bg-green">推荐</span>
-                        烧汁煎炒豆腐
+                        <div class="menu-comm"><span class="tag bg-green">推荐</span></div>
+                        <div class="menu-name">烧汁煎炒豆腐烧</div>
                     </div>
-                    <div class="menu-inforight">720人浏览</div>
+                    <div class="menu-inforight"><span>720人浏览</span></div>
                 </div>
             </div>
             <div class="menu-text">去年去首尔的时候迟到的春川辣炒鸡排饭，就是在平底锅上把食材和米饭一起炒...味道很不错，回家后自己试着做了一下，还真是那个味儿~韩国料理当然离不开韩国辣酱和泡菜快来一起试试吧！ 
@@ -100,27 +117,47 @@
                 <ul class="cook-method">
                     <li>
                         <div class="step-tag">1</div>
-                        <div class="step-img"><img src="images/recommend-menu/cook-method.jpg" title="" alt=""></div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
                         <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
                     </li>
                     <li>
                         <div class="step-tag">2</div>
-                        <div class="step-img"><img src="images/recommend-menu/cook-method.jpg" title="" alt=""></div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
                         <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
                     </li>
                     <li>
                         <div class="step-tag">3</div>
-                        <div class="step-img"><img src="images/recommend-menu/cook-method.jpg" title="" alt=""></div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
                         <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
                     </li>
                     <li>
                         <div class="step-tag">4</div>
-                        <div class="step-img"><img src="images/recommend-menu/cook-method.jpg" title="" alt=""></div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
                         <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
                     </li>
                     <li>
                         <div class="step-tag">5</div>
-                        <div class="step-img"><img src="images/recommend-menu/cook-method.jpg" title="" alt=""></div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
                         <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
                     </li>
 
@@ -129,12 +166,16 @@
         </div>
         <div class="rec-ings">
             <div class="rec-ings-title">
-                <span class="small-line"></span>
+                <div class="small-line"></div>
                 <h4>推荐食材</h4>
-                <span class="small-line"></span>
+                <div class="small-line"></div>
             </div>
             <div class="rec-ings-bann">
-                <a href="javascript:;"><img src="images/recommend-menu/rec-bann.jpg" title="" alt=""></a>
+                <a href="javascript:;">
+                    <div class="lazy-box half">
+                        <img class="lazy" data-original="images/recommend-menu/rec-bann.jpg" title="" alt="">
+                    </div>
+                </a>
                 <div class="rec-ings-see">
                     <span class="arrow-right-green">去看看</span>
                 </div>
@@ -143,7 +184,7 @@
 
     </div>
     <!-- content end -->
-    <script defer async type="text/javascript" src="js/vendor/vendor.min.js"></script>
+    <script type="text/javascript" src="js/vendor/vendor.min.js"></script>
     <script defer async type="text/javascript" src="js/comm.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "utf-8"; //cp
 @import "tobe/base";
 @import "tobe/ext/comm";
 @import "tobe/ext/touchSlide";
@@ -20,6 +20,20 @@ $btnColorClass: (red $red #fff) (green $green #fff);
 }
 .arrow-white-right{
 	@extend %arrow-white-right;
+}
+
+.button.bor-radius{
+	@extend %button.bor-radius;
+}
+.button.bor-radius .iconfont{
+	@extend %button.bor-radius;
+}
+.bar-header .arrow-back{
+	font-size: rem(34);
+}
+
+.bar-header .title.hide{
+	opacity: 0;
 }
 .product-detail {
 	text-align: center;
@@ -53,6 +67,9 @@ $btnColorClass: (red $red #fff) (green $green #fff);
 }
 .package-intro-name{
 	padding: rem(20) 0;
+	.package-intitle{
+		vertical-align: middle;
+	}
 	p{
 		color: #999999;
 		font-size: rem(28);

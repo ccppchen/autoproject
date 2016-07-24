@@ -8,7 +8,6 @@ var clean       = require('gulp-clean');
 var bowerFile   = require('main-bower-files');
 var uglify      = require('gulp-uglify');
 var extReplace  = require('gulp-ext-replace');
-var inject      = require('gulp-inject');
 var svgSymbols  = require('gulp-svg-symbols');
 var iconfontCss = require('gulp-iconfont-css-and-template');
 var iconfont    = require('gulp-iconfont');
@@ -29,11 +28,11 @@ var banner =
 
 // svg symbols
 gulp.task('sprites', ['svgmin'], function () {
-  return gulp.src(yeoman.app+'/svgmin/*.svg')
+  return gulp.src('svgmin/*.svg')
     .pipe(svgSymbols({
       fontSize:   16
     }))
-    .pipe(gulp.dest(yeoman.app+'/assets'));
+    .pipe(gulp.dest('assets'));
 });
 
 // svgmin
@@ -56,7 +55,7 @@ gulp.task('svgmin', function () {
 });
 
 // iconfont
-gulp.task('iconfont', ['svgmin'], function(){
+gulp.task('iconfont', function(){
   gulp.src(['svgmin/**/*.svg'])
      .pipe(iconfontCss({
          glyphs:   null,
@@ -71,17 +70,12 @@ gulp.task('iconfont', ['svgmin'], function(){
     .pipe(gulp.dest('sass/tobe/fonts'));
 });
 
-// 复制
-gulp.task('copy', function(){
-  gulp.src([yeoman.app+'/images/**/*', '!./app/images/base64/*'])
-    .pipe(gulp.dest(yeoman.dist+'/images'))
-});
 
 // 监测文件改动并自动刷新
 gulp.task('server', ['compass'], function(){
   browserSync.init({
        server: {
-           baseDir: yeoman.app
+           baseDir: [yeoman.app, 'lib']
        },
        port: 8000
    });
@@ -90,13 +84,13 @@ gulp.task('server', ['compass'], function(){
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
   gulp.watch(yeoman.app+'/lib/*', ['bower-install']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/*']).on('change', browserSync.reload);
+  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/*']).on('change', browserSync.reload);
 });
 
 
 // 编译sass
 gulp.task('compass', function() {
-  return gulp.src([yeoman.sass+"/**/*.scss", "!./sass/tobe/**/_*.scss"])
+  return gulp.src([yeoman.sass+"/**/*.scss", "!sass/tobe/**/_*.scss", "!sass/compents/css/*.scss"])
     .pipe($.plumber({
         errorHandler: function (error) {
               console.log(error.message);
@@ -104,20 +98,39 @@ gulp.task('compass', function() {
           }
     }))
     .pipe($.compass({
-      image:    yeoman.sass,
       css:      yeoman.app+'/css',
-      sass:     yeoman.sass,
-      sourcemap: true
+      sass: yeoman.sass,
+      image: yeoman.sass,
+      style: 'compressed'
     }))
-
-    .pipe(gulp.dest(yeoman.app+'/css'))
     .pipe($.autoprefixer({
       browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
-      cascade: true,
-      remove: true
+      cascade: true
     }))
+    .pipe(gulp.dest(yeoman.app+'/css'))
+    
 });
 
+// 编写组件编译sass
+gulp.task('doc-sass', function() {
+  return gulp.src([yeoman.sass+"/components.scss"])
+    .pipe($.plumber({
+        errorHandler: function (error) {
+              console.log(error.message);
+              this.emit('end');
+          }
+    }))
+    .pipe($.compass({
+      css:  "app/compents/css",
+      sass: "sass",
+      image: yeoman.sass,
+      comments: false,
+      sourcemap: true
+    }))
+    .pipe(gulp.dest(yeoman.app+"/compents/css"))
+});
+
+// 生产
 gulp.task('compass-pro', function() {
   return gulp.src(yeoman.sass+"/**/*.scss")
     .pipe($.plumber({
@@ -137,42 +150,15 @@ gulp.task('compass-pro', function() {
     }))
     .pipe($.plumber.stop())
     .pipe($.autoprefixer({
-      browsers: [ '> 5%', 'Last 2 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
+      browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
       remove: true
     }))
-    .pipe($.cssnano({
-      removeAll: true,
-      discardDuplicates: true,
-      convertValues: true,
-      colormin: true,
-      discardEmpty: true,
-      discardOverridden: true,
-      discardUnused: true,
-      mergeLonghand: true,
-      mergeRules: true,
-      minifyFontValues: true,
-      minifySelectors: true,
-      orderedValues: true,
-      reducePositions: true,
-      reduceTimingFunctions: true,
-      reduceTransforms: true,
-      uniqueSelectors: true
-    }))
-    // .pipe($.header(banner))
     .pipe(gulp.dest(yeoman.dist+'/css'));
 });
 
-// html压缩
-gulp.task('html', function () {
-    gulp.src([yeoman.app+'/**/*.html','!./'+yeoman.app+'/widget/*.html'])
-    .pipe($.htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(gulp.dest(yeoman.dist));
-});
+// html
 gulp.task('html', function(){
-  gulp.src(yeoman.app+'/*.html')
-  // .pipe(extReplace('.php'))
+  gulp.src([yeoman.app+'/*.html', '!./app/index.html'])
   .pipe(gulp.dest(yeoman.dist))
 });
 // image压缩
@@ -190,6 +176,20 @@ gulp.task('images', function () {
     // .pipe($.webp())
     .pipe(gulp.dest(yeoman.dist+'/css/i'));
 });
+gulp.task('images-min', function () {
+    gulp.src([yeoman.app+'/images/**/*'])
+    .pipe(cache(
+      $.imagemin({
+            optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
+            progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+            interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+            multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
+            use: [png()]
+        })
+    ))
+    // .pipe($.webp())
+    .pipe(gulp.dest(yeoman.dist+'/images'));
+});
 
 // 删除dist
 gulp.task('clean', function(){
@@ -203,31 +203,15 @@ gulp.task('bower-js', function() {
       .pipe(gulp.dest('./bower-js'))
       .pipe($.concat({ path: 'vendor.js'}))
       .pipe(uglify())
-      // .pipe($.header(banner))
       .pipe(extReplace('.min.js'))
-      .pipe(gulp.dest(yeoman.dist+'/js/vendor'))
+      .pipe(gulp.dest(yeoman.app+'/js/vendor'))
 });
 gulp.task('js', function(){
-  gulp.src([yeoman.app+'/js/*.js'])
+  gulp.src([yeoman.app+'/js/**/*.js'])
     // .pipe($.concat({ path: 'app.js' }))
     // .pipe(uglify())
-    // .pipe($.header(banner))
     // .pipe(extReplace('.min.js'))
     .pipe(gulp.dest(yeoman.dist+'/js'))
-});
-
-// bower依赖注入
-gulp.task('bower-install', function(){
-  gulp.src([yeoman.app+'/*.html'])
-    .pipe( inject( gulp.src(bowerFile(), {read: false}), {starttag:'<!-- bower:{{ext}} -->', relative: true} ) )
-    .pipe(inject( gulp.src([yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css'], {read: false}), {relative: true, name: 'inject'} ))
-    .pipe(gulp.dest(yeoman.app))
-});
-gulp.task('inject', ['js','bower-js'], function(){
-  gulp.src([yeoman.dist+'/*.html'])
-    .pipe( inject( gulp.src(yeoman.dist+'/js/vendor/*.js'), {relative: true, starttag: '<!-- bower:{{ext}} -->'} ) )
-    .pipe( inject( gulp.src(yeoman.dist+'/js/*.js'), {relative: true} ) )
-    .pipe(gulp.dest(yeoman.dist))
 });
 
 // ftp
@@ -240,32 +224,26 @@ gulp.task('ftp', function(){
     }))
 });
 
-gulp.task('cssnano', function(){
-  return gulp.src('app/css/vetage.css')
-          .pipe($.cssnano({
-            removeAll: true,
-            discardDuplicates: true,
-            convertValues: true,
-            colormin: true,
-            discardEmpty: true,
-            discardOverridden: true,
-            discardUnused: true,
-            mergeLonghand: true,
-            mergeRules: true,
-            minifyFontValues: true,
-            minifySelectors: true,
-            orderedValues: true,
-            reducePositions: true,
-            reduceTimingFunctions: true,
-            reduceTransforms: true,
-            uniqueSelectors: true
-          }))
-          // .pipe($.header(banner))
-          .pipe(gulp.dest(yeoman.dist+'/css'));
+// imageisux
+gulp.task('imageisux', function() {
+    return gulp.src('app/css/i/*')
+               .pipe($.imageisux('/webp/',true));
+});
+
+// webp
+gulp.task('webp', function () {
+    return gulp.src('app/css/i/header-title.png')
+        .pipe($.webp({
+          src: 'app/css/i/header-title.png',
+          dest: 'webp',
+          options: {}
+        }))
+        .pipe( gulp.dest('webp') );
 });
 
 gulp.task('default', ['compass', 'watch', 'server']);
-gulp.task('build', ['bower-js', 'compass-pro', 'js', 'images', 'copy', 'html', 'ftp']);
+gulp.task('doc', ['doc-sass', 'watch', 'server']);
+gulp.task('build', ['compass-pro', 'images', 'html', 'js', 'images-min']);
 
 
 

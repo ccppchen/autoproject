@@ -1,0 +1,137 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/components-base";
+// @import "tobe/ext/comm";
+
+/* ext */
+.arrow-right{
+	@extend %arrow-right;
+}
+.check-input{
+	@extend %check-input;
+}
+.lazy-box{
+	@extend %lazy-box;
+}
+
+
+/* other */
+.icon-truffle{
+	background: inline-image("base64/truffle.png") no-repeat left center;
+	background-size: rem(36) rem(36);
+}
+.icon-seasonal{
+	background: inline-image("base64/seasonal.png") no-repeat left center;
+	background-size: rem(36) rem(36);
+}
+.icon-celeriac{
+	background: inline-image("base64/celeriac.png") no-repeat left center;
+	background-size: rem(36) rem(36);
+}
+.icon-eggplant{
+	background: inline-image("base64/eggplant.png") no-repeat left center;
+	background-size: rem(36) rem(36);
+}
+.icon-leafy-vegetables{
+	background: inline-image("base64/leafy-vegetables.png") no-repeat left center;
+	background-size: rem(36) rem(36);
+}
+.icon-ecological-vegetable{
+	background: inline-image("base64/ecological-vegetable.png") no-repeat left center;
+	background-size: rem(36) rem(36);
+}
+
+.demo{
+	@include hair(bottom, #eeeeee);
+	.ovfs{
+		.ovfs-item{
+			width: auto;
+			padding: rem(24) rem(6) rem(24) rem(46);
+			margin-left: rem(20);
+			border-right: 0;
+			font-size: rem(30);
+			position: relative;
+			&:last-child{
+				margin-right: rem(20);
+			}
+			&.active{
+				color: $green;
+				font-weight: bold;
+			}
+			&.active:after{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: rem(6);
+				background-color: $green;
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+	
+}
+
+
+
+// triangle
+.triangle{
+	@include triangle(left, 10px, red);
+}
+.triangleright{
+	@include triangle(right, 10px, red);
+}
+.triangletop{
+	@include triangle(top, 10px, red);
+}
+.trianglebottom{
+	@include triangle(bottom, 10px, red);
+}
+
+// 礼品卡
+// list-pic
+@include pic-list;
+@include pic-list(pic-list-three, 3, #ffffff, .2rem, list-bg);
+.cwrap-name{
+	background-color: #ffffff;
+	padding: 0.08rem 0.24rem;
+	font-size: 0.28rem;
+	color: #666666;
+	line-height: 1.5;
+	height: 1rem;
+	display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.cwrap-price{
+	background-color: #ffffff;
+	padding: 0 0.24rem 0.16rem 0.24rem;
+	color: #333333;
+	font-size: rem(28);
+}
+.cwrap-price .small-rmb{
+	color: #333333;
+}
+
+.card-shop{
+	float: right;
+	width: 0.32rem;
+	height: 0.32rem;
+	background: #ffffff inline-image("base64/card-shop.png") no-repeat center center;
+	background-size: contain;
+	display: inline-block;
+	&.nogod{
+		background-image: inline-image("base64/card-shopdark.png");
+	}
+}
+.cwrap-img{
+	background-color: #ffffff;
+	> a{
+		display: block;
+		position: relative;
+		img{
+			padding: 0.16rem;
+		}
+	}
+}

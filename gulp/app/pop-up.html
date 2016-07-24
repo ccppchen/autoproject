@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>筛选页显示分类名</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="css/i/apple-touch/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="css/i/apple-touch/icon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="css/i/apple-touch/icon-196.png">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript">
+    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
+    </script>
+<link rel="stylesheet" type="text/css" href="css/pop-up.css">
+<link rel="stylesheet" type="text/css" href="css/icons.css">
+</head>
+
+<body>
+
+   <!-- 弹窗 -->
+        <div class="modal-overlay modal-overlay-visible"></div>
+        <div class="modal">
+        	<ul>
+        		<li>
+	                <div class="modal-text">百联服务</div>
+	                <div class="bgf2f2-ul-1">
+		                <ul>
+			            	<li>百联自营</li>
+			                <li>自提</li>
+			                <li>促销</li>
+			                <li>全球购</li>
+			                <li class="on">仅看有货</li>
+			            </ul>
+		            </div>
+		        </li>
+		        <li>
+		        	<div class="bgf2f2-font">
+				    	<div class="bgf2f2-font-title">价格区间（元）</div>
+				        <div class="bgf2f2-input fl">
+				        	<input type="text" placeholder="最低价">
+				        </div>
+				        <div class="bgf2f2-center">-</div>
+				        <div class="bgf2f2-input fr">
+				        	<input type="text" placeholder="最高价">
+				        </div>
+				    </div>
+		        </li>
+		        <li style="font-size:0;">
+		        	<a href="#" class="classification">
+		        		<div class="arrow-back iconfont"></div>
+		        		<span class="popup-all">全部</span>
+		        		<span class="all-classification">全部分类</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="#" class="classification bottom-none">
+		        		<div class="arrow-back iconfont"></div>
+		        		<span class="popup-all">全部</span>
+		        		<span class="all-classification">品牌</span>
+		        		<span class="popup-fonts">蔻驰Coach,阿玛尼Armani,克里斯提...</span>
+		        	</a>
+		        	<div class="bgf2f2-ul-2">
+		                <ul>
+		                    <li>杜嘉班纳Dolce&Gabbana</li>
+			                <li>蔻驰 Coach</li>
+			                <li>宝格丽Bvlgari</li>
+			            </ul>
+		            </div>
+		        </li>
+		        <li>
+		            <div class="item-popup">
+			        	<a href="#" class="classification bottom-none">
+			        		<div class="fr-popup">
+				        		<div class="arrow-back iconfont icon-up"></div>
+				        		<span class="popup-all">全部</span>
+				            </div>
+			        		<span class="all-classification">颜色</span>
+			        	</a>
+			        	<div class="bgf2f2-ul-2 pop-info">
+			                <ul>
+					            <li>黑色</li>
+					            <li>玫瑰红</li>
+					            <li>银色</li>
+					            <li>红色</li>
+					            <li>蓝色</li>
+				         </ul>
+			            </div>
+		            </div>
+		        </li>
+		        <li>
+		        	<a href="#" class="classification bottom-none">
+		        		<div class="arrow-back iconfont"></div>
+		        		<span class="popup-all">全部</span>
+		        		<span class="all-classification">分类</span>
+		        	</a>
+		        	<div class="bgf2f2-ul-2">
+		                <ul>
+			            	<li>单肩包</li>
+			                <li>双肩包</li>
+			                <li>手提型</li>
+			            </ul>
+		            </div>
+		        </li>
+        	</ul>
+            <div class="modal-buttons ">
+                <button class="modal-button">重置</button><button class="modal-button" id="tryAgain">确定</button>
+            </div>
+
+        </div>
+	<script type="text/javascript" src="js/vendor/vendor.min.js"></script>
+	<script type="text/javascript">
+      $(function(){
+    	$('#tryAgain').click(function(event) {
+    		$('.modal-overlay').removeClass('modal-overlay-visible');
+    		$('.modal').removeClass('modal-in').addClass('modal-out');
+    	});
+    })
+      $(".bgf2f2-ul-1").find("li") .click(function(){
+		$(this).toggleClass("on");
+	});
+      $(".item-popup").find(".fr-popup").click(function(){
+		$(this).parents(".item-popup").find(".bgf2f2-ul-2").toggleClass("popup-height");
+		$(this).find("div").toggleClass("icon-up").toggleClass("icon-down");
+	});
+	</script>
+</body>
+</html>

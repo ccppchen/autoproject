@@ -1,8 +1,9 @@
-@charset "utf-8";
+@charset "utf-8";//cp
 @import "tobe/base";
 @import "tobe/ext/comm";
 
 @import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
 
 .tag{
 	@extend %tag;
@@ -19,14 +20,19 @@
     }
   }
 }
-
+.lazy-box{
+	@extend %lazy-box;
+	&.seven-four:after{
+		padding-top: 74.603175%;
+	}
+}
 .menu-rec{
 	position: relative;
 	.menu-info{
 		position: absolute;
 		bottom: rem(28);
 		padding: 0 rem(20);
-		@extend %max-width;
+		width: 100%;
 		@include display(flex);
 		@include justify-content(space-between);
 		.menu-infoleft{
@@ -39,13 +45,28 @@
 				display: inline-block;
 				margin: 0 0 0 rem(16);
 			}
+			.menu-name{
+				@include clamp();
+				width: rem(400);
+				display: table-cell;
+				line-height: 1;
+				padding-left: rem(20);
+			}
+			.menu-comm{
+				display: table-cell;
+				vertical-align: top;
+				font-size: 0;
+			}
 		}
 		.menu-inforight{
-			color: #cccccc;
-			font-size: rem(24);
-			background: inline-image("base64/find.png") no-repeat left center / rem(30) auto;
-			padding-left: rem(40);
-			@include align-self(flex-end);
+			span{
+				color: #cccccc;
+				font-size: rem(24);
+				background: inline-image("base64/find.png") no-repeat left center;
+				background-size: rem(30) auto;
+				padding-left: rem(40);
+			}
+			@include align-self(flex-start);
 		}
 	}
 
@@ -59,14 +80,19 @@
 	&:after{
 		content: '';
 		position: absolute;
-		top: - rem(10);
+		top: -5px;
 		left: rem(64);
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 0 rem(10) rem(10) rem(10);
+		border-width: 0 6px 6px 6px;
 		border-color: transparent transparent #ffffff transparent;
+		@include ipad(){
+			top: -12px;
+			border-width: 0 13px 13px 13px;
+		};
 	}
+
 }
 
 .list-ingredients{
@@ -76,22 +102,25 @@
 		padding: rem(36) 0;
 		.foot-menulist{
 			padding-left: rem(48);
-			background: inline-image("base64/foot-menulist.png") no-repeat left center / rem(38) auto;
+			background: inline-image("base64/foot-menulist.png") no-repeat left center;
+			background-size: auto rem(30);
 		}
 		.cook-method{
 			padding-left: rem(48);
-			background: inline-image("base64/cook-method.png") no-repeat left center / rem(38) auto;
+			background: inline-image("base64/cook-method.png") no-repeat left center;
+			background-size: auto rem(30);
 		}
 	}
 	.list-detail{
 		font-size: 0;
 		.ingre-name,.ingre-use{
-			display: inline-block;
-			width: 50%;
+			@include flex(1);
+			width: 0;
 			font-size: rem(28);
 			color: #666666;
 		}
 		li{
+			@include display(flex);
 			padding: rem(20);
 			&:nth-child(odd){
 				background-color: #f6f6f6;
@@ -107,6 +136,8 @@
 			margin-bottom: rem(20);
 			@include hair(bottom, #e7e7e7);
 			background-origin: padding-box;
+			padding-left: 0;
+			margin-left: rem(20);
 			&:last-child{
 				background-image: none;
 				margin-bottom: 0;
@@ -114,7 +145,8 @@
 		}
 		.step-tag{
 			position: absolute;
-			left: 0;
+			z-index: 99;
+			left: - rem(20);
 			top: rem(30);
 			width: rem(74);
 			height: rem(50);
@@ -126,8 +158,9 @@
 			&:after{
 				content: '';
 				position: absolute;
+				z-index: 1;
 				left: 0;
-				bottom: - rem(20);
+				top: rem(50);
 				width: 0; 
 				height: 0; 
 				border-top: rem(20) solid #8c8c8c; 
@@ -151,10 +184,6 @@
 		padding: rem(24) 0;
 		@extend %comm-flex;
 		@include justify-content(center);
-		h4{
-			font-weight: bold;
-			font-size: rem(32);
-			color: #333333;
 			margin: 0 rem(26);
 		}
 	}
@@ -164,12 +193,17 @@
 		text-align: center;
 		.arrow-right-green{
 			color: $green;
-			background: inline-image("base64/arrow-back-green.png") no-repeat right center / rem(30) rem(30);
+			background: inline-image("base64/arrow-back-green.png") no-repeat right center;
+			background-size: rem(30) rem(30);
 			padding-right: rem(52);
 			font-size: rem(40);
 		}
 	}
 	.rec-ings-bann{
+		h4{
+			font-weight: bold;
+			font-size: rem(32);
+			color: #333333;
 		border: 1px solid #dddddd;
 	}
 }
@@ -178,7 +212,6 @@
 	width: rem(35);
 	height: 1px;
 	background-color: #b8b7b6;
-	display: inline-block;
 }
 
 

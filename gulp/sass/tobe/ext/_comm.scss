@@ -1,6 +1,5 @@
 @charset "utf-8"; //china
 .bar {
-    @extend %max-width;
     &.nopadding {
         padding: 0;
     }
@@ -8,7 +7,6 @@
 
 .content {
     width: 100%;
-    @extend %max-width;
     padding-top: $bar-height;
 }
 
@@ -21,7 +19,7 @@
 
 // rmb
 .price-rmb {
-    font-family: arial;
+    font-family: PingFangSC-Regular;
     color: #e6133c;
     font-style: normal;
     margin-right: 3px;
@@ -29,7 +27,7 @@
 }
 
 .small-rmb {
-    font-family: arial;
+    font-family: PingFangSC-Regular;
     color: #333;
     font-style: normal;
     font-size: rem(24);
@@ -77,18 +75,6 @@
     background-color: $blueLight;
 }
 
-// 对齐
-.tac {
-    text-align: center;
-}
-
-.tar {
-    text-align: right;
-}
-
-.tal {
-    text-align-last: left;
-}
 
 // 占位
 .w24 {
@@ -111,189 +97,3 @@
 }
 
 
-
-/* --------------------------------------------------
- * 非输出
- */
-// bar span
-%button.bor-radius .iconfont{
-  @extend %comm-flex;
-  @include justify-content(center);
-  width: rem(48);
-  height: rem(48);
-  background-color: #cccccc;
-  border-radius: 100px;
-}
-%button.bor-radius .iconfont.arrow-back:before{
-  margin-left: -2px;
-}
-
-%max-width {
-    width: 100%;
-    max-width: 750px;
-    min-width: 320px;
-    overflow-x: hidden;
-    margin: 0 auto;
-}
-
-// tag
-%tag {
-    padding: rem(6) rem(12);
-    font-size: rem(20);
-    margin: 0 rem(14);
-    vertical-align: middle;
-    color: #ffffff;
-    border-radius: 3px;
-}
-
-// 灰色透明背景遮罩
-%modal-mask {
-    background-color: rgba(#000000, .7);
-    width: 100%;
-    height: 100%;
-    @extend %max-width;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1003;
-}
-
-// input check
-%check-input {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    user-select: text;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 1px solid #afb3c2;
-    border-radius: 100px;
-    width: rem(34);
-    height: rem(34);
-    margin-right: rem(16);
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
-    &.check-red:checked {
-        background-color: $red;
-        border-color: $red;
-    }
-    &:checked {
-        background-color: $green;
-        border-color: $green;
-    }
-    &:checked:after {
-        content: '';
-        width: rem(16);
-        height: rem(8);
-        border-left: 1px solid #fff;
-        border-bottom: 1px solid #fff;
-        -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    }
-}
-
-// btn-disabled
-%btn-disabled {
-    background-color: #e1e1e1;
-    color: #aaa;
-}
-
-// 右箭头
-%arrow-default {
-    padding-right: rem(25);
-}
-
-%arrow-right {
-    background: inline-image("base64/arrow.png") no-repeat right center / rem(16) auto;
-    @extend %arrow-default;
-}
-
-%arrow-white-right {
-    background: inline-image("base64/arrow-white-right.png") no-repeat right center / rem(16) auto;
-    @extend %arrow-default;
-}
-
-%arrow-down {
-    background: inline-image("base64/down.png") no-repeat right center / rem(16) auto;
-    @extend %arrow-default;
-}
-
-%arrow-up {
-    background: inline-image("base64/up.png") no-repeat right center / rem(16) auto;
-    @extend %arrow-default;
-}
-
-// 返回顶部
-%cp-gotop {
-    position: fixed;
-    right: rem(30);
-    bottom: - rem(220);
-    z-index: 20;
-    width: rem(100);
-    height: rem(100);
-    background-image: url('data:image/png;base64,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');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-%gotop {
-    position: fixed;
-    right: rem(20);
-    bottom: - rem(142);
-    z-index: 20;
-    width: rem(72);
-    height: rem(72);
-    background-image: inline-image("base64/go-top.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 1002;
-}
-
-// 懒加载
-%lazy-box {
-    position: relative;
-    &:after {
-        content: '';
-        display: block;
-        padding-top: 100%;
-    }
-    &.half:after {
-        padding-top: 50%;
-    }
-    &.half-light:after {
-        padding-top: 55.019305%;
-    }
-    &.six:after {
-        padding-top: 66.6666666666666667%;
-    }
-    &.three:after {
-        padding-top: 37.037037%;
-    }
-    &.o-one:after {
-        padding-top: 111.111111111111111%;
-    }
-    .lazy {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        @include transform(translate3d(-50%, -50%, 0));
-    }
-}
-
-// tab-group
-%tab-group {
-    @extend %comm-flex;
-    .tab-item {
-        @include flex(1);
-        @extend %comm-flex;
-        @include justify-content(center);
-        height: 100%;
-        padding: 0;
-        border: 0;
-        outline: 0;
-    }
-}

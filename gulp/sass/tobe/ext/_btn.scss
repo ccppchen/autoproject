@@ -27,7 +27,7 @@ $abledHoverSwitch:       false !default; //是否启用hover
 // btn common style
 // 按钮基本样式，联合申明
 %btn-basic{
-  @include inline-block;
+  display: inline-block;
   cursor: pointer;
   text-align:center;
   border:0 none;
@@ -83,10 +83,10 @@ $abledHoverSwitch:       false !default; //是否启用hover
     color: darken($textColor, 85%);
   }
 
-  &:active{
-    background-color: darken($bgColor,5%);
-    color:$textColor;
-  }
+  // &:active{
+  //   background-color: darken($bgColor,5%);
+  //   color:$textColor;
+  // }
   @if $abledHoverSwitch {
     &:hover{
       background-color: darken($bgColor,5%);

@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "utf-8";//cp
 @import "tobe/base";
 @import "tobe/ext/comm";
 
@@ -9,6 +9,9 @@
 $btnColorClass: (red $red #fff) (green $green #fff);
 @include btn-color-multi();
 
+.tar{
+	text-align: right;
+}
 .btn-disabled{
 	@extend %btn-disabled;
 }

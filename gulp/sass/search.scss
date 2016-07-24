@@ -13,7 +13,8 @@
 	@include align-items(center);
 	.iconfont{
 		width: rem(100);
-		padding-left: rem(20)
+		padding-left: rem(20);
+		display: flex;
 	}
 	.stroll-wid{
 		width: rem(20);
@@ -41,7 +42,7 @@
         font-size:rem(32); 
         color:#333333; 
         text-indent:0;
-        background-size:rem(30)
+        background-size:rem(30);
     }
 }
 .closeicon{
@@ -59,9 +60,6 @@
 .con-search{
 	position: absolute;
 	width: 100%;
-	max-width: 750px;
-	min-width: 320px;
-	margin: 0 auto;
 	height: 100%;
 	background: #fff;
 	padding: 0;
@@ -85,6 +83,7 @@
 .search-content{
 	display:inline-block;
 	padding:rem(20);
+	width: 100%;
 	ul{
 		font-size: 0;
 			li{
@@ -127,7 +126,7 @@
 	}
 }
 .num{
-	font-size:.5rem;
+	font-size:rem(50);
 }
 .bot-right{
 	float:right; 
@@ -136,3 +135,39 @@
 .search-content ul li:nth-child(3n){
 	margin-right:0;
 }
+.search-loading{
+	position: relative;
+	background: inline-image("base64/default-img.png") no-repeat center center;
+	.lazy-box {
+	    position: relative;
+	    .lazy {
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    -ms-transform: translate3d(-50%, -50%, 0);
+	    -webkit-transform: translate3d(-50%, -50%, 0);
+	    transform: translate3d(-50%, -50%, 0);
+	   }
+	   &:after {
+		    content: '';
+		    display: block;
+		    padding-top: 100%;
+		}
+	  }
+}
+// .search-none-icon .lazy-box {
+// 	    position: relative;
+// 	    .lazy {
+// 	    position: absolute;
+// 	    left: 50%;
+// 	    top: 50%;
+// 	    -ms-transform: translate3d(-50%, -50%, 0);
+// 	    -webkit-transform: translate3d(-50%, -50%, 0);
+// 	    transform: translate3d(-50%, -50%, 0);
+// 	   }
+// 	   &:after {
+// 		    content: '';
+// 		    display: block;
+// 		    padding-top: 100%;
+// 		}
+// 	  }

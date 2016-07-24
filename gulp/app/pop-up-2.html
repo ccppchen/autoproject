@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选中多个品牌</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="css/i/apple-touch/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="css/i/apple-touch/icon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="css/i/apple-touch/icon-196.png">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript">
+    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
+    </script>
+<link rel="stylesheet" type="text/css" href="css/pop-up.css">
+<link rel="stylesheet" type="text/css" href="css/icons.css">
+</head>
+
+<body>
+
+   <!-- 弹窗 -->
+    <div class="modal-overlay modal-overlay-visible"></div>
+    <div class="modal modal2">
+    	<div class="popup-header">
+		     <header class="bar bar-header bar-light">
+		        <a href="javascript:history.go(-1)" class="bar-left">
+		            <div class="button iconfont arrow-back"></div>
+		        </a>
+		        <h1 class="title index-title">
+		            全部品牌
+		        </h1>
+		        <span class="sure">确定</span>
+		    </header>
+	    </div>
+	    <div class="pop-up-2">
+	         <div class="popup-font-title on-li">
+	            <ul>
+	                <li class="on"><a href="#"><span>按热度</span></a></li>
+	                <li class=""><a href="#"><span>按首字母</span></a></li>
+	            </ul>
+	        </div>
+	        <div class="popup-list">
+	        	<div class="popup-top-title">
+		        	<div class="popup-top-1">
+			        	<ul>
+			        	    <li class="on">全部</li>
+			        		<li>阿玛尼Armani</li>
+			        		<li>宝格丽Bvlgari</li>
+			        		<li>菠驰Coach</li>
+			        		<li>香奈儿Chanel</li>
+			        		<li>卡地亚Cartier</li>
+			        		<li>杜嘉班纳Dolce&Gabbana</li>
+			        		<li>芙拉Furla</li>
+			        		<li>芬迪Fendi</li>
+			        		<li>爱马仕Hermes</li>
+			        	</ul>
+			        </div>
+			    </div>
+		        <div class="popup-top-title" style="display:none">
+		         	<div class="popup-quanbu">全部</div>
+ 	            	<div class="popup-zimu">#</div>
+		        	<div class="popup-top-2">       	
+			        	<ul>
+			        		<li>77</li>
+			        		<li>77-7d</li>
+		        	</ul>
+			        </div>	
+ 	            	<div class="popup-zimu">A</div>
+		        	<div class="popup-top-2">       	
+			        	<ul>
+			        		<li>奥利奥</li>
+			        		<li>奥菲儿</li>
+			        		<li>阿舍t觉</li>
+			        		<li>阿玛尼</li>
+			        		<li>爱华仕</li>
+			        		<li>艾奔</li>
+			        		<li>艾徽沃</li>
+			        		<li>爱马仕</li>
+			        	</ul>
+			        </div>	
+		        </div> 
+	        </div>
+	    </div>
+	</div>
+	<script type="text/javascript" src="js/vendor/vendor.min.js"></script>
+	<script type="text/javascript">
+      $(function(){
+    	$('#tryAgain').click(function(event) {
+    		$('.modal-overlay').removeClass('modal-overlay-visible');
+    		$('.modal').removeClass('modal-in').addClass('modal-out');
+    	});
+    })
+ 
+	$(".popup-font-title").find("li").click(function(){ 
+		$(this).addClass("on").siblings("li").removeClass("on");
+		$(".popup-list").find(".popup-top-title").eq($(this).index()).show().siblings(".popup-top-title").hide();
+	});
+    
+    var aaa=$(".popup-list").find("li");
+	    aaa.click(function(){
+        aaa.removeClass("on");
+		$(this).addClass("on");
+	});
+	</script>
+</body>
+</html>

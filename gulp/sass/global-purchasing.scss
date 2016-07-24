@@ -1,0 +1,122 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+@import "tobe/ext/comm";
+@import "tobe/ext/touchSlide";
+@import "tobe/components/bar/bar";
+@import "tobe/components/overflow-scroll/overflow-scroll";
+body{
+	background-color: #f7f7f7;
+}
+.white-bg{
+	background-color: #ffffff;
+}
+.bar-header .button{
+	color: #666666;
+}
+.swiper-slide.half-two:after{
+	padding-top: 42%;
+}
+
+.lazy-box{
+	@extend %lazy-box;
+}
+.lazy-box{
+	&.half-four:after{
+		padding-top: 44%;
+	}
+	&.half-six:after{
+		padding-top: 60%;
+	}
+}
+.globalbuy-logo{
+	width: rem(128);
+	height: auto;
+}
+/* main */
+.quanqiugou-1{
+	background: #fff;
+	margin-bottom: rem(20);
+	.quanqiugou-bg{
+		position: relative;
+		background: inline-image("base64/closeicon.png") no-repeat center center;  
+		.lazy-box{
+			position:relative; 
+			.lazy {
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    -ms-transform: translate3d(-50%, -50%, 0);
+			    -webkit-transform: translate3d(-50%, -50%, 0);
+			    transform: translate3d(-50%, -50%, 0);
+			   }
+			&:after{
+             	padding-top: 49%;
+            }
+		}
+	}
+	.quanqiugou-img-bg{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		z-index: 1;
+	    background-color: rgba(0, 0, 0, 0.4);
+	    color: #fff;
+	    text-align:center;
+	    .fonts-1{
+	    	font-size: rem(50);
+	    	position: absolute;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-left: -.9rem;
+	    	margin-top: -.33rem;
+	    }
+	    .fonts-2{
+	    	font-size: rem(28);
+	    	position: absolute;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-left: rem(-125);
+	    	margin-top: rem(60);
+	    	ul li{
+	    		float: left;
+	    		width: rem(88);
+	    		border-right: 1px solid #ffffff;
+	    		a{
+	                  color: #fff;
+	                  display: block;
+	                  line-height: rem(20);
+	                i{
+                  	display: inline-block;
+                  	width: rem(2);
+                  	height: rem(20);
+                  	background: #fff;
+	    		}
+	    	}
+	    }
+	    li:nth-child(3n){
+           border-right: none;
+	    }
+	}
+	
+}
+.quanqiugou-bot{
+		padding:0 rem(20);
+		display: inline-block;
+		width: 100%;
+		font-size: rem(24);
+		ul{
+		display: inline-block;
+		overflow: hidden;
+		margin-right: rem(-40);			
+		}
+
+		li{
+			float: left;
+			padding: rem(20) rem(40) rem(20) 0;
+		}
+		li.on{
+			color: #e6133c;
+		}
+	}
+}

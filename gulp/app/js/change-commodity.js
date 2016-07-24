@@ -1,6 +1,6 @@
 Zepto(function($){
 	// tab
-	$('.vegetables-class').on('touchstart click', '.ovfs-item', function(event) {
+	$('.vegetables-class').on('click', '.ovfs-item', function(event) {
 		$(this).addClass('active').siblings().removeClass('active');
 	});
 	// commodity－content高度自适应触发器
@@ -11,7 +11,7 @@ Zepto(function($){
 	$('.commodity-content').trigger('apperBottom');
 
 	// 删除单个商品
-	$('.chosed-wrap').on('touchstart click', '.chose-close', function(event) {
+	$('.chosed-wrap').on('click', '.chose-close', function(event) {
 		$(this).parent('.chosed-item').fadeOut('fast', function() {
 			$(this).remove();
 		});
@@ -20,7 +20,7 @@ Zepto(function($){
 		}, 300);
 	});
 	// 清空商品
-	$(document).on('touchstart click', '.js-empty', function(event) {
+	$(document).on('click', '.js-empty', function(event) {
 		$('.chosed-wrap .chosed-item').fadeOut('fast', function() {
 			$(this).remove();
 		});
@@ -30,7 +30,7 @@ Zepto(function($){
 	});
 
 	// 商品添加
-	$('.bg-bottom').on('touchstart click', '.bot-right', function(event) {
+	$('.bg-bottom').on('click', '.bot-right', function(event) {
 		// ....
 		setTimeout(function(){
 			$('.commodity-content').trigger('apperBottom');
@@ -41,9 +41,13 @@ Zepto(function($){
 		/* Act on the event */
 	});
 	// 关闭遮罩
-	$('.cmiknow').on('touchstart click', function(event) {
+	$('.cmiknow').on('click', function(event) {
 		$('.modal-mask').fadeOut('fast', function() {
 			// ...
 		});
 	});
+	$('.cmmodal-tip').css({
+        left: $('.search-content .bot-right img').eq(0).offset().left - 10,
+        top: $('.search-content .bot-right img').eq(0).offset().top - 10
+    });
 });

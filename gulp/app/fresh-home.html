@@ -1,88 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>index</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta name="description" content="">
-    <meta name="Keywords" content="">
-    <script type="text/javascript">
-    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
-    </script>
-    <!-- inject:css -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+<title>生鲜-随心订</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="applicable-device" content="mobile">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon-precomposed" sizes="57x57"
+      href="css/i/apple-touch/icon-57.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120"
+      href="css/i/apple-touch/icon-120.png">
+<link rel="apple-touch-icon-precomposed" sizes="196x196"
+      href="css/i/apple-touch/icon-196.png">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="description" content="">
+<meta name="Keywords" content="">
+<script type="text/javascript">
+(function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
+</script>
+
+<!-- inject:css -->
+<link rel="stylesheet" type="text/css" href="css/fresh-home.css">
+<link rel="stylesheet" type="text/css" href="css/icons.css">
 </head>
 
-<body ontouchstart="">
+<body class="body-bg">
+<!-- header start -->
+<header class="bar bar-header bar-light">
+    <a href="javascript:history.go(-1)" class="bar-left">
+        <div class="button iconfont arrow-back"></div>
+    </a>
+    <h1 class="title">
+        <img src="css/i/header-title.png" alt="生鲜=随心订" style="width: 2.34rem;">
+    </h1>
+    <div class="bar-right">
+        <div class="button">订单</div>
+    </div>
+</header>
+<!-- header end -->
 <div class="header-main">
     <a href="#" class="iconfont arrow-back"></a>
     <div><a href="#">订单</a></div>
-    <img src="css/i/header-title.png">
+    <img src="css/i/header-title.png" alt="生鲜=随心订"><h1>生鲜=随心订</h1>
 </div>
-<div class="fresh-banner">
-    <ul>
-        <li><img src="images/fresh-home/banner.png"></li>
-    </ul>
+
+<div class="fresh-banner swipe" id="mySwipe">
+    <div class="ul-img swipe-wrap">
+        <div><a href="#"><img src="images/fresh-home/banner.png" alt=""></a></div>
+        <div style="display:none"><a href="#"><img src="images/fresh-home/banner.png" alt=""></a></div>
+        <div style="display:none"><a href="#"><img src="images/fresh-home/banner.png" alt=""></a></div>
+    </div>
+    <div class="ul-point">
+        <ul id="arrow"></ul>
+    </div>
 </div>
+
 <div class="banner-item">
 	<ul>
-    	<li><a href="#"><i><img src="css/i/fresh-icon-1.png" /></i>基地自采</a></li>
-        <li><a href="#"><i><img src="css/i/fresh-icon-2.png" /></i>随心搭配</a></li>
-        <li><a href="#"><i><img src="css/i/fresh-icon-3.png" /></i>全程冷链</a></li>
-        <li><a href="#"><i><img src="css/i/fresh-icon-4.png" /></i>定天送达</a></li>
+    	<li><a href="#"><i class="on-icon-1"></i>基地自采</a></li>
+        <li><a href="#"><i class="on-icon-2"></i>随心搭配</a></li>
+        <li><a href="#"><i class="on-icon-3"></i>全程冷链</a></li>
+        <li><a href="#"><i class="on-icon-4"></i>定天送达</a></li>
     </ul>
 </div>
 <div class="banner-recommend">
 	<div>当季推荐</div>
-    <img src="images/fresh-home/banner-recommend.png">
+    <a href="#"><img src="images/fresh-home/banner-recommend.png" alt=""></a>
 </div>
 <div class="fresh-ul">
 	<div class="fresh-title">
-    	<img src="css/i/s-title-1.png">
+    	<img src="css/i/s-title-1.png" alt="蔬菜篇·新鲜在身边"><h2>蔬菜篇·新鲜在身边</h2>
     	<a href="#">更多<i class="iconfont arrow-back"></i></a>
 	</div>
 	<div class="fresh-li">
 		<ul>
-        	<li><a href="#"><img src="images/fresh-home/s-img-1.png"></a></li>
-            <li><a href="#"><img src="images/fresh-home/s-img-2.png"></a></li>
-            <li><a href="#"><img src="images/fresh-home/s-img-3.png"></a></li>
-            <li><a href="#"><img src="images/fresh-home/s-img-4.png"></a></li>
+        	<li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-1.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-2.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-3.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-4.png" alt=""></a></li>
         </ul>
 	</div>
     <div class="fresh-title ti-1">
-		<img src="css/i/s-title-2.png">
+		<img src="css/i/s-title-2.png" alt="水果篇·秀出阳光果味"><h2>水果篇·秀出阳光果味</h2>
     	<a href="#">更多<i class="iconfont arrow-back"></i></a>
     </div>
     <div class="fresh-li">
     	<ul>
-        	<li><a href="#"><img src="images/fresh-home/s-img-1.png"></a></li>
-            <li><a href="#"><img src="images/fresh-home/s-img-2.png"></a></li>
+        	<li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-1.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-2.png" alt=""></a></li>
         </ul>
     </div>
 </div>
 
-<div class="fresh-cate-title"><img src="css/i/s-title-3.png"></div>
+<div class="fresh-cate-title"><img src="css/i/s-title-3.png" alt="时令美食·健康时令烹饪"><h2>时令美食·健康时令烹饪</h2></div>
 <div class="fresh-cate-ul">
 	<ul>
     	<li>
         	<div class="cate-img">
             	<div>热门推荐</div>
-            	<img src="images/fresh-home/s-img-banner.png">
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
             </div>
             <div class="fresh-item-main">
             	<i class="i-cate"></i>
             	<div class="item-title">
-                	<div class="title-left">香葱烤河鲫鱼</div>
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
                     <div class="title-right">
-                    	<i><img src="css/i/icon-img.png"></i>
+                    	<i></i>
                         720人浏览
                     </div>
                 </div>
@@ -92,14 +120,14 @@
         <li>
         	<div class="cate-img">
             	<div>热门推荐</div>
-            	<img src="images/fresh-home/s-img-banner.png">
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
             </div>
             <div class="fresh-item-main">
             	<i class="i-cate"></i>
             	<div class="item-title">
-                	<div class="title-left">香葱烤河鲫鱼</div>
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
                     <div class="title-right">
-                    	<i><img src="css/i/icon-img.png"></i>
+                    	<i></i>
                         720人浏览
                     </div>
                 </div>
@@ -109,14 +137,14 @@
         <li>
         	<div class="cate-img">
             	<div>热门推荐</div>
-            	<img src="images/fresh-home/s-img-banner.png">
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
             </div>
             <div class="fresh-item-main">
             	<i class="i-cate"></i>
             	<div class="item-title">
-                	<div class="title-left">香葱烤河鲫鱼</div>
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
                     <div class="title-right">
-                    	<i><img src="css/i/icon-img.png"></i>
+                    	<i></i>
                         720人浏览
                     </div>
                 </div>
@@ -126,14 +154,14 @@
         <li>
         	<div class="cate-img">
             	<div>热门推荐</div>
-            	<img src="images/fresh-home/s-img-banner.png">
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
             </div>
             <div class="fresh-item-main">
             	<i class="i-cate"></i>
             	<div class="item-title">
-                	<div class="title-left">香葱烤河鲫鱼</div>
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
                     <div class="title-right">
-                    	<i><img src="css/i/icon-img.png"></i>
+                    	<i></i>
                         720人浏览
                     </div>
                 </div>
@@ -143,14 +171,14 @@
         <li>
         	<div class="cate-img">
             	<div>热门推荐</div>
-            	<img src="images/fresh-home/s-img-banner.png">
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
             </div>
             <div class="fresh-item-main">
             	<i class="i-cate"></i>
             	<div class="item-title">
-                	<div class="title-left">香葱烤河鲫鱼</div>
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
                     <div class="title-right">
-                    	<i><img src="css/i/icon-img.png"></i>
+                    	<i></i>
                         720人浏览
                     </div>
                 </div>
@@ -159,8 +187,11 @@
         </li>
     </ul>
 </div>
-<div class="fresh-bottom"><img src="css/i/end.png"></div>
-<div class="fresh-fixed"><a href="#"><img src="css/i/bottom-top.png"></a></div>
-<script src="//cdn.bootcss.com/prism/9000.0.1/prism.min.js"></script>
+<div class="fresh-bottom"><span></span></div>
+<script src="js/vendor/vendor.min.js"></script>
+<script src="js/touchslider.js"></script>
+<script src="js/bl-scroll-load.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/fresh-home.js"></script>
 </body>
 </html>

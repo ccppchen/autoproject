@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "utf-8";//cp
 @import "tobe/base";
 @import "tobe/ext/comm";
 @import "tobe/ext/touchSlide";
@@ -8,11 +8,18 @@
 .gotop{
 	@extend %gotop;
 }
-.button.bor-radius{
+.bar-header .button.bor-radius{
 	@extend %button.bor-radius;
 }
-.button.bor-radius .iconfont{
+.bar-header .button.bor-radius .iconfont{
 	@extend %button.bor-radius;
+}
+
+.bar-header .arrow-back{
+	font-size: rem(36);
+}
+.bar-header .title.hide{
+	opacity: 0;
 }
 .product-detail {
 	text-align: center;
