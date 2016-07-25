@@ -167,9 +167,15 @@ gulp.task('js', function(){
     .pipe(gulp.dest(yeoman.dist+'/js'))
 });
 
+// html
+gulp.task('html', function(){
+  gulp.src([yeoman.app+'/*.html'])
+  .pipe(gulp.dest(yeoman.dist))
+});
+
 gulp.task('default', ['compass', 'watch', 'server']);
 gulp.task('doc', ['doc-sass', 'watch', 'server']);
-gulp.task('build', ['compass-pro', 'images', 'js', 'images-min']);
+gulp.task('build', ['compass-pro', 'images', 'js', 'images-min', 'html']);
 
 
 
