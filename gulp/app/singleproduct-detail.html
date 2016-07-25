@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>html5</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+	<meta name="applicable-device" content="mobile">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="css/i/apple-touch/icon-57.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="css/i/apple-touch/icon-120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="196x196" href="css/i/apple-touch/icon-196.png">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+	<script type="text/javascript">
+		(function() {
+			var a = this;
+			a.width = 750;
+			a.fontSize = 100;
+			a.widthProportion = function() {
+				var c = (document.getElementsByTagName("html")[0].offsetWidth) / a.width;
+				var b = c.toFixed(6);
+				return b > 1 ? 1 : b < 0.42667 ? 0.42667 : b
+			};
+			a.changePage = function() {
+				document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + a.widthProportion() * a.fontSize + "px !important")
+			};
+			a.changePage();
+			window.addEventListener("resize", function() {
+				a.changePage()
+			}, false)
+		}());
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/icons.css">
+	<link rel="stylesheet" type="text/css" href="css/singleproduct-detail.css" />
+</head>
+
+<body id="singleproduct">
+	<div class="head-container">
+	<div class="single-head">
+		<div class=" iconfont arrow-back"></div>
+		<div class="head-link">
+			<a class="select">商品</a>
+			<a>详情</a>
+			<a>参数</a>
+			<a>售后</a>
+		</div>
+		<div class=" iconfont more-v"></div>
+		<div class=" iconfont shop-car"><span>2</span></div>
+	</div>
+	</div>
+	<!-- Swiper -->
+	<div class="swiper-container" id="touchSlide">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<a href="javascript:;"><img src="images/singleproduct-detail/product.png" alt=""></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;"><img src="images/singleproduct-detail/product.png" alt=""></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;"><img src="images/singleproduct-detail/product.png" alt=""></a>
+			</div>
+		</div>
+		<div class="swiper-pagination">
+			<ul></ul>
+		</div>
+	</div>
+	<div class="product-name"><span>自营</span>AIR JORDAN 乔丹2 RETRO'DUNK 复刻设计 感受MJ的非凡凌跃
+	</div>
+	<div class="product-remind">
+		敬请于3月19日莅临，拥有属于你的凌跃鞋款。内部标签采用深藏 青和金属金配色，为篮球战靴引入“凌跃”概念
+	</div>
+	<div class="product-pad">
+		<div class="product-core">
+			<span>￥</span><span class="true-core">6999.00</span>
+			<span class="through-core">￥9999.00</span>
+			<div class="phone-special">
+				<div class="special-logo"></div>
+					比PC端省16元
+			</div>
+		</div>
+		
+	</div>
+	<div class="get-ticket-container">
+		<div class="get-ticket">
+			<div class="operate-text">领券</div>
+			<div class="iconfont arrow-back"></div>
+			<div class="ticket-detail ">
+				<ul>
+					<li>
+						<div class="ticket-logo">
+							满100减40
+						</div>
+						<div class="ticket-text">
+							<div class="ticket-limit">
+								<p>每笔订单满100元可用</p>
+								<p>有效期：2016.06.08-2016.06.30</p>
+							</div>
+							<div class="get-button">
+								<a>领取</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="ticket-logo">
+							满100减40
+						</div>
+						<div class="ticket-text">
+							<div class="ticket-limit">
+								<p>每笔订单满100元可用</p>
+								<p>有效期：2016.06.08-2016.06.30</p>
+							</div>
+							<div class="get-button">
+								<a>领取</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="ticket-logo">
+							满100减40
+						</div>
+						<div class="ticket-text">
+							<div class="ticket-limit">
+								<p>每笔订单满100元可用</p>
+								<p>有效期：2016.06.08-2016.06.30</p>
+							</div>
+							<div class="get-button">
+								<a>领取</a>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	<div class="get-ticket-container">
+		<div class="get-ticket">
+			<div class="operate-text">促销</div>
+			<div class="iconfont arrow-back"></div>
+			<div class="ticket-detail sales-detail">
+				<ul>
+					<li>
+						<div class="sales-logo">
+							满100减40
+						</div>
+						<div class="ticket-text">
+							<div class="sales-limit">
+								<p>每笔订单满100元可用</p>
+								<p>有效期：2016.06.08-2016.06.30有效期：2016.06.08-2016.06.30有效期：2016.06.08-2016.06.30</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="sales-logo">
+							满100减40
+						</div>
+						<div class="ticket-text">
+							<div class="sales-limit">
+								<p>每笔订单满100元可用</p>
+								<p>有效期：2016.06.08-2016.06.30</p>
+							</div>
+							
+						</div>
+					</li>
+					
+					
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	<div class="product-pad">
+		<div class="choose-limit">
+			<div class="operate-cotainer">
+				<div class="operate-text">选择</div>
+				<div>规格 数量</div>
+			</div>
+			<div class="iconfont arrow-back icon-enter"></div>
+		</div>
+	</div>
+	<div class="product-pad">
+		<div class="choose-limit">
+			<div class="operate-cotainer">
+				<div class="operate-text">优惠套装</div>
+				<div>最高省<span class="color-s">60.00</span>元</div>
+			</div>
+			<div class="right-enter">
+				<div class="total-num">共15款</div>
+				<div class="iconfont arrow-back icon-enter"></div>
+			</div>
+		</div>
+	</div>
+	<div class="product-pad margin-config">
+		<div class="serve-offer">
+			<div class="operate-text">服务</div>
+			<div class="serve-contain">
+				<div class="serve-company">由百联提供发货</div>
+				<div>
+					<div class="serve-logo">满68元免运费</div>
+					<div class="serve-logo">7天无理由退换货</div>
+					<div class="serve-logo">上门自提</div>
+					<div class="serve-logo">货到付款</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="product-comment margin-config">
+		<ul>
+			<li>
+				<div class="left-head">
+					<div class="operate-text">评价</div>
+					<div><span>98%</span>好评率</div>
+				</div>
+				<div class="right-head">
+					<div class="comment-num">（9999条评论）</div>
+					<div class="iconfont arrow-back icon-enter"></div>
+				</div>
+			</li>
+			<li>
+				<div class="portrait"></div>
+				<div class="comment-container">
+					<div class="comment-head">
+						<div>w***f</div>
+						<div class="comment-star">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div class="ash-star"></div>
+						</div>
+					</div>
+					<div class="comment-text">
+						喜欢~是我想要的！太开心了~推荐给闺蜜了，她也觉得好看，果断下手吧~
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="portrait"></div>
+				<div class="comment-container">
+					<div class="comment-head">
+						<div>w***f</div>
+						<div class="comment-star">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div class="ash-star"></div>
+						</div>
+					</div>
+					<div class="comment-text">
+						喜欢~是我想要的！太开心了~推荐给闺蜜了，她也觉得好看，果断下手吧~
+					</div>
+					<div class="img-container">
+						<div class="img-single">
+							<img src="images/singleproduct-detail/comment.png" />
+						</div>
+						<div class="img-single">
+							<img src="images/singleproduct-detail/comment.png" />
+						</div>
+						<div class="img-single">
+							<img src="images/singleproduct-detail/comment.png" />
+						</div>
+						<div class="img-single">
+							<img src="images/singleproduct-detail/comment.png" />
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div> 有图评论</div>
+			</li>
+		</ul>
+	</div>
+	<div class="margin-config">
+		<img src="images/singleproduct-detail/banner.png" />
+	</div>
+	<div class="recommend-head">
+		大家都在买
+	</div>
+	<!-- Swiper -->
+	<div class="swiper-container margin-config" id="recommend-body">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<ul>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="swiper-slide">
+				<ul>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="swiper-slide">
+				<ul>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<div class="swiper-pagination">
+			<ul></ul>
+		</div>
+	</div>
+	<div class="button-container">
+		<div class="button-buy">
+			<a class="buy-now">
+				立即购买
+			</a>
+			<a class="insert-cart">
+				加入购物车
+			</a>
+		</div>
+	</div>
+	<div class="sinle-detail">
+		<div class="fix-button">
+			<div class="semi-circle">
+				<div class="iconfont arrow-back"></div>
+			</div>
+		</div>
+		<div class="white-line"></div>
+		<div id="detail-container">
+			<div class="detail-top">
+				<div class="top-container">
+					<div class="top-img">
+						<img src="images/singleproduct-detail/top-img.png" alt="">
+					</div>
+					<div class="top-text">
+						<div class="top-money-text">￥<span>4499.00</span></div>
+						<div class="top-limit-text">请选择 颜色 尺码</div>
+						<div class="top-good-text">有货，限购10件</div>
+					</div>
+				</div>
+			</div>
+			<div class="detail-select">
+				<div class="select-top">
+					颜色
+				</div>
+				<div class="body-container">
+					<div class="select-body">
+						<div>黑色</div>
+						<div>黑色</div>
+						<div>黑色</div>
+						<div>黑色</div>
+						<div class="cannot">黑色</div>
+					</div>
+				</div>
+			</div>
+			<div class="detail-select">
+				<div class="select-top">
+					尺码
+				</div>
+				<div class="body-container">
+					<div class="select-body">
+						<div>XS/150</div>
+						<div>S/155</div>
+						<div>M/160</div>
+						<div>L/165</div>
+						<div class="cannot">XL/170</div>
+					</div>
+				</div>
+			</div>
+			<div class="select-num">
+				数量 
+				<div class="num-computer">
+					<div class="num-minus"></div>
+					<div class="num-show">1</div>
+					<div class="num-add"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/vendor/vendor.min.js"></script>
+	<script src="js/touchslider.js"></script>
+	<script src="js/singleproduct-detail.js"></script>
+	<script>
+		$(function() {
+			TouchSlide({
+				slideCell: "#touchSlide",
+				titCell: ".swiper-pagination ul",
+				mainCell: ".swiper-wrapper",
+				effect: "leftLoop",
+				autoPlay: true,
+				delayTime: 300,
+				interTime: 2000,
+				autoPage: true
+			});
+			TouchSlide({
+				slideCell: "#recommend-body",
+				titCell: ".swiper-pagination ul",
+				mainCell: ".swiper-wrapper",
+				effect: "leftLoop",
+				/*autoPlay: true,*/
+				delayTime: 300,
+				interTime: 2000,
+				autoPage: true
+			});
+		});
+	</script>
+</body>

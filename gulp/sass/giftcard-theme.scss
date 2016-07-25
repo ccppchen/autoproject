@@ -5,7 +5,9 @@
 @import "tobe/components/bar/bar";
 @import "tobe/components/overflow-scroll/overflow-scroll";
 @import "tobe/components/nav/nav";
-
+.bar.bar-light{
+	background-color: #ffffff;
+}
 .gotop{
 	@extend %gotop;
 	bottom: .42rem;
@@ -36,6 +38,9 @@
 				white-space: normal;
 				padding: 0.25*0.32rem 0.625*0.32rem;
 				border-bottom: 1px solid #cccccc;
+			}
+			.ovfs-item{
+				width: 25%;
 			}
 		}
 	}
@@ -86,6 +91,7 @@
 	.card-word{
 		color: #666666;
 		border-bottom: 2px solid transparent;
+		@include ellipsis;
 	}
 
 }
@@ -175,6 +181,38 @@
 	display: table;
 	width: 100%;
 	display: none;
+}
+
+// 礼品卡 查看更多
+.head-search{
+    width: 100%;
+    .search-contain{
+        background: #F6F6F6;
+        padding-left: rem(68);
+        position: relative;
+        border-radius: rem(8);
+        .search-logo{
+            width:rem(68);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: no-repeat inline-image("base64/search.png") center center;
+            background-size: rem(28);
+        }
+    }
+    input{
+        height: rem(60);
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: rem(24);
+        color: #333333;
+        &::-webkit-input-placeholder{
+        	color: #333333;
+        }
+    }
 }
 
 
