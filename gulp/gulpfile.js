@@ -4,11 +4,7 @@ var $           = require('gulp-load-plugins')();
 var pkg         = require("./package.json");
 var browserSync = require('browser-sync').create();
 var png         = require('imagemin-pngquant');
-var clean       = require('gulp-clean');
-var bowerFile   = require('main-bower-files');
-var uglify      = require('gulp-uglify');
 var extReplace  = require('gulp-ext-replace');
-var svgSymbols  = require('gulp-svg-symbols');
 var iconfontCss = require('gulp-iconfont-css-and-template');
 var iconfont    = require('gulp-iconfont');
 var cache       = require('gulp-cache');
@@ -18,22 +14,6 @@ var yeoman = {
   dist: "dist",
   sass: 'sass'
 };
-
-var banner =
-"/** \n\
-* jQuery extend V" + pkg.version + " \n\
-* By 野草\n\
-* http://ccppchen.github.io\n \
-*/\n";
-
-// svg symbols
-gulp.task('sprites', ['svgmin'], function () {
-  return gulp.src('svgmin/*.svg')
-    .pipe(svgSymbols({
-      fontSize:   16
-    }))
-    .pipe(gulp.dest('assets'));
-});
 
 // svgmin
 gulp.task('svgmin', function () {
@@ -83,8 +63,7 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
-  gulp.watch(yeoman.app+'/lib/*', ['bower-install']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/*']).on('change', browserSync.reload);
+  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css']).on('change', browserSync.reload);
 });
 
 
@@ -155,95 +134,42 @@ gulp.task('compass-pro', function() {
     }))
     .pipe(gulp.dest(yeoman.dist+'/css'));
 });
-
-// html
-gulp.task('html', function(){
-  gulp.src([yeoman.app+'/*.html', '!./app/index.html'])
-  .pipe(gulp.dest(yeoman.dist))
-});
 // image压缩
 gulp.task('images', function () {
-    gulp.src([yeoman.app+'/css/i/**/*', '!./app/images/base64'])
+    gulp.src([yeoman.app+'/css/i/**/*'])
     .pipe(cache(
       $.imagemin({
-            optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
+            optimizationLevel: 4, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
             interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
             multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
             use: [png()]
         })
     ))
-    // .pipe($.webp())
     .pipe(gulp.dest(yeoman.dist+'/css/i'));
 });
 gulp.task('images-min', function () {
     gulp.src([yeoman.app+'/images/**/*'])
     .pipe(cache(
       $.imagemin({
-            optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
+            optimizationLevel: 4, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
             interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
             multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
             use: [png()]
         })
     ))
-    // .pipe($.webp())
     .pipe(gulp.dest(yeoman.dist+'/images'));
 });
 
-// 删除dist
-gulp.task('clean', function(){
-  gulp.src('./'+yeoman.dist)
-  .pipe(clean({force: true}));
-});
-
-// 导出bower的主要文件并且压缩js
-gulp.task('bower-js', function() {
-    gulp.src(bowerFile())
-      .pipe(gulp.dest('./bower-js'))
-      .pipe($.concat({ path: 'vendor.js'}))
-      .pipe(uglify())
-      .pipe(extReplace('.min.js'))
-      .pipe(gulp.dest(yeoman.app+'/js/vendor'))
-});
 gulp.task('js', function(){
   gulp.src([yeoman.app+'/js/**/*.js'])
-    // .pipe($.concat({ path: 'app.js' }))
-    // .pipe(uglify())
-    // .pipe(extReplace('.min.js'))
     .pipe(gulp.dest(yeoman.dist+'/js'))
-});
-
-// ftp
-gulp.task('ftp', function(){
-  gulp.src([yeoman.dist+'/**/*', '!./.svn/**/*'])
-    .pipe($.ftp({
-      host: "10.201.128.236",
-      user: "h5ftp",
-      pass: "h5ftp"
-    }))
-});
-
-// imageisux
-gulp.task('imageisux', function() {
-    return gulp.src('app/css/i/*')
-               .pipe($.imageisux('/webp/',true));
-});
-
-// webp
-gulp.task('webp', function () {
-    return gulp.src('app/css/i/header-title.png')
-        .pipe($.webp({
-          src: 'app/css/i/header-title.png',
-          dest: 'webp',
-          options: {}
-        }))
-        .pipe( gulp.dest('webp') );
 });
 
 gulp.task('default', ['compass', 'watch', 'server']);
 gulp.task('doc', ['doc-sass', 'watch', 'server']);
-gulp.task('build', ['compass-pro', 'images', 'html', 'js', 'images-min']);
+gulp.task('build', ['compass-pro', 'images', 'js', 'images-min']);
 
 
 

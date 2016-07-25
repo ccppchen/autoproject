@@ -7,33 +7,19 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.5",
-    "gulp-clean": "^0.3.2",
-    "gulp-clean-css": "^2.0.7",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.0",
-    "gulp-cssnano": "^2.1.2",
     "gulp-ext-replace": "^0.3.0",
-    "gulp-ftp": "^1.1.0",
-    "gulp-header": "^1.8.2",
-    "gulp-htmlmin": "^2.0.0",
     "gulp-iconfont": "^8.0.0",
     "gulp-iconfont-css-and-template": "^1.0.31",
-    "gulp-imageisux": "^1.0.5",
     "gulp-imagemin": "^3.0.1",
-    "gulp-inject": "^4.1.0",
-    "gulp-jshint": "^1.0.0",
     "gulp-load-plugins": "^1.2.2",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-svg-symbols": "^1.0.0",
     "gulp-svgmin": "^1.2.2",
-    "gulp-uglify": "^1.5.3",
-    "gulp-uncss": "^1.0.5",
-    "gulp-webp": "^2.3.0",
-    "imagemin-pngquant": "^5.0.0",
-    "main-bower-files": "^2.13.1"
+    "imagemin-pngquant": "^5.0.0"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=4.4.0"
   }
 }
