@@ -10,6 +10,7 @@
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-ext-replace": "^0.3.0",
+    "gulp-file-include": "^0.13.7",
     "gulp-iconfont": "^8.0.0",
     "gulp-iconfont-css-and-template": "^1.0.31",
     "gulp-imagemin": "^3.0.1",
@@ -17,8 +18,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-svgmin": "^1.2.2",
-    "imagemin-pngquant": "^5.0.0",
-    "gulp-ejs": "^2.1.1"
+    "imagemin-pngquant": "^5.0.0"
   },
   "engines": {
     "node": ">=4.4.0"
