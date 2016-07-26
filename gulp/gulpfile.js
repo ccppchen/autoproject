@@ -55,7 +55,7 @@ gulp.task('iconfont', function(){
 gulp.task('server', ['compass'], function(){
   browserSync.init({
        server: {
-           baseDir: [yeoman.app, 'lib']
+           baseDir: ['.tmp', yeoman.app, 'lib']
        },
        port: 8000
    });
@@ -63,6 +63,7 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
+  gulp.watch(yeoman.app+"/*.html", ['ejs']);
   gulp.watch([yeoman.app+'/*.html', yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css']).on('change', browserSync.reload);
 });
 
@@ -171,6 +172,13 @@ gulp.task('js', function(){
 gulp.task('html', function(){
   gulp.src([yeoman.app+'/*.html'])
   .pipe(gulp.dest(yeoman.dist))
+});
+
+// ejs
+gulp.task('ejs', function(){
+  gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.ejs'])
+    .pipe($.ejs( {}, {ext: '.html'}) ) // 在这里如果不指定ext:html，那么生成的文件不是以html为后缀的。
+    .pipe(gulp.dest('.tmp'))
 });
 
 gulp.task('default', ['compass', 'watch', 'server']);
