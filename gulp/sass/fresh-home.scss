@@ -1,15 +1,16 @@
 @charset "utf-8";
 @import "tobe/base";
+@import "tobe/components/bar/bar";
+.bar-font{
+	font-size: rem(32) !important;
+	color: #000000!important;
+}
+.content {
+    width: 100%;
+    padding-top: $bar-height;
+}
 body{
 	background:#f6f6f6;
-}
-ul,li,ol,dt,dd,dl,h1,h2,h3,h4,h5,h6{
-	margin:0px;
-	padding:0px;
-	list-style:none;
-}
-img{
-	border:0;
 }
 .header-main{
 	line-height: 0.88rem;
@@ -233,6 +234,8 @@ img{
 			top:0px;
 			color:#999999;
 			font-size:0.24rem;
+			@extend %arrow-right;
+			background-size: rem(14) auto;
 		}
 		i{
 			transform:rotate(180deg);
