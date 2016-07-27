@@ -75,7 +75,7 @@ gulp.task('iconfont', function(){
 gulp.task('server', ['compass'], function(){
   browserSync.init({
        server: {
-           baseDir: [yeoman.app, 'lib']
+           baseDir: ['.tmp', yeoman.app, 'lib']
        },
        port: 8000
    });
@@ -156,11 +156,6 @@ gulp.task('compass-pro', function() {
     .pipe(gulp.dest(yeoman.dist+'/css'));
 });
 
-// html
-gulp.task('html', function(){
-  gulp.src([yeoman.app+'/*.html', '!./app/index.html'])
-  .pipe(gulp.dest(yeoman.dist))
-});
 // image压缩
 gulp.task('images', function () {
     gulp.src([yeoman.app+'/css/i/**/*', '!./app/images/base64'])
@@ -241,7 +236,27 @@ gulp.task('webp', function () {
         .pipe( gulp.dest('webp') );
 });
 
-gulp.task('default', ['compass', 'watch', 'server']);
+// html
+gulp.task('html', function(){
+  gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
+    .pipe($.fileInclude({
+        prefix: '@@',
+        basepath: 'app/'
+      }))
+    .pipe(gulp.dest(yeoman.dist))
+});
+
+// gulp-file-include
+gulp.task('widget', function(){
+  gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
+    .pipe($.fileInclude({
+        prefix: '@@',
+        basepath: 'app/'
+      }))
+    .pipe(gulp.dest('.tmp'))
+});
+
+gulp.task('default', ['compass', 'watch', 'server', 'widget']);
 gulp.task('doc', ['doc-sass', 'watch', 'server']);
 gulp.task('build', ['compass-pro', 'images', 'html', 'js', 'images-min']);
 

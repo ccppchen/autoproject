@@ -791,6 +791,50 @@
         </div>
     </div>
 
+    <!-- widget -->
+    <h3 id="widget">widget</h3>
+    <p class="use">使用</p>
+    gulp-file-include的配置已经写好了，详情见gulpfiles文件中 "widget" 这个task，
+    用法：首先svn更新，然后在根目录下执行npm install， 会自动安装package.json中配置的gulp-file-include插件包，安装完后执行gulp起服务，会自动检测app目录下的html变动自动执行widget任务。
+<pre>
+</code>
+    <strong class="ext">扩展）!</strong>gulp-file-include插件的Github地址：<a target="_blank" href="https://github.com/coderhaoxin/gulp-file-include">https://github.com/coderhaoxin/gulp-file-include</a>
+    2.html结构如下
+<code class="js">  基本用法
+@@include('test.html')
+
+@@include('some.html', { "nav": true })
+
+@@if (name === 'test' && nav === true) {
+  @@include('test.html')
+}
+
+例如：
+包含公共头部，接收两个参数，第一个参数是title，第二个是要引入的css路径
+@@include('widget/head.html', {
+    "title": "选择配送方式",
+    "css": "css/distribution.css"
+})
+
+header，参数比较多，如果页面头部不合适则不要使用
+@@include('widget/header.html', {
+    "left-icon": "arrow-back", //左边icon的类名
+    "bar-style": "bar-dark", //bar-header的类名
+    "title": "", //标题
+    "nav": false, //是否引入j-nav
+    "right-icon": "more-v", //右边icon的类名（rightIconBool参数一定要是true）
+    "rightIconBool": true, // 是否显示右边icon
+    "rightIconBoolMore": false, // 是否显示右边第二个icon
+    "more-icon": "" //右边第二个icon类名
+})
+
+</code>
+</pre>
+
+    <div class="ext use">预览</div>
+    <div class="floor">
+        
+    </div>
     <script src="//cdn.bootcss.com/highlight.js/9.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </body>

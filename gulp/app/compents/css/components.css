@@ -105,7 +105,7 @@
 .half.lazy-box:after {
   padding-top: 50%;
 }
-.lazy-box .lazy {
+.lazy-box .lazy, .lazy-box .lazy-x {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -491,7 +491,7 @@ textarea::-webkit-input-placeholder {
 .bar .button {
   padding: 0 0.2rem;
   min-width: initial;
-  font-size: 0.3rem;
+  font-size: 0.38rem;
   border: 0;
   background-color: transparent;
   color: #848689;

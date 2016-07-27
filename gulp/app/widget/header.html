@@ -1,0 +1,23 @@
+<!-- header start -->
+<header class="bar bar-header @@bar-style">
+    <div class="bar-left">
+        <a href="javascript:history.go(-1)" class="button">
+            <div class="iconfont @@left-icon"></div>
+        </a>
+    </div>
+    <h1 class="title">
+          @@title
+      </h1>
+    <div class="bar-right">
+        @@if(rightIconBool){
+            <a href="javascript:;" class="button iconfont @@right-icon"></a>
+        }
+        @@if(rightIconBoolMore){
+            <a href="javascript:;" class="button iconfont @@more-icon"></a>
+        }
+        @@if(nav){
+            @@include('widget/j-nav.html')
+        }
+    </div>
+</header>
+<!-- header end -->
