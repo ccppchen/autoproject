@@ -183,7 +183,10 @@ gulp.task('widget', function(){
   gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
     .pipe($.fileInclude({
         prefix: '@@',
-        basepath: 'app/'
+        basepath: 'app/',
+        context: {
+            rightWordBool: false
+        }
       }))
     .pipe(gulp.dest('.tmp'))
 });
