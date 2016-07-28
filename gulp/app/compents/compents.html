@@ -825,16 +825,48 @@ header，参数比较多，如果页面头部不合适则不要使用
     "right-icon": "more-v", //右边icon的类名（rightIconBool参数一定要是true）
     "rightIconBool": true, // 是否显示右边icon
     "rightIconBoolMore": false, // 是否显示右边第二个icon
-    "more-icon": "" //右边第二个icon类名
+    "more-icon": "", //右边第二个icon类名
+    "rightWordBool": true, //右边是否显示文字
+    "right-word": "hello" //右边文字内容
 })
 
 </code>
 </pre>
 
+    <!-- ion-tabs --> 
+    <h3 id="ion-tabs">ion-tabs</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/ion-tabs/ion-tabs";
+</code>
+    <strong class="ext">扩展）!</strong>
+    2.html结构如下
+<code class="html">    使用include进来
+@@include('widget/ion-tabs.html')
+</code>
+</pre>
+
     <div class="ext use">预览</div>
     <div class="floor">
-        
+        <!-- <div class="ion-tabs-up"></div> -->
+        <div class="ion-tabs tabs-light" style="position: relative;">
+            <div class="ion-tab active"><a href="javascript:;"><i class="iconfont tab-index"></i><div class="tab-tro">首页</div></a></div>
+            <div class="ion-tab"><a href="javascript:;"><i class="iconfont tab-class"></i><div class="tab-tro">分类</div></a></div>
+            <div class="ion-tab"><a href="javascript:;"><i class="iconfont tab-shop"></i><div class="tab-tro">购物车</div></a></div>
+            <div class="ion-tab"><a href="javascript:;"><i class="iconfont tab-user"></i><div class="tab-tro">我</div></a></div>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $('.ion-tabs .ion-tab').on('click', function(event) {
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+            });
+        </script>
     </div>
+
+
+
     <script src="//cdn.bootcss.com/highlight.js/9.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </body>

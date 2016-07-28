@@ -51,8 +51,20 @@
 			<a>参数</a>
 			<a>售后</a>
 		</div>
-		<div class=" iconfont more-v"></div>
-		<div class=" iconfont shop-car"><span>2</span></div>
+		<div class="j-nav">
+            <div class="button iconfont more-v"></div>
+            <div class="button iconfont error"></div>
+        </div>
+        <nav class="j-navcontent">
+            <ul class="ul-nav">
+                <li><a href="javascript:;"><i class="iconfont ihome"></i><p>首页</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont isearch"></i><p>搜索</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont class"></i><p>分类</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont shop-car"></i><p>购物车</p></a></li>
+                <li><a href="javascript:;"><i class="iconfont iuser"></i><p>我的i百联</p></a></li>
+            </ul>
+        </nav>
+		<div class=" iconfont topshop-car shop-car"><span>2</span></div>
 	</div>
 	</div>
 	<!-- Swiper -->
@@ -72,6 +84,16 @@
 			<ul></ul>
 		</div>
 	</div>
+	<!-- chenp -->
+	<div class="panicbuying-title">
+    	<div class="panicbuying-left">
+        	<i></i><strong>抢</strong>
+        </div>
+        <div class="panicbuying-right">
+        	<i></i>剩余：<strong id="panicbuying-time">7天 04:45:36</strong>
+        </div>
+    </div>
+	<!-- chenp end -->
 	<div class="product-name"><span>自营</span>AIR JORDAN 乔丹2 RETRO'DUNK 复刻设计 感受MJ的非凡凌跃
 	</div>
 	<div class="product-remind">
@@ -178,7 +200,7 @@
 		</div>
 		
 	</div>
-	<div class="product-pad">
+	<div class="product-pad" id="choose">
 		<div class="choose-limit">
 			<div class="operate-cotainer">
 				<div class="operate-text">选择</div>
@@ -187,7 +209,7 @@
 			<div class="iconfont arrow-back icon-enter"></div>
 		</div>
 	</div>
-	<div class="product-pad">
+	<div class="product-pad" id="suit">
 		<div class="choose-limit">
 			<div class="operate-cotainer">
 				<div class="operate-text">优惠套装</div>
@@ -516,11 +538,12 @@
 				加入购物车
 			</a>
 		</div>
+		<div class="config-buy">确认购买</div>
 	</div>
 	<div class="sinle-detail">
 		<div class="fix-button">
 			<div class="semi-circle">
-				<div class="iconfont arrow-back"></div>
+				<div class="iconfont arrow-back "></div>
 			</div>
 		</div>
 		<div class="white-line"></div>
@@ -530,6 +553,7 @@
 					<div class="top-img">
 						<img src="images/singleproduct-detail/top-img.png" alt="">
 					</div>
+					<div class="close-detail"></div>	
 					<div class="top-text">
 						<div class="top-money-text">￥<span>4499.00</span></div>
 						<div class="top-limit-text">请选择 颜色 尺码</div>
@@ -543,7 +567,7 @@
 				</div>
 				<div class="body-container">
 					<div class="select-body">
-						<div>黑色</div>
+						<div class="active">黑色</div>
 						<div>黑色</div>
 						<div>黑色</div>
 						<div>黑色</div>
@@ -569,12 +593,237 @@
 				数量 
 				<div class="num-computer">
 					<div class="num-minus"></div>
-					<div class="num-show">1</div>
+					<div class="num-show"><input type="text" name="" value="111" placeholder=""></div>
 					<div class="num-add"></div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<div class="discount-suit">
+		<div class="suit-head">
+			优惠套装
+			<div class="close-suit"></div>
+		</div>
+		<div class="suit ">
+			<div class="pad-fix">
+				<div class="top">
+					<div class="top-left">
+						<div>优惠套装</div>
+						<div>韩国温和补水套装</div>
+					</div>
+					<div class="top-right">
+						<div>￥999.99</div>
+						<div class="iconfont arrow-back "></div>
+					</div>
+				</div>
+			</div>
+			<div class="suit-body retract">
+				<div class="body-ul">
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+								
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>			
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+							
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>				
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+							
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>				
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+							
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>				
+				</div>
+			</div>
+			<div class="pad-fix">
+				<div class="bottom">
+					<div class="suit-pay">
+						<p>套装价：<span>￥5129.00</span></p>
+						<p>立省：￥60.00</p>
+					</div>
+					<div class="suit-button back-1">
+						<a>加入购物车</a>
+					</div>
+					<div class="suit-button back-2">
+						<a>立即购买</a>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div class="suit">
+			<div class="pad-fix">
+				<div class="top">
+					<div class="top-left">
+						<div>优惠套装</div>
+						<div>韩国温和补水套装</div>
+					</div>
+					<div class="top-right">
+						<div>￥999.99</div>
+						<div class="iconfont arrow-back"></div>
+					</div>
+				</div>
+			</div>
+			<div class="suit-body retract">
+				<div class="body-ul">
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+								
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>			
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+							
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>				
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+							
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>				
+					<div class="body-li">
+						<div class="retract-float">
+							<div class="suit-img">
+							
+							</div>	
+							<div class="suit-detail">
+								<div class="name">
+									丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+								</div>
+								<div class="limit">
+									<span>颜色：</span><div>红色</div>
+									<span>尺码：</span><div>s</div>
+								</div>
+							</div>
+						</div>
+						<div class="num">
+							<div>x2</div>
+						</div>
+					</div>				
+				</div>
+			</div>
+			<div class="pad-fix">
+				<div class="bottom">
+					<div class="suit-pay">
+						<p>套装价：<span>￥5129.00</span></p>
+						<p>立省：￥60.00</p>
+					</div>
+					<div class="suit-button back-1">
+						<a>加入购物车</a>
+					</div>
+					<div class="suit-button back-2">
+						<a>立即购买</a>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+	
+	<div class="mark"></div>
 	<script src="js/vendor/vendor.min.js"></script>
 	<script src="js/touchslider.js"></script>
 	<script src="js/singleproduct-detail.js"></script>

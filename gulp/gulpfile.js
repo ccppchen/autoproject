@@ -83,6 +83,7 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
+  gulp.watch(yeoman.app+"/*.html", ['widget']);
   gulp.watch(yeoman.app+'/lib/*', ['bower-install']);
   gulp.watch([yeoman.app+'/*.html', yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/*']).on('change', browserSync.reload);
 });
@@ -251,7 +252,10 @@ gulp.task('widget', function(){
   gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
     .pipe($.fileInclude({
         prefix: '@@',
-        basepath: 'app/'
+        basepath: 'app/',
+        context: {
+            rightWordBool: false
+        }
       }))
     .pipe(gulp.dest('.tmp'))
 });

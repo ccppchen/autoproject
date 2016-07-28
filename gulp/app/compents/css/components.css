@@ -15,7 +15,7 @@
 /* --------------------------------------------------
  * 非输出
  */
-.list-between .list-item {
+.list-between .list-item, .ion-tabs {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -970,6 +970,62 @@ textarea::-webkit-input-placeholder {
   background-image: -moz-linear-gradient(to top, #7a43b6, #7842b2);
   background-image: linear-gradient(to top, #7a43b6, #7842b2);
   border-color: #7a43b6;
+}
+
+.ion-tabs-up {
+  width: 100%;
+  height: 1rem;
+}
+
+.ion-tabs {
+  position: fixed;
+  z-index: 10000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1rem;
+  -webkit-box-shadow: 0 0 10px 0 rgba(155, 143, 143, 0.6);
+  box-shadow: 0 0 10px 0 rgba(155, 143, 143, 0.6);
+}
+.ion-tabs.tabs-light {
+  background-color: #f4f4f4;
+}
+.ion-tabs .ion-tab {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+  width: 0;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  text-align: center;
+}
+.ion-tabs .ion-tab a {
+  display: block;
+  font-size: 0;
+}
+.ion-tabs .ion-tab i {
+  font-size: 0.5rem;
+  line-height: 1;
+  color: #555555;
+}
+.ion-tabs .ion-tab .tab-tro {
+  font-size: 0.24rem;
+  color: #333333;
+  line-height: 1;
+}
+.ion-tabs .ion-tab.active i, .ion-tabs .ion-tab.active .tab-tro {
+  color: #e6133c;
+}
+.ion-tabs .ion-tab.active i.tab-index:before {
+  content: "\E00C";
 }
 
 /* ext */

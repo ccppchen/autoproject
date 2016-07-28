@@ -591,6 +591,10 @@
                 .cannot{
                     color:#d6d6d6;
                 }
+                .active{
+                    background-color: #e6133c;
+                    color: #ffffff;
+                }
             }
         }
         .select-num{
@@ -610,6 +614,15 @@
                 background: #f5f5f5;
                 text-align: center;
                 line-height: rem(68);
+                input{
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    text-align: center;
+                    background: transparent;
+                }
             }
             .num-add{
                 height: rem(68);
@@ -1063,3 +1076,43 @@
         }
     }
 } 
+
+
+
+// chenp
+.panicbuying-title{background:#f0f0f0; line-height:1.75*0.4rem; height:1.75*0.4rem; padding:0*0.4rem 0.5*0.4rem;}
+.panicbuying-left{
+    float:left;
+}
+.panicbuying-left i{
+    height:0.65*0.4rem;
+    float:left;
+    width:0.075*0.4rem;
+    display:inline-block;
+    background:#faa62d;
+    margin-right:0.2*0.4rem;
+    margin-top:0.525*0.4rem;
+}
+.panicbuying-left strong{
+    font-size:0.7*0.4rem;
+    color:#333333;
+}
+.panicbuying-left span{
+    font-size:0.6*0.4rem;
+    color:#999999;
+}
+.panicbuying-right{
+    float:right;
+    color:#666666;
+    font-size:0.7*0.4rem;
+}
+.panicbuying-right i{
+    background:url(i/countdown-icon.png) no-repeat center center;
+    background-size:0.65*0.4rem 0.65*0.4rem;
+    display:inline-block;
+    margin-right:0.2*0.4rem;
+    width:0.65*0.4rem;
+    height:0.65*0.4rem;
+    float:left;
+    margin-top:0.55*0.4rem;
+}
