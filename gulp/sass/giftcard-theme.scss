@@ -107,6 +107,9 @@
 	}
 }
 @include pic-list(cwrap-content, 2, #ffffff, rem(20));
+.cwrap-content ul li{
+	float: left;
+}
 .bgfs{
 	background-color: #F6F6F6;
 }

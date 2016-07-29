@@ -23,6 +23,9 @@ $btnColorClass: (red $red #fff) (blueLight $blueLight #fff) (green $green #fff);
 }
 @include pic-list;
 
+.gotop{
+	@extend %gotop;
+}
 .tip{
 	padding: rem(22) rem(30);
 	background-color: $yellowLight;

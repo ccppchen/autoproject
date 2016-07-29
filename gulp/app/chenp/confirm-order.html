@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "确认订单",
+    "css": "css/confirm-order.css"
+})
+<script type="text/javascript">
+    require(['confirm-order']);
+</script>
+</head>
+<body>
+@@include('widget/header.html', {
+    "left-icon": "arrow-back",
+    "bar-style": "bar-light",
+    "title": "确认订单",
+    "nav": true,
+    "right-icon": "",
+    "rightIconBool": false,
+    "rightIconBoolMore": false,
+    "more-icon": ""
+})
+<!-- content -->
+<div class="content">
+    <div class="tip">
+        <div class="tip-text">由于生鲜商品特殊，订单一旦生成，不可取消、不可退货</div>
+    </div>
+    <div class="floor-container">
+        <div class="address">
+            <div class="address-icon"></div>
+            <div class="address-main">
+                <div class="address-owner arrow-right">
+                    <span>乌蛋蛋</span><span class="address-phone">13656780072</span>
+                </div>
+                <div class="address-detail">上海普陀区真光路1258弄12号3204室</div>
+            </div>
+        </div>
+        <div class="address-line"></div>
+    </div>
+    <div class="floor-container">
+        <div class="list-between">
+            <div class="list-item">
+                <div class="list-left">配送方式</div>
+                <div class="list-right">
+                    <div class="list-right">
+                        <input type="radio" name="arrived" class="check-input" id="logistics" checked="checked">
+                        <label for="logistics">物流配送</label>
+                    </div>
+                    <div class="w24"></div>
+                    <div class="list-right">
+                        <input type="radio" name="arrived" class="check-input" id="store">
+                        <label for="store">门店自提</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="floor-container">
+        <div class="list-between">
+            <div class="list-item">
+                <div class="list-left">支付方式</div>
+                <div class="list-right arrow-right">在线支付</div>
+            </div>
+            <div class="list-item">
+                <div class="list-left">优惠券</div>
+                <div class="list-right arrow-right disable-color">无可用</div>
+            </div>
+            <div class="list-item">
+                <div class="list-left">
+                    <input type="radio" name="deduction" class="check-input check-red" id="integral" checked="checked">
+                    <label for="integral">20积分可抵扣0.2元</label>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-left">
+                    <input type="radio" name="deduction" class="check-input check-red" id="ecp">
+                    <label for="ecp">ECP账户可抵2998.48元</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="floor-container">
+        <div class="list-between">
+            <div class="list-item">
+                <div class="list-left">第<span class="font-bold">1</span>次配送</div>
+                <div class="list-right">2016-08-22·周二</div>
+            </div>
+        </div>
+        <div class="list-good">
+            <ul class="good-close">
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="click-up"><span class="">点击显示全部</span></div>
+    </div>
+
+    <div class="floor-container">
+        <div class="list-between">
+            <div class="list-item">
+                <div class="list-left">第<span class="font-bold">2</span>次配送</div>
+                <div class="list-right">2016-08-22·周二</div>
+            </div>
+        </div>
+        <div class="list-good">
+            <ul class="good-close">
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="click-up"><span class="">点击显示全部</span></div>
+    </div>
+
+    <div class="floor-container">
+        <div class="list-between">
+            <div class="list-item">
+                <div class="list-left">第<span class="font-bold">3</span>次配送</div>
+                <div class="list-right">2016-08-22·周二</div>
+            </div>
+        </div>
+        <div class="list-good">
+            <ul class="good-close">
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="click-up"><span class="">点击显示全部</span></div>
+    </div>
+
+    <div class="floor-container">
+        <div class="list-between">
+            <div class="list-item">
+                <div class="list-left">第<span class="font-bold">4</span>次配送</div>
+                <div class="list-right">2016-08-22·周二</div>
+            </div>
+        </div>
+        <div class="list-good">
+            <ul class="good-close">
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-bg">
+                        <div class="lazy-box">
+                            <img class="lazy" data-original="images/confirm-order/goods-180x180q40.png" alt="">
+                        </div>
+                        <p class="good-name">- 糯玉米 400g -</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="click-up"><span class="">点击显示全部</span></div>
+    </div>
+
+    <div class="floor-container">
+        <div class="region-total">
+            <div class="region-detail">
+                <div class="region-left">商品总额</div>
+                <div class="region-right"><em class="small-rmb">￥</em>158.00</div>
+            </div>
+            <div class="region-detail detail">
+                <div class="region-left">积分抵扣</div>
+                <div class="region-right">-<em class="small-rmb">￥</em>10.00</div>
+            </div>
+            <div class="region-detail detail">
+                <div class="region-left">ECP抵扣</div>
+                <div class="region-right">-<em class="small-rmb">￥</em>10.00</div>
+            </div>
+            <div class="region-detail detail">
+                <div class="region-left">优惠抵扣</div>
+                <div class="region-right">-<em class="small-rmb">￥</em>10.00</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content end -->
+<div class="h176"></div>
+<footer class="bar bar-footer nopadding">
+    <div class="address-footer">
+        <div class="address-con">送至：上海普陀区真光路1258弄12号3204室</div>
+    </div>
+    <div class="submit-order">
+        <div class="order-balance">应付:
+            <span class="color-green">
+                <span class="small-rmb">￥</span><span class="font-bold bold-balance">29,000.00</span>
+            </span>
+        </div>
+        <button type="button" class="btn btn-green">提交订单</button>
+    </div>
+</footer>
+</body>
+
+</html>

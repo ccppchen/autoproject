@@ -1,4 +1,4 @@
-$(function(){
+require(['vendor', 'touchslider'], function(){
 	// 轮播图
 	TouchSlide({
 	    slideCell: "#touchSlide",

@@ -8,7 +8,12 @@
 require.config({
     baseUrl: 'js',
     paths: {
-
+        vendor: ['vendor/vendor.min'],
+        touchslider: ['touchslider']
+    },
+    shim: {
+        "bl-scroll-load": ["vendor"],
+        "fx_methods": ["vendor"]
     }
 });
 
@@ -16,3 +21,4 @@ require.config({
 // Start loading the main app file. Put all of
 // your application logic in there.
 require(['comm']);
+

@@ -129,7 +129,9 @@ body{
 	padding: 0 rem(20);
 }
 @include pic-list(floor-half, 2, transparent, .2rem, floor-bg);
-
+.floor-half ul li{
+	float: left;
+}
 .sp-remood{
 	overflow: hidden;
 	.sp-title{

@@ -3,8 +3,11 @@
 <head>
 @@include('widget/head.html', {
     "title": "商品详情",
-    "css": "css/package-introduction.css"
+    "css": "css/product-details.css"
 })
+<script type="text/javascript">
+    require(['product-details']);
+</script>
 </head>
 
 <body>
@@ -15,7 +18,7 @@
                 <div class="iconfont arrow-back"></div>
             </a>
         </div>
-        <h1 class="title hide">
+        <h1 class="title index-title hide">
             商品详情
         </h1>
         <div class="bar-right">
@@ -53,38 +56,17 @@
         </div>
     </div>
     <!-- Swiper end -->
-    <div class="product-detail">
-        <div class="package-intro-name">
-            <h2>
-                <span class="package-intitle">- 崇明生态大番茄 you know you can you know you can </span>
-                <span class="tag bg-green">套餐</span>-
-            </h2>
-            <p>重新定义绿色</p>
-            <div class="product-balance color-green">
-                <span class="small-rmb color-green">¥</span>
-                180.00
-            </div>
+    <div class="product-detail product-end">
+        <div class="product-detail-name">
+            <h2>- 崇明生态大番茄 -</h2>
+            <p>350克/份</p>
         </div>
-        <div class="package-intro">
-            套餐介绍：套餐共4组，每组有5个菜品，可依据网站显示的蔬菜目录随意组合蔬菜受季节、天气等因素影响，蔬菜品种每周都会更替，所以预订时间跨度长的订单收到时，菜品可能与您预选的不一致。
-        </div>
+        <p><img class="lazy" data-original="images/production-detail/detailimg-1.jpg" src="css/i/lazy-default-img.png" alt=""></p>
+        <p><img class="lazy" data-original="images/production-detail/detailimg-2.jpg" src="css/i/lazy-default-img.png" alt=""></p>
+        <p><img class="lazy" data-original="images/production-detail/detailimg-3.jpg" src="css/i/lazy-default-img.png" alt=""></p>
+        <p><img class="lazy" data-original="images/production-detail/detailimg-4.jpg" src="css/i/lazy-default-img.png" alt=""></p>
     </div>
     <!-- content end -->
-    <div class="h120"></div>
-    <footer class="bar bar-footer nopadding">
-        <div class="tab-group graphic-next-step">
-            <a href="javascript:;" class="tab-item btn btn-green">
-                <div class="tab-con arrow-white-right">下一步</div>
-            </a>
-        </div>
-    <footer>
-
-
-    <script type="text/javascript" src="js/vendor/vendor.min.js"></script>
-    <script type="text/javascript" src="js/touchslider.js"></script>
-
-    <script defer async type="text/javascript" src="js/comm.js"></script>
-    <script defer async type="text/javascript" src="js/product-details.js"></script>
 </body>
 
 </html>
