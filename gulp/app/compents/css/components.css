@@ -1131,6 +1131,7 @@ textarea::-webkit-input-placeholder {
   margin-bottom: 0.2rem;
   width: 50%;
   vertical-align: top;
+  float: left;
 }
 .pic-list ul .list-bg {
   background: #ffffff;
@@ -1151,6 +1152,7 @@ textarea::-webkit-input-placeholder {
   margin-bottom: 0.2rem;
   width: 33.33333%;
   vertical-align: top;
+  float: left;
 }
 .pic-list-three ul .list-bg {
   background: #ffffff;

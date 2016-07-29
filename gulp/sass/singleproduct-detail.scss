@@ -473,6 +473,7 @@
         left: 0;
         right: 0;
         bottom: rem(100);
+        max-height: 100%;
         z-index: 1001;
         .fix-button{
             @include display(flex);
@@ -561,6 +562,10 @@
                     color: #666666;
                 }
             }
+        }
+        .select-container{
+            max-height: rem(600);
+            overflow: auto;
         }
         .detail-select{
             padding: 0 rem(20);
@@ -945,6 +950,43 @@
         bottom: 0;
         background: rgba(0,0,0,.6);
         z-index: 999;
+    }
+    .parameter{
+        position: fixed;
+        left: 0;
+        top: rem(88);
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        background: #f8f8f8;
+        z-index: 100;
+        .top{
+            height: rem(68);
+            line-height: rem(68);
+            border-bottom: 1px solid #e7e7e7;
+           
+            padding:0 rem(20);
+            font-weight: bold;
+        }
+        .top:first-child{
+             border-top:1px solid #E7E7E7;
+        }
+        .body{
+            background: #FFFFFF;
+            overflow: hidden;
+            li{
+                height: rem(88);
+                line-height: rem(88); 
+                padding: 0 rem(20);
+                border-bottom: 1px solid #E7E7E7;
+                overflow: hidden;
+                .name{
+                    width: 38.3%;
+                    float: left;
+                    font-weight: bold;
+                }
+            }
+        }
     }
     
 }

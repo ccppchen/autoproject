@@ -1,29 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>商品列表</title>
-<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="format-detection" content="telephone=no, email=no, address=no">
-<meta name="applicable-device" content="mobile">
-<meta http-equiv="Cache-Control" content="no-cache">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="css/i/apple-touch/icon-57.png">
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="css/i/apple-touch/icon-120.png">
-<link rel="apple-touch-icon-precomposed" sizes="196x196" href="css/i/apple-touch/icon-196.png">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="-1">
-<meta name="description" content="">
-<meta name="Keywords" content="">
-<script type="text/javascript">
-(function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
-</script>
-
-<!-- inject:css -->
-<link rel="stylesheet" type="text/css" href="css/productsearchlist.css">
-<link rel="stylesheet" type="text/css" href="css/icons.css">
+@@include('widget/head.html', {
+    "title": "商品列表",
+    "css": "css/productsearchlist.css"
+})
 </head>
 
 <body class="body-bgcolor">
@@ -37,6 +18,12 @@
             <input type="text" placeholder="双肩包 MK">
         </div>
     </div>
+    <!-- chenp -->
+    <div class="notfind-box">
+        <p>没有找到“防晒霜SPF90”的相关商品</p>
+        <p class="linkgoods">我们为您提供“<span class="link-good">防晒霜SPF</span>”的相关商品</p>
+    </div>
+    <!-- chenp end -->
     <div class="pro-item penetrate-body">
         <ul>
             <li class="on">
@@ -235,6 +222,26 @@
         </div>
         <ul>
         	<li><a href="#">喷雾</a></li>
+            <li><a href="#">化妆水</a></li>
+            <li><a href="#">唇膏樱桃</a></li>
+            <li><a href="#">防晒</a></li>
+            <li><a href="#">生鲜</a></li>
+            <li><a href="#">雅诗兰黛小棕瓶</a></li>
+            <li><a href="#">彩妆盒</a></li>
+            <li><a href="#">夏季连衣裙</a></li>
+            <li><a href="#">安娜苏</a></li>
+            <li><a href="#">雅诗兰黛小棕瓶</a></li>
+            <li><a href="#">喷雾</a></li>
+            <li><a href="#">化妆水</a></li>
+            <li><a href="#">唇膏樱桃</a></li>
+            <li><a href="#">防晒</a></li>
+            <li><a href="#">生鲜</a></li>
+            <li><a href="#">雅诗兰黛小棕瓶</a></li>
+            <li><a href="#">彩妆盒</a></li>
+            <li><a href="#">夏季连衣裙</a></li>
+            <li><a href="#">安娜苏</a></li>
+            <li><a href="#">雅诗兰黛小棕瓶</a></li>
+            <li><a href="#">喷雾</a></li>
             <li><a href="#">化妆水</a></li>
             <li><a href="#">唇膏樱桃</a></li>
             <li><a href="#">防晒</a></li>
@@ -620,6 +627,9 @@
         </div>
     </div>
 </div>
+
+<!-- chenp -->
+<div class="fix-bottom-text">200/2093</div>
 <script src="js/vendor/vendor.min.js"></script>
 <script src="js/bl-scroll-load.js"></script>
 <script src="js/comm.js"></script>

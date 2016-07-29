@@ -5,6 +5,11 @@
     "title": "确认订单",
     "css": "css/confirm-order.css"
 })
+<script type="text/javascript" src="js/vendor/vendor.min.js"></script>
+<script data-main="js/config" src="js/require.min.js"></script>
+<script type="text/javascript">
+    require(['confirm-order']);
+</script>
 </head>
 <body>
     @@include('widget/header.html', {
@@ -296,9 +301,6 @@
             <button type="button" class="btn btn-green">提交订单</button>
         </div>
     </footer>
-    <script type="text/javascript" src="js/vendor/vendor.min.js"></script>
-    <script type="text/javascript" src="js/comm.js"></script>
-    <script defer async type="text/javascript" src="js/confirm-order.js"></script>
 </body>
 
 </html>
