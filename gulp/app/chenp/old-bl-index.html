@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-@@include('widget/head.html', {
-    "title": "i百联",
-    "css": "css/bl-index.css"
-})
-<script type="text/javascript">
-    require(['ion-tabs', 'bl-index']);
-</script>
+    <title>index</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="css/i/apple-touch/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="css/i/apple-touch/icon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="css/i/apple-touch/icon-196.png">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript">
+     (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(1);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/bl-index.css">
 </head>
 
 <body>
@@ -17,7 +34,7 @@
             <div class="loading-logo"></div>
             <p class="yellowLight loading-foot">WWW.BL.COM</p>
             <div class="prompt-loading white">
-                <div class="preloader middle white"></div>
+                <div class="preloader middle white"></div>加载中
             </div>
         </div>
         <!-- header start -->
@@ -338,7 +355,126 @@
 
     <!-- app download -->
     <!-- bower:js -->
-    @@include('widget/ion-tabs.html')
+    <script src="js/vendor/vendor.min.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="js/bl-scroll-load.js"></script>
+    <script src="js/touchslider.js"></script>
+    <!-- endinject -->
+    <script type="text/javascript">
+        Zepto(function($){
+
+            $(document).on('touchmove',function(e){
+                e.preventDefault();
+            });
+            FastClick.attach(document.body);
+
+            $(window).on('load', function(event) {
+                $('.bl-ctn-loading').hide();
+                $(document).off('touchmove');
+            });
+
+            $("img.lazy").lazyload();
+            $(".ovfs img.lazy").lazyload({
+                container: '.ovfs'
+            });
+            $('#app-download .close').click(function(event) {
+                $('#app-download').hide();
+            });
+            
+            TouchSlide({
+                slideCell: "#touchSlide",
+                titCell: ".swiper-pagination ul",
+                mainCell: ".swiper-wrapper",
+                effect: "leftLoop",
+                autoPlay: true,
+                delayTime: 300,
+                interTime: 2000,
+                autoPage: true,
+                switchLoad: "_src"
+            });
+
+            $('.title-input .input-control').on('click', function(e) {
+                e.preventDefault;
+                $('.view').hide();
+                $('.search-list').show();
+                // $('.form-control .input').focus();
+            });
+
+            $('.search-list .cancle-search').on('click', function(e) {
+                e.preventDefault;
+                $('.search-list').hide();
+                $('.view').show();
+            });
+            /* 返回顶部 js start */
+             function chinaz(){
+                 this.init();
+             }
+             chinaz.prototype = {
+                 constructor: chinaz,
+                 init: function(){       
+                     this._initBackTop();
+                 },  
+                 _initBackTop: function(){
+                     var $backTop = this.$backTop = $('<div class="cp-gotop"></div>');
+                     $('body').append($backTop);
+                     
+                     $backTop.on('click', function(){
+                         $("html,body").scrollTop(0);
+                     })
+
+                     var timmer = null;
+                     $(window).on("scroll scrollEnd",function() {
+                         var d = $(window).scrollTop(),
+                         e = $(window).height();
+                         e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-100%");
+                    });
+                 }
+                 
+             }
+             var chinaz = new chinaz();
+             /* 返回顶部js end */
+
+            /*滑动加载*/
+            $.fn.scrollLoad({
+                lazy: true,
+                sucback: function(){
+                    $.ajax({
+                        type: 'GET',
+                        url: 'json/more.json',
+                        dataType: 'json',
+                        success: function(data){
+                            var result = '';
+                            for(var i = 0; i < data.lists.length; i++){
+                                result +=  '<li class="recommend-item">'
+                                                +'<a href="javascript:;">'
+                                                    +'<div class="lazy-box">'
+                                                        +'<img class="lazy" data-original="'+data.lists[i].pic+'" alt="">'
+                                                    +'</div>'
+                                                    +'<div class="shop-listText">'+data.lists[i].title+'</div>'
+                                                    +'<span class="color-red shop-price"><i class="price-rmb">¥</i>780.00</span>'
+                                                +'</a>'
+                                            +'</li>';
+                            }
+                            // 为了测试，延迟加载
+                            setTimeout(function(){
+                                $('.recommend-list').append(result);
+                                $("img.lazy").lazyload();
+                            },300);
+                        },
+                        error: function(xhr, type){
+                            alert('Ajax error!');
+                        }
+                    });
+                }
+            });
+            /*end*/
+
+        });
+
+        
+    </script>
+    <!-- my end -->
 </body>
 
 </html>

@@ -8,7 +8,8 @@ require(['vendor', 'touchslider'], function(){
 	    autoPlay: false,
 	    delayTime: 300,
 	    interTime: 2000,
-	    autoPage: true
+	    autoPage: true,
+	    switchLoad: "_src"
 	});
 
 	$('.j-ind li').on('click', function(){

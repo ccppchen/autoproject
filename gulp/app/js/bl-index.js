@@ -18,7 +18,8 @@ require(['vendor', 'touchslider', 'bl-scroll-load'], function() {
         autoPlay: true,
         delayTime: 300,
         interTime: 2000,
-        autoPage: true
+        autoPage: true,
+        switchLoad: "_src"
     });
 
     $('.title-input .input-control').on('click', function(e) {
