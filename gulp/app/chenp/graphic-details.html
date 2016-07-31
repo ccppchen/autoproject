@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "图文详情",
+    "css": "css/graphic-details.css"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-lightWhite",
+        "title": "图文详情",
+        "nav": true,
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <!-- content -->
+    <div class="content">
+        <p><img class="lazy" data-original="images/graphic-details/graphic-details.jpg" src="css/i/lazy-default-img.png" height="100" width="100" alt=""></p>
+    </div>
+    <!-- content end -->
+    <div class="h130"></div>
+    <footer class="bar bar-footer nopadding">
+        <div class="tab-group graphic">
+            <a class="tab-item btn btn-green">
+                <div class="tab-con arrow-white-right">选择物流配送</div>
+            </a>
+            <a class="tab-item btn btn-blueLight">
+                <div class="tab-con arrow-white-right">选择物流配送<br /><span class="middle-font">（ 额外赠送一次 )</span></div>
+            </a>
+        </div>
+        <!-- 图文详情下一步的样式 -->
+        <div class="tab-group graphic-next-step">
+            <a class="tab-item btn btn-green">
+                <div class="tab-con arrow-white-right">下一步</div>
+            </a>
+        </div>
+        <!-- 图文详情下一步的样式 end -->
+    </footer>
+</body>
+
+</html>

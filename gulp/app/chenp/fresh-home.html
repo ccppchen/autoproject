@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "生鲜-随心订",
+    "css": "css/fresh-home.css",
+    "requirejs": "js/fresh-home"
+})
+</head>
+
+<body class="body-bg">
+<!-- header start -->
+<header class="bar bar-header bar-light">
+    <a href="javascript:history.go(-1)" class="bar-left">
+        <div class="button iconfont arrow-back"></div>
+    </a>
+    <h1 class="title">
+        <img src="css/i/header-title.png" alt="生鲜=随心订" style="width: 2.34rem;">
+    </h1>
+    <div class="bar-right">
+        <div class="button">订单</div>
+    </div>
+</header>
+<!-- header end -->
+<div class="header-main">
+    <a href="#" class="iconfont arrow-back"></a>
+    <div><a href="#">订单</a></div>
+    <img src="css/i/header-title.png" alt="生鲜=随心订"><h1>生鲜=随心订</h1>
+</div>
+
+<div class="fresh-banner swipe" id="mySwipe">
+    <div class="ul-img swipe-wrap">
+        <div><a href="#"><img _src="images/fresh-home/banner.png" alt=""></a></div>
+        <div style="display:none"><a href="#"><img _src="images/fresh-home/banner.png" alt=""></a></div>
+        <div style="display:none"><a href="#"><img _src="images/fresh-home/banner.png" alt=""></a></div>
+    </div>
+    <div class="ul-point">
+        <ul id="arrow"></ul>
+    </div>
+</div>
+
+<div class="banner-item">
+	<ul>
+    	<li><a href="#"><i class="on-icon-1"></i>基地自采</a></li>
+        <li><a href="#"><i class="on-icon-2"></i>随心搭配</a></li>
+        <li><a href="#"><i class="on-icon-3"></i>全程冷链</a></li>
+        <li><a href="#"><i class="on-icon-4"></i>定天送达</a></li>
+    </ul>
+</div>
+<div class="banner-recommend">
+	<div>当季推荐</div>
+    <a href="#"><img src="images/fresh-home/banner-recommend.png" alt=""></a>
+</div>
+<div class="fresh-ul">
+	<div class="fresh-title">
+    	<img src="css/i/s-title-1.png" alt="蔬菜篇·新鲜在身边"><h2>蔬菜篇·新鲜在身边</h2>
+    	<a href="#">更多<i class="iconfont arrow-back"></i></a>
+	</div>
+	<div class="fresh-li">
+		<ul>
+        	<li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-1.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-2.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-3.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-4.png" alt=""></a></li>
+        </ul>
+	</div>
+    <div class="fresh-title ti-1">
+		<img src="css/i/s-title-2.png" alt="水果篇·秀出阳光果味"><h2>水果篇·秀出阳光果味</h2>
+    	<a href="#">更多<i class="iconfont arrow-back"></i></a>
+    </div>
+    <div class="fresh-li">
+    	<ul>
+        	<li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-1.png" alt=""></a></li>
+            <li><a href="#"><img class="lazy" data-original="images/fresh-home/s-img-2.png" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="fresh-cate-title"><img src="css/i/s-title-3.png" alt="时令美食·健康时令烹饪"><h2>时令美食·健康时令烹饪</h2></div>
+<div class="fresh-cate-ul">
+	<ul>
+    	<li>
+        	<div class="cate-img">
+            	<div>热门推荐</div>
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
+            </div>
+            <div class="fresh-item-main">
+            	<i class="i-cate"></i>
+            	<div class="item-title">
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
+                    <div class="title-right">
+                    	<i></i>
+                        720人浏览
+                    </div>
+                </div>
+                <div class="item-font">鲜嫩无油，老幼皆宜，再也不用担心油脂多了</div>
+            </div>
+        </li>
+        <li>
+        	<div class="cate-img">
+            	<div>热门推荐</div>
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
+            </div>
+            <div class="fresh-item-main">
+            	<i class="i-cate"></i>
+            	<div class="item-title">
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
+                    <div class="title-right">
+                    	<i></i>
+                        720人浏览
+                    </div>
+                </div>
+                <div class="item-font">鲜嫩无油，老幼皆宜，再也不用担心油脂多了</div>
+            </div>
+        </li>
+        <li>
+        	<div class="cate-img">
+            	<div>热门推荐</div>
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
+            </div>
+            <div class="fresh-item-main">
+            	<i class="i-cate"></i>
+            	<div class="item-title">
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
+                    <div class="title-right">
+                    	<i></i>
+                        720人浏览
+                    </div>
+                </div>
+                <div class="item-font">鲜嫩无油，老幼皆宜，再也不用担心油脂多了</div>
+            </div>
+        </li>
+        <li>
+        	<div class="cate-img">
+            	<div>热门推荐</div>
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
+            </div>
+            <div class="fresh-item-main">
+            	<i class="i-cate"></i>
+            	<div class="item-title">
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
+                    <div class="title-right">
+                    	<i></i>
+                        720人浏览
+                    </div>
+                </div>
+                <div class="item-font">鲜嫩无油，老幼皆宜，再也不用担心油脂多了</div>
+            </div>
+        </li>
+        <li>
+        	<div class="cate-img">
+            	<div>热门推荐</div>
+            	<a href="#"><img class="lazy" data-original="images/fresh-home/s-img-banner.png" alt=""></a>
+            </div>
+            <div class="fresh-item-main">
+            	<i class="i-cate"></i>
+            	<div class="item-title">
+                	<div class="title-left"><a href="#">香葱烤河鲫鱼</a></div>
+                    <div class="title-right">
+                    	<i></i>
+                        720人浏览
+                    </div>
+                </div>
+                <div class="item-font">鲜嫩无油，老幼皆宜，再也不用担心油脂多了</div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="fresh-bottom"><span></span></div>
+</body>
+</html>

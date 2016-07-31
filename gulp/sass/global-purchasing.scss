@@ -38,7 +38,7 @@ body{
 	margin-bottom: rem(20);
 	.quanqiugou-bg{
 		position: relative;
-		background: inline-image("base64/closeicon.png") no-repeat center center;  
+		// background: inline-image("base64/closeicon.png") no-repeat center center;  
 		.lazy-box{
 			position:relative; 
 			.lazy {
@@ -105,6 +105,7 @@ body{
 		display: inline-block;
 		width: 100%;
 		font-size: rem(24);
+		overflow: hidden;
 		ul{
 		display: inline-block;
 		overflow: hidden;
@@ -120,3 +121,4 @@ body{
 		}
 	}
 }
+ 

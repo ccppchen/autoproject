@@ -1,13 +1,9 @@
 @font-face {
 	font-family: "blfont";
-	src: url('./blfont.eot');
-	src: url('./blfont.eot?#iefix') format('eot'),
-		url('./blfont.woff') format('woff'),
-		url('./blfont.ttf') format('truetype'),
-		url('./blfont.svg#blfont') format('svg');
+	src: url('./blfont.ttf') format('truetype');
 }
 
-.iconfont:before {
+.iconfont {
 	font-family: "blfont";
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -17,6 +13,8 @@
 	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
 	text-decoration: none;
 	text-transform: none;
+	line-height: normal;
+	text-rendering: auto;
 }
 
 
@@ -54,4 +52,24 @@
 
 .shop-car:before {
 	content: "\E009";
+}
+
+.tab-class:before {
+	content: "\E00A";
+}
+
+.tab-index:before {
+	content: "\E00B";
+}
+
+.tab-indexactive:before {
+	content: "\E00C";
+}
+
+.tab-shop:before {
+	content: "\E00D";
+}
+
+.tab-user:before {
+	content: "\E00E";
 }

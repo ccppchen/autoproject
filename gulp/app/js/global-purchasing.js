@@ -1,5 +1,7 @@
-      $(function(){
-          $(".quanqiugou-bot").find("li") .click(function(){
-            $(this).toggleClass("on");
-        });
+require(['config'], function(){
+	require(['vendor'], function(){
+		$(".quanqiugou-bot").find("li").click(function() {
+		    $(this).toggleClass("on");
+		});
+	});
 });

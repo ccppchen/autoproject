@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "当季推荐菜谱",
+    "css": "css/recommend-menu.css"
+})
+</head> 
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-white",
+        "title": "当季推荐菜谱",
+        "nav": true,
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <!-- content -->
+    <div class="content">
+        <div class="floor-container">
+            <div class="menu-rec">
+                <div class="menu-img"><img src="images/recommend-menu/foot-menu_02.jpg" title="" alt=""></div>
+                <div class="menu-info">
+                    <div class="menu-infoleft">
+                        <div class="menu-comm"><span class="tag bg-green">推荐</span></div>
+                        <div class="menu-name">烧汁煎炒豆腐烧</div>
+                    </div>
+                    <div class="menu-inforight"><span>720人浏览</span></div>
+                </div>
+            </div>
+            <div class="menu-text">去年去首尔的时候迟到的春川辣炒鸡排饭，就是在平底锅上把食材和米饭一起炒...味道很不错，回家后自己试着做了一下，还真是那个味儿~韩国料理当然离不开韩国辣酱和泡菜快来一起试试吧！ 
+            </div>
+        </div>
+        <div class="floor-container">
+            <div class="list-ingredients">
+                <div class="ingredients-title"><span class="foot-menulist">食材清单</span></div>
+                <ul class="list-detail">
+                    <li>
+                        <div class="ingre-name">豆芽</div>
+                        <div class="ingre-use">150克</div>
+                    </li>
+                    <li>
+                        <div class="ingre-name">韭菜</div>
+                        <div class="ingre-use">150克</div>
+                    </li>
+                    <li>
+                        <div class="ingre-name">千张皮</div>
+                        <div class="ingre-use">1个</div>
+                    </li>
+                    <li>
+                        <div class="ingre-name">大蒜</div>
+                        <div class="ingre-use">150克</div>
+                    </li>
+                    <li>
+                        <div class="ingre-name">橄榄油</div>
+                        <div class="ingre-use">150克</div>
+                    </li>
+                    <li>
+                        <div class="ingre-name">黑胡椒</div>
+                        <div class="ingre-use">150克</div>
+                    </li>
+                    <li>
+                        <div class="ingre-name">剁椒</div>
+                        <div class="ingre-use">1个</div>
+                    </li>
+                    <li>
+                        <div class="ingre-name">油盐</div>
+                        <div class="ingre-use">150克</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="floor-container">
+            <div class="list-ingredients">
+                <div class="ingredients-title"><span class="cook-method">食材清单</span></div>
+                <ul class="cook-method">
+                    <li>
+                        <div class="step-tag">1</div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
+                        <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
+                    </li>
+                    <li>
+                        <div class="step-tag">2</div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
+                        <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
+                    </li>
+                    <li>
+                        <div class="step-tag">3</div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
+                        <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
+                    </li>
+                    <li>
+                        <div class="step-tag">4</div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
+                        <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
+                    </li>
+                    <li>
+                        <div class="step-tag">5</div>
+                        <div class="step-img">
+                            <div class="lazy-box seven-four">
+                                <img class="lazy" data-original="images/recommend-menu/cook-method.jpg" title="" alt="">
+                            </div>
+                        </div>
+                        <div class="step-text">平底锅烧热，放油。西葫芦一片一片的两面沾上面粉。</div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="rec-ings">
+            <div class="rec-ings-title">
+                <div class="small-line"></div>
+                <h4>推荐食材</h4>
+                <div class="small-line"></div>
+            </div>
+            <div class="rec-ings-bann">
+                <a href="javascript:;">
+                    <div class="lazy-box half">
+                        <img class="lazy" data-original="images/recommend-menu/rec-bann.jpg" title="" alt="">
+                    </div>
+                </a>
+                <div class="rec-ings-see">
+                    <span class="arrow-right-green">去看看</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- content end -->
+</body>
+
+</html>

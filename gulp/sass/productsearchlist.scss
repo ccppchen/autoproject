@@ -14,7 +14,8 @@
 }
 .pro-header{
 	height:0.88rem;
-	border-bottom:1px solid #dddddd;
+	// border-bottom:1px solid #dddddd;
+	@include hair(bottom, #dddddd);
 	position:relative;
 	a:link,a:visited{
 		position:absolute;
@@ -77,7 +78,8 @@
 	height:0.88rem;
 	line-height:0.88rem;
 	position:relative;
-	border-bottom:1px solid #dddddd;
+	// border-bottom:1px solid #dddddd;
+	@include hair(bottom, #dddddd);
 	z-index:2;
 	ul{
 		margin:0;
@@ -216,7 +218,9 @@
 .pro-label{
 	padding-bottom:0.2rem;
 	padding-right:0.2rem;
-	border-bottom:1px solid #dddddd;
+	// border-bottom:1px solid #dddddd;
+	@include hair(bottom, #dddddd);
+	background-origin: padding-box;
 	position:relative;
 	z-index:1;
 	&:after{
@@ -366,7 +370,9 @@
 		margin-top:-1px;
 		li{
 			padding:0.2rem 0.2rem 0.2rem 0;
-			border-top:1px solid #ddd;
+			// border-top:1px solid #ddd;
+			@include hair(bottom, #dddddd);
+			background-origin: padding-box;
 			&:after{
 				display:block;
 				content:" ";
@@ -612,7 +618,7 @@
 .gotop{
 	position:fixed;
 	right:0.2rem;
-	bottom:-100%;
+	bottom: rem(30);
 	width:0.88rem;
 	height:0.88rem;
 	text-align:center;
@@ -622,10 +628,8 @@
 	background-image: inline-image("base64/fixed-top.png");
 	background-position: center center ;
 	background-repeat: no-repeat;
-	background-size:rem(42) ;
-	@include display(flex);
-	@include align-items(center);
-	@include justify-content(center);
+	background-size:rem(42);
+	display: none;
 }
 .bg-show{position:absolute; width:100%; left:0; margin-top:1px; background:rgba(0,0,0,0.6); z-index:1; display:none;}
 .list-item{
@@ -699,7 +703,7 @@
 }
 .bottom-info{
 	text-align:center;
-	border-top:1px solid #dddddd;
+	// border-top:1px solid #dddddd;
 	height:rem(81);
 	line-height:rem(81);
 	color:#999999;
@@ -756,6 +760,8 @@
 			background:none;
 			outline:none;
 			font-size:0.3rem;
+			padding: 0; 
+			
 		}
 		div{
 			padding-left:0.84rem;
@@ -826,6 +832,8 @@
 			margin:0;
 			list-style:none;
 			padding:0;
+			max-height: rem(302);
+			overflow: hidden;
 			li{
 				margin:0;
 				list-style:none;
@@ -1387,4 +1395,46 @@
                 }
         }
     }
+}
+.topfix{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #FFFFFF;  
+    
+}
+
+// chenp
+.fix-bottom-text{
+	position: fixed;
+	bottom: rem(30);
+	left: 50%;
+	@include transform(translate(-50%,0));
+	background-color: rgba(#000000, .55);
+	-webkit-border-radius: 16px;
+		-moz-border-radius: 16px;
+		border-radius: 16px;
+	width: rem(150);
+	padding: rem(4) rem(6);
+	line-height: 1;
+	text-align: center;
+	font-size: rem(24);
+	color: #ffffff;
+}
+.notfind-box{
+	text-align: center;
+	padding: rem(54) rem(20);
+	background-color: #f8f8f8;
+	p{
+		font-size: rem(28);
+		color: #333333;
+	}
+	.linkgoods{
+		margin-top: rem(10);
+	}
+}
+.link-good{
+	color: #e6133c;
 }

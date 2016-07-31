@@ -35,6 +35,16 @@ body{
 		}
 	}
 }
+.triangle-up{
+	position: relative;
+}
+.triangle-up:after{
+	position: absolute;
+	bottom: 0;
+	left: rem(60);
+	z-index: 9;
+	@include triangle(top, rem(15), #f7f7f7);
+}
 .lazy-box{
 	@extend %lazy-box;
 }
@@ -98,17 +108,18 @@ body{
 	}
 	.ovfs-item{
 		padding: 0 rem(27);
-		color: #777777;
 		font-size: rem(24);
 		width: auto;
 		border-right: none;
 		a{
 			display: inline-block;
 			line-height: 2;
+			color: #777777;
+			border-bottom: rem(2) solid transparent;
 		}
 		&.active{
-			color: #333333;
 			a{
+				color: #333333;
 				border-bottom: rem(2) solid #2e3384;
 			}
 		}
@@ -118,7 +129,9 @@ body{
 	padding: 0 rem(20);
 }
 @include pic-list(floor-half, 2, transparent, .2rem, floor-bg);
-
+.floor-half ul li{
+	float: left;
+}
 .sp-remood{
 	overflow: hidden;
 	.sp-title{
@@ -219,12 +232,13 @@ body{
 				white-space: normal;
 				height: auto;
 				display: block!important;
-				padding: .08rem .2rem;
+				padding: .08rem 0;
 			}
 		}
 		.ovfs-item{
 			width: 25%;
 			display: inline-block;
+			float: left;
 			padding: rem(24) rem(30);
 			height: auto;
 			&.all{
@@ -277,7 +291,7 @@ body{
 		color: #666666;
 		display: table-cell;
 		vertical-align: middle;
-		padding-left: rem(20);
+		padding-left: rem(26);
 		@include hair(bottom, #dddddd);
 		background-origin: padding-box;
 	}
@@ -404,9 +418,11 @@ body{
 		width: rem(260);
 		height: rem(372);
 		margin-right: rem(20);
-		border-image: inline-image("base64/globorimg.png") 18 18 round;
-		border-width: 10px;
-		border-style: solid;
+		background-image: url("i/gborderimg.png");
+		background-size: rem(260) rem(372);
+		// border-image: inline-image("base64/1.png") 18 18 round;
+		// border-width: 10px;
+		// border-style: solid;
 		text-align: center;
 		a{
 			@extend %transform-middle;
