@@ -176,7 +176,7 @@ gulp.task('html', function(){
         basepath: 'app/',
         context: {
             rightWordBool: false,
-            requirejs: ""
+            requirejs: "js/config"
         }
       }))
     .pipe(gulp.dest(yeoman.dist))
@@ -190,7 +190,7 @@ gulp.task('widget', function(){
         basepath: 'app/',
         context: {
             rightWordBool: false,
-            requirejs: ""
+            requirejs: "js/config"
         }
       }))
     .pipe(gulp.dest('.tmp'))
