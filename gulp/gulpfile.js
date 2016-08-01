@@ -63,8 +63,8 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
-  gulp.watch(yeoman.app+"/*.html", ['widget']);
-  gulp.watch([yeoman.app+'/*.html', yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css']).on('change', browserSync.reload);
+  gulp.watch([yeoman.app+"/*.html",yeoman.app+"/chenp/*.html"], ['widget']);
+  gulp.watch([yeoman.app+'/*.html',yeoman.app+"/chenp/*.html", yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css']).on('change', browserSync.reload);
 });
 
 
@@ -173,7 +173,11 @@ gulp.task('html', function(){
   gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
     .pipe($.fileInclude({
         prefix: '@@',
-        basepath: 'app/'
+        basepath: 'app/',
+        context: {
+            rightWordBool: false,
+            requirejs: ""
+        }
       }))
     .pipe(gulp.dest(yeoman.dist))
 });
@@ -185,7 +189,8 @@ gulp.task('widget', function(){
         prefix: '@@',
         basepath: 'app/',
         context: {
-            rightWordBool: false
+            rightWordBool: false,
+            requirejs: ""
         }
       }))
     .pipe(gulp.dest('.tmp'))
