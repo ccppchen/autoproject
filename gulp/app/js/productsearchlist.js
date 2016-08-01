@@ -1,4 +1,4 @@
-require(['config'], function(){
+require(['config'], function() {
     require(['vendor'], function() {
         $(function() {
             $(".pro-item").find("li").click(function() {
@@ -104,6 +104,34 @@ require(['config'], function(){
             $(".search-criteria").find("dd").click(function() {
                 $(".list-header").find("input").val($(this).find("a").text());
             });
+        });
+
+        $(function() {
+            $(".pro-ul").css("margin-top", $(".topfix").height());
+            var startY;
+            var moveEndY;
+            var num;
+            $(".pro-ul").on("touchstart", function(e) {
+                startY = e.touches[0].pageY;
+                num = 0;
+            });
+            $(".pro-ul").on("touchmove", function(e) {
+                moveEndY = e.touches[0].pageY;
+                Y = moveEndY - startY;
+                if (num == 0) {
+                    if (Y > 0) {
+                        $(".pro-header,.pro-item,.notfind-box").show();
+                        $(".pro-ul").css("margin-top", $(".topfix").height());
+                        num++;
+                    } else if (Y < 0) {
+                        $(".pro-header,.pro-item,.notfind-box").hide();
+                        $(".pro-ul").css("margin-top", $(".topfix").height());
+                        num++;
+                    }
+                }
+
+            });
+
         });
 
         /*筛选*/
@@ -279,5 +307,4 @@ require(['config'], function(){
             };
         };
     });
-
 });
