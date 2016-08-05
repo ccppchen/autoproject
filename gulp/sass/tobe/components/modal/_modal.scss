@@ -1,0 +1,115 @@
+$color-text:        #000000 !default;
+$modalDuration:     500ms !default;
+$modalBgColor:      #ffffff !default;
+$modalButonColor:   #007aff !default;
+$modalButonBg:      #ffffff !default;
+.modal {
+    width: rem(540);
+    position: absolute;
+    z-index: 11000;
+    left: 50%;
+    margin-left: rem(-270);
+    margin-top: 0;
+    overflow: hidden;
+    top: 50%;
+    text-align: center;
+    border-radius: rem(15);
+    opacity: 0;
+    transform: translate3d(0,-50%,0)!important;
+    transition-property: opacity;
+    color: $color-text;
+    display: none;
+    &.modal-in {
+        opacity: 1;
+        transition-duration: $modalDuration;
+        display: block;
+    }
+    &.modal-out {
+        opacity: 0;
+        z-index: 11000-1;
+        transition-duration: $modalDuration;
+    }
+}
+.modal-inner {
+    padding: rem(30);
+    @include hair(bottom, #b5b5b5);
+    border-radius: rem(15) rem(15) 0 0;
+    position: relative;
+    background: $modalBgColor;
+}
+.modal-title {
+    font-weight: 500;
+    font-size: rem(34);
+    text-align: center;
+    +.modal-text {
+        margin-top: rem(10);
+    }
+}
+.modal-buttons {
+    height: rem(88);
+    overflow: hidden;
+    @extend %comm-flex;
+    @include justify-content(center);
+    &.modal-buttons-vertical {
+        display: block;
+        height: auto;
+    }
+}
+.modal-button {
+    width: 100%;
+    padding: 0 rem(10);
+    height: rem(88);
+    font-size: rem(34);
+    line-height: rem(88);
+    text-align: center;
+    color: $modalButonColor;
+    background: $modalButonBg;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    // .hairline(right, #b5b5b5);
+    @include hair(right, #b5b5b5);
+    @include flex(1);
+    &:first-child {
+        border-radius: 0 0 0 rem(15);
+    }
+    &:last-child {
+        background-image: none;
+        border-radius: 0 0 rem(15) 0;
+    }
+    &:first-child:last-child {
+        border-radius: 0 0 rem(15) rem(15);
+        @include hair(top, #e2e2e2);
+        background-origin: padding-box;
+    }
+    &.modal-button-bold {
+        font-weight: bold;
+    }
+    .modal-buttons-vertical & {
+        // .hairline-remove(right);
+        // .hairline-remove(top);
+        // .hairline(bottom, #b5b5b5);
+        background-image: none;
+        @include hair(bottom, #b5b5b5);
+        border-radius: 0;
+        &:last-child {
+            border-radius: 0 0 rem(15) rem(15);
+            // .hairline-remove(bottom);
+            background-image: none;
+        }
+    }
+}
+.modal-no-buttons {
+    .modal-inner {
+        border-radius: rem(15);
+        // .hairline-remove(bottom);
+        background-image: none;
+    }
+    .modal-buttons {
+        display: none;
+    }
+}

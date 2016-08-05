@@ -2,282 +2,323 @@
 <html>
 
 <head>
-@@include('widget/head.html', {
-    "title": "i百联",
-    "css": "css/giftcard-index.css"
-})
-<script defer async type="text/javascript">
-    require(['touchslider'], function(){
-        TouchSlide({
-            slideCell: "#touchSlide",
-            titCell: ".swiper-pagination ul",
-            mainCell: ".swiper-wrapper",
-            effect: "leftLoop",
-            /*autoPlay: true,*/
-            delayTime: 300,
-            interTime: 2000,
-            autoPage: true,
-            switchLoad: "_src"
-        });
-    });
-</script>
+    <title>html5</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="css/i/apple-touch/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="css/i/apple-touch/icon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="css/i/apple-touch/icon-196.png">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript">
+    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(1);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
+    </script>
+    <!-- inject:css -->
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+    <link rel="stylesheet" type="text/css" href="css/giftcard-index.css">
+    <!-- endinject -->
 </head>
-
-<body id="giftcard">
-    <div class="content">
-        <header class="bar bar-header bar-light">
-            <div class="bar-left">
-                <a href="javascript:history.go(-1)" class="button iconfont arrow-back"></a>
-            </div>
-            <h1 class="title index-title">
+	<body id="giftcard">
+		<div class="content">
+			<header class="bar bar-header bar-light">
+				<div class="bar-left">
+					<a href="javascript:history.go(-1)" class="button iconfont arrow-back"></a>
+				</div>
+				<h1 class="title index-title">
 	            		礼品卡
 	        </h1>
-            <div class="bar-right">
-            </div>
-        </header>
-    </div>
-    <div class="head-search">
-        <div class="search-contain">
-            <div class="search-logo"></div>
-            <input type="text" />
-        </div>
-    </div>
-    <!-- Swiper -->
-    <div class="swiper-container" id="touchSlide">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a href="javascript:;"><img _src="images/fresh-home/banner.png" alt=""></a>
-            </div>
-            <div class="swiper-slide">
-                <a href="javascript:;"><img _src="images/fresh-home/banner.png" alt=""></a>
-            </div>
-            <div class="swiper-slide">
-                <a href="javascript:;"><img _src="images/fresh-home/banner.png" alt=""></a>
-            </div>
-        </div>
-        <div class="swiper-pagination">
-            <ul></ul>
-        </div>
-    </div>
-    <div class="giftcard-class">
-        <div class="class-container">
-            <div class="class-detail">
-                <div class="class-img1"></div>
-                <p> 主题</p>
-            </div>
-            <div class="class-detail">
-                <div class="class-img2"></div>
-                <p> 对象</p>
-            </div>
-            <div class="class-detail">
-                <div class="class-img3"></div>
-                <p> 节日</p>
-            </div>
-            <div class="class-detail">
-                <div class="class-img4"></div>
-                <p> 价格</p>
-            </div>
-        </div>
-    </div>
-    <div class="list-head">
-        <img src="css/i/cardlogo1.png" class="left-logo">
-        <div class="head-text">经典卡</div>
-        <img src="css/i/cardlogo-r1.png" class="right-logo">
-    </div>
-    <div class="scroll-list">
-        <div class="scroll-ul">
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log-no"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log-no"></div>
-                </div>
-            </div>
-            <div class=" get-more">
-                <div class="get-more-e">MORE</div>
-                <div class="get-more-c">查看更多</div>
-            </div>
-        </div>
-    </div>
-    <div class="list-head">
-        <img src="css/i/cardlogo2.png" class="left-logo">
-        <div class="head-text">感谢卡</div>
-        <img src="css/i/cardlogo-r2.png" class="right-logo">
-    </div>
-    <div class="scroll-list">
-        <div class="scroll-ul">
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log-no"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="list-head">
-        <img src="css/i/cardlogo3.png" class="left-logo">
-        <div class="head-text">猴年纪念卡</div>
-        <img src="css/i/cardlogo-r3.png" class="right-logo">
-    </div>
-    <div class="scroll-list">
-        <div class="scroll-ul">
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log-no"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="list-head">
-        <img src="css/i/cardlogo4.png" class="left-logo">
-        <div class="head-text">爱情卡</div>
-        <img src="css/i/cardlogo-r4.png" class="right-logo">
-    </div>
-    <div class="scroll-list">
-        <div class="scroll-ul">
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log-no"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-            <div class="list-contain">
-                <div class="list-img">
-                    <img src="images/giftcard-index/Group 9.png" />
-                    <!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
-                </div>
-                <div class="list-text">百联财理全球购588型(电子卡)</div>
-                <div class="list-pay">
-                    <div class="paynum"><span>¥</span>199.0</div>
-                    <div class="pay-log"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="arrive-bottom">
-        <div>·</div>到底啦
-        <div>·</div>
-    </div>
-    <!-- Swiper end -->
-</body>
+				<div class="bar-right">
+				</div>
+			</header>
+		</div>
+		<div class="head-search">
+			<div class="search-contain">
+				<div class="search-logo"></div>
+				<input type="text" />
+			</div>
+		</div>
+		<!-- Swiper -->
+		<div class="swiper-container" id="touchSlide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="javascript:;"><img src="images/fresh-home/banner.png" alt=""></a>
+				</div>
+				<div class="swiper-slide">
+					<a href="javascript:;"><img src="images/fresh-home/banner.png" alt=""></a>
+				</div>
+				<div class="swiper-slide">
+					<a href="javascript:;"><img src="images/fresh-home/banner.png" alt=""></a>
+				</div>
+			</div>
+			<div class="swiper-pagination">
+				<ul></ul>
+			</div>
+		</div>
+		<div class="giftcard-class">
+			<div class="class-container">
+				<div class="class-detail">
+					<div class="class-img1"></div>
+					<p> 主题</p>
+				</div>
+				<div class="class-detail">
+					<div class="class-img2"></div>
+					<p> 对象</p>
+				</div>
+				<div class="class-detail">
+					<div class="class-img3"></div>
+					<p> 节日</p>
+				</div>
+				<div class="class-detail">
+					<div class="class-img4"></div>
+					<p> 价格</p>
+				</div>
+			</div>
+		</div>
+		<div class="list-head">
+			<img src="css/i/cardlogo1.png" class="left-logo">
+			<div class="head-text">经典卡</div>
+			<img src="css/i/cardlogo-r1.png" class="right-logo">
+		</div>
+		<div class="scroll-list">
+			<div class="scroll-ul">
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log-no"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log-no"></div>
+					</div>
+				</div>
+				<div class=" get-more">
+					<div class="get-more-e">MORE</div>
+					<div class="get-more-c">查看更多</div>
+				</div>
+			</div>
+		</div>
+		<div class="list-head">
+			<img src="css/i/cardlogo2.png" class="left-logo">
+			<div class="head-text">感谢卡</div>
+			<img src="css/i/cardlogo-r2.png" class="right-logo">
+		</div>
+		<div class="scroll-list">
+			<div class="scroll-ul">
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log-no"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list-head">
+			<img src="css/i/cardlogo3.png" class="left-logo">
+			<div class="head-text">猴年纪念卡</div>
+			<img src="css/i/cardlogo-r3.png" class="right-logo">
+		</div>
+		<div class="scroll-list">
+			<div class="scroll-ul">
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log-no"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list-head">
+			<img src="css/i/cardlogo4.png" class="left-logo">
+			<div class="head-text">爱情卡</div>
+			<img src="css/i/cardlogo-r4.png" class="right-logo">
+		</div>
+		<div class="scroll-list">
+			<div class="scroll-ul">
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log-no"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+				<div class="list-contain">
+					<div class="list-img">
+						<img src="images/giftcard-index/Group 9.png" />
+						<!--<div class="no-pro">无&nbsp;&nbsp;&nbsp;货</div>-->
+					</div>
+					<div class="list-text">百联财理全球购588型(电子卡)</div>
+					<div class="list-pay">
+						<div class="paynum"><span>¥</span>199.0</div>
+						<div class="pay-log"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="arrive-bottom"><div>·</div>到底啦<div>·</div></div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Swiper end -->
+		<script src="js/vendor/vendor.min.js"></script>
+		<script src="js/touchslider.js"></script>
+		<script src="js/comm.js"></script>
+		<script>
+			$(function() {
+				TouchSlide({
+					slideCell: "#touchSlide",
+					titCell: ".swiper-pagination ul",
+					mainCell: ".swiper-wrapper",
+					effect: "leftLoop",
+					/*autoPlay: true,*/
+					delayTime: 300,
+					interTime: 2000,
+					autoPage: true
+				});
+			});
+		</script>
+	</body>
 
 </html>

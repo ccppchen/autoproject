@@ -1,4 +1,4 @@
-require(['config'], function(){
+require(['config', 'comm'], function(){
     require(['vendor', 'touchslider'], function(){
         $(window).on('scroll touchmove', function() {
             var percent = $(window).scrollTop() / $('.bar-header').height();

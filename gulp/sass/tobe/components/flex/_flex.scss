@@ -1,57 +1,50 @@
 // Grid
 // ----------------------------------------------
-.grid {
+%grid {
   @include display(flex);
 }
 
-.grid-top {
+%grid-top {
   @include align-items(flex-start);
 }
 
-.grid-middle {
+%grid-middle {
   @include align-items(center);
 }
 
-.grid-bottom {
+%grid-bottom {
   @include align-items(flex-start);
 }
 
-.grid-stretch {
+%grid-stretch {
   @include align-items(stretch);
 }
 
-.grid-baseline {
+%grid-baseline {
   @include align-items(baseline);
 }
 
-.grid-left {
+%grid-left {
   @include justify-content(flex-start);
 }
 
-.grid-center {
+%grid-center {
   @include justify-content(center);
 }
 
-.grid-right {
+%grid-right {
   @include justify-content(flex-end);
 }
 
-.grid-between {
+%grid-between {
   @include justify-content(space-between);
 }
 
-.grid-around {
+%grid-around {
   @include justify-content(space-around);
 }
 
-.cell {
+%cell {
   @include flex(1);
-}
-
-// flex 
-.cell04{
-  @include flex(.4);
-}
-.cell06{
-  @include flex(.6);
+  width: 0;
 }

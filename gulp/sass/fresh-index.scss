@@ -1,10 +1,8 @@
 @charset "utf-8";
 @import "tobe/base";
-@import "compass";
 @import "tobe/components/bar/bar";
 @import "tobe/components/overflow-scroll/overflow-scroll";
 @import "tobe/components/nav/nav";
-@import "tobe/components/flex/flex";
 @include pic-list();
 body{
 	background:#e5e5e5;
@@ -16,6 +14,19 @@ ul,li,ol,dt,dd,dl,h1,h2,h3,h4,h5,h6{
 }
 img{
 	border:0;
+}
+.lazy-box{
+@extend %lazy-box;
+&.half:after{
+	padding-top: 50%;
+}
+&.banner:after{
+	padding-top: 48%;
+}
+&.line{    background-size: 0.5rem;}
+&.line:after{
+	padding-top: 10.4%;
+}
 }
 
 .bar-header .title img{width:auto;height:rem(86);}
@@ -146,8 +157,12 @@ img{
 	margin-right:rem(20);
 }
 }
+.ovfs-line-box{width:100%;height:rem(93);margin-top:rem(20);}
+
 .ovfs-line{
-	margin-top:rem(20);
+	top:$bar-height;
+	left:0;
+	z-index:2;
 	background:#fff;
 		.ovfs-item{
 			width: auto;
@@ -174,12 +189,7 @@ img{
 			}
 		}
 	}
-.ovfs-line-fix{
-	position:fixed;
-	top:$bar-height;
-	margin-top:0;
-	z-index:2;
-}
+
 .j-ovfs-line{
 	display:none;
 }
@@ -191,6 +201,10 @@ img{
 	padding: 0 0.24rem 0.16rem 0.24rem;
 	color: #333333;
 	font-size: rem(28);
+	ul{
+		display:none;
+		&.show{display:block;}
+	}
 	.cwrap-price{
 		width:rem(130);
 		background:#40d4b3;

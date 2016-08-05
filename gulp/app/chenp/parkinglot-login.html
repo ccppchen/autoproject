@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "停车场",
+    "css": "css/parkinglot.css",
+    "requirejs": "js/parkinglot"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "停车场",
+        "nav": false,
+        "right-icon": "parkinfo",
+        "rightIconBool": true,
+        "rightIconBoolMore": false,
+        "more-icon": ""
+    })
+
+    
+
+    <div class="content">
+        <!-- ad -->
+        <p><img src="images/parkinglot/ad.jpg" alt=""></p>
+        <!-- ad end -->
+        <div class="nav-menu">
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="css/i/tcarmicon-1.png" alt="">
+                    <div class="item-p">扫一扫</div>
+                </a>
+            </div>
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="css/i/tcarmicon-2.png" alt="">
+                    <div class="item-p">我的车辆</div>
+                </a>
+            </div>
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="css/i/tcarmicon-3.png" alt="">
+                    <div class="item-p">领券中心</div>
+                </a>
+            </div>
+            <div class="item-menu">
+                <a href="javascript:;">
+                    <img src="css/i/tcarmicon-4.png" alt="">
+                    <div class="item-p">领券商铺</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 车牌号 -->
+        <div class="plate-el">
+            <div class="plate-left">
+                <div class="plate-word">车牌号</div>
+                <input class="plate-fir icon-down" type="text" name="" value="沪" placeholder="" readonly>
+                <div class="plate-input">
+                    <input type="text" name="" value="" placeholder="请输入6位车牌号">
+                    <span class="platei-close"></span>
+                </div>
+            </div>
+            <a class="plate-btn">
+                绑定车牌
+            </a>
+        </div>
+        <div class="plate-el">
+            <div class="plate-left">
+                <div class="plate-word">车牌号</div>
+                <input class="plate-fir icon-down" type="text" name="" value="沪" placeholder="" readonly>
+                <div class="plate-input">
+                    <input type="text" name="" value="" placeholder="请输入6位车牌号">
+                    <span class="platei-close"></span>
+                </div>
+            </div>
+            <a class="plate-btn on">
+                绑定车牌
+            </a>
+        </div>
+
+        <!-- 停车场 -->
+        <div class="park-box">
+            <div class="park-inner">
+                <a href="javascript:;" title="">
+                    <div class="park-inner-title">
+                        <div class="tcar-ear">中环百联购物广场停车场</div>
+                        <div class="parkinner-right iconfont arrow-back"></div>
+                    </div>
+                </a>
+                <div class="park-inner-main">
+                    <div class="park-main-left">
+                        <p>沪A 53212 停在 A99801<a class="find-parke" href="javascript:;" title="">找车位</a></p>
+                        <div class="park-time">时长<span class="time-span">0</span>天<span class="time-span">4</span>小时<span class="time-span">40</span>分钟</div>
+                    </div>
+                    <div class="park-main-right">
+                        <p>收费:30元</p>
+                        <a href="javascript:;" title="">
+                            <div class="park-paybtn">
+                                <span class="tcari-pay">支付</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="park-box">
+            <div class="park-inner">
+                <a href="javascript:;" title="">
+                    <div class="park-inner-title">
+                        <div class="tcar-ear">中环百联购物广场停车场</div>
+                        <div class="parkinner-right iconfont arrow-back"></div>
+                    </div>
+                </a>
+                <div class="park-inner-main">
+                    <div class="park-main-left">
+                        <p>沪A 53212 停在 A99801<a class="find-parke" href="javascript:;" title="">找车位</a></p>
+                        <div class="park-info">
+                            您的免费停车时间剩余 <span class="red-color">00:40:23</span>
+                            <div class="grayinfo">免费时间结束后，将收取停车费用哦~</div>
+                        </div>
+                    </div>
+                    <div class="park-main-right small-font">
+                        <p>免费停车时段</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="park-box">
+            <div class="park-inner">
+                <a href="javascript:;" title="">
+                    <div class="park-inner-title">
+                        <div class="tcar-ear">中环百联购物广场停车场</div>
+                        <div class="parkinner-right iconfont arrow-back"></div>
+                    </div>
+                </a>
+                <div class="park-inner-main">
+                    <div class="park-main-left">
+                        <p>沪A 53212 停在 A99801<a class="find-parke" href="javascript:;" title="">找车位</a></p>
+                        <div class="park-info">
+                            您已支付停车费，请在 <span class="red-color">00:40:23</span> 内离场
+                            <div class="grayinfo">时间结束后，将会再次计费哦~</div>
+                        </div>
+                    </div>
+                    <div class="park-main-right small-font">
+                        <p>已支付</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="park-box">
+            <div class="park-inner">
+                <a href="javascript:;" title="">
+                    <div class="park-inner-title">
+                        <div class="tcar-ear">中环百联购物广场停车场</div>
+                        <div class="parkinner-right iconfont arrow-back"></div>
+                    </div>
+                </a>
+                <div class="park-inner-main">
+                    <div class="park-main-left">
+                        <div class="no-park">您的汽车还没有进入停车场哦~</div>
+                    </div>
+                    <div class="park-main-right">
+                        <a href="javascript:;" class="park-paybtn">
+                             我要换车 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="park-box">
+            <div class="park-inner">
+                <div class="comm-flex">
+                    <div class="park-orderbox">
+                        <a class="parko-top">
+                            <div class="parkorder-img"><img src="css/i/tpark-h.png" alt=""></div>
+                            <div class="parkorder-text">
+                                我的停车优惠
+                                <p class="park-niceinfo">优惠券积分</p>
+                            </div>
+                        </a>
+                        <a class="parko-bottom">
+                            <div class="parkorder-img"><img src="css/i/tpark-t.png" alt=""></div>
+                            <div class="parkorder-text">
+                                我的停车订单
+                                <p class="park-niceinfo">待支付订单(<span class="or-color">2</span>)</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="park-search">
+                        <a href="javascript:;" title="">
+                            <div class="parkorder-img"><img src="css/i/tpark-p.jpg" alt=""></div>
+                            <div class="parkorder-text">
+                                搜索停车场
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="total-modal">请输入正确的车牌</div>
+    <div class="mask"></div>
+    <div class="modal">
+        <div class="modal-inner">
+            <div class="modal-title font-bod">
+                该车牌已经被其他用户绑定，每个车牌只允许被一位用户绑定如有疑问，请拨打
+                <p><a class="a-tel" href="tel:400-900-8800" title="">400-900-8800</a></p>
+            </div>
+        </div>
+        <div class="modal-buttons">
+            <span class="modal-button modal-button-bold">我知道了</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

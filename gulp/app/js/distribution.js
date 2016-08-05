@@ -1,4 +1,4 @@
-require(['config'], function(){
+require(['config', 'comm'], function(){
 	require(['vendor'], function(){
 		$('#distriWay .list-right').on('click', function(){
 		    $(this).children('.check-input').prop('checked', 'checked');

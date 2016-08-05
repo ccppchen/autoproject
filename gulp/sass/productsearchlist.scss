@@ -1,5 +1,11 @@
 @charset "utf-8";
 @import "tobe/base";
+html{
+	-webkit-overflow-scrolling:inherit;
+	&.touch{
+		-webkit-overflow-scrolling:touch;
+	}
+}
 .body-bgcolor{
 	background:#ffffff;
 	min-width:320px;
@@ -422,13 +428,22 @@
 					font-size:0.28rem;
 					height:rem(84);
 					overflow:hidden;
+					.clamp{
+						@include clamp;
+						font-size: rem(28);
+					}
 					a:link,a:visited{
 						color:#333333;
 						i{
-							float:left;
-							display:inline-block;
 							margin-right:rem(10);
 							margin-top:rem(7);
+							position: absolute;
+							& + .clamp:before{
+								content: '';
+								width: rem(80);
+								display: inline-block;
+								vertical-align: top;
+							}
 						}
 					}
 					a.qqg{
@@ -602,17 +617,19 @@
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
-	&:after{
-		width:rem(10);
-		height:rem(10);
-		border-radius:50%;
-		background:#e6133c;
-		position:absolute;
-		left:rem(55);
-		top:rem(20);
-		z-index:2;
-		display:block;
-		content:"";
+	&.red-col{
+		&:after{
+			width:rem(10);
+			height:rem(10);
+			border-radius:50%;
+			background:#e6133c;
+			position:absolute;
+			left:rem(55);
+			top:rem(20);
+			z-index:2;
+			display:block;
+			content:"";
+		}
 	}
 }
 .gotop{
@@ -925,7 +942,7 @@
 		}
 	}
 }
-.screen-fixed{position:fixed; top:0; left:100%; z-index:3; width:100%; height:100%;}
+.screen-fixed{position:fixed; top:0; left:100%; z-index:3; width:100%; height:100%; z-index: 1001;}
 
 /*筛选*/
 @import "tobe/ext/comm";
@@ -951,6 +968,7 @@
     width: 90%;
     height: 100%;
     position: absolute;
+    z-index: 1001;
     top: 0;
     color: #3d4145;
     background-color: #fff;
@@ -995,6 +1013,9 @@
     padding-right: rem(20);
     font-size: rem(28);
     color: #666666;
+    &.active{
+    	color: #e6133c;
+    }
 }
 .bgf2f2-ul-1 {
     border-bottom: 1px solid #ddd;
@@ -1175,6 +1196,12 @@
             align-items: center;
             float: left;
             display: flex;
+            // overflow: hidden;
+            // white-space: nowrap;
+            span{
+            	@include ellipsis;
+            	display: block;
+            }
         }
         li.on {
             background: #e6133c;
@@ -1403,7 +1430,7 @@
     right: 0;
     z-index: 100;
     background: #FFFFFF;  
-    
+    transition: 0.3s linear 0s;
 }
 
 // chenp

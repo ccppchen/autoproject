@@ -1,4 +1,4 @@
-require(['config'], function(){
+require(['config', 'comm'], function(){
     require(['vendor', 'fx_methods'], function() {
         // tab
         $('.vegetables-class').on('click', '.ovfs-item', function(event) {

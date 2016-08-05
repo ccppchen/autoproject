@@ -1,0 +1,66 @@
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+
+body{
+	background-color: #FAFAFA;
+}
+.content{
+	padding-top: $bar-height;
+}
+
+.lazy-box{
+	@extend %lazy-box;
+}
+
+.list-block{
+	font-size: rem(28);
+	.item-content{
+		background-color: #ffffff;
+		padding-left: rem(10);
+		overflow: hidden;
+		a{
+			position: relative;
+			display: block;
+			@include hairline(bottom, #E9E9E9);
+			&:after{
+				left: rem(124);
+			}
+		}
+		.item-media{
+			width: rem(130);
+			@include justify-content(center);
+			height: rem(160);
+			@extend %comm-flex;
+			float: left;
+		}
+		.item-inner{
+			padding: rem(28) rem(20);
+			overflow: hidden;
+			.item-title-row{
+				position: relative;
+				.item-after{
+					position: absolute;
+					right: 0;
+					top: 0;
+					font-size: rem(24);
+					color: #999999;
+					line-height: 2.3;
+				}
+			}
+			.item-subtitle{
+				@include ellipsis;
+				font-size: rem(28);
+				color: #666666;
+				margin-top: rem(8);
+			}
+			.item-title-row{
+				
+			}
+			.item-title{
+				font-size: rem(36);
+				color: #333333;
+			}
+		}
+	}
+}

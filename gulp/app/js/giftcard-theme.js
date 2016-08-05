@@ -1,4 +1,4 @@
-require(['config'], function(){
+require(['config', 'comm'], function(){
     require(['vendor'], function(){
         $('.card-title .ovfs-item').on('click', function(){
             $(this).addClass('active').siblings().removeClass('active');

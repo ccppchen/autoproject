@@ -1,4 +1,10 @@
-require(['config'], function(){
+require({
+    baseUrl: 'js',
+    paths: {
+        vendor: ['vendor/vendor.min'],
+       
+    }
+    }, function(){
     require(['vendor'], function() {
         var getmonthday = function(year, month) { //获取某一个月的天数
             var monthAry = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

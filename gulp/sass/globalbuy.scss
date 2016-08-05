@@ -75,6 +75,12 @@ body{
 	left: 0;
 	top: 0;
 	font-weight: 400;
+	& + .item-word:before{
+		content: '';
+		display: inline-block;
+		vertical-align: top;
+		width: rem(68);
+	}
 }
 .tag-global:after{
 	content: '自营';
@@ -364,7 +370,7 @@ body{
 				border: 1px solid #eaeaea;
 				@extend %comm-flex;
 				@include justify-content(center);
-				i{
+				.shop-car{
 					color: #2e3384;
 					font-size: rem(32);
 				}

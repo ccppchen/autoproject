@@ -1,5 +1,11 @@
-require(['config'], function(){
-    require(['vendor'], function() {
+require({
+	    baseUrl: 'js',
+	    paths: {
+	        vendor: ['vendor/vendor.min'],
+	        touchslider: ['touchslider']
+	    }
+    }, function(){
+    require(['vendor' , 'touchslider'], function() {
         $(".sinle-detail").css("bottom", $(".button-buy").height() - $("#detail-container").height());
         $(".get-ticket .arrow-back").click(function() {
             $(this).toggleClass("arrow-up")
@@ -109,6 +115,31 @@ require(['config'], function(){
             $(this).addClass("select").siblings().removeClass("select");
             $(".parameter").hide();
         });
+
+        $(function() {
+			TouchSlide({
+				slideCell: "#touchSlide",
+				titCell: ".swiper-pagination ul",
+				mainCell: ".swiper-wrapper",
+				effect: "leftLoop",
+				autoPlay: true,
+				delayTime: 300,
+				interTime: 2000,
+				autoPage: true
+			});
+			TouchSlide({
+				slideCell: "#recommend-body",
+				titCell: ".swiper-pagination ul",
+				mainCell: ".swiper-wrapper",
+				effect: "leftLoop",
+				/*autoPlay: true,*/
+				delayTime: 300,
+				interTime: 2000,
+				autoPage: true
+			});
+		});
+
+		
     });
 
 });

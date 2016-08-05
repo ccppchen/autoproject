@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 
 <head>
-@@include('widget/head.html', {
-    "title": "html5",
-    "css": "css/singleproduct-detail.css"
-})
-<script type="text/javascript">
-    require(['singleproduct-detail', 'touchslider'], function(){
-    	TouchSlide({
-    		slideCell: "#touchSlide",
-    		titCell: ".swiper-pagination ul",
-    		mainCell: ".swiper-wrapper",
-    		effect: "leftLoop",
-    		autoPlay: true,
-    		delayTime: 300,
-    		interTime: 2000,
-    		autoPage: true,
-    		switchLoad: "_src"
-    	});
-    	TouchSlide({
-    		slideCell: "#recommend-body",
-    		titCell: ".swiper-pagination ul",
-    		mainCell: ".swiper-wrapper",
-    		effect: "leftLoop",
-    		/*autoPlay: true,*/
-    		delayTime: 300,
-    		interTime: 2000,
-    		autoPage: true,
-    		switchLoad: "_src"
-    	});
-    	
-    });
-</script>
+	<meta charset="utf-8">
+	<title>html5</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+	<meta name="applicable-device" content="mobile">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="css/i/apple-touch/icon-57.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="css/i/apple-touch/icon-120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="196x196" href="css/i/apple-touch/icon-196.png">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+	<script type="text/javascript">
+		(function() {
+			var a = this;
+			a.width = 750;
+			a.fontSize = 100;
+			a.widthProportion = function() {
+				var c = (document.getElementsByTagName("html")[0].offsetWidth) / a.width;
+				var b = c.toFixed(6);
+				return b > 1 ? 1 : b < 0.42667 ? 0.42667 : b
+			};
+			a.changePage = function() {
+				document.getElementsByTagName("html")[0].setAttribute("style", "font-size:" + a.widthProportion() * a.fontSize + "px !important")
+			};
+			a.changePage();
+			window.addEventListener("resize", function() {
+				a.changePage()
+			}, false)
+		}());
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/icons.css">
+	<link rel="stylesheet" type="text/css" href="css/singleproduct-detail.css" />
 </head>
 
 <body id="singleproduct">
@@ -64,13 +71,13 @@
 	<div class="swiper-container" id="touchSlide">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
-				<a href="javascript:;"><img _src="images/singleproduct-detail/product.png" alt=""></a>
+				<a href="javascript:;"><img src="images/singleproduct-detail/product.png" alt=""></a>
 			</div>
 			<div class="swiper-slide">
-				<a href="javascript:;"><img _src="images/singleproduct-detail/product.png" alt=""></a>
+				<a href="javascript:;"><img src="images/singleproduct-detail/product.png" alt=""></a>
 			</div>
 			<div class="swiper-slide">
-				<a href="javascript:;"><img _src="images/singleproduct-detail/product.png" alt=""></a>
+				<a href="javascript:;"><img src="images/singleproduct-detail/product.png" alt=""></a>
 			</div>
 		</div>
 		<div class="swiper-pagination">
@@ -308,7 +315,7 @@
 				<ul>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -319,7 +326,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -330,7 +337,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -341,7 +348,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -352,7 +359,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -363,78 +370,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
-						</div>
-						<div class="recommend-text">
-							诗篇2016英伦修身两粒扣薄款风（...
-						</div>
-						<div class="recommend-pay">
-							<span>￥</span>2690.00
-						</div>
-					</li>
-					
-				</ul>
-			</div>
-			<div class="swiper-slide">
-				<ul>
-					<li>
-						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
-						</div>
-						<div class="recommend-text">
-							诗篇2016英伦修身两粒扣薄款风（...
-						</div>
-						<div class="recommend-pay">
-							<span>￥</span>2690.00
-						</div>
-					</li>
-					<li>
-						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
-						</div>
-						<div class="recommend-text">
-							诗篇2016英伦修身两粒扣薄款风（...
-						</div>
-						<div class="recommend-pay">
-							<span>￥</span>2690.00
-						</div>
-					</li>
-					<li>
-						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
-						</div>
-						<div class="recommend-text">
-							诗篇2016英伦修身两粒扣薄款风（...
-						</div>
-						<div class="recommend-pay">
-							<span>￥</span>2690.00
-						</div>
-					</li>
-					<li>
-						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
-						</div>
-						<div class="recommend-text">
-							诗篇2016英伦修身两粒扣薄款风（...
-						</div>
-						<div class="recommend-pay">
-							<span>￥</span>2690.00
-						</div>
-					</li>
-					<li>
-						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
-						</div>
-						<div class="recommend-text">
-							诗篇2016英伦修身两粒扣薄款风（...
-						</div>
-						<div class="recommend-pay">
-							<span>￥</span>2690.00
-						</div>
-					</li>
-					<li>
-						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -450,7 +386,7 @@
 				<ul>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -461,7 +397,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -472,7 +408,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -483,7 +419,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -494,7 +430,7 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -505,7 +441,78 @@
 					</li>
 					<li>
 						<div class="recommend-img">
-							<img _src="images/singleproduct-detail/recommend-img.png" />
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="swiper-slide">
+				<ul>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
+						</div>
+						<div class="recommend-text">
+							诗篇2016英伦修身两粒扣薄款风（...
+						</div>
+						<div class="recommend-pay">
+							<span>￥</span>2690.00
+						</div>
+					</li>
+					<li>
+						<div class="recommend-img">
+							<img src="images/singleproduct-detail/recommend-img.png" />
 						</div>
 						<div class="recommend-text">
 							诗篇2016英伦修身两粒扣薄款风（...
@@ -920,4 +927,31 @@
 		</div>
 	</div>
 	<div class="mark"></div>
+	<script src="js/vendor/vendor.min.js"></script>
+	<script src="js/touchslider.js"></script>
+	<script src="js/singleproduct-detail.js"></script>
+	<script>
+		$(function() {
+			TouchSlide({
+				slideCell: "#touchSlide",
+				titCell: ".swiper-pagination ul",
+				mainCell: ".swiper-wrapper",
+				effect: "leftLoop",
+				autoPlay: true,
+				delayTime: 300,
+				interTime: 2000,
+				autoPage: true
+			});
+			TouchSlide({
+				slideCell: "#recommend-body",
+				titCell: ".swiper-pagination ul",
+				mainCell: ".swiper-wrapper",
+				effect: "leftLoop",
+				/*autoPlay: true,*/
+				delayTime: 300,
+				interTime: 2000,
+				autoPage: true
+			});
+		});
+	</script>
 </body>

@@ -1,0 +1,344 @@
+$bodyBgColor: #f8f8f8;
+$modalButonColor:   #e6133c; 
+@import "tobe/base";
+@import "tobe/components/flex/flex";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav-menu/nav-menu";
+@import "tobe/components/list-between/list-between";
+@import "tobe/components/modal/modal";
+@import "tobe/ext/picker";
+.modal{
+	overflow: hidden;
+}
+.picker-items{
+	height: 3.6rem!important;
+}
+.modal-title{
+	padding-top: rem(20);
+}
+.picker-center-highlight{
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+
+	&:before,&:after{
+		content: none;
+	}
+}
+.a-tel{
+	color: #007aff;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.mask{
+	@include mask(.6,10001);
+}
+.icon-down{
+	background: inline-image("base64/tcari-down.png") no-repeat right center;
+	background-size: rem(22) auto;
+	padding-right: rem(30);
+}
+.arrow-right{
+	@extend %arrow-right;
+	background-size: rem(14) auto;
+	color: #999999;
+}
+.total-modal{
+	@extend %total-modal;
+}
+.font-bod{
+	font-weight: bold;
+}
+.picker-modal,.modal{
+	position: fixed;
+}
+.bar-header{
+	position: relative;
+}
+.content {
+	// position: absolute;
+	// z-index: 100;
+	// left: 0;
+	// right: 0;
+	// bottom: 0;
+ //    width: 100%;
+    // padding-top: $bar-height;
+    // overflow-y: scroll;
+}
+.parkinfo:after{
+	content: '';
+	width: rem(40);
+	height: rem(40);
+	background: inline-image("base64/tcar-info.png") no-repeat center center;
+	background-size: contain;
+}
+
+.nav-menu{
+	padding: rem(30) 0 rem(34) 0;
+	background-color: #ffffff;
+	.item-p{
+		color: #222222;
+		margin-top: rem(18);
+	}
+	.item-menu img{
+		width: rem(100);
+		height: rem(100);
+	}
+}
+
+// plate
+.platei-close{
+	width: rem(37);
+	height: rem(30);
+	background: inline-image("base64/tcari-close.png") no-repeat center center;
+	background-size: rem(37) rem(30);
+}
+.plate-el{
+	margin-top: rem(20);
+	@extend %comm-flex;
+	height: rem(100);
+	background-color: #ffffff;
+	color: #222222;
+	.plate-left{
+		.plate-fir{
+			width: rem(80);
+			border: none;
+		}
+		@extend %comm-flex;
+		@include flex(1);
+		height: 100%;
+		.plate-input{
+			@include flex(1);
+			padding-left: rem(22);
+			position: relative;
+			input{
+				width: 100%;
+				font-size: rem(28);
+				color: #333333;
+				padding: 0;
+				margin: 0;
+				border: none;
+				letter-spacing: rem(18);
+				&::-webkit-input-placeholder{
+					letter-spacing: normal;
+					color: #cccccc;
+				}
+			}
+			.platei-close{
+				position: absolute;
+				z-index: 2;
+				right: rem(22);
+				top: 50%;
+				@include transform(translate(0, -50%));
+				display: none;
+			}
+		}
+		.plate-word{
+			padding: 0 rem(20);
+		}
+	}
+	.plate-btn{
+		width: rem(160);
+		height: 100%;
+		background-color: #cccccc;
+		font-size: rem(28);
+		color: #ffffff;
+		a{
+			color: #ffffff;
+		}
+		text-align: center;
+		@extend %comm-flex;
+		@include justify-content(center);
+		&.on{
+			background-color: #e6133c;
+		}
+	}
+}
+
+.park-box{
+	overflow: hidden;
+	padding: rem(22) rem(22) 0;
+	&:last-child{
+		padding-bottom: rem(22);
+	}
+	.park-inner{
+		border: 1px solid #e8e8e8;
+		border-radius: 5px;
+		background-color: #ffffff;
+		overflow: hidden;
+	}
+	.park-inner-title{
+		height: rem(68);
+		@include hair(bottom, #e7e7e7);
+		background-origin: padding-box;
+		@extend %comm-flex;
+		@extend %grid-between;
+		font-size: rem(28);
+		color: #222222;
+		padding: 0 rem(18);
+		.tcar-ear{
+			background: inline-image("base64/tcari-ear.jpg") no-repeat left center;
+			background-size: auto rem(36);
+			padding-left: rem(50);
+			@extend %comm-flex;
+			height: 100%;
+			line-height: 1;
+		}
+		.parkinner-right{
+			@include transform(rotate(180deg));
+			color: #999999;
+		}
+		.tcar-ear{
+
+		}
+	}
+	.park-inner-main{
+		@extend %comm-flex;
+		background-color: #ffffff;
+		height: rem(184);
+	}
+	.park-main-left{
+		padding: rem(38) rem(28);
+		color: #333333;
+		font-size: rem(28);
+		font-weight: bold;
+		@include flex(1);
+		border-right: 1px solid #e8e8e8;
+		height: 100%;
+		p{
+			font-size: rem(28);
+			color: #333333;
+		}
+		.find-parke{
+			color: #56adf0;
+			margin-left: rem(18);
+		}
+		.park-time{
+			color: #999999;
+			font-size: rem(28);
+			.time-span{
+				font-size: rem(44);
+				color: #333333;
+				margin: 0 rem(6);
+			}
+		}
+	}
+	.park-main-right{
+		width: rem(210);
+		// @include hair(left, #e8e8e8);
+		// background-origin: padding-box;
+		padding: rem(38) rem(30);
+		text-align: center;
+		font-weight: bold;
+		p{
+			font-size: rem(24);
+			line-height: 1;
+		}
+		.park-paybtn{
+			font-size: rem(28);
+			color: #ffffff;
+			background-color: #e6133c;
+			padding: rem(8);
+			border-radius: 2px;
+			text-align: center;
+			margin-top: rem(16);
+			a{
+				width: 100%;
+				height: 100%;
+				color: #ffffff;
+			}
+			.tcari-pay{
+				background: inline-image("base64/tcari-pay.png") no-repeat left center;
+				background-size: auto rem(30);
+				padding-left: rem(42);
+			}
+		}
+	}
+	.input-info,.go-login{
+		text-align: center;
+	}
+	.input-info{
+		font-size: rem(32);
+		color: #999999;
+		font-weight: bold;
+		margin-top: rem(50);
+		margin-bottom: rem(30);
+	}
+	.park-loginbtn{
+		font-size: rem(24);
+		background-color: #e6133c;
+		color: #ffffff;
+		border-radius: 2px;
+		padding: rem(14) rem(18);
+		display: inline-block;
+		margin-bottom: rem(50);
+	}
+}
+
+.tcar-list{
+	margin: rem(38) 0;
+}
+
+.red-color{
+	color: #e6133c!important;
+}
+.park-info{
+	font-size: rem(24);
+	color: #333333;
+	line-height: 1.2;
+	text-align: center;
+	margin-top: rem(24);
+	.grayinfo{
+		font-size: rem(24);
+		color: #999999;
+	}
+}
+.no-park{
+	@extend %comm-flex;
+	@include justify-content(center);
+	height: 100%;
+}
+.comm-flex{
+	@extend %comm-flex;
+	text-align: center;
+	.parkorder-text{
+		font-size: rem(28);
+		color: #666666;
+		margin: rem(18) 0 0 0;
+		line-height: 1.4;
+	}
+	.park-niceinfo{
+		font-size: rem(24);
+		color: #999999;
+		.or-color{
+			color: #fe5956;
+		}
+	}
+}
+.park-orderbox{
+	@include flex(.4);
+	.parkorder-img{
+		width: rem(110);
+		height: rem(110);
+		margin: 0 auto;
+		text-align: center;
+	}
+	border-right: 1px solid #e7e7e7;
+	.parko-top{
+		border-bottom: 1px solid #e7e7e7;
+		padding: rem(20) 0;
+		display: block;
+	}
+	.parko-bottom{
+		padding: rem(20) 0;
+		display: block;
+	}
+}
+.park-search{
+	@include flex(.6);
+	.parkorder-img{
+		width: rem(320);
+		height: rem(320);
+		margin: 0 auto;
+		text-align: center;
+	}
+}

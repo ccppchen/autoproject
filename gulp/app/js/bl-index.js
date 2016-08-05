@@ -1,4 +1,4 @@
-require(['config'], function(){
+require(['config', 'comm'], function(){
     require(['vendor', 'touchslider', 'bl-scroll-load','ion-tabs'], function() {
         $(document).on('touchmove', function(e) {
             e.preventDefault();

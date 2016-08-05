@@ -1,4 +1,4 @@
-require(['config'], function() {
+require(['config', 'comm'], function() {
     require(['vendor'], function() {
         $(function() {
             $(".pro-item").find("li").click(function() {
@@ -30,8 +30,9 @@ require(['config'], function() {
                 $(".item-number").removeClass("on");
                 $(this).hide();
             });
+            // 
             $(".pro-label").find(".item-number").find("span").click(function() {
-                var k = $("body").height() - $(this).parents(".pro-label").offset().top;
+                var k = $(".mian-info").height();
                 $(this).parents(".item-number").toggleClass("on").find(".bg-show").toggle().height(k).parents(".item-number").siblings(".item-number").removeClass("on").find(".bg-show").hide();
             });
             $(".item-number").find("dd").click(function() {
@@ -107,30 +108,66 @@ require(['config'], function() {
         });
 
         $(function() {
-            $(".pro-ul").css("margin-top", $(".topfix").height());
-            var startY;
-            var moveEndY;
-            var num;
-            $(".pro-ul").on("touchstart", function(e) {
-                startY = e.touches[0].pageY;
-                num = 0;
-            });
-            $(".pro-ul").on("touchmove", function(e) {
-                moveEndY = e.touches[0].pageY;
-                Y = moveEndY - startY;
-                if (num == 0) {
-                    if (Y > 0) {
-                        $(".pro-header,.pro-item,.notfind-box").show();
-                        $(".pro-ul").css("margin-top", $(".topfix").height());
-                        num++;
-                    } else if (Y < 0) {
-                        $(".pro-header,.pro-item,.notfind-box").hide();
-                        $(".pro-ul").css("margin-top", $(".topfix").height());
-                        num++;
-                    }
-                }
 
-            });
+            var p=0,t=0,g=0;
+            var liHeight = $('.pro-ul ul li').height();
+            var topFixH = $(".topfix").height();
+            var pageHeight = liHeight*8;
+            $(".pro-ul").css("margin-top", topFixH);
+            // $(window).scroll(function(e){  
+            //     p = $(this).scrollTop();  
+                  
+            //     if (p > pageHeight) {
+            //         if(t<=p){//下滚  
+            //             $('.topfix').css('-webkit-transform', 'translateY(-'+($(".topfix").height()-$('.pro-label').height())+'px)');
+            //         }  
+                      
+            //         else{//上滚  
+            //             $('.topfix').css('-webkit-transform', 'translateY(0)');
+            //         }
+            //         g++;
+
+            //     }
+
+            //     var pageNum = parseInt((p-topFixH)/pageHeight)+1; //往下滑动的页数
+            //     $('.page-num').html(pageNum);
+                
+
+            //     setTimeout(function(){t = p;},0);     
+            // });
+            var xx,yy,XX,YY,swipeX,swipeY ;
+             window.addEventListener('touchstart',function(event){
+                 xx = event.targetTouches[0].screenX ;
+                 yy = event.targetTouches[0].screenY ;
+                 swipeX = true;
+                 swipeY = true ;
+             })
+             window.addEventListener('touchmove',function(event){
+                  XX = event.targetTouches[0].screenX ;
+                  YY = event.targetTouches[0].screenY ;
+                  p = window.pageYOffset|| document.documentElement.scrollTop || document.body.scrollTop;
+                  if(swipeX && Math.abs(XX-xx)-Math.abs(YY-yy)>0)  //左右滑动
+                  {
+                      event.stopPropagation();//组织冒泡
+                      event.preventDefault();//阻止浏览器默认事件
+                      swipeY = false ;
+                      //左右滑动
+                  }
+                  else if(swipeY && Math.abs(XX-xx)-Math.abs(YY-yy)<0){  //上下滑动
+                      swipeX = false;
+                        if (p > pageHeight) {
+                          if (Math.abs(YY)>Math.abs(yy)>0&&Math.abs(YY)>0) {
+                                $('.topfix').css({'-webkit-transform': 'translateY(0)','-moz-transform': 'translateY(0)','transform': 'translateY(0)'});
+                            }else if(Math.abs(YY)<Math.abs(yy)>0&&Math.abs(yy)>0){
+                              $('.topfix').css({'-webkit-transform': 'translateY(-'+($(".topfix").height()-$('.pro-label').height())+'px)','-moz-transform': 'translateY(-'+($(".topfix").height()-$('.pro-label').height())+'px)','transform': 'translateY(-'+($(".topfix").height()-$('.pro-label').height())+'px)'});
+                            }
+                        }
+                        var pageNum = parseInt((p-topFixH)/pageHeight)+1; //往下滑动的页数
+                        $('.page-num').html(pageNum);
+                  }
+              });
+
+
 
         });
 
@@ -188,7 +225,7 @@ require(['config'], function() {
             });
             $(".item-popup2").find(".popup2-xiajiantou").click(function() {
                 $(this).parents(".item-popup2").find(".popup2-bottom").toggleClass("popup2-height");
-                $(this).find("div").toggleClass("icon-up").toggleClass("icon-down");
+                $(this).find("div.arrow-back").toggleClass("icon-up").toggleClass("icon-down");
             });
             cc2.click(function() {
                 $(this).addClass("on").siblings("dd").removeClass("on");
@@ -227,7 +264,6 @@ require(['config'], function() {
                 $(".fclass").show().siblings(".pro-modal-1").hide().siblings(".pro-modal-2").hide();
             });
         });
-
 
         /*防点穿*/
 

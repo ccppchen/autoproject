@@ -1,5 +1,5 @@
-require(['config'], function(){
-    require(['vendor'], function() {
+require(['config', 'comm'], function(){
+    require(['vendor'], function(){
         // 点击收起和显示
         $('.click-up').on('click', function() {
             $(this).children('span').toggleClass('toggle-css');
@@ -12,5 +12,6 @@ require(['config'], function(){
             }
         });
     });
+    
 
 });
