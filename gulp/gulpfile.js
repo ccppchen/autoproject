@@ -64,6 +64,7 @@ gulp.task('server', ['compass'], function(){
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
   gulp.watch([yeoman.app+"/*.html",yeoman.app+"/chenp/*.html"], ['widget']);
+  gulp.watch([yeoman.app+'/tpl/*.html'], ['dev_tpl']);
   gulp.watch([yeoman.app+'/*.html',yeoman.app+"/chenp/*.html", yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css']).on('change', browserSync.reload);
 });
 
@@ -196,7 +197,18 @@ gulp.task('widget', function(){
     .pipe(gulp.dest('.tmp'))
 });
 
-gulp.task('default', ['compass', 'watch', 'server', 'widget']);
+// handlebars 预编译
+gulp.task('dev_tpl', function(){
+    return gulp.src(yeoman.app+'/index.html')
+       .pipe($.handlebarsPrecompile({
+              reg: /<!\-\-html\s+"([^"]+)"\-\->/g,
+              baseSrc: "app/tpl",
+              dest: ".tmp"
+        }))
+       .pipe(gulp.dest('.tmp'))
+});
+
+gulp.task('default', ['compass', 'watch', 'server', 'widget', 'dev_tpl']);
 gulp.task('doc', ['doc-sass', 'watch', 'server']);
 gulp.task('build', ['compass-pro', 'images', 'js', 'images-min', 'html']);
 
