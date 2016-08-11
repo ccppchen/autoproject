@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "编辑时间",
+    "css": "css/mc.css",
+    "requirejs": "js/mc"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "编辑时间",
+        "nav": false,
+        "right-icon": "",
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <div class="content">
+        <input class="show-time" id="dataTime" type="text" name="" value="每日 22:00 - 次日 7:00" placeholder="" readonly>
+        <div class="etbtn-group">
+            <div class="btn"><a href="javascript:;" title="">取消</a></div>
+            <div class="clver"></div>
+            <div class="btn confirm-picker"><a href="javascript:;" title="">确定</a></div>
+        </div>
+    </div>
+</body>
+
+</html>

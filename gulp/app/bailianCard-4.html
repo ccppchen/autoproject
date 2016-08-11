@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "我的百联卡-无百联卡",
+    "css": "css/bailianCard.css"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-lightWhite",
+        "title": "我的i百联",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false,
+        "rightWordBool": true,
+        "right-word": "常见问题"
+    })
+    <!-- content -->
+    <div class="content">
+        <div class="bailianCard-img1"><img src="images/bailianCard/cardimg-1.png"></div>
+        <div class="bailianCard-none">您还没有绑定任何百联卡哦～</div>
+        <div class="items-btns-02">
+                <button class="btns-login share2 btn-disabled01">回首页</button>
+                <button class="btns-login share2 btn-disabled02">绑定新卡</button>
+        </div>
+    </div>
+    <!-- content end -->
+</body>  
+
+</html>

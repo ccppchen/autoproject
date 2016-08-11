@@ -1,10 +1,4 @@
-require({
-	    baseUrl: 'js',
-	    paths: {
-	        vendor: ['vendor/vendor.min'],
-	        touchslider: ['touchslider']
-	    }
-    }, function(){
+require(['config','comm'], function(){
     require(['vendor' , 'touchslider'], function() {
         $(".sinle-detail").css("bottom", $(".button-buy").height() - $("#detail-container").height());
         $(".get-ticket .arrow-back").click(function() {
@@ -43,7 +37,7 @@ require({
         $("#choose,.mark,.semi-circle").click(function() {
             detailup();
         });
-        $(".config-buy,.mark,.parameter").hide();
+        $(".config-buy,.mark,.parameter,.comment").hide();
         $(".button-buy a").click(function() {
             $(".semi-circle .arrow-back").addClass("arrow-down");
             $(".sinle-detail").css("bottom", $(".button-buy").height());
@@ -110,10 +104,12 @@ require({
         $("#parameter").click(function() {
             $(this).addClass("select").siblings().removeClass("select");
             $(".parameter").show();
+            $("#pagemain").hide();
         });
         $("#main").click(function() {
             $(this).addClass("select").siblings().removeClass("select");
             $(".parameter").hide();
+             $("#pagemain").show();
         });
 
         $(function() {

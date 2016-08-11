@@ -3,9 +3,11 @@
 @import "tobe/components/bar/bar";
 @import "tobe/components/overflow-scroll/overflow-scroll";
 @import "tobe/components/nav/nav";
+@import "tobe/ext/touchSlide";
 @include pic-list();
 body{
 	background:#e5e5e5;
+	&#fresh-list{background:#f6f6f6;}
 }
 ul,li,ol,dt,dd,dl,h1,h2,h3,h4,h5,h6{
 	margin:0px;
@@ -23,61 +25,28 @@ img{
 &.banner:after{
 	padding-top: 48%;
 }
-&.line{    background-size: 0.5rem;}
+&.banner{
+	position:relative;
+	.sttimg{width:rem(145);height:rem(50);position:absolute;top:0;left:rem(30);}
+}
+&.line{background-size: 0.5rem;}
 &.line:after{
 	padding-top: 10.4%;
 }
 }
-
+#touchSlide{
+ .banner:after{
+	padding-top: 48%;
+}
+}
 .bar-header .title img{width:auto;height:rem(86);}
-.bar.bar-light{background:#fff;}
+.bar.bar-light{background-color:#fff;}
 .bar .button{color:#000;}
-.bar .button-share{width:rem(31);height:rem(31);background: inline-image("base64/share-icon.png") no-repeat center center;background-size:contain;}
+.bar .button-share{width:rem(31);background: inline-image("base64/share-icon.png") no-repeat center center;background-size:contain;}
 .content{padding-top: rem(88);}
 
 /* touchslide */
 
-#touchSlide {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: auto;
-}
-
-.swiper-slide a {
-    display: block;
-}
-
-.swiper-wrapper {
-    .swiper-slide {
-        position: relative;
-    }
-}
-
-.swiper-pagination {
-    position: absolute;
-    bottom: rem(16);
-    left: 50%;
-    @include transform(translate3d(-50%,
-    0,
-    0));
-    li {
-        display: inline-block;
-        width: rem(16);
-        height: rem(16);
-        @include border-radius(20px);
-        text-indent: -9999px;
-        overflow: hidden;
-        margin: 0 rem(12);
-        border: 1px solid #fff;
-        background-color: #000;
-        opacity:0.3;
-        &.on {
-            background: #fff;
-            opacity:1;
-        }
-    }
-}
 .nav-menu{
 	padding: rem(20) 0;
 	@include display(flex);
@@ -105,7 +74,12 @@ img{
 		@include ellipsis();
 	}
 }
-
+.swiper-container .swiper-adv{
+	position:absolute;
+	top:0;
+	left:rem(30);
+	img{width:auto;height:rem(50);}
+	}
 .fresh-title{
 	width:100%;
 	height:rem(94);
@@ -149,6 +123,7 @@ img{
 		@include ellipsis();
 	}
 }
+
 .more{
 	display: inline-block;
 	width:rem(110);
@@ -156,6 +131,44 @@ img{
 	img{width:rem(110);}
 	margin-right:rem(20);
 }
+}
+.class-scroll{position:relative;@include hairline(bottom, #ccc);}
+.ovfs-special{
+	position:relative;
+	font-size:0;
+	
+	
+	li{
+		padding:rem(26);
+	  width: rem(162);
+    display: inline-block;
+		position: relative;
+		vertical-align: top;
+		img{
+			width: rem(110);
+			height: rem(110);
+			border:1px solid #eee;
+			border-radius:rem(60);
+		}
+		.txt{
+		  margin-top: rem(8);
+		  font-size: rem(24);
+		  padding: 0 rem(5);
+		  color: $grayDarker;
+		  @include ellipsis();
+		  text-align:center;
+	  }
+		
+  }
+  .through-line{
+  	width:rem(110);
+  	height:rem(4);
+  	background:#40d4b3;
+  	position:absolute;
+  	bottom:rem(1);
+  	left:0;
+  	margin-left:rem(26);
+  }
 }
 .ovfs-line-box{width:100%;height:rem(93);margin-top:rem(20);}
 
@@ -194,7 +207,8 @@ img{
 	display:none;
 }
 .pic-list{
-	margin-top:rem(20);
+	padding:rem(20);
+	background:#f6f6f6;
 	.cwrap-name{color:$graylikver;font-size:rem(26);padding:0 rem(20);height:rem(86);line-height:rem(40);overflow:hidden;}
 	.cwrap-price-line{
 	background-color: #ffffff;
@@ -235,4 +249,32 @@ img{
 	bottom:rem(20);
 	right:rem(20);
 	background-size:contain;
+}
+.fresh-list-title{width:100%;height:rem(84);line-height:rem(54);margin-top:rem(20);padding-top:rem(30);background:#fff;font-size:rem(36);color:#333;text-align:center;float:left;}
+.fresh-list{
+	width:100%;
+	height:auto;
+	padding:0 rem(25) rem(24) rem(25);
+	background:#fff;
+	float:left;
+  li{
+  	width:25%;
+  	display:inline-block;
+  	text-align:center;
+  	float:left;
+  	img{
+			width: rem(120);
+			height: rem(120);
+			border:1px solid #eee;
+			border-radius:rem(60);
+		}
+		.txt{
+		  margin-top: rem(8);
+		  font-size: rem(24);
+		  padding: 0 rem(5);
+		  color: $grayDarker;
+		  @include ellipsis();
+		  text-align:center;
+	  }
+	}
 }

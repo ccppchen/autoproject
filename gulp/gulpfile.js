@@ -56,7 +56,7 @@ gulp.task('svgmin', function () {
 
 // iconfont
 gulp.task('iconfont', function(){
-  gulp.src(['svgmin/**/*.svg'])
+  gulp.src(['svg/**/*.svg'])
      .pipe(iconfontCss({
          glyphs:   null,
          fontName: 'blfont',

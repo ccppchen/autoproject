@@ -26,50 +26,54 @@
 	content: "\E002";
 }
 
-.error:before {
+.close:before {
 	content: "\E003";
 }
 
-.ihome:before {
+.error:before {
 	content: "\E004";
 }
 
-.isearch:before {
+.ihome:before {
 	content: "\E005";
 }
 
-.iuser:before {
+.isearch:before {
 	content: "\E006";
 }
 
-.more-v:before {
+.iuser:before {
 	content: "\E007";
 }
 
-.search:before {
+.more-v:before {
 	content: "\E008";
 }
 
-.shop-car:before {
+.search:before {
 	content: "\E009";
 }
 
-.tab-class:before {
+.shop-car:before {
 	content: "\E00A";
 }
 
-.tab-index:before {
+.tab-class:before {
 	content: "\E00B";
 }
 
-.tab-indexactive:before {
+.tab-index:before {
 	content: "\E00C";
 }
 
-.tab-shop:before {
+.tab-indexactive:before {
 	content: "\E00D";
 }
 
-.tab-user:before {
+.tab-shop:before {
 	content: "\E00E";
+}
+
+.tab-user:before {
+	content: "\E00F";
 }

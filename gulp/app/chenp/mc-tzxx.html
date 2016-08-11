@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "通知消息",
+    "css": "css/mc.css",
+    "requirejs": "js/comm"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "通知消息",
+        "nav": true,
+        "right-icon": "",
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <div class="content">
+        <div class="order-server-list">
+            <ul>
+                <li class="item-content">
+                    <div class="os-title">
+                        <div class="os-t-left">版本更新</div>
+                        <div class="os-t-right">10:30</div>
+                    </div>
+                    <div class="os-con">
+                        <div class="os-con-right">
+                            i百联已发布新版本
+                        </div>
+                    </div>
+                    <div class="os-detail">
+                        <a href="javascript:;">
+                            查看详情
+                        </a>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="os-title">
+                        <div class="os-t-left">物流费调整</div>
+                        <div class="os-t-right">10:30</div>
+                    </div>
+                    <div class="os-con">
+                        <div class="os-con-right">
+                            由于物流成本增加.........
+                        </div>
+                    </div>
+                    <div class="os-detail">
+                        <a href="javascript:;">
+                            查看详情
+                        </a>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="os-title">
+                        <div class="os-t-left">关税调整</div>
+                        <div class="os-t-right">10:30</div>
+                    </div>
+                    <div class="os-con">
+                        <div class="os-con-right">
+                            由于物流成本增加..........
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

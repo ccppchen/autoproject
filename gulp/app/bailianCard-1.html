@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "我的百联卡-有百联卡",
+    "css": "css/bailianCard.css"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-lightWhite",
+        "title": "使用百联卡",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false,
+        "rightWordBool": true,
+        "right-word": "常见问题"
+    })
+    <!-- content -->
+    <div class="content">
+        <div class="bailianCard-balance">可用余额</div>
+        <div class="bailianCard-number">9999.00元</div>
+        <div class="items-btns">
+            <button class="btn-login btn-disabled1 share"><span>绑定新卡</span></button>
+            <button class="btn-login btn-disabled2 share"><span>绑定新卡</span></button>
+        </div>
+    </div>
+    <!-- content end -->
+</body>  
+
+</html>

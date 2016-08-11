@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "我的百联卡-解绑流程",
+    "css": "css/bailianCard.css"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-lightWhite",
+        "title": "使用百联卡",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <!-- content -->
+    <div class="content">
+        <div class="bailianCard-jiebang">请输入支付密码验证，以解绑百联卡</div>
+            <div class="bgfff-input pho1">
+                <input type="text" placeholder="请输入6位支付密码">
+            </div>
+        <div class="items-btns-2">
+            <button class="btns-login share2 btn-disabled03">确认</button>
+        </div>
+    </div>
+    <div class="bg-show">
+        <div class="successful-bg"><img src="css/i/card-2.png"></div>
+        <div class="successful-fonts">解绑成功</div>
+    </div>
+    <!-- content end -->
+</body>  
+
+</html>

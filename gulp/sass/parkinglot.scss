@@ -87,8 +87,8 @@ $modalButonColor:   #e6133c;
 
 // plate
 .platei-close{
-	width: rem(37);
-	height: rem(30);
+	width: rem(88);
+	height: rem(88);
 	background: inline-image("base64/tcari-close.png") no-repeat center center;
 	background-size: rem(37) rem(30);
 }
@@ -101,6 +101,7 @@ $modalButonColor:   #e6133c;
 	.plate-left{
 		.plate-fir{
 			width: rem(80);
+			height: rem(88);
 			border: none;
 		}
 		@extend %comm-flex;
@@ -112,6 +113,7 @@ $modalButonColor:   #e6133c;
 			position: relative;
 			input{
 				width: 100%;
+				height: rem(88);
 				font-size: rem(28);
 				color: #333333;
 				padding: 0;
@@ -126,7 +128,7 @@ $modalButonColor:   #e6133c;
 			.platei-close{
 				position: absolute;
 				z-index: 2;
-				right: rem(22);
+				right: 0;
 				top: 50%;
 				@include transform(translate(0, -50%));
 				display: none;

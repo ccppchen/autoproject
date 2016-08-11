@@ -1,30 +1,11 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>html5</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="format-detection" content="telephone=no, email=no, address=no">
-    <meta name="applicable-device" content="mobile">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57"
-          href="css/i/apple-touch/icon-57.png">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120"
-          href="css/i/apple-touch/icon-120.png">
-    <link rel="apple-touch-icon-precomposed" sizes="196x196"
-          href="css/i/apple-touch/icon-196.png">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta name="description" content="">
-    <meta name="Keywords" content="">
-    <script type="text/javascript">
-    (function(){var a=this;a.width=750;a.fontSize=100;a.widthProportion=function(){var c=(document.getElementsByTagName("html")[0].offsetWidth)/a.width;var b=c.toFixed(6);return b>1?1:b<0.42667?0.42667:b};a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")};a.changePage();window.addEventListener("resize",function(){a.changePage()},false)}());
-    </script>
-    <link rel="stylesheet" type="text/css" href="css/icons.css">
-    <link rel="stylesheet" type="text/css" href="css/vegetables-date.css" />
+@@include('widget/head.html', {
+    "title": "蔬菜随心定",
+    "css": "css/vegetables-date.css",
+    "requirejs": "js/vegetables-changedate"
+})
 </head>
 <body id="vegetables-date" >
 	<header class="bar bar-header bar-light">
@@ -101,6 +82,5 @@
 	<!--<div class="first-show"></div>
 	<div class="vegetable-know"><img src="css/i/vegetable-know.png"></div>
 	<div class="plusMark"></div>-->
-	<script src="js/vendor/vendor.min.js"  ></script>
-	<script src="js/vegetables-changedate.js" async></script>
+	
 </body>
