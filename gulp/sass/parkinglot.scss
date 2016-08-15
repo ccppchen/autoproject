@@ -79,9 +79,34 @@ $modalButonColor:   #e6133c;
 		color: #222222;
 		margin-top: rem(18);
 	}
-	.item-menu img{
+
+	.item-imgd{
 		width: rem(100);
 		height: rem(100);
+		background-color: #cccccc;
+		margin: 0 auto;
+		@extend %comm-flex;
+		@include justify-content(center);
+		border-radius: 50%;
+		&.color1{
+			background-color: #f7c13b;
+		}
+		&.color2{
+			background-color: #f17252;
+		}
+		&.color3{
+			background-color: #21e293;
+		}
+		&.color4{
+			background-color: #56adf0;
+		}
+		&.disabled{
+			background-color: #cccccc;
+		}
+	}
+	.item-menu img{
+		width: rem(48);
+		height: rem(48);
 	}
 }
 
