@@ -8,6 +8,11 @@ var extReplace  = require('gulp-ext-replace');
 var iconfontCss = require('gulp-iconfont-css-and-template');
 var iconfont    = require('gulp-iconfont');
 var cache       = require('gulp-cache');
+var path        = require('path');
+var fs          = require('fs')
+var handlebars  = require('handlebars');
+var handhtml    = require('gulp-handlebars-html')(handlebars);
+var mockServer  = require('gulp-mock-server');
 
 var yeoman = {
   app: "app",
@@ -64,7 +69,7 @@ gulp.task('server', ['compass'], function(){
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
   gulp.watch([yeoman.app+"/*.html",yeoman.app+"/chenp/*.html"], ['widget']);
-  gulp.watch([yeoman.app+'/tpl/*.html'], ['dev_tpl']);
+  gulp.watch([yeoman.app+'/templates/*.html'], ['dev-tpl']);
   gulp.watch([yeoman.app+'/*.html',yeoman.app+"/chenp/*.html", yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css']).on('change', browserSync.reload);
 });
 
@@ -198,17 +203,52 @@ gulp.task('widget', function(){
 });
 
 // handlebars 预编译
-gulp.task('dev_tpl', function(){
-    return gulp.src(yeoman.app+'/index.html')
-       .pipe($.handlebarsPrecompile({
-              reg: /<!\-\-html\s+"([^"]+)"\-\->/g,
-              baseSrc: "app/tpl",
-              dest: ".tmp"
+gulp.task('dev-tpl', function(){
+  return gulp.src(yeoman.app+'/templates/tpl.html')
+        .pipe($.data(function (file) {
+
+            var filePath = file.path;
+
+            // global.json 全局数据，页面中直接通过属性名调用
+            return Object.assign(JSON.parse(fs.readFileSync('./app/json/global.json')), {
+                // local: 每个页面对应的数据，页面中通过 local.属性 调用
+                local: JSON.parse(fs.readFileSync( path.join(path.dirname(filePath), '/data/'+path.basename(filePath, '.html') + '.json')))
+            }) 
         }))
-       .pipe(gulp.dest('.tmp'))
+        .pipe(handhtml($.data, {
+              allowedExtensions: ['html'],
+              partialsDirectory : ['.tmp']
+          }))
+        .pipe(gulp.dest('.tmp'))
 });
 
-gulp.task('default', ['compass', 'watch', 'server', 'widget', 'dev_tpl']);
+var mockbase = path.join(__dirname, 'mock');
+// mock 数据服务
+gulp.task('webserver', function() {
+    gulp.src('.')
+        .pipe(mockServer({
+            livereload: true,
+            mockDir: './server',
+            port: 8090,
+            open: false,
+            middleware: function(res, pathname, paramObj, next){
+              switch (pathname) {
+                      case '/api/global':
+                          var data = fs.readFileSync(path.join(mockbase, 'global.json'), 'utf-8');
+
+                          res.setHeader('Content-Type', 'application/json');
+                          res.end(paramObj.callback + '(' + data + ')');
+                          return ;
+                      default:
+                          ;
+                  }
+                  next();
+            }
+        }));
+});
+
+
+gulp.task('default', ['compass', 'watch', 'server', 'widget', 'dev-tpl']);
 gulp.task('doc', ['doc-sass', 'watch', 'server']);
 gulp.task('build', ['compass-pro', 'images', 'js', 'images-min', 'html']);
 
