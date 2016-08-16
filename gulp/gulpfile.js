@@ -12,7 +12,7 @@ var path        = require('path');
 var fs          = require('fs')
 var handlebars  = require('handlebars');
 var handhtml    = require('gulp-handlebars-html')(handlebars);
-var mockServer  = require('gulp-mock-server');
+// var mockServer  = require('gulp-mock-server');
 
 var yeoman = {
   app: "app",
@@ -222,30 +222,30 @@ gulp.task('dev-tpl', function(){
         .pipe(gulp.dest('.tmp'))
 });
 
-var mockbase = path.join(__dirname, 'mock');
-// mock 数据服务
-gulp.task('webserver', function() {
-    gulp.src('.')
-        .pipe(mockServer({
-            livereload: true,
-            mockDir: './server',
-            port: 8090,
-            open: false,
-            middleware: function(res, pathname, paramObj, next){
-              switch (pathname) {
-                      case '/api/global':
-                          var data = fs.readFileSync(path.join(mockbase, 'global.json'), 'utf-8');
+// var mockbase = path.join(__dirname, 'mock');
+// // mock 数据服务
+// gulp.task('webserver', function() {
+//     gulp.src('.')
+//         .pipe(mockServer({
+//             livereload: true,
+//             mockDir: './server',
+//             port: 8090,
+//             open: false,
+//             middleware: function(res, pathname, paramObj, next){
+//               switch (pathname) {
+//                       case '/api/global':
+//                           var data = fs.readFileSync(path.join(mockbase, 'global.json'), 'utf-8');
 
-                          res.setHeader('Content-Type', 'application/json');
-                          res.end(paramObj.callback + '(' + data + ')');
-                          return ;
-                      default:
-                          ;
-                  }
-                  next();
-            }
-        }));
-});
+//                           res.setHeader('Content-Type', 'application/json');
+//                           res.end(paramObj.callback + '(' + data + ')');
+//                           return ;
+//                       default:
+//                           ;
+//                   }
+//                   next();
+//             }
+//         }));
+// });
 
 
 gulp.task('default', ['compass', 'watch', 'server', 'widget', 'dev-tpl']);
