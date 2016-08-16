@@ -1,5 +1,6 @@
 require(['config'], function(){
-    require(['vendor'], function() {
+    require(['vendor'], function(FastClick) {
+        FastClick.attach(document.body);
             require(['swiper_around_bl'], function(){
                 $('.swiper-mover').swiper_around();
             })

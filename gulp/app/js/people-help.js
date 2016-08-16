@@ -1,5 +1,6 @@
 require(['config'], function(){
-	require(['comm','vendor'], function(){
+	require(['vendor'],  function(FastClick){
+        FastClick.attach(document.body);
 			$(".search-txt").click(function(){
 				$("#normal-form").hide();
 				$("#search-form").show();

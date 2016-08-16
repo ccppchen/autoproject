@@ -1,0 +1,213 @@
+/*搜索*/
+.main-info-search{
+	display:none;
+	.list-header{
+		height:0.84rem;
+		border-bottom:1px solid #e1e1e1;
+		position:relative;
+		a:link,a:visited{
+			position:absolute;
+			left:0px;
+			top:0px;
+			width:0.84rem;
+			text-align:center;
+			line-height:0.92rem;
+			color:#999999;
+			display:inline-block;
+			height:0.84rem;
+			z-index:1;
+			font-size:0.35rem;
+		}
+		button{
+			position:absolute;
+			right:0;
+			top:0;
+			height:0.84rem;
+			text-align:center;
+			width:0.92rem;
+			border:0;
+			background:none;
+			outline:none;
+			font-size:0.3rem;
+			padding: 0; 
+			
+		}
+		div{
+			padding-left:0.84rem;
+			padding-right:0.92rem;
+			position:relative;
+			height:0.6rem;
+			padding-top:0.12rem;
+			input{
+				border:0;
+				width:100%;
+				background:#f6f6f6;
+				border-radius:0.06rem;
+				box-sizing:border-box;
+				padding:0rem 0.2rem;
+				height:0.6rem;
+				font-size:0.24rem;
+			}
+		}
+	}
+	.search-main{
+		padding:0rem rem(30);
+		.search-main-title{
+			height:rem(60);
+			margin-top:rem(20);
+			line-height:rem(60);
+			.title-left{
+				float:left;
+				color:#999999;
+				font-size:rem(22);
+				i.time-icon{
+					display:inline-block;
+					float:left;
+					height:rem(26);
+					width:rem(26);
+					margin-right:rem(12);
+					background-image: inline-image("base64/time-icon.png");
+					background-position: center center ;
+					background-repeat: no-repeat;
+					background-size: 0.26rem;
+					margin-top:rem(15);
+				}
+				i.recommend-icon{
+					display:inline-block;
+					float:left;
+					height:rem(26);
+					width:rem(26);
+					margin-right:rem(12);
+					background-image: inline-image("base64/recommend-icon.png");
+					background-position: center center ;
+					background-repeat: no-repeat;
+					background-size: 0.26rem;
+					margin-top:rem(15);
+				}
+			}
+			.title-right{
+				display:inline-block;
+				width:rem(24);
+				height:rem(24);
+				float:right;
+				margin-top:rem(18);
+				background-image: inline-image("base64/delete.png");
+				background-position: center center ;
+				background-repeat: no-repeat;
+				background-size: 0.24rem;
+			}
+		}
+		ul{
+			margin:0;
+			list-style:none;
+			padding:0;
+			max-height: rem(302);
+			overflow: hidden;
+			li{
+				margin:0;
+				list-style:none;
+				padding:0;
+				float:left;
+				a:link,a:visited{
+					display:inline-block;
+					margin-right:rem(20);
+					margin-top:rem(20);
+					height:rem(54);
+					line-height:rem(54);
+					border-radius:rem(4);
+					border:1px solid #d8d8d8;
+					font-size:rem(24);
+					padding:0rem rem(30);
+				}
+				&.on{
+					a{
+						color:#e6133c !important;
+					}
+				}
+				&.block{
+					float:none;
+					display:block;
+					line-height:rem(100);
+					text-align:center;
+					margin:0;
+					padding:0;
+					font-size:rem(24);
+					color:#333;
+				}
+			}
+			&:after{
+				display:block;
+				content:" ";
+				height:0;
+				clear:both;
+				visibility:hidden
+			}
+		}
+	}
+	.search-criteria{
+		overflow:hidden;
+		display:none;
+		ul{
+			margin:0;
+			padding:0;
+			list-style:none;
+			padding-left:rem(30);
+			li{
+				border-bottom:1px solid #e1e1e1;
+				line-height:rem(44);
+				padding-bottom:rem(20);
+				&:after{
+					display:block;
+					content:" ";
+					height:0;
+					clear:both;
+					visibility:hidden
+				}
+				span{
+					padding-top:rem(20);
+					color:#333333;
+					font-size:rem(24);
+					display:inline-block;
+					float:left;
+				}
+				div{
+					padding-left:rem(150);
+					padding-right:rem(20);
+					dl{
+						dd{
+							float:right;
+							margin-top:rem(20);
+							background:#f4f4f4;
+							border-radius:rem(4);
+							margin-left:rem(20);
+							overflow:hidden;
+							a:link,a:visited{
+								padding:0rem rem(20);
+								white-space:nowrap;
+								color:#666;
+								display:inline-block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal-click{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1001;
+	background: rgba(0, 0, 0, 0.5);
+	visibility: hidden;
+	opacity: 0;
+	transition-duration: 400ms;
+}
+.modal-click.show{
+	opacity: 1;
+    visibility: visible;
+}

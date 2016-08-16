@@ -32,7 +32,7 @@ $modalButonBg:      #ffffff !default;
 }
 .modal-inner {
     padding: rem(30);
-    @include hair(bottom, #b5b5b5);
+    @include hairline(bottom, #b5b5b5);
     border-radius: rem(15) rem(15) 0 0;
     position: relative;
     background: $modalBgColor;
@@ -72,7 +72,7 @@ $modalButonBg:      #ffffff !default;
     cursor: pointer;
     box-sizing: border-box;
     // .hairline(right, #b5b5b5);
-    @include hair(right, #b5b5b5);
+    @include hairline(right, #b5b5b5);
     @include flex(1);
     &:first-child {
         border-radius: 0 0 0 rem(15);
@@ -83,7 +83,7 @@ $modalButonBg:      #ffffff !default;
     }
     &:first-child:last-child {
         border-radius: 0 0 rem(15) rem(15);
-        @include hair(top, #e2e2e2);
+        // @include hair(top, #e2e2e2);
         background-origin: padding-box;
     }
     &.modal-button-bold {

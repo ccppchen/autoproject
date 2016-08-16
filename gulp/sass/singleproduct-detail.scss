@@ -238,11 +238,18 @@
         line-height: 1;
         margin-bottom: rem(8);
         .special-logo{
-            width: rem(120);
-            height: rem(26);
+            height: rem(32);
+            @include display(flex);
+            @include align-items(center);
             background: no-repeat url("i/single-detail/special-logo.png") left center;
-            background-size: 100%; 
+            background-size:auto 100%; 
             margin-right: rem(14);
+            padding-left: rem(32);
+            padding-right: rem(4);
+            font-size: rem(24);
+            border: 1px solid #e6133c;
+            overflow: hidden;
+            border-radius: rem(4);
         }
     }
     .get-ticket-container{
@@ -578,6 +585,7 @@
             margin-right: rem(20);
             width: rem(180);
             height: rem(98);
+            overflow: hidden;
             border: 1px solid #dad9d9;
         }
         .logo-name{
@@ -1416,7 +1424,7 @@
         line-height: rem(32);
         padding:0 rem(6);
         margin: rem(6) 0;
-        max-height: rem(64);
+        height: rem(64);
         color: #666666;
     }
     .recommend-pay{

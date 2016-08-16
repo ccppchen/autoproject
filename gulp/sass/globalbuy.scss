@@ -148,8 +148,7 @@ body{
 			width: auto;
 		}
 	}
-	.sp-goods.end:after{
-		content: '－  到底啦  －';
+	.end{
 		color: #999999;
 		font-size: rem(24);
 		text-align: center;
@@ -172,7 +171,7 @@ body{
 
 	.sp-price{
 		padding: 0 rem(4);
-		font-size: rem(24);
+		font-size: rem(28);
 		color: #333333;
 		font-weight: bold;
 		margin: rem(6) 0;
@@ -470,5 +469,4 @@ body{
 
 	}
 }
-
-
+@import "class/search";

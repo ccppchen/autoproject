@@ -35,6 +35,7 @@
 			border-radius:rem(4);
 			border:0 none;
 			background: inline-image("base64/search_icon.png") no-repeat rem(10) #ffffff;
+			background-size:auto 60%;
 		}
 		em{
 			width:rem(40);
@@ -85,23 +86,23 @@
 			border-radius:rem(50);
 			&.i1{
 				background: inline-image("base64/search-icon-1.png") no-repeat center #FF9A2C;
-				background-size:70%;
+				background-size:50%;
 			}
 			&.i2{
 				background: inline-image("base64/search-icon-2.png") no-repeat center #368BEE;
-				background-size:70%;
+				background-size:50%;
 			}
 			&.i3{
 				background: inline-image("base64/search-icon-3.png") no-repeat center #F44259;
-				background-size:70%;
+				background-size:50%;
 			}
 			&.i4{
 				background: inline-image("base64/search-icon-4.png") no-repeat center #79BA64;
-				background-size:70%;
+				background-size:50%;
 			}
 			&.i5{
 				background: inline-image("base64/search-icon-5.png") no-repeat center #A4866B;
-				background-size:70%;
+				background-size:50%;
 			}
 		}
 		.txt{

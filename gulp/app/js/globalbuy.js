@@ -38,5 +38,15 @@ require(['config', 'comm'], function(){
 			 	container: '#j-scroll-'+index
 			 });
 		});
+
+		// search
+		$('.search').on('click', function(event) {
+			$('.bar,.content').hide();
+			$('.main-info-search').show();
+		});
+		$('.j-close').on('click', function(event) {
+			$('.bar,.content').show();
+			$('.main-info-search').hide();
+		});
 	});
 });
