@@ -374,9 +374,6 @@
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
           transform: scaleY(0.5);
         }
-        @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-            transform: scaleY(0.33);
-        }
     }
   }
   
@@ -397,9 +394,7 @@
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
             transform: scaleX(0.5);
         }
-        @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-            transform: scaleX(0.33);
-        }
+        
     }
   }
 
@@ -419,9 +414,6 @@
         transform-origin: 50% 100%;
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
           transform: scaleY(0.5);
-        }
-        @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-            transform: scaleY(0.33);
         }
     }
   }
@@ -443,9 +435,7 @@
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
             transform: scaleX(0.5);
         }
-        @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-            transform: scaleX(0.33);
-        }
+        
     }
   }
 
@@ -861,4 +851,9 @@
   left: 50%;
   top: 45%;
   margin-left: rem(-270);
+}
+
+%content {
+    width: 100%;
+    padding-top: $bar-height;
 }

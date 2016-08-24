@@ -865,7 +865,176 @@ header，参数比较多，如果页面头部不合适则不要使用
         </script>
     </div>
 
+    <!-- modal  -->
+    <h3 id="modal">modal</h3>
+    <p class="use">使用</p>
+<pre>
+    1.在页面scss文件中引入下面这个文件 
+<code class="scss">    @import "tobe/components/modal/modal";
+</code>
+    <strong class="ext">扩展）!</strong>
+    2.html结构如下
+<code class="html">
+&lt;!-- 灰色背景 -->
+&lt;div class="mask"></div>
+&lt;!-- 两个按钮呢 -->
+ &lt;!-- modal-in类是显示，modal-out是隐藏 -->
+&lt;div class="modal modal-out">
+    &lt;div class="modal-inner">
+        &lt;div class="modal-text">
+            确定要解绑百联卡吗？&lt;/br >百联卡余额可用于支付订单
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="modal-buttons">
+        &lt;button class="modal-button">取消&lt;/button>
+        &lt;button class="modal-button">确定&lt;/button>
+    &lt;/div>
+&lt;/div>
+&lt;!-- 单个按钮 -->
+&lt;div class="modal modal-in">
+    &lt;div class="modal-inner">
+        &lt;div class="modal-text">
+            支付密码错误，请重试
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="modal-buttons">
+        &lt;button class="modal-button">重试&lt;/button>
+    &lt;/div>
+&lt;/div>
+&lt;!-- 带标题 -->
+&lt;div class="modal modal-out">
+    &lt;div class="modal-inner">
+        &lt;div class="modal-title">运费规则&lt;/div>
+        &lt;div class="modal-text">
+            1.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作，货物
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="modal-buttons">
+        &lt;button class="modal-button">取消&lt;/button>
+        &lt;button class="modal-button">确定&lt;/button>
+    &lt;/div>
+&lt;/div>
+&lt;!-- 带标题可滚动 -->
+&lt;div class="modal modal-out">
+    &lt;div class="modal-inner">
+        &lt;div class="modal-title hairline">运费规则&lt;/div>
+        &lt;div class="modal-text">
+&lt;p>1.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作，货物配送到您手中的配送时间会有所不同，一般您下单支付成功后3-5个工作日左右发货。&lt;/p>
+&lt;p>2.如遇上海关国检抽检、节假日或其他不可抗力（海关系统维护、航班延误、地震、冰灾、交通事故等）导致的异常情况，将会影响订单发货时效。将会影响订单发货时效。&lt;/p>
+&lt;p>3.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="modal-buttons">
+        &lt;button class="modal-button">取消&lt;/button>
+        &lt;button class="modal-button">确定&lt;/button>
+    &lt;/div>
+&lt;/div>
+&lt;!-- 带关闭带图片 -->
+&lt;div class="modal modal-out not-change">
+    &lt;div class="modal-close">&lt;/div>
+    &lt;div class="modal-inner">
+        &lt;div class="modal-title">机会用完了！&lt;/div>
+        &lt;div class="modal-text">
+            &lt;div class="modal-img">
+                &lt;img src="css/i/not-change.png" alt="">
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="modal-buttons shake-buttons">
+        &lt;a class="modal-button">知道啦&lt;/a>
+        &lt;a class="modal-button active">邀请一起摇&lt;/a>
+    &lt;/div>
+&lt;/div>
+</code>
+</pre>
 
+    <div class="ext use">预览</div>
+    <div class="floor" style="background: rgba(0,0,0,.6); padding: 20px 0;" id="modalShow">
+        <div class="mask"></div>
+        <div class="modal modal-in">
+            <div class="modal-inner">
+                <div class="modal-text">
+                    确定要解绑百联卡吗？</br >百联卡余额可用于支付订单
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button">取消</button>
+                <button class="modal-button">确定</button>
+            </div>
+        </div>
+        <div class="modal modal-in">
+            <div class="modal-inner">
+                <div class="modal-text">
+                    支付密码错误，请重试
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button">重试</button>
+            </div>
+        </div>
+
+        <div class="modal modal-in">
+            <div class="modal-inner">
+                <div class="modal-title">运费规则</div>
+                <div class="modal-text">
+                    1.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作，货物
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button">取消</button>
+                <button class="modal-button">确定</button>
+            </div>
+        </div>
+
+        <div class="modal modal-in">
+            <div class="modal-inner">
+                <div class="modal-title hairline">运费规则</div>
+                <div class="modal-text">
+        <p>1.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作，货物配送到您手中的配送时间会有所不同，一般您下单支付成功后3-5个工作日左右发货。</p>
+        <p>2.如遇上海关国检抽检、节假日或其他不可抗力（海关系统维护、航班延误、地震、冰灾、交通事故等）导致的异常情况，将会影响订单发货时效。将会影响订单发货时效。</p>
+        <p>3.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作</p>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button">取消</button>
+                <button class="modal-button">确定</button>
+            </div>
+        </div>
+
+        <div class="modal modal-in">
+            <div class="modal-close"></div>
+            <div class="modal-inner">
+                <div class="modal-title font-bold">机会用完了！</div>
+                <div class="modal-text">
+                    <div class="modal-img">
+                        <img src="../css/i/not-change.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons shake-buttons">
+                <button class="modal-button">知道啦</button>
+                <button class="modal-button active">邀请一起摇</button>
+            </div>
+        </div>
+
+        <div class="modal modal-in">
+            <div class="modal-close"></div>
+            <div class="modal-inner">
+                <div class="modal-title font-bold">机会用完了！</div>
+                <div class="modal-text">
+                    <div class="modal-img">
+                        <img src="../css/i/not-change.png" alt="">
+                    </div>
+                    <p class="shake-text">线下东方商厦<span class="color-red">500元抵用券</span>1张</p>
+                    <p class="shake-text">线下东方商厦<span class="color-red">500元抵用券</span>1张</p>
+                </div>
+            </div>
+            <div class="modal-buttons shake-buttons">
+                <button class="modal-button">知道啦</button>
+                <button class="modal-button active">邀请一起摇</button>
+            </div>
+        </div>
+    </div>
 
     <script src="//cdn.bootcss.com/highlight.js/9.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>

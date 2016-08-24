@@ -1,0 +1,13 @@
+@import "tobe/function";
+$remBase: 20;
+@import "tobe/components/bar/bar";
+@import "tobe/ext/picker";
+.picker-modal .bar:before{
+	content: none;
+}
+.picker-modal .bar{
+	box-shadow: none;
+}
+.picker-items-col{
+	@include flex(1);
+}

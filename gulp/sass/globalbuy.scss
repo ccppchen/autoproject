@@ -105,7 +105,7 @@ body{
 
 /* indicator */
 .indicator{
-	padding: 0 rem(20);
+	// padding: 0 rem(20);
 	background-color: #ffffff;
 	.ovfs{
 		@extend %comm-flex;
@@ -113,20 +113,22 @@ body{
 		overflow: hidden;
 	}
 	.ovfs-item{
-		padding: 0 rem(27);
+		// padding: 0 rem(27);
 		font-size: rem(24);
-		width: auto;
+		width: 20%!important;
 		border-right: none;
+		@include ellipsis;
+		text-align: center;
 		a{
 			display: inline-block;
 			line-height: 2;
 			color: #777777;
-			border-bottom: rem(2) solid transparent;
+			border-bottom: 1px solid transparent;
 		}
 		&.active{
 			a{
 				color: #333333;
-				border-bottom: rem(2) solid #2e3384;
+				border-bottom: 1px solid #2e3384;
 			}
 		}
 	}
@@ -165,7 +167,7 @@ body{
 		font-size: rem(24);
 		color: #666666;
 		@include clamp;
-		min-height: rem(72);
+		height: rem(78);
 		padding: 0 rem(4);
 	}
 
@@ -470,3 +472,9 @@ body{
 	}
 }
 @import "class/search";
+
+// @include screen(320px, 350px){
+// 	.indicator .ovfs-item{
+// 		padding: 0 rem(22);
+// 	}
+// };

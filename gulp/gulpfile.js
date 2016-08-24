@@ -83,6 +83,7 @@ gulp.task('server', ['compass'], function(){
 
 gulp.task('watch', function(){
   gulp.watch(yeoman.sass+"/**/*.scss", ['compass']);
+  gulp.watch(yeoman.sass+"/components.scss", ['doc-sass']);
   gulp.watch(yeoman.app+"/**/*.html", ['widget']);
   gulp.watch(yeoman.app+'/lib/*', ['bower-install']);
   gulp.watch([yeoman.app+'/*.html', yeoman.app+'/chenp/*.html', yeoman.app+'/compents/*.html', yeoman.app+'/js/**/*.js', yeoman.app+'/css/*.css', yeoman.app+'/lib/*']).on('change', browserSync.reload);

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "摇一摇",
+    "css": "css/shake.css",
+    "requirejs": "js/shake"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "摇一摇",
+        "nav": false,
+        "right-icon": "more-v",
+        "rightIconBool": true,
+        "rightIconBoolMore": false,
+        "more-icon": ""
+    })
+    <!-- 背景 -->
+    <div class="main" style="background: #d43522 url(images/shake/bg2.jpg) no-repeat center top; background-size: 100% auto;">
+    </div>
+    
+    <div class="shake-bottom">
+        <div class="shake-btngroup">
+            <div class="groups">
+                <!-- 未登录 -->
+                <a href="javascript:;" class="btn-top not-login">
+                    您还没有登录，<span class="arrow-right big-font">立即登录</span>
+                </a>
+
+                <!-- 已登录 -->
+                <a href="javascript:;" class="btn-top change" style="display: none">
+                    您今天还剩余<span class="big-font">3</span>次机会
+                </a>
+            </div>
+            <div class="btn-bottom" style="display: none">
+                <a class="btn-inner" style="background-color: #ffe98c; color: #634f17;">查看我的奖品</a>
+                <a class="btn-inner btn-right" style="background-color: #ffe98c; color: #634f17;">邀请一起摇</a>
+            </div>
+
+            <!--  -->
+        </div>
+        <div class="source-bottom">
+            <img src="images/shake/shake-bottom12.jpg" alt="">
+        </div>
+        <div class="shake-win">
+            <ul id="scroll-top">
+                <li>恭喜 138****5250 获得10元优惠券！1</li>
+                <li>恭喜 138****5250 获得！2</li>
+                <li>恭喜 138****5250 获得！3</li>
+                <li>恭喜 138****5250 获得！4</li>
+                <li>恭喜 138****5250 获得10元优惠券！5</li>
+                <li>恭喜 138****5250 获得！6</li>
+                <li>恭喜 138****5250 获得！7</li>
+                <li>恭喜 138****5250 获得！8</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- modal -->
+    <div class="mask" style="display: none"></div>
+    <!-- 中奖了 -->
+    <div class="modal modal-out winp">
+        <div class="modal-close"></div>
+        <div class="modal-inner">
+            <div class="modal-title">恭喜您中奖啦！</div>
+            <div class="modal-text">
+                <div class="modal-img">
+                    <img src="css/i/zhongjiang.png" alt="">
+                </div>
+                <p class="shake-text">线下东方商厦<span class="color-red">500元抵用券</span>1张</p>
+                <p class="shake-text">线上百联到家<span class="color-red">10元抵用券</span>1张</p>
+                <p class="shake-text">线上百联到家<span class="color-red">10元抵用券</span>1张</p>
+            </div>
+        </div>
+        <div class="modal-buttons shake-buttons">
+            <a class="modal-button">继续摇</a>
+            <a class="modal-button active">炫耀一下</a>
+        </div>
+    </div>
+    <!-- 没中奖 -->
+    <div class="modal modal-out not-winp">
+        <div class="modal-close"></div>
+        <div class="modal-inner">
+            <div class="modal-title">哎哟喂，没摇中！</div>
+            <div class="modal-text">
+                <div class="modal-img">
+                    <img src="css/i/not-zhongjiang.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="modal-buttons shake-buttons">
+            <a class="modal-button">继续摇</a>
+            <a class="modal-button active">邀请一起摇</a>
+        </div>
+    </div>
+    <!-- 没次数 -->
+    <div class="modal modal-out not-change">
+        <div class="modal-close"></div>
+        <div class="modal-inner">
+            <div class="modal-title">机会用完了！</div>
+            <div class="modal-text">
+                <div class="modal-img">
+                    <img src="css/i/not-change.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="modal-buttons shake-buttons">
+            <a class="modal-button">知道啦</a>
+            <a class="modal-button active">邀请一起摇</a>
+        </div>
+    </div>
+
+    <!-- 炫耀一下 -->
+    <div class="share-modal flaunt" hidden>
+        <div class="arrow-more"><img src="css/i/shadow-arrow.png" alt=""></div>
+        <div class="share-img">
+            <img src="css/i/xuanyao.png" alt="">
+        </div>
+    </div>
+    <!-- 一起摇 -->
+    <div class="share-modal shake" hidden>
+        <div class="arrow-more"><img src="css/i/shadow-arrow.png" alt=""></div>
+        <div class="share-img">
+            <img src="css/i/yiqiyao.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

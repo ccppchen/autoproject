@@ -1,10 +1,16 @@
 @charset "utf-8";//cp
 @import "tobe/base";
 @import "tobe/ext/comm";
-
 @import "tobe/components/bar/bar";
 @import "tobe/components/list-between/list-between";
 @import "tobe/components/nav/nav";
+
+@import "tobe/components/modal/modal"; 
+.mask{
+	@include mask();
+	display: block;
+	z-index: 1002;
+}
 
 // 按钮
 @import "tobe/ext/btn";
@@ -17,7 +23,7 @@ $btnColorClass: (red $red #fff) (blueLight $blueLight #fff) (green $green #fff);
 .arrow-right{
 	@extend %arrow-right;
 }
-.lazy-box{
+.lazy-box{ 
 	@extend %lazy-box;
 	background: none;
 }

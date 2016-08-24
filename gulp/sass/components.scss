@@ -2,7 +2,7 @@
 @import "tobe/base";
 @import "tobe/components/components-base";
 // @import "tobe/ext/comm";
-
+@include switch-color-multi();
 /* ext */
 .arrow-right{
 	@extend %arrow-right;
@@ -134,4 +134,37 @@
 			padding: 0.16rem;
 		}
 	}
+}
+
+// modal
+.mask{
+	@include mask();
+	z-index: 1004;
+
+}
+.modal{
+	position: relative;
+	@include transform(translate3d(0, 0, 0) !important);
+	margin-top: 15px;
+}
+
+.shake-text{
+	font-size: rem(28);
+	color: #666666;
+	text-align: center;
+}
+.color-red{
+	color: #e6133c;
+}
+.modal-img{
+	height: rem(360);
+	@extend %comm-flex;
+	@include justify-content(center);
+	img{
+		width: rem(350);
+	}
+}
+
+.font-bold{
+	font-weight: bold;
 }

@@ -1,0 +1,67 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/list-between/list-between";
+
+.arrow-right{
+    @extend %arrow-right;
+    background-size: rem(12) auto;
+}
+.content{
+	@extend %content;
+}
+
+body{
+	background-color: #f2f2f2;
+}
+
+.bl-cardpay{
+	.list-item{
+		padding-right: 0;
+		.list-right{
+			margin-right: rem(30);
+			font-size: rem(24);
+			color: #999999;
+			padding-right: rem(30);
+			.balance{
+				margin: 0 rem(8);
+			}
+		}
+	}
+	.list-left{
+		font-size: rem(28);
+		color: #333333;
+	}
+	.cpay-bal{
+		font-size: rem(28);
+		color: #999999;
+		padding: 0 rem(30);
+		height: rem(88);
+		font-weight: bold;
+		@extend %comm-flex;
+	}
+	.mtop{
+		margin-top: rem(20);
+	}
+	.cpay-order-balance{
+		margin-left: rem(58);
+		font-size: rem(24);
+		color: #666666;
+	}
+	%balance{
+		color: #e62233;
+	}
+	.balance{
+		@extend %balance;
+	}
+	.cpay-balance{
+		font-size: rem(32);
+		color: #333333;
+		@extend %balance;
+	}
+	.icon-card{
+		width: rem(50);
+		height: rem(50);
+		margin-right: rem(26);
+	}
+}

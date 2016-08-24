@@ -1,5 +1,4 @@
 require.config({
-    baseUrl: 'js',
     paths: {
         vendor: ['vendor/vendor.min'],
         touchslider: ['touchslider']

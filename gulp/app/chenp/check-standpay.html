@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "收银台",
+    "css": "css/check-standpay.css",
+    "requirejs": "js/confirm-order"
+})
+</head>
+<body>
+@@include('widget/header.html', {
+    "left-icon": "arrow-back",
+    "bar-style": "bar-light",
+    "title": "收银台",
+    "nav": false,
+    "right-icon": "",
+    "rightIconBool": false,
+    "rightIconBoolMore": false,
+    "more-icon": ""
+})
+<!-- content -->
+<div class="content bl-cardpay">
+    
+    <div class="list-between">
+        <div class="list-item">
+            <div class="list-left">
+                <div class="cpay-balance"><span>待支付：</span><span class="balance">￥21</span></div>
+                <div class="cpay-order-balance">订单金额：￥2000</div>
+            </div>
+        </div>
+    </div>
+    <div class="cpay-bal">选择支付方式</div>
+    <div class="list-between">
+        <a class="list-item">
+            <div class="list-left">
+                <span class="icon-card"><img src="css/i/ok-card.png" alt=""></span>
+                百联/OK积点卡
+            </div>
+            <div class="list-right arrow-right">
+                需收取<span class="balance">000.00</span>元服务费
+            </div>
+        </a>
+        <a class="list-item">
+            <div class="list-left">
+                <span class="icon-card"><img src="css/i/vip-card.png" alt=""></span>
+                OK会员卡
+            </div>
+            <div class="list-right arrow-right">
+                需收取<span class="balance">000.00</span>元服务费
+            </div>
+        </a>
+    </div>
+
+    <div class="list-between mtop">
+        <a class="list-item">
+            <div class="list-left">
+                <span class="icon-card"><img src="css/i/weixin-card.png" alt=""></span>
+                微信支付
+            </div>
+            <div class="list-right arrow-right"></div>
+        </a>
+    </div>
+</div>
+<!-- content end -->
+</body>
+
+</html>

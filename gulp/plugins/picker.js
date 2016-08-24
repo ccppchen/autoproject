@@ -348,17 +348,17 @@ var Picker = function(params) {
         }
         p.value = newValue;
         p.displayValue = newDisplayValue;
-        // if (p.params.onChange) {
-        //     p.params.onChange(p, p.value, p.displayValue);
-        // }
-        // if (p.input && p.input.length > 0) {
-        //     $(p.input).val(p.params.formatValue ? p.params.formatValue(p, p.value, p.displayValue) : p.value.join(' '));
-        //     $(p.input).trigger('change');
-        // }
-        $('.confirm-picker').on('click', function(event) {
+        if (p.params.onChange) {
+            p.params.onChange(p, p.value, p.displayValue);
+        }
+        if (p.input && p.input.length > 0) {
             $(p.input).val(p.params.formatValue ? p.params.formatValue(p, p.value, p.displayValue) : p.value.join(' '));
             $(p.input).trigger('change');
-        });
+        }
+        // $('.confirm-picker').on('click', function(event) {
+        //     $(p.input).val(p.params.formatValue ? p.params.formatValue(p, p.value, p.displayValue) : p.value.join(' '));
+        //     $(p.input).trigger('change');
+        // });
     };
 
     // Columns Handlers

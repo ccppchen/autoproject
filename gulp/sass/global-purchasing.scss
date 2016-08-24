@@ -43,6 +43,7 @@ body{
 			position:relative; 
 			.lazy {
 			    position: absolute;
+			    height: 100%;
 			    left: 50%;
 			    top: 50%;
 			    -ms-transform: translate3d(-50%, -50%, 0);
@@ -77,11 +78,13 @@ body{
 	    	top: 50%;
 	    	left: 50%;
 	    	margin-top: rem(60);
-	    	margin-left: rem(-250);
+	    	// margin-left: rem(-250);
+	    	@include transform(translate(-50%,0));
 	    	width: rem(500);
 	    	ul{
                 text-align: center;
                 display: inline-table;
+                margin-right: rem(-20);
 	    	}
 	    	li{
 	    		float: left;
