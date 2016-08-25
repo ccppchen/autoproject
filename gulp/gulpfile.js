@@ -89,10 +89,6 @@ gulp.task('compass', function() {
       image: yeoman.sass,
       style: 'compressed'
     }))
-    .pipe($.autoprefixer({
-      browsers: [ '> 5%', 'Last 4 versions', 'Firefox >= 20', 'iOS 7', 'Android >= 4.0' ],
-      cascade: true
-    }))
     .pipe(gulp.dest(yeoman.app+'/css'))
     
 });
@@ -176,7 +172,7 @@ gulp.task('js', function(){
 
 // html
 gulp.task('html', function(){
-  gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
+  gulp.src([yeoman.app+'/*.html', yeoman.app+'/chenp/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
     .pipe($.fileInclude({
         prefix: '@@',
         basepath: 'app/',
@@ -190,7 +186,7 @@ gulp.task('html', function(){
 
 // gulp-file-include
 gulp.task('widget', function(){
-  gulp.src([yeoman.app+'/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
+  gulp.src([yeoman.app+'/*.html', yeoman.app+'/chenp/*.html', '!./'+yeoman.app+'/widget/**/*.html'])
     .pipe($.fileInclude({
         prefix: '@@',
         basepath: 'app/',
@@ -203,22 +199,38 @@ gulp.task('widget', function(){
 });
 
 // handlebars 预编译
+
+handlebars.registerPartial('footer', '<footer>the end</footer>');
+handlebars.registerHelper('capitals', function(str){
+  return str.toUpperCase();
+});
+handlebars.registerHelper('index', function(str){
+  return str++;
+});
 gulp.task('dev-tpl', function(){
   return gulp.src(yeoman.app+'/templates/tpl.html')
+        .pipe($.plumber({
+            errorHandler: function (error) {
+                  console.log(error.message);
+                  this.emit('end');
+              }
+        }))
         .pipe($.data(function (file) {
 
             var filePath = file.path;
 
             // global.json 全局数据，页面中直接通过属性名调用
-            return Object.assign(JSON.parse(fs.readFileSync('./app/json/global.json')), {
-                // local: 每个页面对应的数据，页面中通过 local.属性 调用
-                local: JSON.parse(fs.readFileSync( path.join(path.dirname(filePath), '/data/'+path.basename(filePath, '.html') + '.json')))
-            }) 
+            // return Object.assign(JSON.parse(fs.readFileSync('./app/json/global.json')), {
+            //     // local: 每个页面对应的数据，页面中通过 local.属性 调用
+            //     local: JSON.parse(fs.readFileSync( path.join(path.dirname(filePath), '/data/'+path.basename(filePath, '.html') + '.json')))
+            // }) 
+            return Object.assign( JSON.parse(fs.readFileSync( path.join(path.dirname(filePath), '/data/'+path.basename(filePath, '.html') + '.json'))) ) 
         }))
         .pipe(handhtml($.data, {
-              allowedExtensions: ['html'],
-              partialsDirectory : ['.tmp']
-          }))
+            allowedExtensions: ['html'],
+            partialsDirectory : ['.tmp']
+        }))
+        .pipe($.plumber.stop())
         .pipe(gulp.dest('.tmp'))
 });
 

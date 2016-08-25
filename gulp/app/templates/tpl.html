@@ -1,5 +1,14 @@
+{{site}}
 <ul>
-{{#programme}}
-	<li>{{language}}</li>
-{{/programme}}
+	{{#each programme}}
+
+		<li>{{ index @index }} : {{ capitals this.language }}</li>
+
+	{{/each}}
 </ul>
+
+{{#if bool}}
+
+{{/if}}
+
+{{> footer}}
