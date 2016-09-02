@@ -90,7 +90,7 @@ gulp.task('compass', function() {
       style: 'compressed'
     }))
     .pipe(gulp.dest(yeoman.app+'/css'))
-    
+
 });
 
 // 编写组件编译sass
@@ -199,7 +199,6 @@ gulp.task('widget', function(){
 });
 
 // handlebars 预编译
-
 handlebars.registerPartial('footer', '<footer>the end</footer>');
 handlebars.registerHelper('capitals', function(str){
   return str.toUpperCase();
@@ -216,15 +215,8 @@ gulp.task('dev-tpl', function(){
               }
         }))
         .pipe($.data(function (file) {
-
             var filePath = file.path;
-
-            // global.json 全局数据，页面中直接通过属性名调用
-            // return Object.assign(JSON.parse(fs.readFileSync('./app/json/global.json')), {
-            //     // local: 每个页面对应的数据，页面中通过 local.属性 调用
-            //     local: JSON.parse(fs.readFileSync( path.join(path.dirname(filePath), '/data/'+path.basename(filePath, '.html') + '.json')))
-            // }) 
-            return Object.assign( JSON.parse(fs.readFileSync( path.join(path.dirname(filePath), '/data/'+path.basename(filePath, '.html') + '.json'))) ) 
+            return Object.assign( JSON.parse(fs.readFileSync('./data/'+ file +'.json')) )
         }))
         .pipe(handhtml($.data, {
             allowedExtensions: ['html'],
@@ -233,32 +225,6 @@ gulp.task('dev-tpl', function(){
         .pipe($.plumber.stop())
         .pipe(gulp.dest('.tmp'))
 });
-
-// var mockbase = path.join(__dirname, 'mock');
-// // mock 数据服务
-// gulp.task('webserver', function() {
-//     gulp.src('.')
-//         .pipe(mockServer({
-//             livereload: true,
-//             mockDir: './server',
-//             port: 8090,
-//             open: false,
-//             middleware: function(res, pathname, paramObj, next){
-//               switch (pathname) {
-//                       case '/api/global':
-//                           var data = fs.readFileSync(path.join(mockbase, 'global.json'), 'utf-8');
-
-//                           res.setHeader('Content-Type', 'application/json');
-//                           res.end(paramObj.callback + '(' + data + ')');
-//                           return ;
-//                       default:
-//                           ;
-//                   }
-//                   next();
-//             }
-//         }));
-// });
-
 
 gulp.task('default', ['compass', 'watch', 'server', 'widget', 'dev-tpl']);
 gulp.task('doc', ['doc-sass', 'watch', 'server']);
