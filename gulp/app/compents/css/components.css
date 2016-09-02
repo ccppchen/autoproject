@@ -15,7 +15,7 @@
 /* --------------------------------------------------
  * 非输出
  */
-.list-between .list-item, .ion-tabs, .modal-buttons, .modal-img {
+.list-between .list-item, .ion-tabs, .modal-buttons, .modal-button, .modal-img {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -1135,6 +1135,12 @@ textarea::-webkit-input-placeholder {
   overflow: hidden;
   cursor: pointer;
   box-sizing: border-box;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1;
@@ -1198,6 +1204,46 @@ textarea::-webkit-input-placeholder {
 }
 .modal-no-buttons .modal-buttons {
   display: none;
+}
+
+.switch.switch-danger input:checked ~ span.bg {
+  background-color: #ff0000;
+  background-image: -webkit-linear-gradient(to top, #ff0000, #fa0000);
+  background-image: -moz-linear-gradient(to top, #ff0000, #fa0000);
+  background-image: linear-gradient(to top, #ff0000, #fa0000);
+  border-color: #ff0000;
+}
+
+.switch.switch-primary input:checked ~ span.bg {
+  background-color: #0078E7;
+  background-image: -webkit-linear-gradient(to top, #0078E7, #0075e2);
+  background-image: -moz-linear-gradient(to top, #0078E7, #0075e2);
+  background-image: linear-gradient(to top, #0078E7, #0075e2);
+  border-color: #0078E7;
+}
+
+.switch.switch-pink input:checked ~ span.bg {
+  background-color: #c3325f;
+  background-image: -webkit-linear-gradient(to top, #c3325f, #bf315d);
+  background-image: -moz-linear-gradient(to top, #c3325f, #bf315d);
+  background-image: linear-gradient(to top, #c3325f, #bf315d);
+  border-color: #c3325f;
+}
+
+.switch.switch-orange input:checked ~ span.bg {
+  background-color: #F47837;
+  background-image: -webkit-linear-gradient(to top, #F47837, #f47532);
+  background-image: -moz-linear-gradient(to top, #F47837, #f47532);
+  background-image: linear-gradient(to top, #F47837, #f47532);
+  border-color: #F47837;
+}
+
+.switch.switch-purple input:checked ~ span.bg {
+  background-color: #7a43b6;
+  background-image: -webkit-linear-gradient(to top, #7a43b6, #7842b2);
+  background-image: -moz-linear-gradient(to top, #7a43b6, #7842b2);
+  background-image: linear-gradient(to top, #7a43b6, #7842b2);
+  border-color: #7a43b6;
 }
 
 /* ext */

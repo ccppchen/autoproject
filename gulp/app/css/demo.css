@@ -1,0 +1,51 @@
+.font {
+  font-size: 12px;
+  color: #000000;
+}
+
+.comm-flex {
+  font-size: 24px;
+  color: #fff;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.a {
+  -webkit-transform: translate(0, 50%);
+      -ms-transform: translate(0, 50%);
+          transform: translate(0, 50%);
+}
+
+.h1 {
+  font-size: 2em;
+}
+
+.h2 {
+  font-size: 1.5em;
+}
+
+.h3 {
+  font-size: 1.2em;
+}
+
+.a {
+  color: #fff;
+  border-width: 1px;
+  border-top: 1px solid red;
+}
+.a .b {
+  color: red;
+}
+.a .b.c {
+  font-size: 2 px;
+  background: rgba(255, 0, 0, 0.6);
+}
+
+.main a {
+  color: #666;
+  font-size: rem(24);
+}
+.main a:hover {
+  color: #999;
+}

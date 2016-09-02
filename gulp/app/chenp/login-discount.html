@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "优惠券",
+    "css": "css/login-discount.css",
+    "requirejs": "js/login-discount"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "",
+        "nav": false,
+        "right-icon": "logo",
+        "rightIconBool": true,
+        "rightIconBoolMore": false,
+        "more-icon": ""
+    })
+
+    <div class="content">
+        <div class="discount-info">
+            <img src="css/i/discount.png" alt="">
+            <p>距离您的优惠券还差一步哦～</p>
+        </div>
+
+        <div class="discount-wrap">
+            <div class="wrap-item line">
+                <div class="item-left">
+                    <div class="word-text">手机号</div>
+                    <div class="word-input">
+                        <input class="j-phone" type="tel" name="" value="" placeholder="请输入手机号码" maxlength="11">
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-item">
+                <div class="item-left">
+                    <div class="word-text">验证码</div>
+                    <div class="word-input">
+                        <input class="j-mess-code" type="text" name="" value="" placeholder="请输入短信验证码" maxlength="8">
+                    </div>
+                </div>
+                <button class="item-right" id="getCode">获取短信验证码</button>
+            </div>
+        </div>
+
+        <!-- confirm 去掉disabled背景变红 -->
+        <a href="javascript:;" class="dis-confirmbtn" disabled>确认</a>
+    </div>
+
+
+    <div class="toast">
+        <p>手机号码格式</p>
+    </div>
+</body>
+
+</html>

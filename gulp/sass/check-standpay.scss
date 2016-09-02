@@ -1,67 +1,88 @@
-@charset "utf-8"; //cp
-@import "tobe/base";
-@import "tobe/components/bar/bar";
-@import "tobe/components/list-between/list-between";
+@charset 'utf-8'; //cp
+@import 'tobe/base';
+@import 'tobe/components/bar/bar';
+@import 'tobe/components/list-between/list-between';
 
 .arrow-right{
-    @extend %arrow-right;
     background-size: rem(12) auto;
+
+    @extend %arrow-right;
 }
 .content{
-	@extend %content;
+    @extend %content;
 }
 
 body{
-	background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
-
+.card-pays{
+    background: transparent;
+    .list-item{
+        margin-top: rem(20);
+        background-image: none;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+}
+.balance{
+    margin: 0 rem(8);
+}
 .bl-cardpay{
-	.list-item{
-		padding-right: 0;
-		.list-right{
-			margin-right: rem(30);
-			font-size: rem(24);
-			color: #999999;
-			padding-right: rem(30);
-			.balance{
-				margin: 0 rem(8);
-			}
-		}
-	}
-	.list-left{
-		font-size: rem(28);
-		color: #333333;
-	}
-	.cpay-bal{
-		font-size: rem(28);
-		color: #999999;
-		padding: 0 rem(30);
-		height: rem(88);
-		font-weight: bold;
-		@extend %comm-flex;
-	}
-	.mtop{
-		margin-top: rem(20);
-	}
-	.cpay-order-balance{
-		margin-left: rem(58);
-		font-size: rem(24);
-		color: #666666;
-	}
-	%balance{
-		color: #e62233;
-	}
-	.balance{
-		@extend %balance;
-	}
-	.cpay-balance{
-		font-size: rem(32);
-		color: #333333;
-		@extend %balance;
-	}
-	.icon-card{
-		width: rem(50);
-		height: rem(50);
-		margin-right: rem(26);
-	}
+    .list-item{
+        padding-right: 0;
+        .list-right{
+            font-size: rem(24);
+
+            margin-right: rem(30);
+            padding-right: rem(30);
+
+            color: #999;
+        }
+    }
+    .list-left{
+        font-size: rem(28);
+
+        color: #333;
+    }
+    .cpay-bal{
+        font-size: rem(28);
+        font-weight: bold;
+
+        height: rem(75);
+        padding: 0 rem(30);
+
+        color: #999;
+
+        @extend %comm-flex;
+        @include justify-content(space-between);
+        .cpay-right{
+            font-size: rem(24);
+        }
+    }
+    .cpay-order-balance{
+        font-size: rem(24);
+
+        margin-left: rem(58);
+
+        color: #666;
+    }
+    %balance{
+        color: #e62233;
+    }
+    .balance{
+        @extend %balance;
+    }
+    .cpay-balance{
+        font-size: rem(32);
+
+        color: #333;
+
+        @extend %balance;
+    }
+    .icon-card{
+        width: rem(50);
+        height: rem(50);
+        margin-right: rem(26);
+    }
 }

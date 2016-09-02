@@ -11,5 +11,5 @@ require(['config', 'comm'], function(){
 			autoPage: true,
 			switchLoad: "_src"
 		});
-	})
+	});
 });

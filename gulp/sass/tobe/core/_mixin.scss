@@ -16,7 +16,7 @@
 %ellipsis-basic{
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 @mixin ellipsis($width:100%) {
   @extend %ellipsis-basic;
@@ -856,4 +856,23 @@
 %content {
     width: 100%;
     padding-top: $bar-height;
+}
+
+// toast
+%toast {
+  position: fixed;
+  z-index: 10004;
+  bottom: 25%;
+  left: 50%;
+  @include transform(translate(-50%,0));
+  padding: rem(22) rem(40);
+  min-width: rem(290);
+  min-height: rem(88);
+  max-width: 90%;
+  font-family: PingFang-SC-Regular;
+  font-size: rem(30);
+  color: #FFFFFF;
+  background: rgba(0,0,0,0.80);
+  border-radius: 8px;
+  text-align: center;
 }

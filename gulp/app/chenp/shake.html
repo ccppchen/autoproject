@@ -9,34 +9,34 @@
 </head>
 
 <body>
-    @@include('widget/header.html', {
+    <!-- @@include('widget/header.html', {
         "left-icon": "arrow-back",
         "bar-style": "bar-light",
         "title": "摇一摇",
-        "nav": false,
-        "right-icon": "more-v",
-        "rightIconBool": true,
+        "nav": true,
+        "right-icon": "",
+        "rightIconBool": false,
         "rightIconBoolMore": false,
         "more-icon": ""
-    })
+    }) -->
     <!-- 背景 -->
-    <div class="main" style="background: #d43522 url(images/shake/bg2.jpg) no-repeat center top; background-size: 100% auto;">
+    <div class="main" style="background: #d43522 url(images/shake/bg.jpg) no-repeat center top; background-size: 100% auto;">
     </div>
-    
+
     <div class="shake-bottom">
         <div class="shake-btngroup">
             <div class="groups">
                 <!-- 未登录 -->
-                <a href="javascript:;" class="btn-top not-login">
+                <a href="javascript:;" class="btn-top not-login" style="display: none;">
                     您还没有登录，<span class="arrow-right big-font">立即登录</span>
                 </a>
 
                 <!-- 已登录 -->
-                <a href="javascript:;" class="btn-top change" style="display: none">
+                <a href="javascript:;" class="btn-top change">
                     您今天还剩余<span class="big-font">3</span>次机会
                 </a>
             </div>
-            <div class="btn-bottom" style="display: none">
+            <div class="btn-bottom" style="display: block">
                 <a class="btn-inner" style="background-color: #ffe98c; color: #634f17;">查看我的奖品</a>
                 <a class="btn-inner btn-right" style="background-color: #ffe98c; color: #634f17;">邀请一起摇</a>
             </div>
@@ -44,9 +44,9 @@
             <!--  -->
         </div>
         <div class="source-bottom">
-            <img src="images/shake/shake-bottom12.jpg" alt="">
+            <img src="images/shake/bg222.jpg" alt="">
         </div>
-        <div class="shake-win">
+        <!-- <div class="shake-win" style="background-color: rgba(0,0,0,0.4);">
             <ul id="scroll-top">
                 <li>恭喜 138****5250 获得10元优惠券！1</li>
                 <li>恭喜 138****5250 获得！2</li>
@@ -57,7 +57,7 @@
                 <li>恭喜 138****5250 获得！7</li>
                 <li>恭喜 138****5250 获得！8</li>
             </ul>
-        </div>
+        </div> -->
 
     </div>
 

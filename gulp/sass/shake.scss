@@ -2,6 +2,7 @@
 @import "tobe/base";
 @import "tobe/components/bar/bar";
 @import "tobe/components/modal/modal";
+@import "tobe/components/nav/nav";
 
 .bar{
 	position: relative;
@@ -10,8 +11,7 @@
 	color: #000000;
 }
 .mask{
-	@include mask();
-	z-index: 1002;
+	@include mask(.8, 1002);
 }
 
 // modal
@@ -24,6 +24,9 @@
 .modal-title+.modal-text{
 	margin-bottom: rem(24);
 	margin-top: rem(24);
+}
+.modal-text{
+	overflow: hidden;
 }
 .shake-text{
 	font-size: rem(28);
@@ -44,6 +47,7 @@
 .shake-buttons{
 	.modal-button{
 		color: #333333;
+		display: inherit;
 		&.active{
 			color: #e6133c;
 		}
@@ -56,7 +60,7 @@
 	z-index: 3;
 	top: 0;
 	left: 50%;
-	margin-bottom: rem(80);
+	margin-bottom: rem(50);
 
 	@include transform(translate(-50%,0));
 	.groups{
@@ -70,7 +74,7 @@
 			color: #ffffff;
 			font-size: rem(28);
 			line-height: 1;
-			
+
 			@extend %comm-flex;
 			@include justify-content(center);
 
@@ -120,7 +124,7 @@
 }
 @include screen(320px, 360px){
 	.shake-btngroup{
-		margin-bottom: rem(10);
+		margin-bottom: rem(20);
 	}
 };
 // share
@@ -134,13 +138,13 @@
 	.arrow-more{
 		width: rem(106);
 		position: absolute;
-		right: rem(24);
-		top: rem(42);
+		right: rem(30);
+		top: rem(-10);
 	}
 	.share-img{
 		width: rem(476);
 		position: absolute;
-		top: rem(120);
+		top: rem(70);
 		left: 50%;
 		@include transform(translate(-50%, 0));
 	}
@@ -153,7 +157,7 @@
 	right: 0;
 	.source-bottom{
 		width: 100%;
-		height: rem(320);
+		height: rem(240);
 		overflow: hidden;
 		font-size: 0;
 	}
@@ -178,7 +182,7 @@
 
 .main{
 	position: absolute;
-	top: rem(88);
+	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;

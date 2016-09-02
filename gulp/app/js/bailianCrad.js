@@ -6,9 +6,8 @@ require(['config'], function(){
             pagination: '.swiper-pagination',
                 direction : 'horizontal',
                slidesPerView: 'auto',
-           })
-       
-        }                        
+           });
+        };
             //弹窗隐藏
             $(".info-button").find("button").click(function(){
                     $(".mztj").hide();

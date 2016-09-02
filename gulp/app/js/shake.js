@@ -11,6 +11,12 @@ require(['vendor/vendor.min'], function(FastClick){
         }
         
     }, 30);
+		/* nav */
+		//nav
+		$('.j-nav').on('click', function(event) {
+		    $(this).toggleClass('show-nav');
+		    $(this).siblings('.j-navcontent').toggleClass('show-navcontent')
+		});
 
     // 演示js，开发把下面的js删掉
     // $('.not-login').on('click', function(event) {

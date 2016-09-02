@@ -6,7 +6,7 @@ require(['config', 'comm'], function(){
 		        $('.js-toggle').show();
 		    } else{
 		        $('.js-toggle').hide();
-		    };
+		    }
 		});
 	});
 });

@@ -2,6 +2,7 @@
 * 滑动到底部加载更多
 */
 ;(function($){
+	'use strict';
 	$.fn.scrollLoad = function(opts){
 		var defaults = {
 			sucback: 	function(){}
@@ -15,7 +16,7 @@
 			var viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0;
 			//隐藏的高度
 			var scrollHeight = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-			if(pageHeight - viewportHeight - scrollHeight == 0){    //如果满足触发条件，执行
+			if(pageHeight - viewportHeight - scrollHeight === 0){    //如果满足触发条件，执行
 			    defaults.sucback();
 			}
 		};

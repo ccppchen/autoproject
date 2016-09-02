@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "安悦支付",
+    "css": "css/anyue-pay.css",
+    "requirejs": "js/anyue-pay"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "安悦支付",
+        "nav": false,
+        "right-icon": "",
+        "rightIconBool": false,
+        "rightIconBoolMore": false,
+        "more-icon": ""
+    })
+
+    <div class="content">
+        <div class="discount-info">
+            <p>待付金额</p>
+            <div class="d-pay">￥000,00.00</div>
+        </div>
+
+        <div class="discount-wrap mbottom">
+            <div class="wrap-item">
+                <div class="item-left">
+                    <div class="word-text">订单号</div>
+                    <div class="word-input">
+                        <input class="j-order" type="text" name="" value="12345566666666" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="discount-wrap">
+            <div class="wrap-item line">
+                <div class="item-left">
+                    <div class="word-text">卡号</div>
+                    <div class="word-input">
+                        <input class="j-card" type="text" name="" value="" placeholder="请输入19位卡号" maxlength="19">
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-item">
+                <div class="item-left">
+                    <div class="word-text">密码</div>
+                    <div class="word-input">
+                        <input class="j-password" type="text" name="" value="" placeholder="请输入6位密码" maxlength="6">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- confirm 去掉disabled背景变红 -->
+        <a href="javascript:;" class="dis-confirmbtn" disabled>确认支付</a>
+    </div>
+
+
+    <div class="toast">
+        <p>报错信息</p>
+    </div>
+</body>
+
+</html>
