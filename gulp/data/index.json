@@ -1,0 +1,20 @@
+{
+  "datas": [
+    {
+      "version": "v1.1",
+      "number": "1",
+      "url": "compents/template.html",
+      "name": "模版",
+      "author": "陈鹏",
+      "productManager": ""
+    },
+    {
+      "version": "v1.1",
+      "number": "2",
+      "url": "compents/compents.html",
+      "name": "组件",
+      "author": "陈鹏",
+      "productManager": ""
+    }
+  ]
+}
