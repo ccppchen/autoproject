@@ -1001,19 +1001,23 @@ textarea::-webkit-input-placeholder {
   text-align: center;
   border-radius: 0.15rem;
   opacity: 0;
-  transform: translate3d(0, -50%, 0) !important;
+  -webkit-transform: translate(0, -50%) !important;
+  transform: translate(0, -50%) !important;
+  -webkit-transition-property: opacity;
   transition-property: opacity;
   color: #666666;
   display: none;
 }
 .modal.modal-in {
   opacity: 1;
+  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
   display: block;
 }
 .modal.modal-out {
   opacity: 0;
   z-index: 10999;
+  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
 
@@ -1128,7 +1132,6 @@ textarea::-webkit-input-placeholder {
   text-align: center;
   color: #333333;
   background: #F8F8F8;
-  display: block;
   position: relative;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1204,6 +1207,30 @@ textarea::-webkit-input-placeholder {
 }
 .modal-no-buttons .modal-buttons {
   display: none;
+}
+
+.toast {
+  position: fixed;
+  z-index: 10004;
+  bottom: 50%;
+  left: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.toast p {
+  min-width: 2.9rem;
+  min-height: 0.88rem;
+  max-width: 6rem;
+  margin: 0 auto;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.22rem 0.4rem;
+  font-family: PingFang-SC-Regular;
+  font-size: 0.3rem;
+  color: #FFFFFF;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .switch.switch-danger input:checked ~ span.bg {

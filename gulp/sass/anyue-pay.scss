@@ -2,6 +2,7 @@
 @import "tobe/base";
 @import "tobe/components/bar/bar";
 @import "tobe/components/toast/toast";
+@import "tobe/components/modal/modal";
 
 body{
 	background-color: #f2f2f2;
@@ -18,6 +19,9 @@ body{
 }
 .mbottom{
 	margin-bottom: rem(24);
+}
+.mask{
+	@include mask(.8, 1002);
 }
 
 .discount-info{

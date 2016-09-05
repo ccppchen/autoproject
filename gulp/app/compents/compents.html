@@ -28,13 +28,13 @@
     .floor {
         margin: .18rem auto;
     }
-    
+
     pre {
         font-size: 14px;
         margin: 0;
         line-height: normal;
     }
-    
+
     h3 {
         text-align: center;
         font-size: .45rem;
@@ -55,7 +55,7 @@
     <h3 id="switch">switch</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">     @import "tobe/components/switch/switch";
 </code>
     <strong class="ext">扩展）!</strong>如果以下颜色没有， 自行调用下面mixin, {$class}处命名改按钮颜色名称，$bgColor处填写背景颜色值
@@ -117,7 +117,7 @@
     <h3 id="bar">bar</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/bar/bar";
 </code>
     <strong class="ext">扩展）!</strong>如果以下颜色没有， 自行调用下面mixin, {$class}处命名bar名称，$bgColor处填写背景颜色值，$border-color处填写下边框颜色值（如果没有边框色，值跟背景色一致），$color处填写标题颜色
@@ -249,7 +249,7 @@
     <h3 id="list-between">list-between</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/list-between/list-between";
 </code>
     <strong class="ext">扩展）!</strong>下面预览除本组件还用到两个扩展（1.向右的灰色尖头，2.绿色选择按钮），扩展的样式不多，暂时全都放在ext/_comm.scss文件中，非输出型的，要用需要用@extend方法调用，选择按钮默认是绿色样式如需添加，自行调用 check-color($bgColor), $checkColor处填命名颜色名称，$bgColor处填写背景颜色
@@ -335,7 +335,7 @@
     <h3 id="nav">nav</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/nav/nav";
 </code>
     2.在页面js文件中引入下面这段
@@ -408,12 +408,12 @@
             });
         </script>
     </div>
-    
-    <!-- nav-menu --> 
+
+    <!-- nav-menu -->
     <h3>nav-menu</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/nav-menu/nav-menu";
 </code>
     <strong class="ext">扩展）!</strong>
@@ -484,7 +484,7 @@
     <h3>overflow-scroll</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/overflow-scroll/overflow-scroll";
 </code>
     <strong class="ext">扩展）!</strong> 加上hide-scrollbar这个类隐藏滚动条， 默认子元素ovfs-item固定宽度rem(208) 有有边框，如不需要，请用css覆盖即可，
@@ -572,7 +572,7 @@
     <h3>preloader</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/preloader/preloader";
 </code>
     <strong class="ext">扩展）!</strong>默认有三个尺寸，分别分类了三个类，默认是最小的, 中等的加上.middle, 最大的加上.big, 颜色方面目前有下面两种，灰色和白色， 默认灰色， 白色需要加上white类
@@ -636,7 +636,7 @@
         <div class="triangletop"></div>
     </div>
 
-    <!-- 商品列表pic-list --> 
+    <!-- 商品列表pic-list -->
     <h3>pic-list</h3>
     <p class="use">使用</p>
 <pre>
@@ -833,11 +833,11 @@ header，参数比较多，如果页面头部不合适则不要使用
 </code>
 </pre>
 
-    <!-- ion-tabs --> 
+    <!-- ion-tabs -->
     <h3 id="ion-tabs">ion-tabs</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/ion-tabs/ion-tabs";
 </code>
     <strong class="ext">扩展）!</strong>
@@ -869,7 +869,7 @@ header，参数比较多，如果页面头部不合适则不要使用
     <h3 id="modal">modal</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/modal/modal";
 </code>
     <strong class="ext">扩展）!</strong>
@@ -1036,17 +1036,48 @@ header，参数比较多，如果页面头部不合适则不要使用
         </div>
     </div>
 
+        <!-- toast -->
+        <h3 id="toast">toast</h3>
+        <p class="use">使用</p>
+    <pre>
+        1.在页面scss文件中引入下面这个文件
+    <code class="scss">    @import "tobe/components/toast/toast";
+    </code>
+        <strong class="ext">扩展）!</strong>
+        2.html结构如下
+    <code class="html">
+&lt;!-- 1 -->
+&lt;div class="toast">
+    &lt;p>报错信息&lt;/p>
+&lt;/div>
+&lt;!-- 2 -->
+&lt;div class="toast">
+    &lt;p>手机号码格式不正确，请重新输入重新请重新输入重新&lt;/p>
+&lt;/div>
+    </code>
+    </pre>
+
+        <div class="ext use">预览</div>
+        <div class="floor">
+            <div class="toast" style="position: relative;">
+                <p>报错信息</p>
+            </div>
+            <div class="toast" style="position: relative; margin-top: 10px;">
+                <p>手机号码格式不正确，请重新输入重新请重新输入重新</p>
+            </div>
+        </div>
+
     <script src="//cdn.bootcss.com/highlight.js/9.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>
-<!-- 
-    list-between 
+<!--
+    list-between
     <h3>list-between</h3>
     <p class="use">使用</p>
 <pre>
-    1.在页面scss文件中引入下面这个文件 
+    1.在页面scss文件中引入下面这个文件
 <code class="scss">    @import "tobe/components/list-between/list-between";
 </code>
     <strong class="ext">扩展）!</strong>
@@ -1058,7 +1089,7 @@ header，参数比较多，如果页面头部不合适则不要使用
 
     <div class="ext use">预览</div>
     <div class="floor">
-        
+
     </div>
 
  -->

@@ -10,4 +10,18 @@ require(['vendor/vendor.min'], function(FastClick){
 
         }
     });
+    // 关闭提示
+    $('.modal-button').on('click', function() {
+      $('.modal').removeClass('modal-in').addClass('modal-out');
+      $('.mask').hide();
+    });
+
+    // 关闭提示
+    $.fn.closeToast = function(){
+        $('.toast').show();
+        setTimeout(function(){
+            $('.toast').hide();
+        }, 2000);
+    }
+    $.fn.closeToast();
 });

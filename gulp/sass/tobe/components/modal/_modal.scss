@@ -242,6 +242,7 @@ $ios:              false !default;
             border-radius: 0 0 rem(15) rem(15);
             background-origin: padding-box;
             color: $modalButonColor;
+            @include hairline-remove(right);
         }
         &.modal-button-bold {
             font-weight: bold;

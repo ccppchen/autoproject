@@ -1,4 +1,4 @@
-require(['config', 'comm'], function() {
+require(['config', 'comm'], function(){
     require(['vendor', 'touchslider', 'bl-scroll-load','ion-tabs'], function() {
         $(document).on('touchmove', function(e) {
             e.preventDefault();
@@ -7,7 +7,7 @@ require(['config', 'comm'], function() {
             container: '.ovfs'
         });
         $('#app-download').hide();
-        $('#app-download .close').click(function() {
+        $('#app-download .close').click(function(event) {
             $('#app-download').hide();
         });
 
@@ -50,16 +50,18 @@ require(['config', 'comm'], function() {
 
                 $backTop.on('click', function() {
                     $("html,body").scrollTop(0);
-                });
+                })
+
+                var timmer = null;
                 $(window).on("scroll scrollEnd", function() {
                     var d = $(window).scrollTop(),
                         e = $(window).height();
-                        e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-100%");
+                    e < d ? $backTop.css("bottom", "60px") : $backTop.css("bottom", "-100%");
                 });
             }
 
-        };
-        chinaz();
+        }
+        var chinaz = new chinaz();
         /* 返回顶部js end */
 
         /*滑动加载*/
