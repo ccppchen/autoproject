@@ -1,6 +1,6 @@
 require(['config'], function(){
     require(['vendor' , 'touchslider'], function() {
-       
+
         $(function() {
         	$("#know1").hide()
 			$("#know").click(function(){
@@ -18,7 +18,7 @@ require(['config'], function(){
 			});
 		});
 
-		
+
     });
 
 });

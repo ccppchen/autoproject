@@ -1,6 +1,6 @@
 require(['config','comm'], function(){
     require(['vendor' , 'touchslider'], function() {
-      
+
         $(function() {
 			TouchSlide({
 				slideCell: "#swipe-source",
@@ -14,7 +14,7 @@ require(['config','comm'], function(){
 			});
 		});
 
-		
+
     });
 
 });

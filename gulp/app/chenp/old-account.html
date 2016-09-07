@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "激活会员卡",
+    "css": "css/weui.min.css",
+    "requirejs": "js/weui"
+})
+<link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+</head>
+<body>
+  <div class="weui_msg">
+    <div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div>
+    <div class="weui_text_area">
+      <h2 class="weui_msg_title">账户已存在</h2>
+      <p class="weui_msg_desc">您已有百联通账号 <span class="color-danger">1367***5250</span> 确认使用该账号激活？
+</p>
+    </div>
+    <div class="weui_opr_area">
+      <p class="weui_btn_area">
+        <a href="verification-account.html" class="weui_btn weui_btn_primary">使用老账户激活</a>
+      </p>
+      <br />
+      <p class="weui_msg_desc" id="show-actions">不是我的帐号</p>
+    </div>
+  </div>
+</body>
+
+</html>

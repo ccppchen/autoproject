@@ -19,10 +19,10 @@ require(['vendor/vendor.min'], function(FastClick){
     $('.j-phone,.j-mess-code').on('input', function() {
         if ( $('.j-phone').val() != '' && $('.j-mess-code').val() != '' ) {
             $('.dis-confirmbtn').removeAttr('disabled');
-            
+
         }else if( $('.j-phone').val() == '' || $('.j-mess-code').val() == '' ){
             $('.dis-confirmbtn').attr('disabled', true);
-            
+
         }
     });
 });

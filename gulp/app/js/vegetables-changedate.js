@@ -2,7 +2,7 @@ require({
     baseUrl: 'js',
     paths: {
         vendor: ['vendor/vendor.min'],
-        
+
     }
     }, function(){
     require(['vendor'], function() {
@@ -101,7 +101,7 @@ require({
                     prevyear--;
                 }
                 var monthday = getmonthday(selectyear, selectmonth - 1); //当前月天数
-                var Stamp = new Date(selectyear, selectmonth - 1, 1); //获取当前月1号的信息  
+                var Stamp = new Date(selectyear, selectmonth - 1, 1); //获取当前月1号的信息
                 var firstweek = dayNames[Stamp.getDay()]; //获取当前月1号为星期几
                 var prevmonthday = getmonthday(prevyear, m); //上个月天数
 
@@ -230,13 +230,13 @@ require({
                             var showm=parseInt($(".top-month span").eq(1).text());
                             var spd=parseInt($(this).find(".label-time").find("p:first-child label:last-child").text());
                             var spy=$(".top-month span").eq(0).text()
-                            var dayNames = new Array(0,1,2,3,4,5,6); 
+                            var dayNames = new Array(0,1,2,3,4,5,6);
                             var Stamp = new Date(showy,showm-1,1);//获取当前月1号的信息
                             var firstweek=dayNames[Stamp.getDay()];//获取当前月1号为星期几
                             if(spm==showm){
-                                
+
                                 $(".time-body li span").eq(firstweek+spd-1).removeClass("select");
-                                
+
                             }
                             if(spm+1==showm){
                                 for (var j=0;j<firstweek;j++) {
@@ -249,8 +249,8 @@ require({
                             $(".get-num label").text(parseInt($(".get-num label").text())+1);
                             compare();
                         });
-                                        
-                                        
+
+
                         compare();*/
 
 

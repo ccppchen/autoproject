@@ -3,7 +3,7 @@ require({
 	    paths: {
 	        vendor: ['vendor/vendor.min'],
 	        chart: ['Chart'],
-	        
+
 	    }
     }, function(){
     require(['vendor','chart'], function() {
@@ -18,7 +18,7 @@ require({
 					data : [10000,13000,20000,30000,40000,30000]
 				}
 			]
-			
+
 		}
 
 		var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,{
@@ -34,9 +34,9 @@ require({
 
            }
 		);
-	
-    		
-    			
+
+
+
     });
 
 });

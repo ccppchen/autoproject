@@ -4,7 +4,7 @@ require(['config'], function(){
             require(['swiper_around_bl'], function(){
                 $('.swiper-mover').swiper_around();
             })
-                                     
+
             //弹窗隐藏
             $(".info-button").find("button").click(function(){
                     $(".mztj").hide();

@@ -2,7 +2,7 @@ require({
     baseUrl: 'js',
     paths: {
         vendor: ['vendor/vendor.min'],
-       
+
     }
     }, function(){
     require(['vendor'], function() {
@@ -128,7 +128,7 @@ require({
                     prevyear--;
                 }
                 var monthday = getmonthday(selectyear, selectmonth - 1); //当前月天数
-                var Stamp = new Date(selectyear, selectmonth - 1, 1); //获取当前月1号的信息  
+                var Stamp = new Date(selectyear, selectmonth - 1, 1); //获取当前月1号的信息
                 var firstweek = dayNames[Stamp.getDay()]; //获取当前月1号为星期几
                 var prevmonthday = getmonthday(prevyear, m); //上个月天数
 

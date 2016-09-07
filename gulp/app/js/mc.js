@@ -3,7 +3,7 @@ require(['comm', 'config'], function(){
 		require(['swiper_around_bl'], function(){
 			$('.swiper').swiper_around();
 		})
-		
+
 		require(['pickers'], function(){
 			var dataTime = [];
 			for (var i = 0; i < 24; i++) {
@@ -17,7 +17,7 @@ require(['comm', 'config'], function(){
 			    </header>',
 		    	onlyInPopover: true,
 		    	cssClass: 'edit-time',
-		    	value: ['22', '7'],
+		    	value: ['22', '7', '8'],
                 rotateEffect: true,
                 formatValue: function (p, values, displayValues) {
                   return '每日 ' + displayValues[0] + ':00 - 次日 ' + values[1] + ':00';
@@ -30,7 +30,11 @@ require(['comm', 'config'], function(){
 	                {
 	                    textAlign: 'center',
 	                    values: dataTime
-	                }
+	                },
+                  {
+                      textAlign: 'center',
+                      values: dataTime
+                  }
                 ]
             });
             $('#dataTime').trigger('click');

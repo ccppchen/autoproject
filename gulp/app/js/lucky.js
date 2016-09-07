@@ -1,7 +1,7 @@
 require(['config'], function() {
     require([ 'comm','vendor', 'fx_methods','touchslider'], function() {
     	 $(function() {
-    	 	
+
 var lottery = {
 	index:-1,	//当前转动到哪个位置，起点位置
 	count:0,	//总共有多少个位置
@@ -45,33 +45,33 @@ function getTargetPoint(){
 
 /*	转动停留后事件处理	*/
 function getPrize(){
-	
-	
+
+
 	choiceToPlay -= 1;//**
 	if(choiceToPlay==3){
   $("#modal-success .modal-button.active").html("继续逛");
   $(".mask").show();
 	$("#modal-success").removeClass("modal-out").addClass("modal-in");
-	$(".message .txt .yellow").html(choiceToPlay);	
-	
+	$(".message .txt .yellow").html(choiceToPlay);
+
   }else if(choiceToPlay==2){
   	$("#modal-success .modal-button.active").html("再来一次");
   	$(".mask").show();
 	$("#modal-success").removeClass("modal-out").addClass("modal-in");
-	$(".message .txt .yellow").html(choiceToPlay);	
-	
+	$(".message .txt .yellow").html(choiceToPlay);
+
   }else	if(choiceToPlay==0){
   $("#modal-fail .modal-button.active").html("继续逛");
   $(".mask").show();
-	$("#modal-fail").removeClass("modal-out").addClass("modal-in");	
+	$("#modal-fail").removeClass("modal-out").addClass("modal-in");
 	$(".message .txt").html("<i></i>次数用光了，明天再来吧～");
   }else{
   	$("#modal-fail .modal-button.active").html("再来一次");
   	$(".mask").show();
-	  $("#modal-fail").removeClass("modal-out").addClass("modal-in");	
+	  $("#modal-fail").removeClass("modal-out").addClass("modal-in");
 	  $(".message .txt .yellow").html(choiceToPlay);
   }
-  
+
 	return false;
 }
 
@@ -87,7 +87,7 @@ function roll(){
 		getPrize();
 		return false;
 	}
-	
+
 	if (lottery.times < lottery.cycle) {
 		lottery.speed -= 10;
 	}else if(lottery.times == lottery.cycle) {
@@ -113,8 +113,8 @@ var choiceToPlay = 4;//还能玩几次
 /*	window事件设定	*/
 
 	lottery.init('lottery');
-	
-	
+
+
 	$("#lottery dt").click(function(){
 		if(choiceToPlay <= 0){
 			$("#modal-error .modal-title").html("今天的活动结束了<br/>明天再来吧～");
@@ -123,7 +123,7 @@ var choiceToPlay = 4;//还能玩几次
 			$("#modal-error").removeClass("modal-out").addClass("modal-in");
 			return false;
 		}
-		
+
 		if (click) {
 			$("#modal-error .modal-title").html("网络出现问题<br/>请刷新～");
 			$(".mask").show();
@@ -143,7 +143,7 @@ $(".modal-close").click(function(){
 	$(".mask").hide();
 });
     	});
-    	
+
    });
 
 });

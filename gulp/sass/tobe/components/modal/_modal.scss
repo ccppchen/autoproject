@@ -204,8 +204,7 @@ $ios:              false !default;
     .modal-buttons {
         height: rem(88);
         overflow: hidden;
-        @extend %comm-flex;
-        @include justify-content(center);
+        @include display(flex);
         &.modal-buttons-vertical {
             display: block;
             height: auto;
@@ -222,9 +221,10 @@ $ios:              false !default;
         background: $modalButonBg;
         position: relative;
         white-space: nowrap;
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
         overflow: hidden;
         cursor: pointer;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         @extend %comm-flex;
         @include justify-content(center);

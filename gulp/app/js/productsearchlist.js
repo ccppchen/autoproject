@@ -1,10 +1,10 @@
 require(['config'], function() {
     require([ 'comm','vendor', 'fx_methods','touchslider'], function() {
-    	
+
         $(function() {
         	$(".item-line .add").click(function(){
         		var a=$(this).parent().find(".n").html();
-        		
+
         		if(!$(this).hasClass("disabled")){
         			var b = parseInt(a)+1;
         		  $(this).parent().find(".n").html(b);
@@ -14,10 +14,10 @@ require(['config'], function() {
         		var a=$(this).parent().find(".n").html();
         		var b = parseInt(a)-1;
         		if(a=="1"){
-        			
-        				$(this).parents("li").addClass("error-show");   
-        				$(this).parent().find(".n").html(b);     				
-        			
+
+        				$(this).parents("li").addClass("error-show");
+        				$(this).parent().find(".n").html(b);
+
         		}else if(a=="0"){
               $(this).parents("li").remove();
         		}else{
@@ -54,7 +54,7 @@ require(['config'], function() {
 				touch_t =1;
 						}
 					});
-					
+
 				});
 				$(".black-back").click(function(){
 					$(".gift-list").hide();
@@ -93,7 +93,7 @@ require(['config'], function() {
                 $(".item-number").removeClass("on");
                 $(this).hide();
             });
-            // 
+            //
             $(".pro-label").find(".item-number").find("span").click(function() {
                 var k = $(".mian-info").height();
                 $(this).parents(".item-number").toggleClass("on").find(".bg-show").toggle().height(k).parents(".item-number").siblings(".item-number").removeClass("on").find(".bg-show").hide();
@@ -179,8 +179,8 @@ require(['config'], function() {
             var saleH = $(".sale-form").height();
             var pageHeight = liHeight*8;
             $(".pro-ul").css("margin-top", topFixH);
-            $(window).on("scroll touchmove",function(e){  
-                 p = $(this).scrollTop();  
+            $(window).on("scroll touchmove",function(e){
+                 p = $(this).scrollTop();
                   if (p > headerH) {
                   	$(".pro-ul").css("margin-top", saleH);
                   	$(".sale-form").css("position","fixed");
@@ -189,11 +189,11 @@ require(['config'], function() {
                   	$(".sale-form").attr('style','display:inline-block');
                   }
             //     if (p > pageHeight) {
-            //         if(t<=p){//下滚  
+            //         if(t<=p){//下滚
             //             $('.topfix').css('-webkit-transform', 'translateY(-'+($(".topfix").height()-$('.pro-label').height())+'px)');
-            //         }  
-                      
-            //         else{//上滚  
+            //         }
+
+            //         else{//上滚
             //             $('.topfix').css('-webkit-transform', 'translateY(0)');
             //         }
             //         g++;
@@ -202,9 +202,9 @@ require(['config'], function() {
 
             //     var pageNum = parseInt((p-topFixH)/pageHeight)+1; //往下滑动的页数
             //     $('.page-num').html(pageNum);
-                
 
-            //     setTimeout(function(){t = p;},0);     
+
+            //     setTimeout(function(){t = p;},0);
             });
             var xx,yy,XX,YY,swipeX,swipeY ;
              window.addEventListener('touchstart',function(event){
@@ -246,7 +246,7 @@ require(['config'], function() {
                                 $('.topfix').css({'-webkit-transform': 'translateY(0)','-moz-transform': 'translateY(0)','transform': 'translateY(0)'});
                             }, 300);
                         });
-                        
+
                   }
               });
 
@@ -263,7 +263,7 @@ require(['config'], function() {
                 $("html").removeClass("html-overflow");
                 $('.screen-button').removeClass('on');
                 $('.modal-click').removeClass('show');
-                
+
 
             });
             $(".bgf2f2-ul-1").find("li").click(function() {
@@ -290,15 +290,15 @@ require(['config'], function() {
                 $(this).parents(".item-popup").find(".bgf2f2-ul-2").toggleClass("popup-height");
                 $(this).find("div").toggleClass("icon-up").toggleClass("icon-down");
             });
-            
+
             $(".brand").click(function() {
                 $(".fclass").hide().siblings(".pro-modal-1").show();
             });
-            
+
             $(".brand-choice").click(function() {
                 $(".fclass").hide().siblings(".pro-modal-2").show();
             });
-            
+
             $(".bar-left").click(function() {
                 $(".fclass").show().siblings(".pro-modal-1").hide().siblings(".pro-modal-2").hide();
             });
@@ -321,7 +321,7 @@ require(['config'], function() {
                 aa.removeClass("on");
                 $(".brand").find(".popup-all").text($(this).text());
             });
-            
+
             $(".popup-font-title").find("li").click(function() {
                 $(this).addClass("on").siblings("li").removeClass("on");
                 $(".popup-list").find(".popup-top-title").eq($(this).index()).show().find(".p-but").addClass("on").parents(".popup-top-title").siblings(".popup-top-title").hide().find("li").removeClass("on");
@@ -424,14 +424,14 @@ require(['config'], function() {
             };
             var mainBody = document.getElementsByClassName("penetrate-body");
             var mL = mainBody.length;
-            //var movieflag=[]; 
+            //var movieflag=[];
             var movieflag;
             var insideScroll = document.getElementsByClassName("penetrate-croll");
             var iLength = insideScroll.length; //4
             var ttFlg = true;
 
             while (mL--) {
-                //movieflag[mL]=true; 
+                //movieflag[mL]=true;
                 mainBody[mL].addEventListener("touchstart", function(e) {
                     //movieflag[mL]=true;
                     movieflag = true;

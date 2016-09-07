@@ -10,18 +10,18 @@ require(['config'], function(){
           interTime: 2000,
           autoPage: true
         });
-        
+
         $(window).on("scroll touchmove",function() {
-          var tab_top =$(".pic-list").offset().top-$("#ovfs-line").height()-$("header").height();       
+          var tab_top =$(".pic-list").offset().top-$("#ovfs-line").height()-$("header").height();
           var u = $(window).scrollTop();
-          //console.log(u);   
+          //console.log(u);
           if( u >=tab_top ){
-            $("#ovfs-line").css("position","fixed");  
-      
+            $("#ovfs-line").css("position","fixed");
+
           }else{
             $("#ovfs-line").attr('style','display:inline-block');
           }
-          
+
         });
         $("#ovfs-line li").click(function(){
           var list_index = $(this).index();

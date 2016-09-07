@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "激活会员卡",
+    "css": "css/weui.min.css",
+    "requirejs": "js/weui"
+})
+<link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+</head>
+<body>
+  <div class="weui_msg">
+    <div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div>
+    <div class="weui_text_area">
+      <h2 class="weui_msg_title">账户已存在</h2>
+      <p class="weui_msg_desc">您的百联通账号已与其他微信绑定，确认继续激活？
+</p>
+    </div>
+    <div class="weui_opr_area">
+      <p class="weui_btn_area">
+        <a href="old-account.html" class="weui_btn weui_btn_primary">知道啦继续激活</a>
+      </p>
+      <br />
+      <p class="weui_msg_desc" id="show-actions">不是我的微信</p>
+    </div>
+  </div>
+</body>
+
+</html>

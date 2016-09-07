@@ -2,14 +2,14 @@ require(['vendor/vendor.min'], function(FastClick){
     FastClick.attach(document.body);
     var translate = 0;
     $('#scroll-top').append($('#scroll-top li').eq(0).clone());
-    
+
     var time = setInterval(function(){
         if (-translate >= ( $('#scroll-top li').length-1) * $('#scroll-top li').height() ) {
             translate = 0;
         }else{
             $('#scroll-top').transform( 'translate3d(0,' + translate-- + 'px,0)' );
         }
-        
+
     }, 30);
 		/* nav */
 		//nav
@@ -30,7 +30,7 @@ require(['vendor/vendor.min'], function(FastClick){
     //             // 没中奖
     //             $('.modal').removeClass('modal-in').addClass('modal-out');
     //             $('.not-winp').removeClass('modal-out').addClass('modal-in');
-                
+
     //             setTimeout(function(){
     //                 // 机会用完了
     //                 $('.modal').removeClass('modal-in').addClass('modal-out');

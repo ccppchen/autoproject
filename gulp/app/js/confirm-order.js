@@ -12,6 +12,6 @@ require(['config', 'comm'], function(){
             }
         });
     });
-    
+
 
 });

@@ -15,7 +15,7 @@
 /* --------------------------------------------------
  * 非输出
  */
-.list-between .list-item, .ion-tabs, .modal-buttons, .modal-button, .modal-img {
+.list-between .list-item, .ion-tabs, .modal-img {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -1111,12 +1111,11 @@ textarea::-webkit-input-placeholder {
 .modal-buttons {
   height: 0.88rem;
   overflow: hidden;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
 }
 .modal-buttons.modal-buttons-vertical {
   display: block;
@@ -1137,13 +1136,8 @@ textarea::-webkit-input-placeholder {
   text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1;
@@ -1182,6 +1176,9 @@ textarea::-webkit-input-placeholder {
   border-radius: 0 0 0.15rem 0.15rem;
   background-origin: padding-box;
   color: #333333;
+}
+.modal-button:first-child:last-child:after {
+  display: none;
 }
 .modal-button.modal-button-bold {
   font-weight: bold;

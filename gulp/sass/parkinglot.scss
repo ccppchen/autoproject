@@ -1,5 +1,6 @@
+@charset "utf-8";
 $bodyBgColor: #f8f8f8;
-$modalButonColor:   #e6133c; 
+$modalButonColor:   #e6133c;
 @import "tobe/base";
 @import "tobe/components/flex/flex";
 @import "tobe/components/bar/bar";
@@ -7,6 +8,9 @@ $modalButonColor:   #e6133c;
 @import "tobe/components/list-between/list-between";
 @import "tobe/components/modal/modal";
 @import "tobe/ext/picker";
+.wrap{
+	position: relative;
+}
 .modal{
 	overflow: hidden;
 }
