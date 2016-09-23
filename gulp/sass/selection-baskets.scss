@@ -1,0 +1,244 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+@import "tobe/components/modal/modal";
+@import "tobe/components/bar/bar";
+.modal-button:last-child{
+  color: #333333;
+}
+.content{
+  padding-top: $bar-height;
+  overflow: hidden;
+}
+.icon-basket{
+  width: rem(54);
+  height: rem(50);
+  background: inline-image("base64/basket-icon.png") no-repeat center center;
+  background-size: contain;
+}
+
+.pbasket{
+  position: fixed;
+  z-index: 1004;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: rem(100);
+  @include hairline(top, #d9d9d9);
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(space-between);
+  background-color: #ffffff;
+  .pbasket-price{
+    @include flex(1);
+    padding: 0 rem(4) 0 rem(20);
+    height: rem(100);
+    line-height: 1;
+    @include display(flex);
+    @include align-items(center);
+    .baskets-box{
+      position: relative;
+      height: rem(100);
+      @include display(flex);
+      @include align-items(center);
+      padding-right: rem(32);
+      margin-right: rem(6);
+      .dege{
+        position: absolute;
+        top: rem(12);
+        left: 44%;
+        background-color: #906C5C;
+        border: 2px solid #ffffff;
+        padding: 2px rem(10);
+        font-size: rem(24);
+        border-radius: 10px;
+        color: #ffffff;
+      }
+    }
+
+
+    .price-box{
+      @include display(flex);
+      @include flex-direction(column);
+      .price-total{
+        font-size: rem(24);
+        color: #999999;
+        & + .price-reduc{
+          margin-top: rem(10);
+        }
+      }
+      .price-reduc{
+        font-size: rem(28);
+        color: #000000;
+      }
+    }
+  }
+}
+.pbasket-group-btn{
+  @include display(flex);
+  .bagoods-editprice{
+    padding: 0 rem(30);
+  }
+  .pbasket-btn{
+    height: rem(100);
+    font-size: rem(34);
+    color: #ffffff;
+    display: block;
+    background-color: #bbbbbb;
+    line-height: 1;
+    padding: 0 rem(10);
+    width: rem(330);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    &.join-shop-car{
+      width: rem(240);
+      background-color: #906C5C;
+    }
+    &.immediate-order{
+      width: rem(200);
+      background-color: #594741;
+    }
+    @include screen(320px, 360px){
+      &.join-shop-car{
+        width: rem(220);
+      }
+      &.immediate-order{
+        width: rem(180);
+      }
+    };
+  }
+}
+
+span.go-join{
+  font-size: rem(24);
+}
+
+.mask{
+  @include mask(.8, 1002);
+}
+// 编辑已选商品
+.basket-edit{
+  position: fixed;
+  z-index: 1003;
+  background-color: #FFFFFF;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @include transition(transform linear .3s);
+  @include transform(translate(0, 100%));
+  &.open{
+    @include transform(translate(0, rem(-100)));
+  }
+
+  .basket-edit-title{
+    @extend %comm-flex;
+    @include justify-content(space-between);
+    padding: 0 rem(20);
+    @include hair(bottom, #e7e7e7);
+    div{
+      @extend %comm-flex;
+      padding: 0 rem(10);
+    }
+    .edit-title-name{
+      font-size: rem(28);
+      color: #333333;
+      font-weight: bold;
+      height: rem(90);
+    }
+    .empty-basket-btn{
+      font-size: rem(26);
+      color: #666666;
+      height: rem(90);
+    }
+  }
+  .basket-goods{
+    max-height: rem(720);
+    overflow: hidden;
+    overflow-y: auto;
+    .basket-good{
+      height: rem(120);
+      position: relative;
+      @include hairline(bottom, #e7e7e7);
+      &:after{
+        left: rem(20);
+        right: rem(20);
+        width: auto;
+      }
+      .baskgod-item{
+        height: rem(120);
+        @extend %comm-flex;
+      }
+      .bagoods-name{
+        @include flex(2);
+        padding: 0 rem(20) 0 rem(30);
+        @include ellipsis;
+        font-size: rem(28);
+        color: #333333;
+      }
+    }
+    .baskswiper-remove{
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      -webkit-transform: translate(100%);
+      transform: translate(100%);
+      font-size: rem(28);
+      width: rem(120);
+      color: #ffffff;
+      background-color: #E6133C;
+      @extend %comm-flex;
+      @include justify-content(center);
+    }
+  }
+}
+
+// 增加减少按钮
+.bagoods-prices,.bagoods-editprice{
+  @include flex(1);
+  text-align: center;
+}
+.bagoods-prices{
+  font-size: rem(28);
+  color: #333333;
+  font-weight: 600;
+  padding: 0 rem(20) 0 rem(10);
+  text-align: right;
+}
+.bagoods-editprice{
+  @extend %comm-flex;
+  @include justify-content(center);
+  input{
+    width: rem(64);
+    padding: 0;
+    outline: 0;
+    text-align: center;
+    -webkit-appearance: none;
+    border: 0;
+    font-size: rem(28);
+    color: #333333;
+    background-color: transparent;
+  }
+  .editprice-btn{
+    width: rem(48);
+    height: rem(48);
+    border-radius: 50%;
+    border: 1px solid #906C5C;
+    background-color: transparent;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: inline-image("base64/rectangle.png");
+    background-size: rem(21) auto;
+    &.basplus{
+      background-image: inline-image("base64/create-price-icon.png");
+    }
+    &:disabled,&.disabled{
+      border-color: #666666;
+    }
+    &.basminus.disabled{
+      background-image: inline-image("base64/disabled-rectangle.png");
+    }
+  }
+}

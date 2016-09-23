@@ -1,1 +1,115 @@
 html{font-size:20px}body{font-size:16px}@media only screen and (min-width:400px){html{font-size:21.33px!important}}@media only screen and (min-width:414px){html{font-size:22.08px!important}}@media only screen and (min-width:480px){html{font-size:25.6px!important}}.weui_mask{z-index:100;opacity:0;-webkit-transition-duration:.3s;transition-duration:.3s;visibility:hidden}.weui_mask.weui_mask_visible{opacity:1;visibility:visible}.weui_actionsheet{z-index:100}.color-danger{color:#f6383a}
+.weui_mask_transparent{position:fixed;z-index:1000;width:100%;height:100%;top:0;}
+.weui_dialog,
+.weui_toast {
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  visibility: hidden;
+  margin: 0;
+  left: 7.5%;
+  top: 30%;
+  z-index: 100;
+}
+.weui_dialog .weui_btn_dialog + .weui_btn_dialog,
+.weui_toast .weui_btn_dialog + .weui_btn_dialog {
+  position: relative;
+}
+.weui_dialog .weui_btn_dialog + .weui_btn_dialog:after,
+.weui_toast .weui_btn_dialog + .weui_btn_dialog:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  border-left: 1px solid #D5D5D6;
+  color: #D5D5D6;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+          transform: scaleX(0.5);
+}
+.weui_dialog.weui_dialog_visible,
+.weui_toast.weui_dialog_visible,
+.weui_dialog.weui_toast_visible,
+.weui_toast.weui_toast_visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+@media screen and (min-width: 1024px) {
+  .weui_dialog {
+    left: 32.5%;
+  }
+}
+.weui_toast {
+  position: fixed;
+  z-index: 50000;
+  width: 7.6em;
+  min-height: 7.6em;
+  top: 180px;
+  left: 50%;
+  margin-left: -3.8em;
+  background: rgba(40,40,40,.75);
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  left: 50%;
+  top: 35%;
+}
+.weui_toast_forbidden {
+  color: #F76260;
+}
+.weui_toast_cancel .weui_icon_toast:before {
+  content: "\EA0D";
+}
+.weui_toast_forbidden .weui_icon_toast:before {
+  content: "\EA0B";
+  color: #F76260;
+}
+.weui_toast_text {
+  min-height: 1em;
+  width: auto;
+  height: 45px;
+  border-radius: 25px;
+  margin-left: 0;
+  -webkit-transform: scale(0.9) translate3d(-50%, 0, 0);
+          transform: scale(0.9) translate3d(-50%, 0, 0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+.weui_toast_text.weui_toast_visible {
+  -webkit-transform: scale(1) translate3d(-50%, 0, 0);
+          transform: scale(1) translate3d(-50%, 0, 0);
+}
+.weui_toast_text .weui_icon_toast {
+  display: none;
+}
+.weui_toast_text .weui_toast_content {
+  margin: 10px 15px;
+}
+.weui_mask {
+  opacity: 0;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  visibility: hidden;
+}
+.weui_mask.weui_mask_visible {
+  opacity: 1;
+  visibility: visible;
+}
+.weui-prompt-input {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 2em;
+  width: 80%;
+  margin-top: 10px;
+}
+.weui_toast_text .weui_toast_content{
+  margin: 10px 15px;
+}

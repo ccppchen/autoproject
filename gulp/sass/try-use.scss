@@ -1,0 +1,114 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+
+.content{
+    padding-top: rem(108);
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+}
+.page{
+    background: #ffffff;
+    position: relative;
+    height: 100%;
+}
+.fire-container{
+    
+    background: #ffffff;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    position: relative;
+    
+    .fire{
+        width: rem(310);
+        height: rem(310);
+        position: relative;
+    }
+    .rule{
+        position: absolute;
+        right: rem(20);
+        top: rem(20);
+        color: #999999;
+        font-size: rem(24);
+        text-decoration: underline;
+    }
+}
+.try-remind{
+    background: #ffffff;
+    text-align: center;
+    padding-top: rem(28);
+    padding-bottom: rem(88);
+    p{
+       
+        line-height: 1;
+        font-size: rem(30);
+    }
+    span{
+        font-size: rem(50);
+        color: #FE8602;
+        margin-left: rem(4);
+    }
+}
+.share-button{
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    margin-bottom: rem(20);
+    
+    button{
+        height: rem(88);
+        line-height: rem(90);
+        text-align: center;
+        padding: 0 rem(58);
+        background: #FFD43F;
+        font-size: rem(34);
+        color: #723600;
+        border-radius: rem(10);
+        min-width: rem(520);
+        border: none;
+    }
+}
+.rule-remind{
+    color: #999999;
+    font-size: rem(24);
+    text-align: center;
+    margin: 0 rem(164);
+}
+.bottom-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    .look-remind{
+        color: #999999;
+        font-size: rem(24);
+        margin-bottom: rem(30);
+        text-align: center;
+    }
+    .button-container{
+        overflow: hidden;
+        div{
+            width: 50%;
+            float: left;
+            height: rem(98);
+            line-height: rem(98);
+            color: #723600;
+            text-align: center;
+            font-size: rem(34);
+        }
+        .bg-1{
+            background: #FFF2C5;
+        }
+        .bg-2{
+            background: #FCE595;
+        }
+    }
+}

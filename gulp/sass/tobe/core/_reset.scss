@@ -1,17 +1,15 @@
 @charset "UTF-8";
-//-----------------------------------------------------  
+//-----------------------------------------------------
 // reset scss
 // 包括normalize，清零重置，打印样式三大部分
-//----------------------------------------------------- 
+//-----------------------------------------------------
 
 // normalize
 // http://necolas.github.io/normalize.css/
 //-----------------------------------------------------
 *,*:before,*:after{
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
   -webkit-tap-highlight-color:transparent;
 }
 // HTML5 display definitions
@@ -38,14 +36,6 @@ canvas,
 video {
     display: inline-block;
 }
-
-// 1. Prevents modern browsers from displaying 'audio' without controls
-// 2. Remove excess height in iOS5 devices
-audio:not([controls]) {
-    display: none; // 1
-    height: 0; // 2
-}
-
 // Address `[hidden]` styling not present in IE 8/9.
 // Hide the `template` element in IE, Safari, and Firefox < 22.
 [hidden], template {
@@ -138,19 +128,6 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
-
-// Set consistent quote types.
-q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-// 2
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
 // Address inconsistent and variable font size in all browsers.
 small {
     font-size: 80%;
@@ -170,33 +147,6 @@ sup {
 }
 sub {
     bottom: -0.25em;
-}
-
-// Embedded content
-//------------------------
-// 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
-// 2. Improves image quality when scaled in IE7
-// code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
-// Corrects overflow displayed oddly in IE9
-svg:not(:root) {
-    overflow: hidden;
-}
-
-// Define consistent border, margin, and padding
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-
-// 1. Corrects color not being inherited in IE6/7/8/9
-// 2. Remove padding so people aren't caught out if they zero out fieldsets.
-// 3. Corrects text not wrapping in FF3
-// 4. Corrects alignment displayed oddly in IE6/7
-legend {
-    border: 0; // 1
-    padding: 0; // 2
-    white-space: normal; // 3
 }
 
 // 1. Correct font family not being inherited in all browsers.
@@ -316,11 +266,11 @@ table {
 
 
 // 根据使用习惯，对normalize上进行补充
-//----------------------------------------------------- 
+//-----------------------------------------------------
 html {
   /* 弹性滑动 */
   -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   /*去除长按a链接弹框*/
   -webkit-touch-callout:none;
@@ -328,10 +278,10 @@ html {
   -webkit-user-select-none: none;
   user-select-none: none;
 }
-body { 
+body {
   font-family: $tmallFont;
   font-size: $baseFontSize;
-  line-height: $baseLineHeight; 
+  line-height: $baseLineHeight;
   color:$textColor;
   background-color:$bodyBgColor;
 }
@@ -356,7 +306,7 @@ ul,ol,li,dl,dd{
   list-style: none outside none;
 }
 
-// links 
+// links
 a{
   text-decoration:none;
   -webkit-tap-highlight-color: transparent;
@@ -375,7 +325,7 @@ a{
 @if nth($placeholder,1) {
   // Safari and Chrome
   input::-webkit-input-placeholder,
-  textarea::-webkit-input-placeholder{ 
+  textarea::-webkit-input-placeholder{
     color: nth($placeholder,2);
-  } 
+  }
 }

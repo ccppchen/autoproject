@@ -164,32 +164,62 @@ gulp.task('compass-pro', function() {
 });
 
 // image压缩
-gulp.task('images', function() {
+// gulp.task('images', function() {
+//   gulp.src([yeoman.app + '/css/i/**/*', '!./app/images/base64'])
+//     .pipe(cache(
+//       $.imagemin({
+//         optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
+//         progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+//         interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+//         multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
+//         use: [png()]
+//       })
+//     ))
+//     // .pipe($.webp())
+//     .pipe(gulp.dest(yeoman.dist + '/css/i'));
+// });
+// gulp.task('images-min', function() {
+//   gulp.src([yeoman.app + '/images/**/*'])
+//     .pipe(cache(
+//       $.imagemin({
+//         optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
+//         progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+//         interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+//         multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
+//         use: [png()]
+//       })
+//     ))
+//     // .pipe($.webp())
+//     .pipe(gulp.dest(yeoman.dist + '/images'));
+// });
+gulp.task('images', function () {
   gulp.src([yeoman.app + '/css/i/**/*', '!./app/images/base64'])
-    .pipe(cache(
-      $.imagemin({
-        optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
-        progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-        interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-        multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
-        use: [png()]
-      })
-    ))
-    // .pipe($.webp())
+    .pipe($.image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      jpegRecompress: false,
+      jpegoptim: true,
+      mozjpeg: true,
+      gifsicle: true,
+      svgo: true,
+      concurrent: 10
+    }))
     .pipe(gulp.dest(yeoman.dist + '/css/i'));
 });
-gulp.task('images-min', function() {
+gulp.task('images-min', function () {
   gulp.src([yeoman.app + '/images/**/*'])
-    .pipe(cache(
-      $.imagemin({
-        optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
-        progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-        interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-        multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
-        use: [png()]
-      })
-    ))
-    // .pipe($.webp())
+    .pipe($.image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      jpegRecompress: false,
+      jpegoptim: true,
+      mozjpeg: true,
+      gifsicle: true,
+      svgo: true,
+      concurrent: 10
+    }))
     .pipe(gulp.dest(yeoman.dist + '/images'));
 });
 

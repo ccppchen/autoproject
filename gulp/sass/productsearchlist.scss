@@ -217,6 +217,12 @@ html{
 				display:block;
 			}
 		}
+		li.disable{
+			color:#aaaaaa;
+			.screen-icon{
+				color:#aaaaaa;
+			}
+		}
 	}
 }
 .pro-label{
@@ -489,6 +495,20 @@ html{
 							background-repeat:no-repeat;
 							background-size:100% auto;
 						}
+						.icon{
+							width:auto;
+	          	padding:0 rem(10);
+	          	height:rem(30);
+	          	line-height:rem(30);
+		          border:1px solid #e6133c;
+		          font-size:rem(24);
+	            color:#e6133c;
+		          font-style:normal;
+		          border-radius:rem(4);
+		          background:#ffffff;
+		          margin-top:rem(4);
+						
+						}
 					}
 					.pro-evaluate{
 						white-space:nowrap;
@@ -740,10 +760,14 @@ html{
 .pro-main-none{
 	text-align:center;
 	font-size:rem(32);
-	color:#999999;
 	margin-top:rem(300);
 }
-
+.suggest-remind{
+    text-align:center;
+    font-size:rem(28);
+    color: #999999;
+    margin-top: rem(10);
+}
 /*搜索*/
 .main-info-search{
 	display:none;
@@ -797,7 +821,7 @@ html{
 		}
 	}
 	.search-main{
-		padding:0rem rem(30);
+		padding:0 rem(30) rem(10) rem(30);
 		.search-main-title{
 			height:rem(60);
 			margin-top:rem(20);
@@ -847,7 +871,7 @@ html{
 			margin:0;
 			list-style:none;
 			padding:0;
-			max-height: rem(302);
+			max-height: rem(310);
 			overflow: hidden;
 			li{
 				margin:0;
@@ -1147,6 +1171,7 @@ html{
         padding-left: rem(20);
         display: block;
         font-size: rem(24);
+        text-align:right;
     }
 }
 

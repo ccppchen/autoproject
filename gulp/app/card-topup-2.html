@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "加油卡充值(无号码状态)",
+    "css": "css/card-topup.css",
+    "requirejs": "js/card-topup"
+})
+</head>
+
+<body class="F7F7F7">
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-lightWhite",
+        "title": "加油卡充值",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false,
+        "rightWordBool": true,
+        "right-word": "充值记录"
+    })
+    <!-- content -->
+    <div class="content">
+    <!-- Swiper -->
+    <div class="phoneRechargeBox">
+          <div class="phoneRechargeTitle">
+            <ul class="newFlexBox feuld-ul">
+              <li class="fuel-title">
+                <div class="newFlexBox">
+                  <img src="images/card-topup/chinashiy.jpg" height="70" width="70" alt=""><div class="feuld-name">中国石化</div>
+                </div>
+              </li>
+              <li class="fuel-title active">
+                <div class="newFlexBox">
+                  <img src="images/card-topup/chinafuled.jpg" height="70" width="70" alt=""><div class="feuld-name">中国石油</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="phoneRechargeCon">
+            <div class="phoneRechargeItem">
+              <div class="itemContent hair hairBottom phonePadding">
+                <div class="item-titleRow">
+                  <input id="number" class="item-titleRow" type="tel" name="" value="" placeholder="请输入16位加油卡号" maxlength="13">
+                  <i class="img_icon icon_emptycon btnHidden" style="display: none;"></i>
+                  <!-- <img class="iconfont img_icon icon-icon_userphone" style="display:none" src="images/card-topup/icon_userphone.png"> -->
+                </div>
+                <div class="item-subTitle highRed" id="errorNumber">暂不支持此号码充值</div>
+                <div class="phoneLink" style="display: none;">
+                  <ul>
+                    <li class="hair hairTop">
+                      <div class="phoneNumItem fl">123132112312</div>
+                      <div class="phoneNumName gray smallFont fr">佳佳</div>
+                    </li>
+                    <li class="hair hairTop">
+                      <div class="phoneNumItem fl">123132112312</div>
+                      <div class="phoneNumName gray smallFont fr">佳佳</div>
+                    </li>
+                    <li class="hair hairTop">
+                      <div class="phoneNumItem fl">123132112312</div>
+                      <div class="phoneNumName gray smallFont fr">佳佳</div>
+                    </li>
+                  </ul>
+                  <div class="emptyNumber tac hair hairTop hairBottom">清空历史充值号码</div>
+                </div>
+              </div>
+              <ul class="phoneMoney hair hairBottom disabledRecharge">
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>10元</h3>
+                    <p>售价10.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>20元</h3>
+                    <p>售价20.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>30元</h3>
+                    <p>售价30.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>50元</h3>
+                    <p>售价50.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>100元</h3>
+                    <p>售价100.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>200元</h3>
+                    <p>售价200.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>300元</h3>
+                    <p>售价300.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="">
+                    <h3>500元</h3>
+                    <p>售价499.00元</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    <!-- Swiper end -->
+
+     </div>
+    <!-- content end -->
+</body>  
+
+</html>

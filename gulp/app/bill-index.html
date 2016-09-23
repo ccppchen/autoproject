@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "首页",
+    "css": "css/bill-empty.css",
+    "requirejs": "js/bill-empty"
+})
+</head>
+<body id="everybody-performance">
+	<div class="content">
+	<header class="bar bar-header bar-light">
+          <a href="javascript:history.go(-1)" class="bar-left">
+              <div class="button iconfont arrow-back"></div>
+          </a>
+          <h1 class="title index-title">
+              确认订单
+          </h1>
+          <div class="j-nav">
+              <div class="button iconfont more-v"></div>
+              <div class="button iconfont error"></div>
+          </div>
+          <nav class="j-navcontent">
+              <ul class="ul-nav">
+                  <li><a href="javascript:;"><i class="iconfont ihome"></i><p>首页</p></a></li>
+                  <li><a href="javascript:;"><i class="iconfont isearch"></i><p>搜索</p></a></li>
+                  <li><a href="javascript:;"><i class="iconfont class"></i><p>分类</p></a></li>
+                  <li><a href="javascript:;"><i class="iconfont shop-car"></i><p>购物车</p></a></li>
+                  <li><a href="javascript:;"><i class="iconfont iuser"></i><p>我的i百联</p></a></li>
+              </ul>
+          </nav>
+      </header>
+   </div>
+   <div class="bl-mywallet-hd">
+        <a href="javascript:;" class="wallet-hd-cell bill-index-line" style="display:none">
+            <img class="hd-cell-icon" src="images/payCost/bill-index-icon1.png" alt="">
+            <p>扫一扫</p>
+        </a>
+        <a href="javascript:;" class="wallet-hd-cell">
+            <span class="ss-icon">2</span>
+            <img class="hd-cell-icon" src="images/payCost/bill-index-icon2.png" alt="">
+            <p>付账单</p>
+        </a>
+   </div>
+   <div class="order-show">
+    
+       <div class="order-show-icon">
+        <ul>
+            <li>
+                <a href="#">
+                       <i class="icon-waitpay"></i>
+                       <p class="order-font">手机充值</p>
+                   </a>
+               </li>
+               <li>
+                <a href="#">
+                       <i class="icon-waitreceive"></i>
+                       <p class="order-font">流量充值</p>
+                   </a>
+               </li> 
+               <li>
+                <a href="#">
+                       <i class="icon-waitpick icon-waitpick02"></i>
+                       <p class="order-font fonts02">固话/ 宽带</p>
+                   </a>
+               </li>
+               <li>
+                <a href="#">
+                       <i class="icon-waitassess"></i>
+                       <p class="order-font">水费</p>
+                   </a>
+               </li>
+               <li>
+                <a href="#">
+                       <i class="icon-electricity icon-electricity02"></i>
+                       <p class="order-font fonts02">电费</p>
+                   </a>
+               </li>
+               <li>
+                <a href="#">
+                       <i class="icon-gas icon-gas02"></i>
+                       <p class="order-font fonts02">煤气费</p>
+                   </a>
+               </li>
+               <li>
+                <a href="#">
+                       <i class="icon-cabletv icon-cabletv02"></i>
+                       <p class="order-font fonts02">有线电视</p>
+                   </a>
+               </li>
+               <li>
+                <a href="#">
+                       <i class="icon-tietong icon-tietong02"></i>
+                       <p class="order-font fonts02">铁通</p>
+                   </a>
+               </li>
+               <li>
+                <a href="#">
+                       <i class="icon-card icon-card02"></i>
+                       <p class="order-font fonts02">加油卡</p>
+                   </a>
+               </li>
+           </ul>
+       </div>
+   </div>
+   <div class="bill-fonts">可以使用百联会员卡、积分卡缴费哦~</div>
+   <div class="topbg">
+    <div class="scan scan02"></div>
+    <div class="bangding bangding02" style="display:none"></div>
+    <div id="know" class="know"></div>
+   </div>
+</body>

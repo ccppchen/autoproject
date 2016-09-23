@@ -1,0 +1,159 @@
+@charset "utf-8";
+@import "tobe/base";
+
+@import "tobe/components/nav/nav";
+@import "tobe/components/bar/bar";
+.bar.bar-dark {
+      @include bar-style(#1C1B1F, #1C1B1F, #ffffff);
+}
+.bar.bar-light{
+    background-color: #f5f5f5;
+}
+#bgcolor{
+    background-color: #ffffff;
+}
+// 百联到家 content部分
+.bailian-home{
+    padding: 0 rem(30);
+    // 百联到家 配送部门部分
+    .tt-mendian{
+        height: rem(88);
+        border-bottom: 1px solid #E7E7E7;
+        display: inline-table;
+        width: 100%;
+        padding: rem(26) 0;
+        .fonts{
+            display: inline-block;
+        }
+        .fonts-1{
+            font-size: rem(28);
+            color: #999999;
+        }
+        .fonts-2{
+            background: #FF8B4B;
+            padding: 0 rem(14);
+            font-size: rem(24); 
+            color: #ffffff;
+            border-radius: rem(4);
+            margin: rem(-390) rem(10) 0 rem(38);
+        }
+        .fonts-3{ 
+            color: #2A2A2A;
+            font-size: rem(32);
+        }
+    }
+    .img-mendian{
+        text-align: center;
+        img{
+            width: rem(198);
+            height: rem(198);
+            background-size: rem(198);
+            border:1px solid #f3f3f3;
+            border-radius: rem(4); 
+            margin: rem(30) 0 rem(40) 0;
+        }
+    }
+    .mendian-fonts{
+        padding: 0 0 rem(30) 0;
+        border-bottom: 1px solid #E7E7E7;
+        div{
+            color: #999999;
+            font-size: rem(28);
+            line-height: rem(60);
+            span{
+                color: #666666;
+            }
+        }
+    }
+    // 附近门店部分
+    .near-mendian{
+        .near-title{
+            font-size: rem(28);
+            color: #999999;
+            margin: rem(60) 0 rem(20) 0; 
+        }
+        .ad-mendian{
+            margin-bottom: rem(20);
+            ul{
+                li{
+                    box-sizing:content-box;
+                    border-bottom: 1px solid #E7E7E7;
+                    padding: rem(20) 0;
+                    .mendian-fonttitle{
+                        display: inline-block;
+                        width: 100%;
+                        .fonttitle-left{
+                            float: left;
+                            font-size: rem(28);
+                            span{
+                                padding: 0 rem(8);
+                                border-radius: rem(4);
+                                background: #FF8B4B;
+                                color: #ffffff;
+                                font-size: rem(20);
+                                margin-right: rem(10);
+                            }
+                        }
+                        .fonttitle-right{
+                            float: right;
+                            font-size: rem(24);
+                            color: #999999;
+                        }
+                    }
+                    .manjian{
+                        font-size: rem(24);
+                        color: #4A90E2;
+                    }
+                }
+            }
+        }
+    }
+    // footer部分
+    .footer-close{
+        height: rem(176);
+        position: fixed;
+        bottom: 0;
+        right: 0; 
+        left: 0;
+        padding: 0 rem(30);
+        box-shadow: 0 30px 30px 30px #cccccc;
+        background: #ffffff;
+        .footer-title-list{
+            ul{
+                li{
+                    float: left;
+                    width: 33.333%;
+                    text-align: center;
+                    font-size: rem(24);
+                    color: #2A2A2A;
+                    padding: rem(24) 0;
+                    .fonts{
+                        i{
+                            img{
+                                display: inline-block;
+                                width: rem(24);
+                                height: rem(26);
+                                margin-top: rem(-4);
+                                margin-right: rem(7);
+                            }
+                        }
+                    }
+                    .fonts01{
+                        text-align: left;
+                    }
+                    .fonts03{
+                        float:right; 
+                    }
+                }
+            }
+        }
+        .btn-close{
+            text-align: center;
+            img{
+                width: rem(68);
+                height: rem(68);
+                background-size: rem(68);
+            }
+        }
+    }
+}

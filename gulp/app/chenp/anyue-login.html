@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "填写百联通账户信息并授权登录",
+    "css": "css/anyue-login.css",
+    "requirejs": "js/anyue-login"
+})
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="bar bar-header bar-light">
+        <div class="bar-left">
+            <a href="javascript:;" class="button">
+                <div class="iconfont icon-modal-close"></div>
+            </a>
+        </div>
+        <h1 class="title">
+            填写百联通账户信息并授权登录
+        </h1>
+    </header>
+    <!-- header end -->
+    <!-- 内容 START -->
+    <div class="content">
+        <div class="an-wrap">
+            <ul class="an-form">
+                <li class="an-item">
+                    <div class="an-form-input j-form-input">
+                        <input type="tel" maxlength="11" placeholder="请输入手机号码" class="j-login">
+                        <div class="form-close"></div>
+                    </div>
+                </li>
+                <li class="an-item">
+                    <div class="an-form-input j-form-input">
+                        <input type="text" placeholder="请输入短信验证码" class="j-code">
+                        <div class="form-close"></div>
+                    </div>
+                    <div class="an-get-code">
+                        <input type="button" name="" value="获取短信验证码" class="j-get-code">
+                    </div>
+                </li>
+                <li class="an-item">
+                    <div class="an-form-input j-form-input">
+                        <input type="text" placeholder="请输入验证码" class="j-yz-code">
+                        <div class="form-close"></div>
+                    </div>
+                    <div class="an-form-code an-get-code">
+                        <img src="images/anyue-login/form-code.jpg">
+                    </div>
+                </li>
+            </ul>
+            <input type="button" class="an-submit" value="授权绑定" disabled>
+            <div class="an-agreement">
+                <input type="checkbox" name="" class="an-agr-check" id="an-check" checked>
+                <label for="an-check">同意百联通用户注册协议</label>
+            </div>
+        </div>
+    </div>
+    <!-- 内容 END -->
+
+</body>
+
+</html>

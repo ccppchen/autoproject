@@ -80,7 +80,8 @@ body{
 	    	margin-top: rem(60);
 	    	// margin-left: rem(-250);
 	    	@include transform(translate(-50%,0));
-	    	width: rem(500);
+	    	width: 100%;
+	    	padding: 0 .75rem;
 	    	ul{
                 text-align: center;
                 display: inline-table;

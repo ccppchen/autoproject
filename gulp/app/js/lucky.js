@@ -142,6 +142,7 @@ $(".modal-close").click(function(){
 	$(".modal-in").removeClass("modal-in").addClass("modal-out");
 	$(".mask").hide();
 });
+
     	});
 
    });

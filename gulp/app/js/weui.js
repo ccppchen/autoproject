@@ -31,7 +31,8 @@ require(['vendor/vendor.min'], function(FastClick){
           {
             text: "使用密码验证",
             onClick: function() {
-              // TODO
+              $('.j-password').removeAttr('hidden');
+              $('.j-auth-code').attr('hidden', 'hidden');
             }
           }
         ]
@@ -46,12 +47,15 @@ require(['vendor/vendor.min'], function(FastClick){
           {
             text: "使用手机短信验证",
             onClick: function() {
-              // TODO
+              $('.j-auth-code').removeAttr('hidden');
+              $('.j-password').attr('hidden', 'hidden');
             }
           }
         ]
       });
     });
+
+    $.toast("纯文本", "text");
 
   });
 })

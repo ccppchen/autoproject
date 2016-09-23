@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "人人惠-绩效",
+    "css": "css/everybody-performance.css",
+    "requirejs": "js/everybody-performance"
+})
+</head>
+<body id="everybody-performance">
+	<div class="content">
+	<header class="bar bar-header bar-dark">
+      <div class="bar-left">
+          <a href="javascript:history.go(-1)" class="button">
+              <div class="iconfont arrow-back"></div>
+          </a>
+      </div>
+      <h1 class="title">
+          团队绩效
+      </h1>
+      <div class="bar-right">
+          
+          <a href="javascript:;" class="button iconfont more-v"></a>
+      </div>
+    </header>
+   </div>
+   <div class="performance-li">
+   		<ul>
+   			<li>
+   				注册量
+   			</li>
+   			<li>
+   				首单量
+   			</li>
+   			<li class="select">
+   				订单金额
+   			</li>
+   		</ul>
+   </div>
+   <div class="chart-view">
+   		<div class="top-select">
+   			<div class="left-select">
+   				<ul>
+   					<li class="select">已完成</li>
+   					<li>已下单</li>
+   				</ul>
+   			</div>
+   			<div class="right-select">
+   				<div class="select">周</div>
+   				<div>月</div>
+   			</div> 
+   		</div>
+   		<div class="chart-container">
+	   		<div class="canvas-chart"> 
+	   			<canvas id="canvas" class="canvas"></canvas>
+	   		</div>
+	   		<div id="chartjs-tooltip"></div>
+   		</div>
+   </div>
+   <div class="show-top">
+   			<div>日期</div>
+   			<div>订单数</div>
+   			<div>订单金额</div>
+   </div>
+   <div class="show-body enter-back">
+   		<ul>
+   			<li>
+   				<div>2月14日</div>
+   				<div>
+   					<span class="num">10笔
+   						<label>退款1笔</label> 
+   					</span>
+   				</div>
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				<div>
+   					<span class="num">10笔
+   					</span>
+   				</div>
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				<div>
+   					<span class="num">10笔
+   						<label>退款1笔</label> 
+   					</span>
+   				</div>
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				<div>
+   					<span class="num">10笔
+   					</span>
+   				</div>
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				<div>
+   					<span class="num">10笔
+   					</span>
+   				</div>
+   				<div>¥10,000</div>
+   			</li>
+   		</ul>
+   </div>
+   <p>&nbsp;</p>
+   <div class="show-top">
+   			<div>日期</div>
+   			<div>单日注册量</div>
+   </div>
+   <div class="show-body enter-back">
+   		<ul>
+   			<li>
+   				<div>2月14日</div>
+   				
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				
+   				<div>¥10,000</div>
+   			</li>
+   			<li>
+   				<div>2月14日</div>
+   				
+   				<div>¥10,000</div>
+   			</li>
+   			
+   		</ul>
+   </div>
+</body>

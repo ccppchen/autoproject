@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "加油卡充值",
+    "css": "css/card-topup.css",
+    "requirejs": "js/card-topup"
+})
+</head>
+
+<body class="F7F7F7">
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-lightWhite",
+        "title": "加油卡充值",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false,
+        "rightWordBool": true,
+        "right-word": "充值记录"
+    })
+    <!-- content -->
+    <div class="content">
+    <!-- Swiper -->
+    <div class="phoneRechargeBox">
+          <div class="">
+            <ul class="newFlexBox feuld-ul">
+              <li class="fuel-title curr">
+                <div class="newFlexBox">
+                  <img src="images/card-topup/chinashiy.jpg" alt=""><div class="feuld-name">中国石化</div>
+                </div>
+              </li>
+              <li class="fuel-title ">
+                <div class="newFlexBox">
+                  <img src="images/card-topup/chinafuled.jpg" class="img-color-remove" alt=""><div class="feuld-name">中国石油</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="phoneRechargeCon">
+            <div class="phoneRechargeItem">
+              <div class="itemContent hair hairBottom phonePadding">
+                <div class="item-titleRow">
+                  <input id="number" class="item-titleRow" type="tel" placeholder="请输入19位油卡号" maxlength="19">
+                  <i class="img_icon icon_emptycon btnHidden" style="display: none;"></i>
+                </div>
+                <div class="item-subTitle gray" id="errorNumber"></div>
+                
+                <div class="phoneLink" style="display: none;">
+                  <ul>
+                    <li class="hair hairTop">
+                      <div class="phoneNumItem fl">12313211232</div>
+                      <div class="fr phone-empty"></div>
+                    </li>
+                    <li class="hair hairTop">
+                      <div class="phoneNumItem fl">123132112312</div>
+                      <div class="fr phone-empty"></div>
+                    </li>
+                    <li class="hair hairTop">
+                      <div class="phoneNumItem fl">123132112312</div>
+                      <div class="fr phone-empty"></div>
+                    </li>
+                  </ul>
+                  <div class="emptyNumber tac hair hairTop hairBottom">清空历史充值号码</div>
+                </div>
+              </div>
+              <ul class="phoneMoney hair hairBottom">
+                <li>
+                  <a class="" href="javascript:;" title="">
+                    <h3>10元</h3>
+                    <p>售价10.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="" class="">
+                    <h3>20元</h3>
+                    <p>售价20.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="" class="">
+                    <h3>30元</h3>
+                    <p>售价30.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="" class="">
+                    <h3>50元</h3>
+                    <p>售价50.00元</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" title="" class="curr">
+                    <h3>100元</h3>
+                    <p>售价100.00元</p>
+                  </a>
+                </li>
+                
+              </ul>
+            <div class="flow-type">
+                <div class="flow-limit">充值完成后，需到站点圈存才能将金额同步到您的卡中</div>
+              </div>
+              <div class="phoneFixBottom">
+              
+              <div class="limit-remind phonepay-remind bottom-margin-normal">
+                  <p><img src="images/card-topup/remind-light.png" height="28" width="28">如使用会员卡、积点卡需另支付服务费</p>
+              
+              </div>
+              
+              <div class="config-button-contain">
+                <div class="edit-config-button middleFont">立即支付：￥499.90  <span class="smallFont">（服务费￥1.00）</span></div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    <!-- Swiper end -->
+
+     </div>
+    <!-- content end -->
+</body>  
+
+</html>

@@ -16,10 +16,13 @@
     "gulp-ext-replace": "^0.3.0",
     "gulp-file-include": "^0.13.7",
     "gulp-ftp": "^1.1.0",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-handlebars-html": "0.0.2",
     "gulp-header": "^1.8.2",
     "gulp-htmlmin": "^2.0.0",
     "gulp-iconfont": "^8.0.0",
     "gulp-iconfont-css-and-template": "^1.0.31",
+    "gulp-image": "^2.7.0",
     "gulp-imageisux": "^1.0.5",
     "gulp-imagemin": "^3.0.1",
     "gulp-inject": "^4.1.0",
@@ -33,9 +36,7 @@
     "gulp-uncss": "^1.0.5",
     "gulp-webp": "^2.3.0",
     "imagemin-pngquant": "^5.0.0",
-    "main-bower-files": "^2.13.1",
-    "gulp-handlebars": "^4.0.0",
-    "gulp-handlebars-html": "0.0.2"
+    "main-bower-files": "^2.13.1"
   },
   "engines": {
     "node": ">=0.8.0"

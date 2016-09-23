@@ -1,0 +1,369 @@
+@charset "utf-8";
+@import "tobe/base";
+
+@import "tobe/components/nav/nav";
+@import "tobe/components/bar/bar";
+.bar.bar-dark {
+      @include bar-style(#1C1B1F, #1C1B1F, #ffffff);
+}
+.bar.bar-light{
+    background-color: #f5f5f5;
+}
+// .bar.bar-light .title{
+//     color: #ffffff;
+// }
+#everybody-performance{
+    .content{
+        padding-top: rem(88);
+    }
+    .performance-li{
+        background: #e7e7e7;
+        overflow: hidden;
+        li{
+            width: 33.33%;
+            float: left;
+            height: rem(100);
+            line-height: rem(100);
+            text-align: center;
+            color: #666666;
+            font-size: rem(32);
+        }
+        .select{
+            background: #ffffff;
+            color: #4A90E2;
+            border-top: 2px solid #4A90E2;
+        }
+    }
+}
+.product-filter{
+    zoom: 1;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    .shadow-bg {
+        height: rem(100);
+        width: rem(60);
+        position: absolute;
+        right: rem(72);
+        z-index: 1;
+        background: -webkit-linear-gradient(left,rgba(62,163,255,0),rgba(62,163,255,1));
+        background: -o-linear-gradient(right,rgba(62,163,255,0),rgba(62,163,255,1));
+        background: -moz-linear-gradient(right,rgba(62,163,255,0),rgba(62,163,255,1));
+        background: linear-gradient(to right, rgba(62,163,255,0), rgba(62,163,255,1));
+    }
+    a.more {
+        display: block;
+        float: right;
+    }
+    div.itemauto {
+        overflow: auto;
+        overflow-y: hidden;
+        overflow-x: auto;
+        height: rem(100);
+        position: relative;
+        ul{
+            min-width: 100%;
+            width: 300%;
+            padding: 0;
+            li{
+                width: auto;
+                padding: 0;
+                float: left;
+                box-sizing: border-box;
+                a{
+                    display: block;
+                    margin: 0 auto;
+                    height: rem(100);
+                    text-align: center;
+                    font-size: rem(32);
+                    border: none;
+                    width: auto;
+                    padding: 0 rem(48);
+                }
+            }
+        }
+    }
+}
+.blue-bill-top {
+    background: #3ea3ff;
+    border: none;
+    height: rem(100);
+    a.bill-class-add {
+        border: none;
+        background: #3ea3ff;
+        height: rem(100);
+        line-height: rem(100);
+        color: #fff;
+        padding: 0 rem(30);
+        box-shadow: none;
+        text-align: right;
+        font-size: rem(72);
+    }
+    div.itemauto {
+        margin-right: rem(60);
+        ul{
+            li{
+                height: rem(100);
+                line-height: rem(100);
+                a{
+                    color: rgba(255,255,255,.6);
+                    line-height: rem(100);
+                }
+            }
+            .bill-select{
+                border-bottom: 1px solid #fff;
+            }  
+        }
+    }
+}
+.blue-bill-center{
+    background: #3ea3ff;  
+    text-align: center;
+    padding: rem(126) 0;
+    img{
+        width: rem(194);
+        height: rem(177);
+        background-size: rem(194);
+        margin-bottom: rem(58);
+    } 
+    .fonts{
+        color: #ffffff;
+        font-size: rem(40)
+    }
+}
+.morder-pay-cost {
+    height: rem(120);
+    line-height: rem(120);
+    background: #fff;
+    text-align: center;
+    margin-bottom: rem(40);
+    border-top: 2px solid #e7e7e7;
+    border-bottom: 2px solid #e7e7e7;
+    font-size: rem(36);
+    a{
+    color: #3da3ff;
+    }
+}
+//缴费首页
+.bl-mywallet-hd{
+    height: rem(230);
+    background-color: #3ea3ff;
+    text-align: center;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    position: relative;
+    .wallet-hd-cell{
+        vertical-align: middle;
+        display: table-cell;
+        position: relative;
+        .ss-icon{
+            width: rem(34);
+            height: rem(34);
+            border-radius: 50%;
+            background: #fb345b;
+            position: absolute;
+            line-height: rem(34);
+            text-align: center;
+            color: #ffffff;
+            top: rem(20);
+            left: rem(390);
+        }
+        .hd-cell-icon{
+            width: rem(80);
+            height: rem(80);
+        }
+        p{
+            color: #fff;
+            font-size: rem(32);
+            margin-top: rem(24);
+        }
+    }
+    .bill-index-line{
+        background: inline-image("base64/bill-index-line.jpg") no-repeat right center; 
+        display: inline-block;
+        background-size: rem(2);
+        vertical-align: middle;
+        display: table-cell;
+    }
+}
+.order-show{
+    .order-show-icon{
+        background: #fff;
+        display: inline-block;
+        width: 100%;
+        ul{
+            padding: 0;
+            li{
+                float: left;
+                width: 33.33333%;
+                text-align: center;
+                border-right: 1px solid #f3f3f3;
+                border-bottom: 1px solid #f3f3f3;
+                padding: rem(40) 0;
+                i{
+                    font-size: rem(52);
+                    line-height: rem(40);
+                    display: inline-block;
+                    position: relative;
+                }
+                i.icon-waitpay{
+                    background: inline-image("base64/sj-icon-1.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-waitreceive{
+                   background: inline-image("base64/sj-icon-2.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-waitpick{
+                    background: inline-image("base64/sj-icon-3.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-waitassess{
+                    background: inline-image("base64/sj-icon-4.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-electricity{
+                    background: inline-image("base64/sj-icon-5.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-gas{
+                    background: inline-image("base64/sj-icon-6.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-cabletv{
+                    background: inline-image("base64/sj-icon-7.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-tietong{
+                    background: inline-image("base64/sj-icon-8.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-card{
+                    background: inline-image("base64/sj-icon-9.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-waitpick02{
+                    background: inline-image("base64/sj-icon-03.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }  
+                i.icon-electricity02{
+                    background: inline-image("base64/sj-icon-05.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-gas02{
+                    background: inline-image("base64/sj-icon-06.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-cabletv02{
+                    background: inline-image("base64/sj-icon-07.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-tietong02{
+                    background: inline-image("base64/sj-icon-08.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                i.icon-card02{
+                    background: inline-image("base64/sj-icon-09.png") no-repeat center center; 
+                    width: rem(60);
+                    height: rem(60);
+                    background-size: rem(60);
+                    }
+                .order-font{
+                    font-size: rem(24);
+                    color: #3a3a3a;
+                    line-height: rem(40);
+                    margin-top: rem(20);
+                }
+                .fonts02{
+                    color: #dddddd;
+                }
+            }
+        }
+    }
+}
+.bill-fonts{
+    text-align: center;
+    font-size: rem(24);
+    color: #aeaeae;
+    line-height: rem(100);
+}
+.topbg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    .scan{
+        background: url(i/bill-index/billbg-2.png) no-repeat left top;       
+        float: right;
+        width: rem(331);
+        background-position: 0 rem(20);
+        background-size: rem(331);
+        position: absolute;;
+        right: rem(230);
+        top: rem(80);
+    }
+    .scan02{
+        height: 100%;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .bangding{
+        background: url(i/bill-index/billbg-2.png) no-repeat rem(20) top;        
+        float: right;
+        width: rem(302);
+        background-position: 0 rem(20);
+        background-size: rem(302);
+        position: absolute;
+        left: rem(30);
+        top: rem(80);
+    }
+    .bangding02{
+        height: 100%;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .know{
+        position: absolute;
+        top: rem(800);
+        left: 50%;
+        margin-left: rem(-180);
+        width: rem(360);
+        height: rem(120);
+        background: url(i/bill-index/billbg-3.png) no-repeat center top;        
+        background-size: contain;
+    }
+} 

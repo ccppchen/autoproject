@@ -133,7 +133,7 @@ body{
 				margin-top: rem(8);
 			}
 			.item-title-row{
-				
+
 			}
 			.item-title{
 				font-size: rem(36);
@@ -201,7 +201,7 @@ body{
 			line-height: 1.6;
 			@include clamp;
 		}
-		
+
 	}
 }
 .os-detail{
@@ -226,7 +226,7 @@ body{
 		right: rem(20);
 		width: auto;
 	}
-	
+
 }
 .os-detail a,.arrow-right{
 	background: inline-image("base64/mc_right.png") no-repeat right center;

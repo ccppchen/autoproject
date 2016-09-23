@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "抽奖",
+    "css": "css/lucky.css",
+    "requirejs": "js/lucky"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "抽奖券名称",
+        "nav": true,
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+<style>
+	.lottery-list{border-color:#48357e;}
+	.lottery-list dl{border-color:#df4e91;}
+	.lottery-list dl dd:nth-child(1), .lottery-list dl dd:nth-child(3), .lottery-list dl dd:nth-child(6), .lottery-list dl dd:nth-child(7), .lottery-list dl dd:nth-child(10), .lottery-list dl dd:nth-child(12){background:#fff79a;}
+	.lottery-list dl dd:nth-child(2), .lottery-list dl dd:nth-child(4), .lottery-list dl dd:nth-child(5), .lottery-list dl dd:nth-child(8), .lottery-list dl dd:nth-child(9), .lottery-list dl dd:nth-child(11){background: #ffd588;}
+	.lottery-list dl dd.active{background:#ff4f4b;}
+	
+</style>
+    <div class="main">
+    
+    	<div class="message">
+    		<div class="txt"><i></i>今天还有 <span class="yellow">4</span> 次机会哟~~</div>
+      </div>
+    	<div class="lottery-list">
+        <dl id="lottery" style="background:url('') # no-repeat;background-size:100%;">        	
+        	<dd class="lottery-unit lottery-unit-0"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-1"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-2"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-3"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-11"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-4"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-10"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-5"><img src="images/fresh-home/fresh-img.png"></dd>   	
+        	<dd class="lottery-unit lottery-unit-9"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-8"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-7"><img src="images/fresh-home/fresh-img.png"></dd>
+        	<dd class="lottery-unit lottery-unit-6"><img src="images/fresh-home/fresh-img.png"></dd>        	
+        	<dt><img src="images/lucky/lucky-icon.png"/></dt>
+        </dl>
+      </div>
+      <div class="ruler">
+      	<div class="line">
+      		<div class="name">活动说明：</div>
+      		<div class="txt">1.活动规则活动规则活动规则活动规则活动规<br/>
+               2.活动规则活动规则活动规则活动<br/>
+               3.活动规则活动规则活动规则</div>
+      	</div>
+      	<div class="line">
+      		<div class="name">活动时间：</div>
+      		<div class="txt">2016.08.08 - 2016.18.18</div>
+      	</div>
+      </div>
+    </div>
+<div class="mask"></div>
+<div class="modal modal-out not-change" id="modal-success">
+    <div class="modal-close"></div>
+    <div class="modal-inner">
+        <div class="modal-title">哇，抽到了！</div>
+        <div class="modal-text">
+            <div class="modal-img">
+                <img src="css/i/lucky-ok.png" alt="">
+            </div>
+            <p class="shake-text"><span class="color-red">500减100 优惠券</span></p>
+        </div>
+    </div>
+    <div class="modal-buttons shake-buttons">
+    	<button class="modal-button active">继续逛</button>
+      <button class="modal-button">我的优惠券</button>
+        
+    </div>
+</div>
+<div class="modal modal-out not-change" id="modal-error">
+    <div class="modal-close"></div>
+    <div class="modal-inner">
+        <div class="modal-title">今天的活动结束了<br/>明天再来吧～</div>
+        <div class="modal-text">
+            <div class="modal-img">
+                <img src="css/i/lucky-error.png" alt="">
+            </div>
+            
+        </div>
+    </div>
+    <div class="modal-buttons shake-buttons">
+        <button class="modal-button active">继续逛</button>
+    </div>
+</div>
+<div class="modal modal-out not-change" id="modal-fail">
+    <div class="modal-close"></div>
+    <div class="modal-inner">
+        <div class="modal-title">啊哟，没有抽中~</div>
+        <div class="modal-text">
+            <div class="modal-img">
+                <img src="css/i/lucky-bad.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="modal-buttons shake-buttons">
+        <button class="modal-button active">继续逛</button>
+    </div>
+</div>
+</body>
+
+</html>

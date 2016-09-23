@@ -67,7 +67,7 @@
 	height:auto;
 	position:relative;
 	margin-bottom:rem(10);
-	padding-left:rem(202);
+	padding-left:rem(200);
 	color:#666666;
 	dt{
 		position:absolute;
@@ -123,7 +123,8 @@
 		height:rem(100);
 		line-height:rem(100);
 		background:#ffffff;
-		margin-top:rem(2);
+		margin-top:1px;
+		margin-left:1px;
 		padding-left:rem(28);
 	}
 }
@@ -134,7 +135,7 @@
 		width:100%;
 		height:rem(90);
 		line-height:rem(90);
-		margin-bottom:rem(2);
+		margin-bottom:1px;
 		padding:0 rem(40);
 		color:#333333;
 		background:#ffffff;

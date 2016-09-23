@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "未支付账单(无)",
+    "css": "css/bill-empty.css",
+    "requirejs": "js/bill-empty"
+})
+</head>
+<body id="everybody-performance">
+	<div class="content">
+	 <header class="bar bar-header bar-light">
+            <a href="javascript:history.go(-1)" class="bar-left">
+                <div class="button iconfont arrow-back"></div>
+            </a>
+            <h1 class="title index-title">
+                确认订单
+            </h1>
+            <div class="j-nav">
+                <div class="button iconfont more-v"></div>
+                <div class="button iconfont error"></div>
+            </div>
+            <nav class="j-navcontent">
+                <ul class="ul-nav">
+                    <li><a href="javascript:;"><i class="iconfont ihome"></i><p>首页</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont isearch"></i><p>搜索</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont class"></i><p>分类</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont shop-car"></i><p>购物车</p></a></li>
+                    <li><a href="javascript:;"><i class="iconfont iuser"></i><p>我的i百联</p></a></li>
+                </ul>
+            </nav>
+        </header>
+   </div>
+  <div class="product-filter blue-bill-top">
+         <div class="shadow-bg"></div>
+          <a href="javascript:;" class="more bill-class-add">+</a>
+          <div class="itemauto">
+              <ul>
+                  <li class="bill-select"><a href="javascript:;">我家</a></li>
+                  <li><a href="javascript:;">父母家</a></li>
+                  <li><a href="javascript:;">朋友家</a></li>
+                  <li><a href="javascript:;">父母家</a></li>
+                  <li><a href="javascript:;">父母家</a></li>
+                  <li><a href="javascript:;">父母家</a></li>
+                  <li><a href="javascript:;">父母家</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="blue-bill-center">
+         <img src="images/payCost/bill-img.png">
+         <div class="fonts">暂无支付账单</div>
+      </div> 
+      <div class="morder-pay-cost"><a href="#">更多缴费</a></div>
+</body>

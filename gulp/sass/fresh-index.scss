@@ -3,6 +3,7 @@
 @import "tobe/components/bar/bar";
 @import "tobe/components/overflow-scroll/overflow-scroll";
 @import "tobe/components/nav/nav";
+@import "tobe/components/toast/toast";
 @import "tobe/ext/touchSlide";
 @include pic-list();
 body{
@@ -98,9 +99,11 @@ img{
 	width:rem(260);
 	border-right:0 none;
 	margin-right:rem(20);
+	color:#999999;
 	&:first-child{
 		margin-left:rem(20);
 	}
+	&.active{color:#333333;}
 	.ovfs-name{
 		color:$grayDarker;
 		font-size:rem(24);
@@ -177,6 +180,7 @@ img{
 	left:0;
 	z-index:2;
 	background:#fff;
+	border-bottom:1px solid #eeeeee;
 		.ovfs-item{
 			width: auto;
 			padding: rem(24) rem(12) rem(24) rem(12);
@@ -208,11 +212,12 @@ img{
 }
 .pic-list{
 	padding:rem(20);
+	padding-bottom:0;
 	background:#f6f6f6;
-	.cwrap-name{color:$graylikver;font-size:rem(26);padding:0 rem(20);height:rem(86);line-height:rem(40);overflow:hidden;}
+	.cwrap-name{color:$graylikver;font-size:rem(26);padding:0 rem(20);height:rem(86);line-height:rem(40);overflow:hidden;margin-top:rem(10);}
 	.cwrap-price-line{
 	background-color: #ffffff;
-	padding: 0 0.24rem 0.16rem 0.24rem;
+	padding: 0 0.24rem 0.24rem 0.24rem;
 	color: #333333;
 	font-size: rem(28);
 	ul{
@@ -224,7 +229,8 @@ img{
 		background:#40d4b3;
 		color:#fff;
 		padding-left:rem(10);
-		.small-rmb{font-size: rem(22);}
+		font-weight:bold;
+		.small-rmb{font-size: rem(22);font-weight:normal;margin-right:rem(6);}
 	}
 	.card-shop{
 		width:rem(58);
@@ -236,7 +242,7 @@ img{
 	}
   }
 }
-.arrive-bottom{width:100%;text-align:center;color:#bbb;margin-bottom:rem(10);}
+.arrive-bottom{width:100%;text-align:center;color:#bbb;;margin:rem(30) 0;display:inline-block;}
 .gotop{
 	@extend %gotop;
 	bottom:rem(110);
@@ -250,7 +256,7 @@ img{
 	right:rem(20);
 	background-size:contain;
 }
-.fresh-list-title{width:100%;height:rem(84);line-height:rem(54);margin-top:rem(20);padding-top:rem(30);background:#fff;font-size:rem(36);color:#333;text-align:center;float:left;}
+.fresh-list-title{width:100%;height:rem(114);line-height:rem(54);margin-top:rem(20);padding:rem(30) 0 rem(30) 0;background:#fff;font-size:rem(36);color:#333;text-align:center;font-weight:bold;float:left;}
 .fresh-list{
 	width:100%;
 	height:auto;

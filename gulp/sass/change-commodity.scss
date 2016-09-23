@@ -53,10 +53,10 @@ body{
 }
 
 .bg-bottom{
-	display:inline-block; 
+	display:inline-block;
 	width:100%;
 	.bot-left{
-		float:left; 
+		float:left;
 		color:#333333;
 		padding: 0 rem(6);
 		.cai{
@@ -68,16 +68,16 @@ body{
 		}
 	}
 	.bot-right{
-		float:right; 
+		float:right;
 		padding-top:rem(10);
 		img{
-			width:rem(48); 
-			height:rem(48); 
+			width:rem(48);
+			height:rem(48);
 			background-size:rem(48);
 		}
-	} 
+	}
 }
-// 
+//
 .icon-truffle{
 	background: inline-image("base64/truffle.png") no-repeat left center;
 	background-size: rem(36) rem(36);
@@ -138,7 +138,7 @@ body{
 			}
 		}
 	}
-	
+
 }
 
 .distribution-wrap{
@@ -179,23 +179,16 @@ body{
 }
 
 .cmmodal-tip{
-	position: absolute;
-	width: rem(480);
-	height: auto;
-	left: rem(162);
-	top: rem(405);
-	z-index: 1004;
+    position: absolute;
+    z-index: 1004;
+    top: rem(405);
+    left: rem(162);
+
+    width: rem(480);
+    height: auto;
 }
-.cmiknow{
-	position: absolute;
-	z-index: 1004;
-	width: rem(250);
-	height: auto;
-	left: 50%;
-	top: auto;
-	bottom: rem(130);
-	margin-left: - rem(125);
-}
+
+
 
 
 

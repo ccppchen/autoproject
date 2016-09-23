@@ -359,6 +359,8 @@ body .bg-show {
     	position: relative;
     	top: 50%;
     	margin-top: rem(-40);
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
     	.info-1{
     		line-height: rem(42);
     		font-size: rem(32);

@@ -1,0 +1,311 @@
+@charset "utf-8";//cp
+@import "tobe/base";
+
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+
+
+.tab-group{
+	@extend %tab-group;
+}
+.arrow-white-right{
+	@extend %arrow-white-right;
+}
+
+
+.bar{
+	background-color: #ffffff;
+        .title{
+            font-size: rem(38);
+        }
+	.bar-right a{
+		font-size: rem(28);
+		color: #343434 !important;
+	}
+}
+.bar .button{
+    padding: 0 rem(30);
+}
+body{
+	background-color: #f7f7f7;
+}
+// 我的百联卡bailianCard-1
+.content{
+    width: 100%;
+	padding-top: rem(88);
+}
+.phoneRechargeBox {
+    background-color: #fff;
+    .feuld-ul{
+        padding: rem(30) 0;
+        margin: 0 rem(30);
+        // border-bottom: 1px solid #e7e7e7;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -moz-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        li:first-child{
+            margin-right: rem(40);
+        }
+        li.curr{
+            border-color: #3ea2ff;
+        }
+        li{
+            text-align: center;
+            padding: rem(20) rem(40);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            -webkit-flex-basis: 0;
+            flex-basis: 0;
+            -webkit-align-self: center;
+            -moz-align-self: center;
+            align-self: center;
+            img{
+                width: rem(70);
+                margin-right: rem(20);
+            }
+            .feuld-name{
+                font-size: rem(36);
+                line-height: 1;
+            }
+        }
+    }
+    .fuel-title{
+        .newFlexBox{
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            box-pack: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            justify-content: center;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -moz-align-items: center;
+            -webkit-align-items: center;
+            align-items: center;
+            .img-color-remove{
+                -webkit-filter: grayscale(100%);
+                -moz-filter: grayscale(100%);
+                -ms-filter: grayscale(100%);
+                -o-filter: grayscale(100%);
+                filter: grayscale(100%);
+                filter: gray;
+            }
+        }
+    }
+    .phoneRechargeCon{
+        .phoneRechargeItem{
+            .phonePadding{
+                padding: rem(18.4) 0 rem(30);
+                z-index: 10005;
+                background: #fff;
+            }
+            .hairBottom{
+                position: relative;
+            }
+            .itemContent{
+                .item-titleRow{
+                    position: relative;
+                    height: rem(83.2);
+                    line-height: rem(83.2);
+                    input{
+                        font-size: rem(52);
+                        color: #333;
+                        width: 90%;
+                        border: none;
+                        outline: none;
+                    }
+                    i{
+                        position: absolute;
+                            top: 50%;
+                            right: rem(-29.68);
+                            width: rem(83.2);
+                            height: rem(83.2);
+                            -webkit-transform: translateY(-50%);
+                            -moz-transform: translateY(-50%);
+                            transform: translateY(-50%);
+                    }
+                    i.icon_emptycon{
+                        background: url(i/icon_emptycon.png) no-repeat right center;
+                        background-size: rem(36) rem(36);
+                        background-position: center center;
+                        margin-right: rem(30);
+                    }
+                    i.img_icon{
+                        display: inline-block;
+                        width: rem(30);
+                        height: rem(30);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin-left: rem(6);
+                        vertical-align: top;
+                    }
+                }
+                .gray{
+                    color: #999;
+                }
+                .phoneLink{
+                    position: absolute;
+                    top: rem(159.6);
+                    width: 100%;
+                    background: #fff;
+                    left: 0;
+                    z-index: 21;
+                }
+            }
+        }
+        .phoneMoney{
+            padding: rem(30) 0 rem(10);
+            overflow: hidden;
+            li{
+                display: block;
+                float: left;
+                width: 33.333333%;
+                padding: 0 rem(10);
+                overflow: hidden;
+                text-align: center;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                margin-bottom: rem(20);
+                a{
+                    border: 1px solid #ccc;
+                        border-radius: rem(12);
+                        display: block;
+                        padding: rem(12) rem(10) rem(16) rem(10);
+                        color: #999;
+                        h3{
+                            font-size: rem(40);
+                            color: #333;
+                            // letter-spacing: rem(20);
+                            height: rem(40);
+                            margin-bottom: rem(8);
+                        }
+                        p{
+                            font-size: rem(24);
+                        }
+                }
+                a.curr{
+                    background-color: #3ea2ff;
+                    color: #fff;
+                    border-color: #3ea2ff;
+                }
+            }
+        }
+        .hairBottom{
+            position: relative;
+            border-top: 1px solid #e7e7e7;
+            // border-bottom: 1px solid #e7e7e7;
+            margin: 0 rem(30); 
+        }
+        .flow-type{
+            padding: rem(30);
+            padding-left: rem(32);
+            margin-top: rem(-16);
+            z-index: 20;
+            position: absolute;
+            background: #FFFFFF;
+            left: 0;
+            right: 0;
+            .flow-limit{
+                font-size: rem(24);
+                color: #3ea2ff;
+            }
+        }
+        .phoneFixBottom{
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              z-index: 20;
+              .phonepay-remind{
+                padding: 0 rem(30);
+                p{
+                    margin-bottom: 0;
+                }
+              }
+              .bottom-margin-normal{
+                margin-bottom: rem(20);
+              }
+              .limit-remind{
+                p{
+                    font-size: rem(24);
+                        color: #999999;
+                        margin-bottom: rem(24);
+                        overflow: hidden;
+                        img{
+                            width: rem(28);
+                            margin-right: rem(24);
+                            float: left;
+                        }
+                }
+              }
+              .config-button-contain{
+                background: #FFFFFF;
+                padding: rem(20) rem(30);
+                .middleFont{
+                    font-size: rem(34);
+                }
+                .edit-config-button{
+                    border-radius: rem(12);
+                    color: #fff;
+                    background: #1e9cf1;
+                    text-align: center;
+                    height: rem(88);
+                    line-height: rem(88);
+                    font-size: rem(36);
+                    width: 100%;
+                    border: 0;
+                    .smallFont{
+                        font-size: rem(24);
+                    }
+                }
+              }
+        }
+    }
+}
+// 加油卡充值(无号码状态)
+.item-titleRow{
+    .img_icon{
+        height: auto;
+        display: inline-block;
+        width: rem(30);
+        height: rem(30);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: rem(6);
+        vertical-align: top;
+    }
+    .iconfont{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .icon-icon_userphone{
+        width: rem(46);
+        height: rem(46);
+    }
+}
+.highRed{
+    color: #e6133c;
+}
+.phoneMoney.disabledRecharge li a, .phoneMoney.disabledRecharge li a h3{
+    color: #cccccc !important;
+} 
