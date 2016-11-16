@@ -128,6 +128,7 @@ body{
                         width: 90%;
                         border: none;
                         outline: none;
+                        padding: 0;
                     }
                     i{
                         position: absolute;
@@ -143,13 +144,11 @@ body{
                         background: url(i/icon_emptycon.png) no-repeat right center;
                         background-size: rem(36) rem(36);
                         background-position: center center;
-                        margin-right: rem(30);
                     }
                     i.img_icon{
                         display: inline-block;
-                        width: rem(30);
-                        height: rem(30);
-                        background-size: contain;
+                        width: rem(83.2);
+                        height: rem(83.2);
                         background-repeat: no-repeat;
                         margin-left: rem(6);
                         vertical-align: top;
@@ -157,14 +156,6 @@ body{
                 }
                 .gray{
                     color: #999;
-                }
-                .phoneLink{
-                    position: absolute;
-                    top: rem(159.6);
-                    width: 100%;
-                    background: #fff;
-                    left: 0;
-                    z-index: 21;
                 }
             }
         }
@@ -280,16 +271,6 @@ body{
 }
 // 加油卡充值(无号码状态)
 .item-titleRow{
-    .img_icon{
-        height: auto;
-        display: inline-block;
-        width: rem(30);
-        height: rem(30);
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: rem(6);
-        vertical-align: top;
-    }
     .iconfont{
         position: absolute;
         right: 0;
@@ -309,3 +290,62 @@ body{
 .phoneMoney.disabledRecharge li a, .phoneMoney.disabledRecharge li a h3{
     color: #cccccc !important;
 } 
+// 添加历史记录样式
+.phoneLink{
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        left: 0;
+        z-index: 21;
+        ul{
+            li{
+                background: url(i/icon_emptycon.png) no-repeat right center;
+                    background-size: auto 100%;
+                    background-origin: content-box;
+                    .fl{
+                        float: left;
+                    }
+                    .fr{
+                        float: right;
+                    }
+                    .phone-empty{
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 13%;
+                        height: 100%;
+                    }
+            }
+        }
+        .emptyNumber{
+            color: #3ea2ff;
+            font-size: rem(32);
+        }
+        .tac{
+            text-align: center;
+        }
+    }
+    .phoneLink li, .phoneLink .emptyNumber {
+        font-size: rem(40);
+        padding: rem(20) 0;
+        overflow: hidden;
+        position: relative;
+    }
+    .orderContainer .itemContent:after, .hair:after, .phoneLink .emptyNumber:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        top: auto;
+        height: 1px;
+        width: 100%;
+        background-color: #e7e7e7;
+        display: block;
+        z-index: 15;
+        transform-origin: 50% 100%;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }

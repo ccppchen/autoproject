@@ -42,6 +42,7 @@ var fluidFire=function(options){
 						    ctx.lineTo(start+v*6,b);
 						    ctx.lineTo(start,b);
 						    ctx.closePath();
+							ctx.strokeStyle=color1;
 						    ctx.fillStyle=color1;
 						    ctx.fill();
 						    ctx.stroke();
@@ -58,6 +59,7 @@ var fluidFire=function(options){
 						    ctx.lineTo(start+v*6,b);
 						    ctx.lineTo(start2,b);
 						    ctx.closePath();
+							ctx.strokeStyle=color1;
 						    ctx.fillStyle=color2;
 						    ctx.fill();
 						    ctx.stroke();

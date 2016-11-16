@@ -50,7 +50,7 @@
 	"accessor-pairs": 2,                      //object getter/setter方法需要成对出现
 	"dot-location": [2, "property"],          //换行调用对象方法  点操作符应写在行首
 	"no-lone-blocks": 2,                      //多余的{}嵌套
-	"no-empty-label": 2,                      //无用的标记
+	"no-empty-label": 0,                      //无用的标记
 	"no-extend-native": 2,                    //禁止扩展原生对象
 	"no-floating-decimal": 2,                 //浮点型需要写全 禁止.1 或 2.写法
 	"no-loop-func": 2,                        //禁止在循环体中定义函数

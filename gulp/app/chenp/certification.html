@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  @@include('widget/head.html', { "title": "填写个人信息", "css": "css/certification.css", "requirejs": "js/certification" })
+</head>
+
+<body>
+  @@include('widget/header.html', { "left-icon": "arrow-back", "bar-style": "bar-light", "title": "填写个人信息", "nav": false, "rightIconBool": false, "rightIconBoolMore": false })
+  <!-- content -->
+  <div class="content">
+    <div class="prompt-wrap flex-middle">
+      <div class="prompt-notice"><i class="iconfont prompt"></i></div>
+      <div class="prompt-inner flex-middle">请填写您的真实信息，实名认证一旦确定不可修改！</div>
+      <!-- <div class="prompt-close flex-center"><i class="iconfont error"></i></div> -->
+    </div>
+    <div class="list-between info-comm">
+      <div class="list-item">
+        <div class="list-left">
+          <div class="info-title"><span class="must-tag">*</span>身份信息</div>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="list-left">
+          <div class="info-name">真实姓名</div>
+          <div class="info-detail">
+            <input type="text" class="j-name" name="" placeholder="请输入您的真实姓名">
+          </div>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="list-left">
+          <div class="info-name">身份证号</div>
+          <div class="info-detail">
+            <input type="text" class="j-ident" name="" placeholder="请输入您的18位身份证号码">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-between info-comm">
+      <div class="list-item">
+        <div class="info-title">身份证正反面照片</div>
+      </div>
+      <div class="picture-box">
+        <div class="look-sup">温馨提示: 仅支持JPEG格式，不超过200K，证件照片、文字清晰可见，无明显涂改痕迹。</div>
+        <div class="picture-inner">
+          <div class="picture-item">
+            <div class="picture-main">
+              <input type="file" class="hide-file" id="file_input1" accept="image/*" capture="camera">
+              <div class="items-fact">
+                <div class="picture-icon"><img src="css/i/picture.png"></div>
+                <div class="picture-con">上传正面照片</div>
+              </div>
+            </div>
+            <div class="picture-eg">
+              <div class="picture-con">示例</div>
+              <img src="css/i/idtend-z.jpg">
+            </div>
+          </div>
+          <div class="picture-space"></div>
+          <div class="picture-item">
+            <div class="picture-main">
+              <input type="file" class="hide-file" id="file_input2" accept="image/*" capture="camera">
+              <div class="items-fact">
+                <div class="picture-icon"><img src="css/i/picture.png"></div>
+                <div class="picture-con">上传反面照片</div>
+              </div>
+            </div>
+            <div class="picture-eg">
+              <div class="picture-con">示例</div>
+              <img src="css/i/idtend-f.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="confirm-box">
+      <input type="button" class="confirm-btn" value="确认并提交" disabled>
+      <div class="confirm-info">实名认证后，您的资料将得到完整保护，支付更安全</div>
+    </div>
+  </div>
+  <!-- content end -->
+</body>
+
+</html>

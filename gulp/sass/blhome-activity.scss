@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import "tobe/function";
+
+/* 爆款商品列表 3列 */
+@include pic-list(blhomehot-list-three, 3, #ffffff, .2rem, blhomehot-content);
+.blhomehot-list-three{
+  ul{
+    // margin-bottom: rem(-44);
+    li{
+      margin-bottom: rem(44);
+    }
+  }
+  .con-name{
+    @include ellipsis;
+    font-size: rem(24);
+    color: #666666;
+    margin-top: rem(10);
+  }
+  .con-bright{
+    background-size: rem(52) rem(52);
+    width: rem(68);
+    height: rem(68);
+  }
+  .con-bottom{
+    margin-top: rem(18);
+    line-height: 1;
+    position: relative;
+    .con-bleft{
+      font-size: rem(36);
+      color: #111111;
+      del{
+        font-size: rem(26);
+        color: #666666;
+        padding-left: rem(8);
+        display: block;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.colum.hot{
+  padding-bottom: rem(25);
+  background-color: #ffffff;
+  .columhot-title{
+    padding: rem(22) rem(20) rem(22) rem(18);
+    font-size: 0;
+    color: #111111;
+    .slash{
+      color: #FF4242;
+      margin: 0 4px;
+    }
+    .slot-left,.slot-slash{
+      float: left;
+    }
+    .slot-time{
+      display: inline-block;
+      width: rem(50);
+      height: rem(50);
+      border-color: #CDCDCD;
+      background-color: #ffffff;
+      border-style: solid;
+      border-width: 1px 1px 3px 1px;
+      border-color: #CDCDCD;
+      text-align: center;
+      border-radius: 3px;
+      font-size: rem(28);
+      color: #111111;
+
+    }
+    .slot-slash{
+      // width: rem(50);
+      // height: rem(50);
+      line-height: 1;
+      padding: rem(8) 0;
+      margin-left: 3px;
+      display: inline-block;
+      border-style: solid;
+      border-width: 1px 1px 1px 1px;
+      border-color: transparent;
+    }
+    a{
+      display: block;
+      font-size: rem(30);
+      overflow: hidden;
+      i{
+        font-style: normal;
+        margin: 0 3px;
+      }
+    }
+  }
+}
+
+.columhot-content{
+  padding: 0 rem(20) rem(0);
+  background-color: #ffffff;
+}
+

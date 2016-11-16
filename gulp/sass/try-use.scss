@@ -2,8 +2,9 @@
 @import "tobe/base";
 @import "tobe/components/bar/bar";
 @import "tobe/components/nav/nav";
-
-.content{
+@import "tobe/components/toast/toast";
+@import "tobe/components/modal/modal";
+.content {
     padding-top: rem(108);
     overflow: hidden;
     position: absolute;
@@ -11,27 +12,33 @@
     right: 0;
     top: 0;
     bottom: 0;
-    
 }
-.page{
+.button{
+    width: auto !important;
+}
+.page {
     background: #ffffff;
     position: relative;
     height: 100%;
 }
-.fire-container{
-    
+.fire-container {
     background: #ffffff;
+    padding-left: rem(10);
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
     position: relative;
-    
-    .fire{
+    .fire {
         width: rem(310);
         height: rem(310);
         position: relative;
+        img {
+            border-top-left-radius: 1rem;
+            overflow: hidden;
+            border-top-right-radius: 1rem;
+        }
     }
-    .rule{
+    .rule {
         position: absolute;
         right: rem(20);
         top: rem(20);
@@ -40,29 +47,27 @@
         text-decoration: underline;
     }
 }
-.try-remind{
+.try-remind {
     background: #ffffff;
     text-align: center;
     padding-top: rem(28);
     padding-bottom: rem(88);
-    p{
-       
+    p {
         line-height: 1;
         font-size: rem(30);
     }
-    span{
+    span {
         font-size: rem(50);
         color: #FE8602;
         margin-left: rem(4);
     }
 }
-.share-button{
+.share-button {
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
     margin-bottom: rem(20);
-    
-    button{
+    button {
         height: rem(88);
         line-height: rem(90);
         text-align: center;
@@ -75,27 +80,27 @@
         border: none;
     }
 }
-.rule-remind{
+.rule-remind {
     color: #999999;
     font-size: rem(24);
     text-align: center;
     margin: 0 rem(164);
 }
-.bottom-container{
+.bottom-container {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     overflow: hidden;
-    .look-remind{
+    .look-remind {
         color: #999999;
         font-size: rem(24);
         margin-bottom: rem(30);
         text-align: center;
     }
-    .button-container{
+    .button-container {
         overflow: hidden;
-        div{
+        div {
             width: 50%;
             float: left;
             height: rem(98);
@@ -104,11 +109,322 @@
             text-align: center;
             font-size: rem(34);
         }
-        .bg-1{
+        .bg-1 {
             background: #FFF2C5;
         }
-        .bg-2{
+        .bg-2 {
             background: #FCE595;
         }
+    }
+}
+.mark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 10000;
+    display: none;
+}
+.share-contain {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    background: #ffffff;
+    padding-top: rem(40);
+    transition: all ease 0.2s;
+    z-index: 10001;
+    .title {
+        font-size: rem(32);
+        line-height: 1;
+        margin-bottom: rem(12);
+        text-align: center;
+    }
+    .title-label {
+        font-size: rem(24);
+        height: rem(32);
+        line-height: rem(32);
+        text-align: center;
+        color: #666666;
+        margin-bottom: rem(36);
+    }
+    .share-choose {
+        @include display(flex);
+        @include justify-content(center);
+        @include align-items(center);
+        padding-bottom: rem(30);
+        border-bottom: 1px solid #dddddd;
+        .choose-link {
+            padding: 0 rem(45);
+        }
+        .link-img {
+            @include display(flex);
+            @include justify-content(center);
+            @include align-items(center);
+            height: rem(96);
+            margin-bottom: rem(10);
+            img {
+                width: rem(96);
+            }
+        }
+        .link-name {
+            color: #828282;
+            font-size: rem(26);
+            height: rem(32);
+            line-height: rem(32);
+            text-align: center;
+        }
+    }
+    .cancel-share {
+        height: rem(100);
+        line-height: rem(100);
+        font-size: rem(34);
+        text-align: center;
+    }
+}
+.try-goods {
+    padding: rem(18) rem(20);
+    background: #FE5E73;
+    @include display(flex);
+    @include align-items(center);
+    .goods-pic {
+        width: rem(80);
+        height: rem(80);
+        border-radius: rem(8);
+        background: #ffffff;
+        margin-right: rem(16);
+    }
+    .name-text {
+        font-size: rem(24);
+        color: #ffffff;
+        margin-bottom: rem(18);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: rem(32);
+    }
+    .cost-con {
+        @include display(flex);
+        @include align-items(center);
+    }
+    .try-cost {
+        padding: 0 rem(6);
+        color: #723600;
+        height: rem(32);
+        line-height: rem(32);
+        font-size: rem(24);
+        background: #FFD43F;
+        border-radius: rem(6);
+        margin-right: rem(16);
+    }
+    .base-cost {
+        line-height: 1;
+        color: #ffffff;
+        text-decoration: line-through;
+        font-size: rem(24);
+    }
+}
+/*试用品好友加一把火从火焰至按钮以上区域*/
+.try-share-top {
+    position: relative;
+    overflow: hidden;
+    padding-top: rem(70);
+    padding-bottom: rem(30);
+    background: url("i/try-use/top-back.png") no-repeat;
+    background-size: 100% auto;
+    .how-to-fire {
+        position: absolute;
+        top: rem(20);
+        right: rem(20);
+        opacity: 0.69;
+        font-size: rem(24);
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+    .share-fire {
+        background: none;
+        margin-bottom: rem(32);
+    }
+    .fire-num {
+        font-size: rem(48);
+        line-height: 1;
+        text-align: center;
+        margin-bottom: rem(150);
+    }
+    .head-pic {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        div {
+            height: rem(60);
+            width: rem(60);
+            margin-bottom: rem(14);
+            border-radius: rem(10);
+            overflow: hidden;
+        }
+    }
+    .try-user {
+        height: rem(37);
+        line-height: rem(37);
+        font-size: rem(26);
+        text-align: center;
+        color: #666666;
+    }
+}
+/*按钮以及下面文字部分*/
+.add-fire {
+    background: #ffffff;
+    padding: 0 rem(30) rem(62);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    div {
+        width: rem(330);
+        height: rem(88);
+        line-height: rem(88);
+        text-align: center;
+        font-size: rem(34);
+        color: #ffffff;
+        border-radius: rem(10);
+    }
+    .bg-b {
+        background: #B4C3FF;
+    }
+    .bg-r {
+        background: #FF6F86;
+    }
+}
+/*按钮下面的标语*/
+.add-banner {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    background: #ffffff;
+    padding-bottom: rem(32);
+    margin-bottom: rem(20);
+    .middle-line {
+        height: rem(2);
+        width: rem(50);
+        background: #cdcdcd;
+    }
+    .center-img {
+        width: rem(610);
+    }
+}
+/*
+ * 
+ * 
+ * */
+.try-assess {
+    padding: 0 rem(30);
+    background: #ffffff;
+    border-bottom: 1px solid #ececec;
+    li {
+        padding: rem(20) 0;
+        border-bottom: 1px solid #ececec;
+    }
+    li:last-child{
+        border-bottom: none;
+    }
+    .line-one {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(space-between);
+        margin-bottom: rem(30);
+        .assess-user {
+            @include display(flex);
+            @include align-items(center);
+        }
+    }
+    .headpic {
+        height: rem(60);
+        width: rem(60);
+        margin-right: rem(30);
+        border-radius: 100%;
+        overflow: hidden;
+    }
+    .time {
+        color: #999999;
+        margin-left: rem(40);
+    }
+    .score-num {
+        color: #cd0000;
+        font-size: rem(30);
+    }
+    .line-two {
+        color: #666666;
+    }
+}
+.watch-more{
+    height: rem(86);
+    line-height: rem(86);
+    color: #999999;
+    background: #ffffff;
+    text-align: center;
+    margin-bottom: rem(98);
+}
+/*
+ *
+ * 
+ *  
+ */
+.apply-try {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    div {
+        width: 50%;
+        height: rem(98);
+        line-height: rem(98);
+        text-align: center;
+        font-size: rem(34);
+        color: #723600;
+    }
+    .bg-y1 {
+        background: #fff2c5;
+    }
+    .bg-y2 {
+        background: #ffd43f;
+    }
+}
+.toast {
+    p {
+        padding: rem(40) 0;
+        min-width: rem(464);
+    }
+    img {
+        margin-bottom: rem(20);
+    }
+}
+.water {
+    img {
+        max-width: rem(154);
+    }
+}
+.match {
+    img {
+        max-width: rem(238);
+    }
+}
+.modal,
+.modal-button,
+.modal-inner {
+    background: #ffffff;
+}
+.modal-text {
+    textarea {
+        width: 100%;
+        height: rem(198);
+        border: 1px solid #dfdfdf;
+        margin-top: rem(20);
+        resize: none;
+        color: #333333;
+        -webkit-appearance: none;
     }
 }

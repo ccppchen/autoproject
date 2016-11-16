@@ -158,7 +158,7 @@ body{
 		display: block;
 		margin-top: - rem(20);
 	}
-	
+
 	li a{
 		padding: rem(10);
 		display: block;
@@ -255,7 +255,7 @@ body{
 				@include ellipsis;
 				display: inline-block;
 			}
-			
+
 		}
 		.right-down:before{
 			content: none;
@@ -345,7 +345,7 @@ body{
 			@include hair(bottom, #dddddd);
 			background-origin: border-box;
 			h3{
-				
+
 				position: relative;
 				.item-word{
 					font-size: rem(28);

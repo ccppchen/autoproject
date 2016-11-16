@@ -3,7 +3,6 @@ var gulp        = require('gulp');
 var $           = require('gulp-load-plugins')();
 var pkg         = require("./package.json");
 var browserSync = require('browser-sync').create();
-var png         = require('imagemin-pngquant');
 var clean       = require('gulp-clean');
 var bowerFile   = require('main-bower-files');
 var uglify      = require('gulp-uglify');
@@ -13,7 +12,7 @@ var iconfontCss = require('gulp-iconfont-css-and-template');
 var iconfont    = require('gulp-iconfont');
 var cache       = require('gulp-cache');
 var path        = require('path');
-var fs          = require('fs')
+var fs          = require('fs');
 var handlebars  = require('handlebars');
 var handhtml    = require('gulp-handlebars-html')(handlebars);
 // var mockServer  = require('gulp-mock-server');
@@ -91,7 +90,7 @@ gulp.task('watch', function() {
   gulp.watch(yeoman.sass + "/components.scss", ['doc-sass']);
   gulp.watch(yeoman.app + "/**/*.html", ['widget']);
   gulp.watch(yeoman.app + '/lib/*', ['bower-install']);
-  gulp.watch([yeoman.app + '/*.html', yeoman.app + '/chenp/*.html', yeoman.app + '/compents/*.html', yeoman.app + '/js/**/*.js', yeoman.app + '/css/*.css', yeoman.app + '/lib/*']).on('change', browserSync.reload);
+  gulp.watch([yeoman.app + '/*.html', yeoman.app + '/chenp/*.html', yeoman.app + '/compents/*.html', yeoman.app + '/js/**/*.js', yeoman.app + '/lib/*']).on('change', browserSync.reload);
 });
 
 
@@ -115,6 +114,7 @@ gulp.task('compass', function() {
       cascade: true
     }))
     .pipe(gulp.dest(yeoman.app + '/css'))
+    .pipe(browserSync.reload({stream: true}))
 
 });
 
@@ -163,37 +163,8 @@ gulp.task('compass-pro', function() {
     .pipe(gulp.dest(yeoman.dist + '/css'));
 });
 
-// image压缩
-// gulp.task('images', function() {
-//   gulp.src([yeoman.app + '/css/i/**/*', '!./app/images/base64'])
-//     .pipe(cache(
-//       $.imagemin({
-//         optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
-//         progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-//         interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-//         multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
-//         use: [png()]
-//       })
-//     ))
-//     // .pipe($.webp())
-//     .pipe(gulp.dest(yeoman.dist + '/css/i'));
-// });
-// gulp.task('images-min', function() {
-//   gulp.src([yeoman.app + '/images/**/*'])
-//     .pipe(cache(
-//       $.imagemin({
-//         optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
-//         progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-//         interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-//         multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
-//         use: [png()]
-//       })
-//     ))
-//     // .pipe($.webp())
-//     .pipe(gulp.dest(yeoman.dist + '/images'));
-// });
 gulp.task('images', function () {
-  gulp.src([yeoman.app + '/css/i/**/*', '!./app/images/base64'])
+  gulp.src([yeoman.app + '/css/i/*', '!./app/images/base64'])
     .pipe($.image({
       pngquant: true,
       optipng: false,
@@ -268,9 +239,9 @@ gulp.task('imageisux', function() {
 
 // webp
 gulp.task('webp', function() {
-  return gulp.src('app/css/i/header-title.png')
+  return gulp.src('app/images/*.{jpg, png}')
     .pipe($.webp({
-      src: 'app/css/i/header-title.png',
+      src: 'app/images/*.{jpg, png}',
       dest: 'webp',
       options: {}
     }))
@@ -379,6 +350,6 @@ gulp.task('dev-tpl', function(){
 //         }));
 // });
 
-gulp.task('default', ['compass', 'watch', 'server', 'widget', 'dev-tpl']);
+gulp.task('default', ['compass', 'watch', 'server', 'widget']);
 gulp.task('doc', ['doc-sass', 'watch', 'server']);
 gulp.task('build', ['compass-pro', 'images', 'html', 'myhtml', 'js', 'images-min']);

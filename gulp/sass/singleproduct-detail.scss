@@ -1,6 +1,8 @@
 @charset "utf-8";
 @import "tobe/base";
 @import "tobe/components/nav/nav";
+@import "selection-baskets";
+@import "tobe/components/bar/bar";
 #singleproduct {
     background: #eeeeee;
     .head-container {
@@ -14,11 +16,10 @@
         top: 0;
         right: 0;
         height: rem(88);
-        background: rgba(255,255,255,.6);
+        background: rgba(255, 255, 255, .6);
         .arrow-back {
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(center);
-            @include align-items(center);
             height: rem(88);
             float: left;
             padding: 0 rem(16);
@@ -27,9 +28,8 @@
         .more-v,
         .error {
             float: right;
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(center);
-            @include align-items(center);
             height: rem(88);
             font-size: rem(50);
             padding: 0 rem(20);
@@ -37,9 +37,8 @@
         .topshop-car {
             font-size: rem(48);
             float: right;
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(center);
-            @include align-items(center);
             height: rem(88);
             width: rem(108);
             padding: 0 rem(30);
@@ -104,7 +103,7 @@
             display: inline-block;
             border-radius: rem(6);
             padding: 0 rem(10);
-            height: rem(32);
+            // height: rem(32);
             line-height: rem(32);
             color: #E6133C;
             transform: translateY(rem(-4));
@@ -168,8 +167,7 @@
         padding: rem(30) rem(20);
         background: #FFFFFF;
         .top {
-            @include display(flex);
-            @include align-items(center);
+            @extend %comm-flex;
         }
         .bl-logo {
             width: rem(160);
@@ -183,8 +181,7 @@
             color: #666666;
         }
         .bottom {
-            @include display(flex);
-            @include align-items(center);
+            @extend %comm-flex;
             @include justify-content(center);
             .bottom-li {
                 width: 25%;
@@ -192,8 +189,7 @@
                 padding-right: rem(24);
                 margin-top: rem(30);
                 height: rem(30);
-                @include display(flex);
-                @include align-items(center);
+                @extend %comm-flex;
                 div {
                     width: 100%;
                     line-height: 1;
@@ -226,16 +222,14 @@
         }
     }
     .phone-special {
-        @include display(flex);
-        @include align-items(center);
+        @extend %comm-flex;
         font-size: rem(24);
         margin-top: rem(20);
         line-height: 1;
         margin-bottom: rem(8);
         .special-logo {
             padding: rem(4) 0;
-            @include display(flex);
-            @include align-items(center);
+            @extend %comm-flex;
             background: no-repeat url("i/single-detail/special-logo.png") left center;
             background-size: auto 100%;
             margin-right: rem(14);
@@ -324,9 +318,8 @@
             .ticket-text {
                 font-size: rem(24);
                 overflow: hidden;
-                @include display(flex);
+                @extend %comm-flex;
                 @include justify-content(space-between);
-                @include align-items(flex-end);
             }
             .ticket-limit {
                 float: left;
@@ -337,11 +330,13 @@
             .sales-limit {
                 float: left;
                 padding-top: rem(6);
+                padding-right: rem(30);
                 p {
-                    height: rem(36);
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
+                    // height: rem(36);
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
+                    // white-space: nowrap;
+                    display: inline-block;
                 }
             }
             .get-button {
@@ -367,6 +362,7 @@
                 border-bottom: none;
                 padding-bottom: 0;
                 padding-top: 0;
+                overflow: hidden;
             }
         }
         .ticket-logo:before {
@@ -392,9 +388,8 @@
     }
     .choose-limit {
         height: rem(88);
-        @include display(flex);
+        @extend %comm-flex;
         @include justify-content(space-between);
-        @include align-items(center);
     }
     .serve-offer {
         padding: rem(30) 0 rem(10);
@@ -423,8 +418,7 @@
         -webkit-transform: rotate(180deg);
     }
     .operate-cotainer {
-        @include display(flex);
-        @include align-items(center);
+        @extend %comm-flex;
     }
     .operate-text {
         color: #666666;
@@ -432,8 +426,7 @@
         float: left;
     }
     .right-enter {
-        @include display(flex);
-        @include align-items(center);
+        @extend %comm-flex;
         .total-num {
             color: #999999;
             font-size: rem(24);
@@ -465,15 +458,13 @@
             }
             .comment-head {
                 line-height: 1;
-                @include display(flex);
+                @extend %comm-flex;
                 @include justify-content(space-between);
-                @include align-items(center);
                 margin-bottom: rem(20);
             }
             .comment-star {
-                @include display(flex);
+                @extend %comm-flex;
                 @include justify-content(space-between);
-                @include align-items(center);
                 div {
                     width: rem(25);
                     height: rem(25);
@@ -504,16 +495,13 @@
         li:first-child {
             height: rem(88);
             padding: 0;
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(space-between);
-            @include align-items(center);
             .left-head {
-                @include display(flex);
-                @include align-items(center);
+                @extend %comm-flex;
             }
             .right-head {
-                @include display(flex);
-                @include align-items(center);
+                @extend %comm-flex;
             }
             .comment-num {
                 color: #999999;
@@ -524,15 +512,13 @@
         }
         li:last-child {
             border-bottom: none;
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(center);
-            @include align-items(center);
             height: rem(115);
             padding: 0;
             div {
-                @include display(flex);
+                @extend %comm-flex;
                 @include justify-content(center);
-                @include align-items(center);
                 height: rem(65);
                 min-width: rem(200);
                 padding: 0 rem(16);
@@ -556,12 +542,10 @@
     .banner-enter {
         padding: rem(30) rem(20);
         background: #FFFFFF;
-        @include display(flex);
-        @include align-items(center);
+        @extend %comm-flex;
         @include justify-content(space-between);
         .logo-container {
-            @include display(flex);
-            @include align-items(center);
+            @extend %comm-flex;
             @include justify-content(space-between);
         }
         .banner-logo {
@@ -604,10 +588,10 @@
         bottom: rem(100);
         max-height: 100%;
         z-index: 1001;
+        visibility: hidden;
         .fix-button {
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(center);
-            @include align-items(center);
             height: rem(28);
             margin-bottom: rem(-2);
             overflow: hidden;
@@ -623,12 +607,10 @@
             border-radius: 100%;
             background: #FFFFFF;
             height: rem(50);
-            box-shadow: 0 0 6px #CCCCCC;
             @include transform(translateY(25%));
             z-index: 1;
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(center);
-            @include align-items(center);
             .arrow-back {
                 font-size: rem(24);
                 transform: rotate(90deg) translateX(-25%);
@@ -730,44 +712,8 @@
         .select-num {
             padding: rem(30) rem(20);
             background: #FFFFFF;
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(space-between);
-            @include align-items(center);
-            .num-computer {
-                @include display(flex);
-                @include justify-content(space-between);
-                @include align-items(center);
-            }
-            .num-show {
-                height: rem(68);
-                width: rem(90);
-                background: #f5f5f5;
-                text-align: center;
-                line-height: rem(68);
-                input {
-                    width: 100%;
-                    height: 100%;
-                    margin: 0;
-                    padding: 0;
-                    border: 0;
-                    text-align: center;
-                    background: transparent;
-                }
-            }
-            .num-add {
-                height: rem(68);
-                width: rem(74);
-                margin-left: rem(4);
-                background: #eeeeee no-repeat url("i/single-detail/add.png") center center;
-                background-size: rem(32);
-            }
-            .num-minus {
-                height: rem(68);
-                width: rem(74);
-                margin-right: rem(4);
-                background: #fbfbfb no-repeat url("i/single-detail/minus.png") center center;
-                background-size: rem(32);
-            }
         }
     }
     .button-container {
@@ -783,6 +729,9 @@
             white-space: nowrap;
             font-size: rem(0);
             z-index: 1;
+            .pay-presale{
+                width: 100%!important;
+            }
             .buy-now {
                 display: inline-block;
                 width: 50%;
@@ -862,15 +811,13 @@
         }
         .top {
             height: rem(88);
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(space-between);
-            @include align-items(center);
             border-bottom: 1px solid #E7E7E7;
         }
         .top-left {
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(space-between);
-            @include align-items(center);
             div:first-child {
                 height: rem(34);
                 line-height: rem(34);
@@ -883,9 +830,8 @@
             }
         }
         .top-right {
-            @include display(flex);
+            @extend %comm-flex;
             @include justify-content(space-between);
-            @include align-items(center);
             div:first-child {
                 font-size: rem(24);
                 color: #E6133C;
@@ -970,6 +916,23 @@
                     float: none;
                     margin: 0;
                 }
+            }
+        }
+        .sinle-detail {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: rem(100);
+            max-height: 100%;
+            z-index: 1001;
+            visibility: hidden;
+            .fix-button {
+                @include display(flex);
+                @include justify-content(center);
+                @include align-items(center);
+                height: rem(28);
+                margin-bottom: rem(-2);
+                overflow: hidden;
                 .suit-detail {
                     float: none;
                     width: 100%;
@@ -978,9 +941,8 @@
                     display: none;
                 }
                 .limit {
-                    @include display(flex);
+                    @extend %comm-flex;
                     @include justify-content(center);
-                    @include align-items(center);
                     span {
                         display: none;
                     }
@@ -1070,7 +1032,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0,0,0,.6);
+        background: rgba(0, 0, 0, .6);
         z-index: 999;
     }
     .parameter {
@@ -1165,15 +1127,13 @@
             .head {
                 height: rem(80);
                 margin: 0 rem(20);
-                @include display(flex);
+                @extend %comm-flex;
                 @include justify-content(space-between);
-                @include align-items(center);
                 border-bottom: 1px solid #e7e7e7;
             }
             .head-left {
-                @include display(flex);
+                @extend %comm-flex;
                 @include justify-content(space-between);
-                @include align-items(center);
                 .head-logo {
                     width: rem(50);
                     height: rem(50);
@@ -1191,8 +1151,7 @@
             .star {
                 padding: 0 rem(20);
                 height: rem(68);
-                @include display(flex);
-                @include align-items(center);
+                @extend %comm-flex;
                 overflow: hidden;
                 div {
                     width: rem(25);
@@ -1221,8 +1180,7 @@
             }
             .goods-num {
                 padding: 0 rem(20);
-                @include display(flex);
-                @include align-items(center);
+                @extend %comm-flex;
                 @include justify-content(space-between);
                 margin-bottom: rem(20);
                 .left-num {
@@ -1304,172 +1262,552 @@
                 width: 100%;
                 top: 50%;
                 left: 50%;
-                @include transform(translate3d(-50%,-50%,0));
+                @include transform(translate3d(-50%, -50%, 0));
             }
         }
     }
-}
-#touchSlide {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    .swiper-slide:after {
-        content: "";
-        display: block;
-        padding-top: 84.13%;
-    }
-    .swiper-slide a {
-        display: block;
+    #touchSlide {
+        position: relative;
         width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        @include transform(translate3d(-50%,-50%, 0));
+        overflow: hidden;
+        .swiper-slide:after {
+            content: "";
+            display: block;
+            padding-top: 84.13%;
+        }
+        .swiper-slide a {
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate3d(-50%, -50%, 0));
+        }
+        .swiper-wrapper {
+            .swiper-slide {
+                position: relative;
+            }
+        }
+        .swiper-pagination {
+            position: absolute;
+            bottom: rem(72);
+            left: 50%;
+            @include transform(translate3d(-50%, 0, 0));
+            li {
+                display: inline-block;
+                width: rem(16);
+                height: rem(16);
+                @include border-radius(20px);
+                text-indent: -9999px;
+                overflow: hidden;
+                margin: 0 rem(12);
+                border: 1px solid #FFFFFF;
+                background: #FFFFFF;
+                &.on {
+                    background: #E71740;
+                    border: 1px solid #E71740;
+                }
+            }
+        }
     }
-    .swiper-wrapper {
+    #recommend-body {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: #FFFFFF;
+        padding-bottom: rem(40);
         .swiper-slide {
             position: relative;
+            padding: 0 rem(40);
+            ul {
+                overflow: hidden;
+                margin-left: rem(-35);
+            }
+            li {
+                width: 33.33%;
+                padding-left: rem(35);
+                float: left;
+            }
         }
-    }
-    .swiper-pagination {
-        position: absolute;
-        bottom: rem(16);
-        left: 50%;
-        @include transform(translate3d(-50%, 0, 0));
-        li {
-            display: inline-block;
-            width: rem(16);
-            height: rem(16);
-            @include border-radius(20px);
-            text-indent: -9999px;
+        .recommend-img {
+            width: 100%;
+            position: relative;
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                @include transform(translate3d(-50%, -50%, 0));
+            }
+        }
+        .recommend-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
             overflow: hidden;
-            margin: 0 rem(12);
-            border: 1px solid #FFFFFF;
-            background: #FFFFFF;
-            &.on {
-                background: #E71740;
-                border: 1px solid #E71740;
+            text-overflow: ellipsis;
+            font-size: rem(24);
+            line-height: rem(32);
+            padding: 0 rem(6);
+            margin: rem(6) 0;
+            height: rem(64);
+            color: #666666;
+        }
+        .recommend-pay {
+            line-height: 1;
+            margin-bottom: rem(30);
+            span {
+                font-size: rem(24);
+            }
+        }
+        .recommend-img:after {
+            content: "";
+            padding-top: 100%;
+            display: block;
+        }
+        .swiper-pagination {
+            position: absolute;
+            bottom: rem(30);
+            left: 50%;
+            line-height: 1;
+            @include transform(translate3d(-50%, 0, 0));
+            li {
+                display: inline-block;
+                width: rem(38);
+                height: rem(6);
+                text-indent: -9999px;
+                overflow: hidden;
+                margin: 0 rem(4);
+                border: 1px solid #bfbfbf;
+                background: #bfbfbf;
+                &.on {
+                    width: rem(48);
+                    height: rem(8);
+                    background: #E71740;
+                    border: 1px solid #E71740;
+                }
             }
         }
     }
-}
-#recommend-body {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: #FFFFFF;
-    padding-bottom: rem(40);
-    .swiper-slide {
+    /* 10-14 chenpeng 定金预售 */
+    .premask {
+        @include mask(.7, 1110);
+    }
+    .modal-title+.modal-text {
+        padding-top: rem(20);
+    }
+    .presale-tag.presale-sub {
+        margin-top: -.7rem;
+        background: rgba(#000000, .4);
         position: relative;
-        padding: 0 rem(40);
-        ul {
-            overflow: hidden;
-            margin-left: rem(-35);
+        z-index: 2;
+        .panicbuying-left strong,
+        .panicbuying-right {
+            font-size: rem(28);
+            color: #ffffff;
         }
-        li {
-            width: 33.33%;
-            padding-left: rem(35);
+        .panicbuying-left .span-res {
+            font-size: rem(24);
+            color: #cccccc;
+        }
+    }
+    .panicbuying-title,
+    .presale-tag {
+        background: #f0f0f0;
+        line-height: 1.75*0.4rem;
+        height: 1.75*0.4rem;
+        padding: 0*0.4rem 0.5*0.4rem;
+        .panicbuying-left {
             float: left;
         }
-    }
-    .recommend-img {
-        width: 100%;
-        position: relative;
-        img {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            @include transform(translate3d(-50%,-50%,0));
-        }
-    }
-    .recommend-text {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: rem(24);
-        line-height: rem(32);
-        padding: 0 rem(6);
-        margin: rem(6) 0;
-        height: rem(64);
-        color: #666666;
-    }
-    .recommend-pay {
-        line-height: 1;
-        margin-bottom: rem(30);
-        span {
-            font-size: rem(24);
-        }
-    }
-    .recommend-img:after {
-        content: "";
-        padding-top: 100%;
-        display: block;
-    }
-    .swiper-pagination {
-        position: absolute;
-        bottom: rem(30);
-        left: 50%;
-        line-height: 1;
-        @include transform(translate3d(-50%, 0, 0));
-        li {
+        .panicbuying-left i {
+            height: 0.65*0.4rem;
+            float: left;
+            width: 0.075*0.4rem;
             display: inline-block;
-            width: rem(38);
-            height: rem(6);
-            text-indent: -9999px;
-            overflow: hidden;
-            margin: 0 rem(4);
-            border: 1px solid #bfbfbf;
-            background: #bfbfbf;
-            &.on {
-                width: rem(48);
-                height: rem(8);
-                background: #E71740;
-                border: 1px solid #E71740;
+            background: #faa62d;
+            margin-right: 0.2*0.4rem;
+            margin-top: 0.525*0.4rem;
+        }
+        .panicbuying-left strong {
+            font-size: 0.7*0.4rem;
+            color: #333333;
+        }
+        .panicbuying-left span {
+            font-size: 0.6*0.4rem;
+            color: #999999;
+        }
+        .panicbuying-right {
+            float: right;
+            color: #666666;
+            font-size: 0.7*0.4rem;
+        }
+        .panicbuying-right i {
+            background: url("i/countdown-icon.png") no-repeat center center;
+            background-size: 0.65*0.4rem 0.65*0.4rem;
+            display: inline-block;
+            margin-right: 0.2*0.4rem;
+            width: 0.65*0.4rem;
+            height: 0.65*0.4rem;
+            float: left;
+            margin-top: 0.55*0.4rem;
+        }
+    }
+    /* 10-14 chenpeng 定金预售 */
+    .deposit {
+        width: 100%;
+        overflow: hidden;
+        @extend %comm-flex;
+        @include justify-content(space-between);
+        height: rem(94);
+        padding: 0 rem(20);
+        background-color: #ffffff;
+        @include hair(bottom, #e7e7e7);
+        position: relative;
+        .deposit-price {
+            @extend %comm-flex;
+            .presale-price {
+                font-size: rem(46);
+                color: #e6133c;
+                font-weight: bolder;
+                .rmb {
+                    font-size: rem(28);
+                    color: #e6133c;
+                    font-style: normal;
+                    margin-right: 3px;
+                }
+            }
+        }
+        .deposit-balance {
+            font-size: rem(24);
+            color: #333333;
+        }
+        .prermb {
+            color: #ffffff;
+            width: rem(100);
+            text-align: center;
+            position: relative;
+            z-index: 9;
+            margin-right: 4px;
+            line-height: 1;
+        }
+        .yt {
+            position: absolute;
+            color: #f23c52;
+            font-size: rem(120);
+            top: rem(-12);
+            left: rem(12);
+        }
+    }
+    .presale-innner {
+        padding: 0 rem(20*2);
+        background-color: #fafafa;
+        font-size: rem(24*2);
+        @include transform(scale(.5));
+        transform-origin: left top;
+        width: rem(750*2);
+        .rmb {
+            font-size: rem(24*2);
+            font-style: normal;
+        }
+        .arrow-right {
+            background: inline-image("base64/arrow.png") no-repeat right center;
+            background-size: rem(16*2) auto;
+            padding-right: rem(25*2);
+        }
+        .pre-inner-item {
+            @extend %comm-flex;
+            @include justify-content(space-between);
+            height: rem(75*2);
+            &:nth-child(2) {
+                border-bottom: 1px solid #e7e7e7;
+            }
+            .inner-item-left {
+                @include flex(1);
+                @extend %comm-flex;
+            }
+            .item-name {
+                width: rem(75*2);
+                color: #666666;
+            }
+            .item-price {
+                font-size: rem(30*2);
+                color: #e6133c;
+                margin-right: 5*2px;
+                em.rmb {
+                    font-style: normal;
+                    font-size: rem(26*2);
+                }
+            }
+            .item-time {
+                color: #999999;
+            }
+            .item-del {
+                margin-left: 3*2px;
+                font-size: rem(28*2);
+                color: #999999;
             }
         }
     }
-}
-// chenp
-.panicbuying-title {
-    background: #f0f0f0;
-    line-height: 1.75*0.4rem;
-    height: 1.75*0.4rem;
-    padding: 0*0.4rem 0.5*0.4rem;
-}
-.panicbuying-left {
-    float: left;
-}
-.panicbuying-left i {
-    height: 0.65*0.4rem;
-    float: left;
-    width: 0.075*0.4rem;
-    display: inline-block;
-    background: #faa62d;
-    margin-right: 0.2*0.4rem;
-    margin-top: 0.525*0.4rem;
-}
-.panicbuying-left strong {
-    font-size: 0.7*0.4rem;
-    color: #333333;
-}
-.panicbuying-left span {
-    font-size: 0.6*0.4rem;
-    color: #999999;
-}
-.panicbuying-right {
-    float: right;
-    color: #666666;
-    font-size: 0.7*0.4rem;
-}
-.panicbuying-right i {
-    background: url("i/countdown-icon.png") no-repeat center center;
-    background-size: 0.65*0.4rem 0.65*0.4rem;
-    display: inline-block;
-    margin-right: 0.2*0.4rem;
-    width: 0.65*0.4rem;
-    height: 0.65*0.4rem;
-    float: left;
-    margin-top: 0.55*0.4rem;
+    .inner-posr {
+        background-color: #fafafa;
+        position: relative;
+        height: rem(75*2);
+    }
+    .z-link {
+        @extend %z-link;
+    }
+    /* 百联财礼去掉的底部 加入礼物篮 */
+    // .presale-bottom-box {
+    //     position: fixed;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     height: rem(100);
+    //     z-index: 1;
+    //     background-color: #ffffff;
+    //     @include hairline(top, #e7e7e7);
+    //     @include display(flex);
+    //     .prebtn-mange {
+    //         width: rem(230);
+    //         @extend %comm-flex;
+    //         .mange-item {
+    //             text-align: center;
+    //             @include flex(1);
+    //             position: relative;
+    //             width: 0;
+    //             font-size: 0;
+    //             height: rem(100);
+    //             @extend %comm-flex;
+    //             @include flex-direction(column);
+    //             @include justify-content(center);
+    //             &:first-child {
+    //                 @include hairline(right, #e7e7e7);
+    //             }
+    //             .deget {
+    //                 position: absolute;
+    //                 right: rem(10);
+    //                 top: rem(4);
+    //                 z-index: 2;
+    //                 background-color: #e6133c;
+    //                 font-size: rem(24);
+    //                 color: #ffffff;
+    //                 @include transform(scale(.75));
+    //                 @include transform-origin(left top);
+    //                 padding: 0 5px;
+    //                 border-radius: 10px;
+    //                 font-family: arial;
+    //             }
+    //             .iconfont {
+    //                 font-size: rem(46);
+    //                 color: #666666;
+    //             }
+    //             .p {
+    //                 line-height: 1;
+    //                 font-size: rem(24);
+    //                 color: #666666;
+    //                 margin-top: rem(6);
+    //             }
+    //         }
+    //     }
+    //     .prebtn-pay {
+    //         @extend %comm-flex;
+    //         @include justify-content(center);
+    //         background-color: #e6133c;
+    //         font-size: rem(36);
+    //         @include flex(1);
+    //         color: #ffffff;
+    //     }
+    // }
+    /* 10-21 chenpeng 百联财礼版 */
+    .pride-for {
+        font-size: rem(24);
+        color: #999999;
+        margin: rem(15) 0;
+        padding-left: rem(32);
+    }
+    #singleproduct .serve-offer .serve-logo.disservenfor {
+        background: no-repeat url("i/single-detail/i.png") left center;
+        background-size: 0.22rem 0.22rem;
+    }
+    .sub-height {
+        height: $bar-height*2;
+        width: 100%;
+    }
+    .bar.bar-normal {
+        z-index: 998;
+        @include bar-style(#ffffff, #e7e7e7, #333333);
+        .button {
+            color: #333333;
+        }
+    }
+    .bar.subhead-bar {
+        top: $bar-height;
+        background-color: #f7f7f7;
+        z-index: 99;
+    }
+    .subhead-tabs {
+        @extend %comm-flex;
+        .subhead-tabs-item {
+            @include flex(1);
+            padding: 0 rem(24);
+            height: $bar-height;
+            @extend %comm-flex;
+            line-height: 1;
+            font-size: rem(32);
+            color: #333333;
+            border-bottom: 2px solid transparent;
+            &.active {
+                border-bottom: 2px solid #333333;
+            }
+        }
+    }
+    .bar .button {
+        position: relative;
+    }
+    .deget {
+        position: absolute;
+        right: rem(-16);
+        top: rem(14);
+        z-index: 2;
+        font-size: rem(24);
+        color: #ffffff;
+        min-width: rem(48);
+        text-align: center;
+        border-radius: 10px;
+        background-color: #e6133c;
+        border: 1px solid #ffffff;
+        padding: 0 rem(14);
+        line-height: 1.5;
+        font-family: Arial;
+        @include transform(scale(.75));
+        transform-origin: left top;
+    }
+    .subhead-bar .bar-right .pgift {
+        margin-right: rem(14);
+    }
+    .pride-money-box {
+        padding: 0 rem(20);
+        background-color: #ffffff;
+        position: relative;
+        height: rem(90);
+        @include hairline(top, #e7e7e7);
+        @include hair(bottom, #e7e7e7);
+        @extend %comm-flex;
+        .pride-money {
+            font-size: rem(46);
+            color: #e6133c;
+            .rmb {
+                font-size: rem(28);
+                color: #e6133c;
+                font-style: normal;
+            }
+            del {
+                font-size: rem(28);
+                color: #999999;
+                margin-left: rem(30);
+            }
+        }
+    }
+    .num-computer {
+        @extend %comm-flex;
+        @include justify-content(space-between);
+    }
+    .num-show {
+        height: rem(68);
+        width: rem(90);
+        background: #f5f5f5;
+        text-align: center;
+        line-height: rem(68);
+        input {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    .num-add {
+        height: rem(68);
+        width: rem(74);
+        margin-left: rem(4);
+        background: #eeeeee no-repeat url("i/single-detail/add.png") center center;
+        background-size: rem(38);
+    }
+    .num-minus {
+        height: rem(68);
+        width: rem(74);
+        margin-right: rem(4);
+        background: #fbfbfb no-repeat url("i/single-detail/minus.png") center center;
+        background-size: rem(38);
+    }
+    .pride-bottom-box {
+        height: 1rem;
+        width: rem(294);
+        .num-add,
+        .num-minus,
+        .num-show {
+            height: 1rem;
+            margin: 0;
+            background-color: #ffffff;
+            @include flex(1);
+        }
+    }
+    .num-show {
+        border-right: 1px solid #bfbfbf;
+        border-left: 1px solid #bfbfbf;
+        border-width: 0 1px;
+        -webkit-border-image: url("data:image/gif;base64,R0lGODlhBAAEAIABANra2v///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjAxODAxMTc0MDcyMDY4MTE4MDgzOEM2RDA0Mzc2M0VFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjBDQjM0Q0NCNzE0RjExRTRBMTRFODk0NjhEQTdCRTkxIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjBDQjM0Q0NBNzE0RjExRTRBMTRFODk0NjhEQTdCRTkxIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowMjgwMTE3NDA3MjA2ODExODA4MzhDNkQwNDM3NjNFRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExODA4MzhDNkQwNDM3NjNFRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAEALAAAAAAEAAQAAAIGRAKGmgcFADs=") 0 2 round;
+        input {
+            font-size: rem(40);
+            color: #333333;
+            font-weight: bold;
+        }
+    }
+    .serve-address {
+        padding-left: rem(32);
+        font-size: rem(28);
+        color: #333333;
+        background-image: url("i/server-address.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto rem(28);
+    }
+    .button-container .button-buy.kf-box {
+        background-color: #ffffff;
+        z-index: 2;
+        font-size: rem(36);
+        color: #ffffff;
+    }
+    .z-link {
+        @extend %z-link;
+    }
+    .btngroup-kf {
+        @extend %comm-flex;
+        position: relative;
+        @include hairline(top, #d0d0d0);
+        height: 100%;
+        .btngroup-item {
+            @include flex(1);
+            height: 100%;
+            @extend %comm-flex;
+            @include justify-content(center);
+            color: #ffffff;
+            position: relative;
+            &:first-child {
+                width: rem(150);
+                background-color: #f5f5f5;
+                font-size: rem(50);
+                color: #919191;
+                @include flex(inherit);
+            }
+            &:nth-child(2) {
+                background-color: #faa62d;
+            }
+            &:nth-child(3) {
+                background-color: #e6133c;
+            }
+        }
+    }
 }

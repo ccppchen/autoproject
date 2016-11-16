@@ -22,58 +22,118 @@
 	content: "\E001";
 }
 
-.class:before {
+.arrow-right:before {
 	content: "\E002";
 }
 
-.close:before {
+.ask:before {
 	content: "\E003";
 }
 
-.error:before {
+.askfill:before {
 	content: "\E004";
 }
 
-.ihome:before {
+.attention:before {
 	content: "\E005";
 }
 
-.isearch:before {
+.attentionfill:before {
 	content: "\E006";
 }
 
-.iuser:before {
+.camera:before {
 	content: "\E007";
 }
 
-.more-v:before {
+.camerafill:before {
 	content: "\E008";
 }
 
-.search:before {
+.cart:before {
 	content: "\E009";
 }
 
-.shop-car:before {
+.cartfill:before {
 	content: "\E00A";
 }
 
-.tab-class:before {
+.close:before {
 	content: "\E00B";
 }
 
-.tab-index:before {
+.delete:before {
 	content: "\E00C";
 }
 
-.tab-indexactive:before {
+.deliver:before {
 	content: "\E00D";
 }
 
-.tab-shop:before {
+.evaluate:before {
 	content: "\E00E";
 }
 
-.tab-user:before {
+.female:before {
 	content: "\E00F";
+}
+
+.home:before {
+	content: "\E010";
+}
+
+.homefill:before {
+	content: "\E011";
+}
+
+.male:before {
+	content: "\E012";
+}
+
+.message:before {
+	content: "\E013";
+}
+
+.messagefill:before {
+	content: "\E014";
+}
+
+.more-v:before {
+	content: "\E015";
+}
+
+.my:before {
+	content: "\E016";
+}
+
+.myfill:before {
+	content: "\E017";
+}
+
+.pay:before {
+	content: "\E018";
+}
+
+.refund:before {
+	content: "\E019";
+}
+
+.scan:before {
+	content: "\E01A";
+}
+
+.search:before {
+	content: "\E01B";
+}
+
+.send:before {
+	content: "\E01C";
+}
+
+.we:before {
+	content: "\E01D";
+}
+
+.wefill:before {
+	content: "\E01E";
 }

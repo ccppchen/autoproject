@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		@@include('widget/head.html', { "title": "赠送礼物", "css": "css/give-gift.css","requirejs": "js/give-gift" })
+	</head>
+
+	<body id="give-gift">
+		<div class="content">
+			<header class="bar bar-header bar-light">
+				<div class="bar-left">
+					<a href="javascript:history.go(-1)" class="button iconfont arrow-back">
+						返回
+					</a>
+				</div>
+				<h1 class="title index-title">
+	            		赠送礼物
+	        </h1>
+				<div class="j-nav">
+					<div class="button iconfont more-v"></div>
+					<div class="button iconfont error"></div>
+				</div>
+				<nav class="j-navcontent">
+					<ul class="ul-nav">
+						<li>
+							<a href="javascript:;"><i class="iconfont ihome"></i>
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont isearch"></i>
+								<p>搜索</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont class"></i>
+								<p>分类</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont shop-car"></i>
+								<p>购物车</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont iuser"></i>
+								<p>我的i百联</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+		<div class="top-banner">
+			<img src="css/i/give-gift/tree.png" />
+			<div class="head-box"></div>
+		</div>
+		<div class="bottom-box">
+			<div class="box">
+				<div class="swipe-box">
+					<div class="swiper-container" id="touchSlide">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a href="javascript:;"><img src="images/gift.png" alt=""></a>
+							</div>
+							<div class="swiper-slide">
+								<a href="javascript:;"><img src="images/gift.png" alt=""></a>
+							</div>
+							<div class="swiper-slide">
+								<a href="javascript:;"><img src="images/gift.png" alt=""></a>
+							</div>
+						</div>
+						<div class="prev" style="display: none;"></div>
+						<div class="next" style="display: none;"></div>
+						<div class="state-box" style="visibility: hidden;">
+							<div class="pageState"></div>
+						</div>
+					</div>
+					<div class="mystery">
+						<img src="css/i/give-gift/mystery.png">
+					</div>
+				</div>
+
+				<div class="give-text">
+					“亲爱哒，生日快到啦！<br />我选了一份礼物，希望你会喜欢”
+				</div>
+				<div class="give-button">
+					领取礼物
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

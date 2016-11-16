@@ -194,8 +194,8 @@
      if(this.opts.isRefresh) {
          this.$wrap
              .on('touchstart', function(e) {
-                 that.startX = e.originalEvent.targetTouches[0].pageX || e.touches[0].pageX;
-                 that.startY = e.originalEvent.targetTouches[0].pageY || e.touches[0].pageY;
+                 that.startX = e.targetTouches[0].screenX;
+                 that.startY = e.targetTouches[0].screenY;
              })
              .on('touchmove', function(e) {
                  that.scrollTop = $(this).scrollTop();
@@ -235,8 +235,8 @@
          return;
      }
 
-     var currentX = (e.touches[0].pageX || e.originalEvent.targetTouches[0].pageX) - this.startX,
-         currentY = (e.touches[0].pageY || e.originalEvent.targetTouches[0].pageY) - this.startY;
+     var currentX = event.targetTouches[0].screenX - this.startX,
+         currentY = event.targetTouches[0].screenY - this.startY;
 
      // 如果横向滚动大于纵向滚动. 取消触发事件
      if (Math.abs(currentX) > Math.abs(currentY)) {

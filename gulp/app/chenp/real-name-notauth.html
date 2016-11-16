@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  @@include('widget/head.html', { "title": "实名认证", "css": "css/certification.css", "requirejs": "js/certification" })
+</head>
+
+<body>
+  @@include('widget/header.html', { "left-icon": "arrow-back", "bar-style": "bar-light", "title": "实名认证", "nav": false, "rightIconBool": false, "rightIconBoolMore": false })
+  <!-- content -->
+  <div class="content">
+    <div class="prompt-wrap flex-middle">
+      <div class="prompt-notice"><i class="iconfont prompt"></i></div>
+      <div class="prompt-inner flex-middle">您的实名认证正在审核中，请耐心等申请结果！</div>
+      <!-- <div class="prompt-close flex-center"><i class="iconfont error"></i></div> -->
+    </div>
+    <!-- <div class="see-info">
+      <a href="javascript:;">
+        <div class="see-a">请查看您的认证信息</div>
+        <p>若您需要更改实名认证信息，请携带本人身份证至百联门店办理。</p>
+      </a>
+    </div> -->
+    <div class="list-between info-comm">
+      <div class="list-item">
+        <div class="list-left">
+          <div class="info-title">身份信息</div>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="list-left">
+          <div class="info-name">真实姓名</div>
+          <div class="info-detail">
+            <input type="text" class="j-name" name="" placeholder="" value="高伟" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="list-left">
+          <div class="info-name">身份证号</div>
+          <div class="info-detail">
+            <input type="text" class="j-ident" name="" placeholder="" value="310************111" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-between info-comm">
+      <div class="list-item">
+        <div class="info-title">身份证正反面照片</div>
+      </div>
+      <div class="picture-box">
+        <div class="picture-inner">
+          <div class="picture-item">
+            <div class="picture-main">
+              <img src="images/real-name-auth/ident-z.jpg" alt="" class="up-img">
+            </div>
+          </div>
+          <div class="picture-space"></div>
+          <div class="picture-item">
+            <div class="picture-main">
+              <img src="images/real-name-auth/ident-f.jpg" alt="" class="up-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="confirm-box">
+      <input type="button" class="confirm-btn" value="返回上一级">
+    </div>
+  </div>
+  <!-- content end -->
+</body>
+
+</html>

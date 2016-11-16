@@ -219,10 +219,14 @@
         }
         .trans-detail{
             text-align: right;
+            width: rem(200);
         }
         .trans-back{
             font-size: rem(24);
             color: #4A90E2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
     .everyday-trans-head{

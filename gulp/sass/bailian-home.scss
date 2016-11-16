@@ -19,15 +19,16 @@
     .tt-mendian{
         height: rem(88);
         border-bottom: 1px solid #E7E7E7;
-        display: inline-table;
+        @include display(flex);
+        @include align-items(center);
         width: 100%;
-        padding: rem(26) 0;
         .fonts{
             display: inline-block;
         }
         .fonts-1{
             font-size: rem(28);
             color: #999999;
+            float: left;
         }
         .fonts-2{
             background: #FF8B4B;
@@ -35,11 +36,12 @@
             font-size: rem(24); 
             color: #ffffff;
             border-radius: rem(4);
-            margin: rem(-390) rem(10) 0 rem(38);
+            margin: 0 rem(10) 0 rem(38);
         }
         .fonts-3{ 
             color: #2A2A2A;
             font-size: rem(32);
+            float: left;
         }
     }
     .img-mendian{
@@ -104,6 +106,9 @@
                         font-size: rem(24);
                         color: #4A90E2;
                     }
+                    .mendian-fonts{
+                        border-bottom: none;
+                    }
                 }
             }
         }
@@ -156,4 +161,13 @@
             }
         }
     }
+}
+.open-show{
+    transition: all ease .2s;
+    height: auto;
+    overflow: hidden;
+}
+
+.open-show.close{
+    height: 0;
 }

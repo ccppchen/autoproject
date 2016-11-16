@@ -1,0 +1,127 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+@import "tobe/components/toast/toast";
+.tab-group {
+    @extend %tab-group;
+}
+
+.arrow-white-right {
+    @extend %arrow-white-right;
+}
+
+.bar {
+    background-color: #ffffff;
+    .bar-right a {
+        font-size: rem(28);
+        color: #888888 !important;
+    }
+}
+
+.bar .button {
+    padding: 0 rem(30);
+}
+
+body {
+    background-color: #ffffff;
+}
+
+// 绑定会员卡-1
+.content {
+    text-align: center;
+    background: #ffffff;
+    padding-bottom: rem(20);
+    padding-top: rem(88);
+}
+
+.member-banner {
+    text-align: center;
+    img {
+        height: rem(324);
+    }
+}
+
+.input-frame {
+    height: auto;
+    margin-top: rem(60);
+    padding: 0 rem(100);
+    .line-frame {
+        height: rem(78);
+        border-bottom: 1px solid #cccccc;
+        text-align: left;
+        @include display(flex);
+        @include align-items(center);
+        .fill-box {
+            width: rem(300);
+            height: rem(76);
+            line-height: rem(76);
+            @include flex(1);
+            position: relative;
+            .member-inputbox {
+                width: rem(300);
+                height: rem(76);
+                font-size: rem(32);
+                color: #333333;
+                border: 0 none;
+                ::-webkit-input-placeholder {
+                    /* WebKit browsers */
+                    color: #999;
+                    font-size: rem(28);
+                }
+                :-moz-placeholder {
+                    /* Mozilla Firefox 4 to 18 */
+                    color: #999;
+                    font-size: rem(28);
+                }
+                ::-moz-placeholder {
+                    /* Mozilla Firefox 19+ */
+                    color: #999;
+                    font-size: rem(28);
+                }
+                :-ms-input-placeholder {
+                    /* Internet Explorer 10+ */
+                    color: #999;
+                    font-size: rem(28);
+                }
+            }
+        }
+        .get-button {
+            margin-left: rem(40);
+            height: rem(58);
+            .get {
+                width: rem(210);
+                height: rem(58);
+                line-height: rem(58);
+                font-size: rem(24);
+                color: #999999;
+                background: #F7F7F7;
+                border-radius: 4px;
+                cursor: pointer;
+                border: 0 none;
+            }
+        }
+        .close-button {
+            width: rem(28);
+            height: rem(76);
+            background: inline-image("base64/icon-close.png") no-repeat right center;
+            background-size: rem(28);
+            position: absolute;
+            right: rem(0);
+            top: rem(0);
+            margin: 0 auto;
+            display: none;
+        }
+    }
+    .submit-button {
+        width: 100%;
+        height: rem(84);       
+        font-size: rem(34);
+        color: #fff;
+        background: #E6133C;
+        border-radius: 4px;        
+        border: 0 none;
+        margin-top: rem(40);
+    }
+}
+

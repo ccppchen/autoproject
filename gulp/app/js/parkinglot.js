@@ -1,5 +1,5 @@
 require(['config', 'comm'], function() {
-    require(['vendor', 'fx_methods'], function() {
+    require(['vendor', 'fx_methods', 'touchslider'], function() {
         // 下拉刷新
         require(['zepto-refresh'], function(){
             $(window).refresh({
@@ -71,7 +71,36 @@ require(['config', 'comm'], function() {
             $('.mask').toggle();
             $(document).off('touchmove');
         });
+        // 弹出引导
+        $('.j-f-modal').one('show', function() {
+            $('.j-f-modal,.mask').show();
+            $('.main-body').addClass('filter');
+            $('body').on('touchmove', function(event) {
+                event.preventDefault();
+            });
+            // 轮播图
+            TouchSlide({
+                slideCell: "#touchSlide",
+                titCell: ".swiper-pagination ul",
+                mainCell: ".swiper-wrapper",
+                effect: "left",
+                autoPlay: false,
+                delayTime: 300,
+                interTime: 2000,
+                autoPage: true,
+                switchLoad: "_src"
+            });
 
+        });
+        $('.j-f-modal').trigger('show');
+
+        $('.f-modal-close').on('click', function(event) {
+            $('.f-modal,.mask').hide();
+            $('.main-body').removeClass('filter');
+            $('body').off('touchmove');
+        });
+
+        // $('.j-g-modal,.mask').show();
 
     });
 });

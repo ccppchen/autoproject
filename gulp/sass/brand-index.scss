@@ -1,0 +1,735 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/overflow-scroll/overflow-scroll";
+@import "tobe/components/nav/nav";
+@import "tobe/components/toast/toast";
+@import "tobe/ext/touchSlide";
+/*
+*2016.9.19
+*by fanqiuming
+*对应页面：天天抢购-品牌团频道页，天天抢购-品牌团详情页，天天抢购-量贩团
+*/
+/*背景色*/
+body{
+  background:#f6f6f6;
+}
+/*商品图图片占位设置*/
+.lazy-box{
+@extend %lazy-box;
+}
+/*轮播图图片占位设置*/
+#touchSlide{
+ .banner:after{
+  padding-top: 40%;
+}
+}
+/*轮播图图片占位设置*/
+.content{
+  margin-top:rem(88);
+  padding-bottom:rem(90);
+}
+/**
+*横向滚动导航
+*1.移动时定位
+*2.普通分栏样式
+*3.普通分栏选中样式
+*4.特殊分栏，包含价格排序
+*5.价格排序样式
+*6.价格排序上下箭头
+*7.价格排序上箭头选中时
+*8.价格排序下箭头选中时
+*/
+.ovfs{
+  background: #343434;
+  height:rem(80);
+  z-index:4;
+  border-bottom:1px solid #d8d8d8;
+  &.ovfs-line-position{/* 1 */
+    top:rem(88);
+    left:0;
+  }
+
+  li.ovfs-item{/* 2 */
+    color:#ffffff;
+    width:auto;
+    padding:0 rem(4);
+    margin:0 rem(26);
+    border-right:0 none;
+    text-align:center;
+    height:rem(44);
+    margin-top:rem(16);
+    line-height:rem(44);
+    font-size:rem(24);
+  }
+  li.active{/* 3 */
+    border-bottom:2px solid #fff;
+    font-weight:bold;
+    font-size:rem(26);
+  }
+
+  &.ovfs-line-sp{/* 4 */
+    padding-left:rem(172);
+    background: #ffffff;
+    li.ovfs-item{
+      color:#999999;
+    }
+    li.active{
+    border-bottom:0 none;
+    font-size:rem(24);
+    font-weight:normal;
+    color:#8B001B;
+    }
+    li.ovfs-item-sp{/* 5 */
+      position:absolute;
+      top:rem(22);
+      left:0;
+      width:rem(172);
+      height:rem(32);
+      line-height:rem(32);
+      background:#ffffff;
+      padding-right:rem(24);
+      margin:0;
+      border-right:1px solid #f3f3f3;
+      z-index:5;
+      color:#666666;
+      box-shadow:0 0 rem(8) rem(8) #ffffff;
+      .arrow{/* 6 */
+        position:absolute;
+        right:rem(44);
+        top:rem(2);
+        height:rem(28);
+        s{
+          border-bottom: rem(12) solid #c7c7c7;
+          border-left: rem(8) dashed transparent;
+          border-right: rem(8) dashed transparent;
+          position:absolute;
+          width:0;
+          height:0;
+          top:0;
+          right:0;
+        }
+        i{
+          border-top: rem(12) solid #c7c7c7;
+          border-left: rem(8) dashed transparent;
+          border-right: rem(8) dashed transparent;
+          position:absolute;
+          width:0;
+          height:0;
+          bottom:0;
+          right:0;
+        }
+        &.arrow-up{/* 7 */
+          s{
+            border-bottom: rem(12) solid #666666;
+            border-left: rem(8) dashed transparent;
+            border-right: rem(8) dashed transparent;
+          }
+        }
+        &.arrow-down{/* 8 */
+          i{
+            border-top: rem(12) solid #666666;
+            border-left: rem(8) dashed transparent;
+            border-right: rem(8) dashed transparent;
+          }
+        }
+      }
+    }
+  }
+}
+/**
+*横向滚动导航占位
+*/
+.ovfs-fix{
+  width:100%;
+  height:rem(80);
+  position:relative;
+  z-index:4;
+
+  &.ovfs-line-position{
+    top:rem(88);
+    left:0;
+  }
+}
+/**
+*小标题栏
+*/
+.brand-title{
+  width:100%;
+  padding:0 rem(16);
+  height:rem(80);
+  position:relative;
+  .line{/* 居中横线 */
+    width:100%;
+    height:0;
+    margin-top:rem(40);
+    border-bottom:1px solid #e1e1e1;
+    float:left;
+  }
+  .name{
+    width:rem(164);
+    height:rem(80);
+    line-height:rem(80);
+    position:absolute;
+    text-align:center;
+    top:0;
+    left:50%;
+    margin-left:rem(-82);
+    background:#f6f6f6;
+    color:#999999;
+  }
+}
+/**
+*商品/活动分栏展示模板
+*/
+@include pic-list();
+.pic-list{
+  padding:0 rem(16);
+  margin-top:rem(10);
+}
+/**
+*商品/活动分栏样式
+*1.单品样式
+*2.品牌标题
+*3.优惠信息
+*4.单品名
+*5.单品价格
+*6.左上角标签
+*7.左上角标签文字信息
+*8.价格行
+*9.购买按钮
+*10.活动未开始时朦层
+*11.活动未开始时黑色背景
+*12.活动未开始时提示开始时间
+*/
+.brand-list{
+  .list-bg{/* 1 */
+    width:100%;
+    padding:rem(10) rem(12) rem(10) rem(12);
+    position:relative;
+    .brand{/* 2 */
+      width:rem(110);
+      height:rem(60);
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .sale-message{/* 3 */
+      width:rem(232);
+      height:rem(48);
+      position:absolute;
+      bottom:rem(-24);
+      left:50%;
+      margin-left:rem(-116);
+      background:#ff355c;
+      color:#ffffff;
+      line-height:rem(48);
+      font-size:rem(30);
+      text-align:center;
+    }
+    .sale-name{/* 4 */
+      width:100%;
+      height:rem(72);
+      line-height:rem(36);
+      overflow:hidden;
+      color:#444444;
+      font-size:rem(24);
+      display:block;
+    }
+    .sale-price{/* 5 */
+      width:100%;
+      height:rem(60);
+      line-height:rem(60);
+      text-align:center;
+      font-size:rem(24);
+      color:#444444;
+      .red{
+        font-size:rem(42);
+        color: #8B001B;
+      }
+    }
+    em{/* 6 */
+      width:0;
+      height:0;
+      border-top: rem(24) solid red;/* 箭头指向左上 */
+      border-left: rem(24) dashed red;
+      border-right: rem(24) dashed transparent;
+      border-bottom: rem(24) dashed transparent;
+      position:absolute;
+      top:0;
+      left:0;
+      overflow:hidden;
+      z-index:2;
+    }
+    .icon-txt{/* 7 */
+      width:rem(34);
+      height:rem(34);
+      line-height:rem(34);
+      color:#fff;
+      font-size:rem(24);
+      position:absolute;
+      top:0;
+      left:rem(4);
+      z-index:3;
+    }
+    .brand-price{/* 8 */
+        width:100%;
+        height:rem(40);
+        line-height:rem(40);
+        @include ellipsis();
+        color:#444444;
+        font-size:rem(40);
+        margin-top:rem(16);
+        font-size: rem(40);
+        color: #8B001B;
+        i{
+          font-size:rem(24);
+          font-style:normal;
+        }
+        del{
+          color:#444444;
+          font-size:rem(28);
+          margin-left:rem(6);
+        }
+      }
+      a.buy{/* 9 */
+        width:rem(234);
+        height:rem(48);
+        line-height:rem(48);
+        border: 1px solid #FF5D7D;
+        color:#FF5D7D;
+        text-align:center;
+        margin:0 auto;
+        font-size:rem(24);
+        display:block;
+        margin-top:rem(30);
+      }
+  }
+  .comming{position:relative;}/* 10 */
+  .black-back{/* 11 */
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.8);
+
+  }
+  .start-date{/* 12 */
+    width:rem(220);
+    height:rem(220);
+    background:#ffffff;
+    position:absolute;
+    top:rem(80);
+    left:50%;
+    margin-left:rem(-110);
+    .date{
+      width:100%;
+      height:rem(72);
+      line-height:rem(36);
+      color:#222222;
+      font-size:rem(24);
+      margin-top:rem(28);
+      text-align:center;
+    }
+    .seeyou{
+      width:100%;
+      height:rem(46);
+      line-height:rem(46);
+      margin-top:rem(30);
+      text-align:center;
+      color:#222222;
+      font-size:rem(30);
+    }
+  }
+}
+/**
+*品牌团专场特殊样式
+*/
+.brand-list-brand .list-bg .sale-name{
+  margin-top:rem(30);
+}
+/**
+*天天抢购活动总导航
+*1.定位于页面底部
+*2.将整个导航栏等分
+*3.页面链接以及当前选中样式
+*/
+.top-link {/* 1 */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10006;
+  background-color:#ffffff;
+  border-top:1px solid #d8d8d8;
+  ul {/* 2 */
+  overflow: hidden;
+  white-space: nowrap;
+  @include display(flex);
+    li {/* 3 */
+
+      display: inline-block;
+      text-align: center;
+      height: rem(40);
+      line-height: rem(40);
+      @include flex(1);
+      border-left:1px solid #e7e7e7;
+      margin:rem(24) 0;
+      a {
+      padding: rem(8) 0;
+      color: #666;
+      }
+      &.select a {
+        color: #8b001b;
+      }
+      &:first-child{
+        border-left:0 none;
+      }
+    }
+  }
+}
+/**
+*品牌团头部导航
+*1.导航栏宽度高度
+*2.固定左侧图片大小
+*3.固定右侧折扣大小
+*4.中间文字信息
+*5.倒计时
+*/
+.sale-head{/* 1 */
+  width:100%;
+  height:rem(100);
+  background:#ffffff;
+  padding:0 rem(230) 0 rem(144);
+  position:relative;
+  .brand-img{/* 2 */
+    width:rem(120);
+    height:rem(50);
+    position:absolute;
+    top:rem(22);
+    left:rem(14);
+  }
+  .discount{/* 3 */
+    width:rem(120);
+    height:rem(100);
+    line-height:rem(100);
+    position:absolute;
+    right:rem(20);
+    top:0;
+    text-align:right;
+    font-size: rem(24);
+    color: #8B001B;
+    span{
+      font-size:rem(40);
+    }
+  }
+  .text{/* 4 */
+    width:100%;
+    height:rem(66);
+    padding-top:rem(14);
+    .name{
+      width:100%;
+      height:rem(32);
+      line-height:rem(32);
+      @include ellipsis();
+      font-size: rem(24);
+      color: #222222;
+    }
+    .time{/* 5 */
+      width:100%;
+      height:rem(34);
+      line-height:rem(34);
+      font-size: rem(24);
+      color: #444444;
+      @include ellipsis();
+      #day{
+        font-size:rem(30);
+        padding:0 rem(4);
+        background:#f2f2f2;
+      }
+    }
+  }
+}
+/**
+*品牌团整栏式
+*1.列表
+*2.单品
+*3.左侧图片
+*4.右侧信息
+*5.商品名称，超过一行自动隐藏
+*6.商品信息，超过一行自动隐藏
+*7.商品价格
+*8.购买按钮
+*9.活动已结束
+*/
+.item-list{/* 1 */
+  width:100%;
+  padding:0 rem(18);
+  padding-bottom:rem(18);
+  li{/* 2 */
+    width:100%;
+    padding:rem(14);
+    background:#fff;
+    height:rem(238);
+    margin-top:rem(18);
+    position:relative;
+    a.pic{    /* 3 */
+      float:left;
+    img{
+      width:rem(220);
+      height:rem(220);
+    }
+    }
+    .right{/* 4 */
+      padding:rem(4) 0 0 rem(20);
+      overflow:hidden;
+      position:relative;
+      .name{/* 5 */
+        width:100%;
+        height:rem(40);
+        line-height:rem(40);
+        @include ellipsis();
+        color:#444444;
+        font-size:rem(26);
+      }
+      .message{/* 6 */
+        width:100%;
+        height:rem(34);
+        line-height:rem(34);
+        @include ellipsis();
+        color:#444444;
+        font-size:rem(24);
+      }
+      .price{/* 7 */
+        width:100%;
+        height:rem(40);
+        line-height:rem(40);
+        @include ellipsis();
+        color:#444444;
+        font-size:rem(40);
+        margin-top:rem(88);
+        font-size: rem(40);
+        color: #8B001B;
+        i{
+          font-size:rem(24);
+          font-style:normal;
+        }
+        del{
+          color:#444444;
+          font-size:rem(28);
+          margin-left:rem(6);
+        }
+      }
+      a.buy{/* 8 */
+        width:rem(100);
+        height:rem(100);
+        padding:rem(14);
+        text-align:center;
+        line-height:rem(36);
+        border: 1px solid #FF5D7D;
+        color:#FF5D7D;
+        font-size:rem(24);
+        position:absolute;
+        bottom:0;
+        right:rem(10);
+      }
+      .end{/* 9 */
+        width:rem(100);
+        height:rem(100);
+        padding:rem(14);
+        text-align:center;
+        line-height:rem(36);
+        border: 1px solid #5d5d5d;
+        color:#5d5d5d;
+        font-size:rem(24);
+        position:absolute;
+        bottom:0;
+        right:rem(10);
+      }
+    }
+    .sold-out{
+      width:rem(220);
+      height:rem(220);
+      position:absolute;
+      top:rem(14);
+      left:rem(14);
+      background:rgba(0,0,0,0.6);
+    }
+  }
+}
+
+/**
+*量贩团头部导航
+*1.将整个导航栏等分
+*2.页面链接以及当前选中样式
+*/
+.sale-tab{/* 1 */
+  width:100%;
+  height:rem(90);
+  white-space: nowrap;
+  background:#ffffff;
+  @include display(flex);
+  li{/* 2 */
+      width: rem(100);
+      display: inline-block;
+      text-align: center;
+      height: rem(90);
+      line-height: rem(90);
+      @include flex(1);
+      a {
+      padding: rem(8) 0;
+      color: #666666;
+      font-size:rem(28);
+      }
+      &.select a {
+        color: #8b001b;
+        border-bottom: 2px solid #8b001b;
+      }
+    }
+}
+/**
+*量贩团整栏式
+*1.列表
+*2.单品
+*3.左侧图片
+*4.右侧信息
+*5.商品名称，超过一行自动隐藏
+*6.商品信息，超过两行自动隐藏
+*7.商品限购
+*8.商品价格
+*9.购买按钮
+*10.活动已结束
+*11.商品售完图标
+*/
+.transverse-goods{/* 1 */
+  background: #F8F8F8;
+  padding:rem(10);
+  li{
+    padding:rem(10);
+  }
+  .transverse-goods-container{/* 2 */
+    border: 1px solid #e7e7e7;
+    overflow: hidden;
+    background: #ffffff;
+    position: relative;
+    .transverse-goods-img {/* 3 */
+      width: rem(248);
+      height: rem(248);
+      float: left;
+      position: relative;
+      .out-stock-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: rem(150);
+        height: rem(150);
+        margin-left: rem(-76);
+        margin-top: rem(-76);
+      }
+    }
+    .transverse-goods-detail{/* 4 */
+      border-left: 1px dashed #E7E7E7;
+      overflow: hidden;
+      height:rem(248);
+      box-sizing: border-box;
+      box-shadow: rem(-10) 0 rem(6) rgba(0,0,0,0.05);
+      padding: rem(20);
+      position:relative;
+    }
+    .transverse-goods-name{/* 5 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: rem(8);
+      font-size: rem(28);
+    }
+    .transverse-goods-introduce{/* 6 */
+      font-size: rem(24);
+      color: #999999;
+      margin-bottom: rem(16);
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: nowrap;
+      height: rem(28);
+      line-height: rem(28);
+      text-overflow: ellipsis;
+    }
+    .transverse-goods-num {/* 7 */
+      border-left: rem(4) solid #E6133C;
+      font-size: rem(24);
+      padding-left: rem(8);
+      color: #999999;
+      margin-bottom: rem(20);
+      margin-top:rem(28);
+      height: rem(26);
+      line-height: rem(26);
+    }
+    .transverse-goods-buy {/* 8 */
+      position: absolute;
+      bottom: rem(20);
+      right: rem(20);
+      width: rem(70);
+      height: rem(70);
+      border: 1px solid #8b001b;
+      box-sizing: border-box;
+      div {
+        color: #fff;
+        background: #8B001B;
+        width: rem(70);
+        height: rem(70);
+        margin-top: rem(-8);
+        margin-left: rem(-8);
+        text-align: center;
+        font-size: rem(24);
+        line-height: rem(30);
+        padding: rem(4) 0;
+        box-sizing: border-box;
+      }
+    }
+    .single-detail-money{ /* 9 */
+        strong{
+        font-size: rem(32);
+        color: #8b001b;
+        margin-right: rem(14);
+        }
+        span{
+          font-size: rem(24);
+          color: #999999;
+          text-decoration: line-through;
+        }
+    }
+    .transverse-goods-gray {/* 10 */
+      border-color: #999999;
+      div {
+        background: #999;
+      }
+    }
+    .goods-sell-out {/* 11 */
+      color: #999;
+      padding: 0.25rem 0 0.75rem 0;
+      background-color: #F8F8F8;
+      font-size: 0.6rem;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: flex;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+    }
+  }
+}
+/* 返回顶部 */
+.gotop{
+  @extend %gotop;
+  bottom:rem(110);
+}
+/*
+*2016.9.19
+*by fanqiuming
+*对应页面：天天抢购-品牌团频道页，天天抢购-品牌团详情页，天天抢购-量贩团
+*end
+*/

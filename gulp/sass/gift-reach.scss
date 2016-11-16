@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+#gift-reach {
+    background: #ffffff;
+    .content {
+        padding-top: rem(88);
+        position: relative;
+    }
+    .top-box {
+        position: relative;
+        height: rem(616);
+        background: -webkit-linear-gradient(180deg, #FFCD68, #FFF769);
+        background: -o-linear-gradient(180deg, #FFCD68, #FFF769);
+        background: -moz-linear-gradient(180deg, #FFCD68, #FFF769);
+        background: linear-gradient(180deg, #FFCD68, #FFF769);
+        .success-img {
+            padding-top: rem(84);
+            @include display(flex);
+            @include align-items(center);
+            @include justify-content(center);
+            .img-box {
+                width: rem(160);
+                height: rem(160);
+            }
+        }
+        .success-text {
+            text-align: center;
+            padding-top: rem(24);
+            p {
+                font-size: rem(40);
+                line-height: 1.25;
+            }
+        }
+        .gift-logo {
+            position: absolute;
+            bottom: rem(-68);
+            left: 0;
+            right: 0;
+            @include display(flex);
+            @include align-items(center);
+            @include justify-content(center);
+            div {
+                width: rem(340);
+            }
+        }
+    }
+    .reach-button {
+        margin: rem(268) rem(30) 0;
+        border: 1px solid #e6133c;
+        height: rem(88);
+        line-height: rem(88);
+        text-align: center;
+        color: #e6133c;
+        border-radius: rem(10);
+        font-size: rem(40);
+    }
+    .concern-text {
+        padding-top: rem(100);
+        font-size: rem(40);
+        line-height: 1.4;
+        text-align: center;
+        margin-bottom: rem(24);
+    }
+    .concern-image {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        div{
+            width: rem(280);
+            height: rem(280);
+            border-radius: rem(8);
+        }
+    }
+    .arrive-later{
+        padding-top: rem(194);
+        font-size: rem(40);
+        text-align: center;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  @@include('widget/head.html', { "title": "停车点券", "css": "css/park-dianquan.css", "requirejs": "js/park-dianquan" })
+</head>
+
+<body>
+  @@include('widget/header.html', { "left-icon": "arrow-back", "bar-style": "bar-light", "title": "停车点券", "nav": false, "rightIconBool": false, "rightIconBoolMore": false })
+  <!-- content -->
+  <div class="content">
+    <div class="prompt-wrap flex-middle">
+      <div class="prompt-notice"><i class="iconfont prompt"></i></div>
+      <div class="prompt-inner flex-middle">百联赠送您的60点券已到账</div>
+      <div class="prompt-close flex-center"><i class="iconfont error"></i></div>
+    </div>
+    <div class="balance-wrap">
+      <p class="balance-noti">可用点券</p>
+      <p class="balance-use">910</p>
+    </div>
+    <div class="ctabs-title">
+      <div class="ctitle-item active">充值点券</div>
+      <div class="ctitle-item">自定义</div>
+    </div>
+    <div class="ctabs-content">
+      <div class="ccontent-item">
+        <div class="ccitem-name">温馨提示：1点可支付1元停车费<a href="javascript:;">了解更多</a></div>
+        <div class="pic-list-three">
+          <ul>
+            <li class="discounts">
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <p class="list-name">5点</p>
+                  <div class="list-balance">售价：4元</div>
+                  <div class="list-discounts">限时5折</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <p class="list-name">5点</p>
+                  <div class="list-balance">售价：4元</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <p class="list-name">5点</p>
+                  <div class="list-balance">售价：4元</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <p class="list-name">5点</p>
+                  <div class="list-balance">售价：4元</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <p class="list-name">5点</p>
+                  <div class="list-balance">售价：4元</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <p class="list-name">5点</p>
+                  <div class="list-balance">售价：4元</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <p class="list-name">5点</p>
+                  <div class="list-balance">售价：4元</div>
+                </div>
+              </div>
+            </li>
+            <li class="other">
+              <div class="list-bg">
+                <div class="flex-inner">
+                  <div class="other-balance">自定义</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="ccontent-item">
+        <div class="ccitem-name">温馨提示：1点可支付1元停车费<a href="javascript:;">了解更多</a></div>
+        <div class="an-wrap">
+          <ul class="an-form">
+            <li class="an-item">
+              <div class="an-form-input j-form-input">
+                <input type="tel" placeholder="请输入充值金额" class="j-tel">
+              </div>
+            </li>
+          </ul>
+          <div class="btb-group">
+            <a href="javascript:;" class="bl-btn bl-btn-primary">确认充值</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content end -->
+  <div class="pos-bottom">
+    <div class="flex-center">
+      <div class="pos-flex">
+        <a href="javascript:;">
+          <div class="posf-pic"><img src="css/i/dq-kf.png"></div>
+          <div class="posf-word">联系客服</div>
+        </a>
+      </div>
+      <div class="pos-flex">
+        <a href="javascript:;">
+          <div class="posf-pic"><img src="css/i/dq-dhm.png"></div>
+          <div class="posf-word">兑换码</div>
+        </a>
+      </div>
+      <div class="pos-flex">
+        <a href="javascript:;">
+          <div class="posf-pic"><img src="css/i/dq-jl.png"></div>
+          <div class="posf-word">交易记录</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- 充值 -->
+  <div class="mask"></div>
+  <div class="modal j-pay-modal modal-out">
+    <div class="modal-close"></div>
+    <div class="modal-inner">
+      <div class="modal-title hairline">选择支付方式</div>
+      <div class="modal-text">
+        <div class="flex-center">
+          <div class="pos-flex">
+            <a href="javascript:;">
+              <div class="pay-pic"><img src="css/i/weixin.png" alt=""></div>
+              <div class="pay-name">微信支付</div>
+            </a>
+          </div>
+          <div class="pos-flex">
+            <a href="javascript:;">
+              <div class="pay-pic"><img src="css/i/alipay.png" alt=""></div>
+              <div class="pay-name">支付宝支付</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

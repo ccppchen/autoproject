@@ -10,6 +10,8 @@ $modalButonColor:   #e6133c;
 @import "tobe/ext/picker";
 .wrap{
 	position: relative;
+	width: 100%;
+	height: 100%;
 }
 .modal{
 	overflow: hidden;
@@ -110,7 +112,7 @@ $modalButonColor:   #e6133c;
 	}
 	.item-menu img{
 		width: rem(48);
-		height: rem(48);
+		height: auto;
 	}
 }
 
@@ -379,3 +381,290 @@ $modalButonColor:   #e6133c;
 		color: #007aff;
 	}
 }
+
+
+/* 停车点券 */
+ @charset "utf-8";
+
+ #touchSlide{
+ 	position: relative;
+ 	width: 100%;
+ }
+ .swiper-slide{
+ 	position: relative;
+ 	width: 100%;
+ 	// border-radius: 5px;
+ 	overflow: hidden;
+ 	& + &{
+ 		display: none;
+ 	}
+ 	a{
+ 		display: block;
+ 		position: relative;
+		background-color: #ffffff;
+ 		&:after{
+	 		padding-top: 100%;
+	 		content: '';
+	 		display: block;
+	 	}
+ 	}
+ 	a img{
+ 		display: block;
+ 		position: absolute;
+ 		left: 50%;
+ 		top: 50%;
+ 		@include transform(translate3d(-50%, -50%, 0)!important);
+ 		width: 100%;
+ 		font-size: 0;
+ 		border-radius: 0 0 5px 5px;
+ 	}
+ }
+ .swiper-pagination{
+ 	position: absolute;
+ 	bottom: rem(16);
+ 	left: 50%;
+ 	@include transform(translate3d(-50%, 0, 0));
+ 	li {
+ 	    display: inline-block;
+ 	    width: 8px;
+ 	    height: 8px;
+ 	    @include border-radius(20px);
+ 	    text-indent: -9999px;
+ 	    overflow: hidden;
+ 	    margin: 0 rem(8);
+ 	    border: 1px solid #fff;
+ 	    background-color: transparent;
+ 	    &.on{
+ 	    	background:#fff;
+ 	    }
+ 	}
+ 	&.pagination-green{
+ 		li{
+ 			background-color: #ddd;
+ 			border: 0;
+ 			&.on{
+ 				background-color: $green;
+ 			}
+ 		}
+ 	}
+
+}
+.lazy-box{
+	@extend %lazy-box;
+}
+
+.f-modal{
+	width: rem(315*2);
+	// height: rem(415*2);
+	// background-color: #ffffff;
+	// overflow: hidden;
+	position: fixed;
+	z-index: 11000;
+	left: 50%;
+	margin-left: rem(-315);
+	margin-top: 0;
+	top: 50%;
+	text-align: center;
+	border-radius: 5px;
+	transform: translate3d(0,-50%,0)!important;
+	display: none;
+	.f-modal-close{
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 100;
+		@include transform(translate(0, -100%));
+		width: rem(35*2);
+		height: rem(50*2);
+		background-image: url("i/close.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.f-modal-top{
+		background: #FFFFFF;
+		// border-radius: 5px 5px 0 0;
+		padding: rem(30);
+		height: rem(200);
+		.f-modal-title{
+			font-size: rem(32);
+			color: #2A2A2A;
+		}
+		.f-modal-text{
+			font-size: rem(28);
+			color: #999999;
+			height: rem(84);
+			@extend %comm-flex;
+			@include justify-content(center);
+			margin-top: rem(12);
+		}
+	}
+}
+.swiper-pagination{
+	bottom: rem(-52);
+	ul{
+		line-height: 1;
+	}
+}
+.swiper-pagination li{
+	background-color: #cccccc;
+	border: none;
+	&.on{
+		background-color: #FAEF02;
+	}
+}
+#touchSlide{
+	overflow: inherit;
+	// background-color: #ffffff;
+}
+.main-body{
+	height: 100%;
+  width: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+  &.filter{
+  	-webkit-filter: blur(4px);
+  	-moz-filter: blur(4px);
+  	filter: blur(4px);
+  }
+}
+.raidus-no{
+	width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  z-index: 10000;
+}
+.j-f-modal .f-modal-inner{
+	// background-color: #FF1A22;
+	// border-radius: 5px;
+	// overflow: hidden;
+	position: relative;
+	text-align: center;
+	// padding: rem(11*2) rem(15*2) rem(20*2);
+	color: #ffffff;
+	.swiper-wrapper .f-modal-inner{
+		background-color: #FF1A22;
+		overflow: hidden;
+		position: absolute;
+		min-height: 100%;
+		width: 100%;
+		padding: rem(11*2) rem(15*2) rem(20*2);
+	}
+	.f-word{
+		margin-top: rem(-56);
+	}
+	.f-logo{
+		position: absolute;
+		left: rem(20);
+		top: rem(20);
+		z-index: 2;
+		background: url("i/logo.png") no-repeat;
+		background-size: contain;
+		width: rem(37*2);
+		height: rem(32);
+	}
+	.coupon-box{
+		position: relative;
+		padding: rem(8) 5px 0;
+		margin-top: rem(28);
+		.coupon-center{
+			background: #FFEDB2;
+			box-shadow: inset 0px 4px 0px 0px rgba(255,0,0,0.04);
+			position: relative;
+			background-image: url("i/bolang.png");
+			background-position: left bottom;
+			background-size: contain;
+			background-repeat: no-repeat;
+			padding: rem(30) rem(18);
+		}
+		.coupon-top{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: rem(16);
+			background-color: #D10000;
+			border-radius: 5px;
+		}
+		.coupon-inner-text{
+			font-size: rem(24);
+			color: #666666;
+		}
+		.coupon-ul{
+			max-height: rem(174*2);
+			overflow-y: auto;
+			> li{
+				width: 100%;
+				height: rem(100);
+				margin-top: rem(24);
+
+				position: relative;
+				.coupin-li-inner{
+					position: absolute;
+					left: 0;
+					top: 0;
+					height: 200%;
+					width: 200%;
+					@include transform(scale(.5));
+					transform-origin: left top;
+					@extend %comm-flex;
+					background-image: url("i/coulon-bg.png");
+					background-repeat: no-repeat;
+					background-position: left top;
+					background-size: 100% 100%;
+					.coupon-point,.coupon-detail{
+						// width: 26.4%
+						@include flex(.264);
+						height: 100%;
+						@extend %comm-flex;
+						@include justify-content(center);
+						font-size: rem(24*2);
+						color: #999999;
+					}
+					.coupon-point{
+						color: #666666;
+						.coupon-word{
+							@include align-items(baseline);
+							line-height: 1;
+						}
+						strong{
+							font-size: rem(60*2);
+							color: #FF5055;
+							font-family: Arial-BoldMT;
+							line-height: 1;
+						}
+					}
+					.coupon-detail{
+						// width: 73.6%;
+						@include flex(.736);
+						& > ul li{
+							&:before{
+								content: '';
+								width: 6px;
+								height: 6px;
+								background-color: #D8D8D8;
+								border-radius: 50%;
+								display: inline-block;
+								vertical-align: middle;
+								margin-right: rem(24);
+							}
+						}
+					}
+					.c-detail-item{
+						text-align: left;
+						font-size: rem(24*2);
+						color: #999999;
+						span{
+							color: #333333;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+

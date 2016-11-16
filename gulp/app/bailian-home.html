@@ -1,96 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-@@include('widget/head.html', {
-    "title": "百联到家-弹层",
-    "css": "css/bailian-home.css"
-})
-</head>
-<body id="bgcolor">
-<!-- content Start -->
-<div class="bailian-home">
-<!-- 配送门店 Start -->
-  <div class="tt-mendian">
-  <div class="fonts fonts-1">配送门店</div>
-  <div class="fonts fonts-2">超市</div>
-  <div class="fonts fonts-3">联华超市福州路店</div>
-  </div>
-  <div class="img-mendian"><img src="images/bailian-home/bl-img.png" alt=""></div>
-  <div class="mendian-fonts">
-    <div class="address">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<span>上海市黄浦区福州路1234号</span></div>
-    <div class="times">营业时间：<span>上午09:00 ~ 下午22:00</span></div>
-    <div class="info">其他信息：<span>粮油促销秒杀活动</span></div>
-  </div>
- <!-- 配送门店 End --> 
- <!-- 附近门店 Start -->
- <div class="near-mendian">
-    <div class="near-title">附近门店</div>
-    <div class="ad-mendian">
-      <ul>
-        <li>
-          <div class="mendian-fonttitle">
-            <div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
-            <div class="fonttitle-right">1.2km</div>
-          </div>
-          <div class="manjian">粮油调味满100减50</div>
-        </li>
-        <li>
-          <div class="mendian-fonttitle">
-            <div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
-            <div class="fonttitle-right">1.2km</div>
-          </div>
-          <div class="manjian">粮油调味满100减50</div>
-        </li>
-        <li>
-          <div class="mendian-fonttitle">
-            <div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
-            <div class="fonttitle-right">1.2km</div>
-          </div>
-          <div class="manjian">粮油调味满100减50</div>
-        </li>
-        <li>
-          <div class="mendian-fonttitle">
-            <div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
-            <div class="fonttitle-right">1.2km</div>
-          </div>
-          <div class="manjian">粮油调味满100减50</div>
-        </li>
-        <li>
-          <div class="mendian-fonttitle">
-            <div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
-            <div class="fonttitle-right">1.2km</div>
-          </div>
-          <div class="manjian">粮油调味满100减50</div>
-        </li>
-        <li>
-          <div class="mendian-fonttitle">
-            <div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
-            <div class="fonttitle-right">1.2km</div>
-          </div>
-          <div class="manjian">粮油调味满100减50</div>
-        </li>
-      </ul>
-    </div>
- </div>
- <!-- 附近门店 End -->
- <!-- footer Start -->
- <div class="footer-close">
-  <div class="footer-title-list">
-    <ul>
-      <li>
-        <div class="fonts fonts01"><i><img src="images/bailian-home/xg01.png" alt=""></i>3小时速达</div>
-      </li>
-      <li>
-        <div class=" fonts fonts02"><i><img src="images/bailian-home/xg01.png" alt=""></i>满38元包邮</div>
-      </li>
-      <li>
-        <div class="fonts fonts03"><i><img src="images/bailian-home/xg01.png" alt=""></i>品质保证</div>
-      </li>
-    </ul>
-  </div>
-  <div class="btn-close"><a href="#"><img src="images/bailian-home/close01.png" alt=""></a></div>
- </div>
- <!-- footer End -->
-</div>
-<!-- content End -->
-</body>
+
+	<head>
+		@@include('widget/head.html', { "title": "百联到家-弹层", "css": "css/bailian-home.css","requirejs": "js/bailian-home" })
+	</head>
+
+	<body id="bgcolor">
+		<!-- content Start -->
+		<div class="bailian-home">
+			<!-- 配送门店 Start -->
+			<div class="tt-mendian">
+				<div class="fonts fonts-1">配送门店</div>
+				<div class="fonts fonts-2">超市</div>
+				<div class="fonts fonts-3">联华超市福州路店</div>
+			</div>
+			<div class="open-show">
+				<div class="img-mendian"><img src="images/bailian-home/bl-img.png" alt=""></div>
+				<div class="mendian-fonts">
+					<div class="address">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<span>上海市黄浦区福州路1234号</span></div>
+					<div class="times">营业时间：<span>上午09:00 ~ 下午22:00</span></div>
+					<div class="info">其他信息：<span>粮油促销秒杀活动</span></div>
+				</div>
+			</div>
+			<!-- 配送门店 End -->
+			<!-- 附近门店 Start -->
+			<div class="near-mendian">
+				<div class="near-title">附近门店</div>
+				<div class="ad-mendian">
+					<ul>
+						<li>
+							<div class="mendian-fonttitle">
+								<div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
+								<div class="fonttitle-right">1.2km</div>
+								
+							</div>
+							<div class="manjian">粮油调味满100减50</div>
+							<div class="open-show close">
+									<div class="img-mendian"><img src="images/bailian-home/bl-img.png" alt=""></div>
+									<div class="mendian-fonts">
+										<div class="address">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<span>上海市黄浦区福州路1234号</span></div>
+										<div class="times">营业时间：<span>上午09:00 ~ 下午22:00</span></div>
+										<div class="info">其他信息：<span>粮油促销秒杀活动</span></div>
+									</div>
+							</div>
+						</li>
+						<li>
+							<div class="mendian-fonttitle">
+								<div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
+								<div class="fonttitle-right">1.2km</div>
+								
+							</div>
+							<div class="manjian">粮油调味满100减50</div>
+							<div class="open-show close">
+									<div class="img-mendian"><img src="images/bailian-home/bl-img.png" alt=""></div>
+									<div class="mendian-fonts">
+										<div class="address">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<span>上海市黄浦区福州路1234号</span></div>
+										<div class="times">营业时间：<span>上午09:00 ~ 下午22:00</span></div>
+										<div class="info">其他信息：<span>粮油促销秒杀活动</span></div>
+									</div>
+							</div>
+						</li>
+						<li>
+							<div class="mendian-fonttitle">
+								<div class="fonttitle-left"><span>超市</span>联华超市 浙江中路店</div>
+								<div class="fonttitle-right">1.2km</div>
+								
+							</div>
+							<div class="manjian">粮油调味满100减50</div>
+							<div class="open-show close">
+									<div class="img-mendian"><img src="images/bailian-home/bl-img.png" alt=""></div>
+									<div class="mendian-fonts">
+										<div class="address">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<span>上海市黄浦区福州路1234号</span></div>
+										<div class="times">营业时间：<span>上午09:00 ~ 下午22:00</span></div>
+										<div class="info">其他信息：<span>粮油促销秒杀活动</span></div>
+									</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 附近门店 End -->
+			<!-- footer Start -->
+			<div class="footer-close">
+				<div class="footer-title-list">
+					<ul>
+						<li>
+							<div class="fonts fonts01"><i><img src="images/bailian-home/xg01.png" alt=""></i>3小时速达</div>
+						</li>
+						<li>
+							<div class=" fonts fonts02"><i><img src="images/bailian-home/xg01.png" alt=""></i>满38元包邮</div>
+						</li>
+						<li>
+							<div class="fonts fonts03"><i><img src="images/bailian-home/xg01.png" alt=""></i>品质保证</div>
+						</li>
+					</ul>
+				</div>
+				<div class="btn-close">
+					<a href="#"><img src="images/bailian-home/close01.png" alt=""></a>
+				</div>
+			</div>
+			<!-- footer End -->
+		</div>
+		<!-- content End -->
+	</body>

@@ -1,7 +1,7 @@
 @charset "utf-8"; //cp
-@import "tobe/base";
+@import "tobe/function";
 @import "tobe/components/modal/modal";
-@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
 .modal-button:last-child{
   color: #333333;
 }
@@ -91,6 +91,20 @@
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
+    // &:first-child:last-child{
+    //   width: rem(220*2);
+    // }
+    @at-root{
+      #bsaketshow5 .pbasket-group-btn .pbasket-btn{
+        width: rem(220*2);
+      }
+
+      @include screen(320px, 360px){
+        #bsaketshow5 .pbasket-group-btn{
+          width: rem(200*2);
+        }
+      };
+    }
     &.join-shop-car{
       width: rem(240);
       background-color: #906C5C;
@@ -106,6 +120,9 @@
       &.immediate-order{
         width: rem(180);
       }
+      // &:first-child:last-child{
+      //   width: rem(200*2);
+      // }
     };
   }
 }
@@ -114,7 +131,7 @@ span.go-join{
   font-size: rem(24);
 }
 
-.mask{
+.mask,.share-mask{
   @include mask(.8, 1002);
 }
 // 编辑已选商品
@@ -156,25 +173,29 @@ span.go-join{
     max-height: rem(720);
     overflow: hidden;
     overflow-y: auto;
+    padding: 0 rem(20);
     .basket-good{
       height: rem(120);
       position: relative;
-      @include hairline(bottom, #e7e7e7);
-      &:after{
-        left: rem(20);
-        right: rem(20);
-        width: auto;
-      }
+      overflow: hidden;
+      // @include hairline(bottom, #e7e7e7);
+      border-bottom: 1px solid #e7e7e7;
+      // &:after{
+      //   left: rem(20);
+      //   right: rem(20);
+      //   width: auto;
+      // }
       .baskgod-item{
         height: rem(120);
         @extend %comm-flex;
       }
       .bagoods-name{
         @include flex(2);
-        padding: 0 rem(20) 0 rem(30);
+        padding: 0 rem(20) 0 rem(0);
         @include ellipsis;
         font-size: rem(28);
         color: #333333;
+        width: 190px;
       }
     }
     .baskswiper-remove{
@@ -211,6 +232,7 @@ span.go-join{
   @include justify-content(center);
   input{
     width: rem(64);
+    height: 24px;
     padding: 0;
     outline: 0;
     text-align: center;
@@ -219,10 +241,11 @@ span.go-join{
     font-size: rem(28);
     color: #333333;
     background-color: transparent;
+    display: block;
   }
   .editprice-btn{
-    width: rem(48);
-    height: rem(48);
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: 1px solid #906C5C;
     background-color: transparent;
@@ -241,4 +264,63 @@ span.go-join{
       background-image: inline-image("base64/disabled-rectangle.png");
     }
   }
+}
+
+/* 加分享 */
+.icon-share:after{
+  content: '';
+  width: .4rem;
+  height: .4rem;
+  background: inline-image('base64/icon-share.png') no-repeat center center;
+  background-size: contain;
+}
+
+.share-box{
+  position: fixed;
+  z-index: 10000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  transition: -webkit-transform linear .3s;
+  transition: transform linear .3s;
+  transition: transform linear .3s,-webkit-transform linear .3s;
+}
+.share-box .share-title{
+  font-size: 1.125*0.32rem;
+  padding: .6875*0.32rem .625*0.32rem;
+  color: #333333;
+}
+.share-box .share-wrap{
+  width: 60%;
+  display: inline-block;
+  font-size: 0;
+}
+.share-box .share-wrap .share-item{
+  display: inline-block;
+}
+.share-box .share-wrap .share-item:first-child{
+  margin-right: 2.8125*0.32rem;
+}
+.share-box .share-wrap .share-item img{
+  width: 3.6875*0.32rem;
+}
+.share-box .share-wrap .share-item p{
+  font-size: 0.75*0.32rem;
+  color: #666666;
+  margin-top: 0.5*0.32rem;
+}
+.share-box .share-btn{
+  font-size: 1.0*0.32rem;
+  color: #333333;
+  padding: 1*0.32rem 0;
+  margin: 1.1875*0.32rem 0.625*0.32rem 0;
+  border: 0;
+  background-image: linear-gradient(0deg, #e7e7e7, #e7e7e7 50%, transparent 50%);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
 }

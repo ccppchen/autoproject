@@ -1,0 +1,96 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/list-between/list-between";
+
+.content{
+  @extend %content;
+}
+.arrow-right{
+  @extend %arrow-right;
+}
+
+.order-title{
+  padding: rem(24);
+  background-color: #fffcea;
+  font-size: rem(28);
+  color: #804800;
+  @extend %comm-flex;
+  @include justify-content(space-between);
+  .title-status{
+    color: #e6133c;
+  }
+}
+.park-order .list-between{
+  margin-top: rem(20);
+  .list-left{
+    color: #999999;
+  }
+}
+.goods-balance .list-between{
+  padding: rem(15) 0;
+  .list-item{
+    background-image: none;
+    height: rem(60);
+    .list-right{
+      color: #e6133c;
+    }
+  }
+}
+.fack-pay{
+  @extend %comm-flex;
+  @include justify-content(flex-end);
+  height: rem(88);
+  background-color: #ffffff;
+  @include hair(top, #e7e7e7);
+  padding: 0 rem(30);
+  .fack-money{
+    color: #e6133c;
+  }
+}
+
+.parknow-time{
+  margin: rem(30);
+  background-color: #fff;
+  border-radius: 5px;
+  @extend %comm-flex;
+  .parknow-left{
+    @include flex(.65);
+    padding: 0 rem(20);
+    .parknow-item{
+      font-size: rem(28);
+      color: #999999;
+      span{
+        color: #333333;
+      }
+    }
+  }
+  .parknow-left,.parknow-right{
+    height: rem(175);
+    @extend %comm-flex;
+  }
+  .parknow-right{
+    @include flex(.35);
+    @include justify-content(center);
+    position: relative;
+    @include hairline(left, #e8e8e8);
+
+    .parknow-item{
+      text-align: center;
+      font-size: rem(40);
+      color: #333333;
+      font-weight: bold;
+    }
+  }
+
+}
+.parknow-info{
+  position: absolute;
+  top: rem(10);
+  right: rem(12);
+  width: rem(44);
+  height: rem(44);
+  background: url("i/parknow-info.png") no-repeat;
+  background-size: rem(32) rem(32);
+  background-position: center center;
+}

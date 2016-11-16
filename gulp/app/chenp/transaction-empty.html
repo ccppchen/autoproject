@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  @@include('widget/head.html', { "title": "交易记录", "css": "css/park-dianquan.css", "requirejs": "js/comm" })
+</head>
+
+<body>
+  @@include('widget/header.html', { "left-icon": "arrow-back", "bar-style": "bar-light", "title": "交易记录", "nav": false, "rightIconBool": false, "rightIconBoolMore": false })
+  <!-- content -->
+  <div class="content">
+    <div class="trans-empty">
+      <i class="iconfont empty-list empty-icon"></i>
+      <p class="empty-word">暂无交易纪录</p>
+    </div>
+  </div>
+  <!-- content end -->
+</body>
+
+</html>

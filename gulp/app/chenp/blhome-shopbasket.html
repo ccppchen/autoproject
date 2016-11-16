@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  @@include('widget/blhome-head.html', { "title": "购物篮", "css": "css/blhome-shopbasket.css", "requirejs": "js/blhome-shopbasket" })
+</head>
+
+<body>
+  <header class="bar bar-header bar-orange">
+    <div class="bar-left">
+      <a href="javascript:history.go(-1)" class="button">
+        <div class="iconfont blhome-arrow-back"></div>
+      </a>
+    </div>
+    <h1 class="title">
+          购物篮
+      </h1>
+    <div class="bar-right">
+      <a href="javascript:;" class="button shops-edit">编辑</a>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="items-inner">
+      <div class="shop-title">联华超市福州店 1.2km  </div>
+      <ul class="love-list">
+        <li class="love-item swiper">
+          <input type="checkbox" name="" class="check-blhome">
+          <div class="swiper-left love-swiper">
+            <a href="https://www.baidu.com" class="love-item-pic lazy-box">
+              <img data-original="images/blhome/ordergoods.jpg" class="lazy">
+              <div class="con-img-tag xg">限购1件</div>
+              <span class="enough-reduce"><img src="css/i/blhome/manreduce.png"></span>
+            </a>
+            <div class="love-item-inner">
+              <a href="https://www.baidu.com">
+                <div class="love-title">清风纯品原木金装抽纸150抽3包3层...</div>
+                <div class="other-tag">
+                  <span class="xg-tag tag-primary">限购</span>限购商品不参加其他活动
+                </div>
+                <div class="love-content">
+                  <div class="love-content-left">
+                    <div class="left-price"><small class="rmb">￥</small>190.00</div>
+                  </div>
+                </div>
+              </a>
+              <div class="balance-edit">
+                <div class="bagoods-editprice">
+                  <button class="editprice-btn basminus"></button>
+                  <input class="basinput" type="text" name="" value="1" maxnum="2" readonly>
+                  <button class="editprice-btn basplus"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="love-swiper-remove swiper-right">删除</div>
+        </li>
+        <li class="love-item swiper">
+          <input type="checkbox" name="" class="check-blhome">
+          <div class="swiper-left love-swiper">
+            <a href="https://www.baidu.com" class="love-item-pic lazy-box">
+              <img data-original="images/blhome/ordergoods.jpg" class="lazy">
+              <div class="con-img-tag kcjz">库存紧张</div>
+            </a>
+            <div class="love-item-inner">
+              <a href="https://www.baidu.com">
+                <div class="love-title">清风纯品原木金装抽纸150抽3包3层...</div>
+                <div class="love-content">
+                  <div class="love-content-left">
+                    <div class="left-price"><small class="rmb">￥</small>190.00</div>
+                  </div>
+                </div>
+              </a>
+              <div class="balance-edit">
+                <div class="bagoods-editprice">
+                  <button class="editprice-btn basminus"></button>
+                  <input class="basinput" type="text" name="" value="1" maxnum="2" readonly>
+                  <button class="editprice-btn basplus"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="love-swiper-remove swiper-right">删除</div>
+        </li>
+        <li class="love-item swiper not-item">
+          <input type="checkbox" name="" class="check-blhome" disabled>
+          <div class="swiper-left love-swiper">
+            <a href="https://www.baidu.com" class="love-item-pic lazy-box">
+              <img data-original="images/blhome/ordergoods.jpg" class="lazy">
+              <div class="con-img-tag qgl">抢光了</div>
+            </a>
+            <div class="love-item-inner">
+              <a href="https://www.baidu.com">
+                <div class="love-title">清风纯品原木金装抽纸150抽3包3层...</div>
+                <div class="love-content">
+                  <div class="love-content-left">
+                    <div class="left-price"><small class="rmb">￥</small>190.00</div>
+                  </div>
+                </div>
+              </a>
+              <div class="balance-edit">
+                <div class="bagoods-editprice">
+                  <!-- <button class="editprice-btn basminus" disabled></button> -->
+                  <!-- <input class="basinput" type="text" name="" value="1" maxnum="2" readonly> -->
+                  <!-- <button class="editprice-btn basplus" disabled></button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="love-swiper-remove swiper-right">删除</div>
+        </li>
+        <li class="love-item swiper not-item">
+          <input type="checkbox" name="" class="check-blhome" disabled>
+          <div class="swiper-left love-swiper">
+            <a href="https://www.baidu.com" class="love-item-pic lazy-box">
+              <img data-original="images/blhome/ordergoods.jpg" class="lazy">
+              <div class="con-img-tag qgl">下架了</div>
+            </a>
+            <div class="love-item-inner">
+              <a href="https://www.baidu.com">
+                <div class="love-title">清风纯品原木金装抽纸150抽3包3层...</div>
+                <div class="love-content">
+                  <div class="love-content-left">
+                    <div class="left-price"><small class="rmb">￥</small>190.00</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="love-swiper-remove swiper-right">删除</div>
+        </li>
+      </ul>
+      <div class="enough-info">
+        <div class="eninfo-left">
+          <span class="xg-tag tag-green">满减</span>再买¥12.00，立减 ¥50.00
+        </div>
+        <a href="javascript:;" class="eninfo-right arrow-right">去凑单</a>
+      </div>
+    </div>
+  </div>
+  <!-- content end -->
+  <div class="bask-land">
+    <div class="bask-price">
+      <div class="bask-checked">
+        <input type="checkbox" name="" class="check-blhome" id="check-blhome">
+        <label for="check-blhome">全选</label>
+      </div>
+      <div class="bask-balance">
+        <div class="balance">¥780.00</div>
+        <div class="enough-balance">已满38元免运费</div>
+      </div>
+    </div>
+    <a class="bask-btn">去结算</a>
+  </div>
+</body>
+
+</html>

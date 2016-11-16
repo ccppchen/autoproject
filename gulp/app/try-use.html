@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-@@include('widget/head.html', {
-    "title": "礼品卡-主题",
-    "css": "css/try-use.css",
-    "requirejs": "js/try-use"
-})
-</head>
 
-<body>
-    @@include('widget/header.html', {
-        "left-icon": "",
-        "bar-style": "bar-light",
-        "title": "申请使用",
-        "nav": true,
-        "rightIconBool": false,
-        "rightIconBoolMore": false
-    })
-   <div class="content">
-   	<div class="page">
-	   <div class="fire-container">
-	   		<div class="fire" id="fire"></div>
-	   		<div class="rule">了解火焰值规则</div>
-	   </div>
-	   <div class="try-remind">
-	   		<p>申请提交成功！</p>
-	   		<p>您现在的初始火焰值只有<span>20</span></p>
-	   </div>
-	   <div class="share-button">
-	   		<button>分享给小伙伴帮你加把火</button>
-	   </div>
-	   <div class="rule-remind">
-	   		火焰值达到xxx以上即可进入筛选名单
-			（火焰值越高试用机会越大）
-	   </div>
-	   <div class="bottom-container">
-	   		<div class="look-remind">
-	   			可在“我的试用”中查看审核结果哦～
-	   		</div>
-	   		<div class="button-container">
-	   			<div class="bg-1">我的试用</div>
-	   			<div class="bg-2">查看更多试用</div> 
-	   		</div>
-	   </div>
-	</div>
-   </div>
-</body>
+	<head>
+		@@include('widget/head.html', { "title": "试用品-满意度", "css": "css/try-use.css", "requirejs": "js/try-use" })
+	</head>
+
+	<body>
+		@@include('widget/header.html', { "left-icon": "", "bar-style": "bar-light", "title": "申请使用", "nav": true, "rightIconBool": false, "rightIconBoolMore": false })
+		<div class="content">
+			<div class="page">
+				<div class="fire-container">
+					<div class="fire" id="fire"></div>
+					<div class="rule">了解火焰值规则</div>
+				</div>
+				<div class="try-remind">
+					<p>申请提交成功！</p>
+					<p>您现在的初始火焰值只有<span>20</span></p>
+				</div>
+				<div class="share-button">
+					<button>分享给小伙伴帮你加把火</button>
+				</div>
+				<div class="rule-remind">
+					火焰值达到xxx以上即可进入筛选名单 （火焰值越高试用机会越大）
+				</div>
+				<div class="bottom-container">
+					<div class="look-remind">
+						可在“我的试用”中查看审核结果哦～
+					</div>
+					<div class="button-container">
+						<div class="bg-1">我的试用</div>
+						<div class="bg-2">查看更多试用</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mark"></div>
+		<div class="share-contain">
+			<div class="title">
+				分享试用商品
+			</div>
+			<div class="title-label">
+				分享的越多得到试用品机会越高哦！
+			</div>
+			<div class="share-choose">
+				<div class="choose-link">
+					<div class="link-img">
+						<img src="css/i/try-use/weixin.png" />
+					</div>
+					<div class="link-name">微信好友</div>
+				</div>
+				<div class="choose-link">
+					<div class="link-img">
+						<img src="css/i/try-use/peng.png" />
+					</div>
+					<div class="link-name">微信好友</div>
+				</div>
+			</div>
+			<div class="cancel-share">取消</div>
+		</div>
+	</body>
 
 </html>

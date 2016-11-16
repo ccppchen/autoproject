@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "绑定会员卡",
+    "css": "css/member-card.css",
+    "requirejs": "js/member-card.js"
+})
+</head>
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "绑定会员卡",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <!-- content -->
+    <div class="content">
+        <div class="member-banner">
+            <img src="images/bailian-home/bl-img.png" alt="" class="lazy">
+        </div>
+        <div class="input-frame">
+            <div class="line-frame">
+                <div class="fill-box">
+                    <input type="text" class="member-inputbox" placeholder="请输入短信验证码">
+                    <div class="close-button"></div>
+                </div>
+                <div class="get-button">
+                    <input type="button" class="get" value="获取短信验证码">
+                </div>
+            </div>
+            <input type="button" class="submit-button" value="确 定" disabled>
+        </div>
+    </div>
+
+    <!-- content end -->
+</body>
+
+</html>

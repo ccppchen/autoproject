@@ -1,6 +1,7 @@
 require(['config','comm'], function(){
     require(['vendor' , 'touchslider'], function() {
         $(".sinle-detail").css("bottom", $(".button-buy").height() - $("#detail-container").height());
+        $(".sinle-detail").css("visibility","initial");
         $(".get-ticket .arrow-back").click(function() {
             $(this).toggleClass("arrow-up")
             $(this).next().toggleClass("spread-ticket");
@@ -63,16 +64,16 @@ require(['config','comm'], function(){
         function numPan(){
             if ($('.num-show input').val() >= 98) {
                 $('.num-show input').val(99);
-                $('.num-add').css('backgroundColor', '#fbfbfb');
-                $('.num-minus').css('backgroundColor', '#eeeeee');
+                $('.select-num .num-add').css('backgroundColor', '#fbfbfb');
+                $('.select-num .num-minus').css('backgroundColor', '#eeeeee');
             } else if ($('.num-show input').val() <= 2) {
                 $('.num-show input').val(1);
-                $('.num-minus').css('backgroundColor', '#fbfbfb');
-                $('.num-add').css('backgroundColor', '#eeeeee');
+                $('.select-num .num-minus').css('backgroundColor', '#fbfbfb');
+                $('.select-num .num-add').css('backgroundColor', '#eeeeee');
             }
         };
         numPan();
-        $('.num-computer').on('click shuru', '.num-add', function(event) {
+        $('.select-num .num-computer').on('click shuru', '.num-add', function(event) {
             var numVal = parseInt($('.num-show input').val());
             if (numVal >= 98) {
                 $('.num-show input').val(99);
@@ -82,7 +83,7 @@ require(['config','comm'], function(){
                 $('.num-add,.num-minus').css('backgroundColor', '#eeeeee');
             }
         });
-        $('.num-computer').on('click shuru', '.num-minus', function(event) {
+        $('.select-num .num-computer').on('click shuru', '.num-minus', function(event) {
             var numVal = parseInt($('.num-show input').val());
             if (numVal <= 2) {
                 $('.num-show input').val(1);
@@ -118,10 +119,11 @@ require(['config','comm'], function(){
 				titCell: ".swiper-pagination ul",
 				mainCell: ".swiper-wrapper",
 				effect: "leftLoop",
-				autoPlay: true,
+				autoPlay: false,
 				delayTime: 300,
 				interTime: 2000,
-				autoPage: true
+				autoPage: true,
+                switchLoad: "_src"
 			});
 			TouchSlide({
 				slideCell: "#recommend-body",
@@ -134,6 +136,44 @@ require(['config','comm'], function(){
 				autoPage: true
 			});
 		});
+
+        /* 10-13 chenpeng 加定金预售 */
+        $('.modal-close,.j-know').on('click', function(event) {
+            $('.j-presale').addClass('modal-out').removeClass('modal-in');
+            $('.premask').hide();
+        });
+        $('.j-prerolus').on('click', function(event) {
+            $('.j-presale').removeClass('modal-out').addClass('modal-in');
+            $('.premask').show();
+        });
+        $(document).on("touchmove",function(e) {
+           if(e.target.className.indexOf("premask") >= 0 || e.target.className.indexOf("modal") >= 0) {
+                e.preventDefault();
+            } else {
+                e.stopPropagation();
+            }
+        });
+        /* 10-21 chenpeng 加百联财礼 */
+        $('.subhead-tabs').on('click', '.subhead-tabs-item', function(event) {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+
+        // $('.pride-bottom-box .num-computer').on('click', '.num-add', function(event) {
+        //     var numVal = parseInt($('.num-show input').val());
+        //     if (numVal >= 98) {
+        //         $('.num-show input').val(99);
+        //     } else {
+        //         $('.num-show input').val(numVal + 1);
+        //     }
+        // });
+        // $('.pride-bottom-box .num-computer').on('click', '.num-minus', function(event) {
+        //     var numVal = parseInt($('.num-show input').val());
+        //     if (numVal <= 2) {
+        //         $('.num-show input').val(1);
+        //     } else {
+        //         $('.num-show input').val(numVal - 1);
+        //     }
+        // });
 
 
     });

@@ -101,6 +101,7 @@ body{
         background: -o-linear-gradient(left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5) , rgba(255, 255, 255, 0.8)); 
         background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5) , rgba(255, 255, 255, 0.8));
         background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5) , rgba(255, 255, 255, 0.8));
+        pointer-events: none;
     }
     .ovfs{
         @extend %comm-flex;

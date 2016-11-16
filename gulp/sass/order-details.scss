@@ -1,0 +1,396 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+.tab-group {
+    @extend %tab-group;
+}
+
+.arrow-white-right {
+    @extend %arrow-white-right;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+// 订单详情-待支付
+// 订单状态
+.dd-img-info {
+    height: rem(68);
+    line-height: rem(68);
+    padding: 0 rem(20) 0 rem(56);
+    font-size: rem(24);
+    background: #575a74 url(i/dd-img.png) no-repeat rem(20) center;
+    background-size: rem(24);
+    color: #cccccc;
+    margin-top: rem(88);
+    span {
+        color: #fff;
+    }
+}
+
+//收货信息
+.caricon {
+    height: rem(88);
+    background: #ffefb1 url(i/caricon-1.png) no-repeat rem(20) center;
+    padding-left: rem(56);
+    background-size: rem(24) auto;
+    color: #666666;
+    font-size: rem(24);
+    line-height: rem(88);
+    border-bottom: 1px solid #e9e9e9;
+    span {
+        color: #333;
+    }
+}
+
+//百联股份
+.bk-top-a {
+    margin-top: rem(20);
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            padding: 0 rem(30) !important;
+            clear: both;
+            margin-bottom: rem(20);
+            background: #FFF;
+            .order-item-title {
+                box-sizing: content-box;
+                color: #333333;
+                font-size: rem(28);
+                height: rem(32);
+                line-height: rem(32);
+                padding: rem(32) 0 rem(12);
+                i {
+                    border: 1px solid #e6133c;
+                    border-radius: rem(8);
+                    color: #e6133c;
+                    float: left;
+                    font-size: rem(16);
+                    height: rem(26);
+                    line-height: rem(22);
+                    margin-top: rem(4);
+                }
+                i.hse-2 {
+                    color: #FFF;
+                    background: #e6133c;
+                    border: 1px solid #e6133c;
+                    border-radius: rem(4);
+                    height: rem(30);
+                    line-height: rem(30);
+                    font-size: rem(20);
+                    padding: 0 rem(8);
+                    margin-top: 0;
+                    vertical-align: middle;
+                    border: 0;
+                    margin-top: rem(1);
+                    font-style: normal;
+                }
+                span {
+                    display: inline;
+                    float: left;
+                    margin-left: rem(8);
+                }
+            }
+            .product-img-div-2 {
+                padding: rem(20) 0;
+                box-sizing: content-box;
+                clear: both;
+                border-bottom: 1px solid #eee;
+                .order-img-1 {
+                    float: left;
+                    width: rem(150);
+                    height: rem(150);
+                }
+                .fr-arial {
+                    float: right;
+                    line-height: rem(40);
+                    text-align: right;
+                    .fr-money-1 {
+                        color: #e6133c;
+                        font-size: rem(28);
+                    }
+                    .fr-number {
+                        color: #999999;
+                        font-size: rem(24);
+                    }
+                }
+                .order-font-1 {
+                    padding-right: rem(132);
+                    padding-left: rem(170);
+                    .order-name-1 {
+                        color: #333333;
+                        font-size: rem(24);
+                        line-height: rem(36);
+                        height: rem(72);
+                        overflow: hidden;
+                        display: block;
+                        a:link {
+                            color: #333333;
+                        }
+                        a:visited {
+                            color: #333333;
+                        }
+                    }
+                    .hri {
+                        height: rem(40);
+                        div.tui-2 {
+                            margin-top: rem(4);
+                            i.i-img {
+                                background: url(i/icon-m9.png) no-repeat center center;
+                                background-size: 100% 100%;
+                                float: left;
+                                width: rem(30);
+                                height: rem(30);
+                                font-size: 0;
+                                padding: 0;
+                                display: inline-block;
+                            }
+                            span {
+                                float: left;
+                                display: inline;
+                                background: #999999;
+                                border-left: 0;
+                                font-size: rem(20);
+                                color: #ffffff;
+                                line-height: rem(30);
+                                padding: 0 rem(8);
+                            }
+                        }
+                    }
+                    .order-color-1 {
+                        color: #999999;
+                        font-size: rem(24);
+                        line-height: rem(36);
+                    }
+                }
+            }
+            .money-show1 {
+                height: rem(88);
+                text-align: right;
+                line-height: rem(80);
+                font-size: rem(28);
+                color: #000000;
+                clear: both;
+                span {
+                    margin-left: rem(40);
+                }
+            }
+        }
+        li.list-1{
+            margin-bottom: rem(20);
+            .on-sale2-a{
+                box-sizing: content-box;
+                font-size: rem(28);
+                height: rem(80);
+                line-height: rem(80);
+                .on-sale-left{
+                    float: left;
+                    color: #333333;
+                    font-size: rem(28);
+                }
+                .on-sale-right-1{
+                    float: right;
+                    font-size: rem(24);
+                }
+                .c333{
+                    color: #333333;
+                }
+                .fz{
+                    font-size: rem(28);
+                }
+            }
+        }
+        li.list-2{
+            margin-bottom: rem(20);
+            padding: 0 0 0 rem(20);
+            .timecolor{
+                line-height: rem(40);
+                color: #333333;
+                padding: rem(20) 0;
+                font-size: rem(24);
+            }
+        }
+        li.list-2{
+            .on-sale2-a{
+                box-sizing: content-box;
+                font-size: rem(28);
+                height: rem(80);
+                line-height: rem(80);
+                border-top: 1px solid #ddd;
+                .on-sale-left{
+                    float: left;
+                    color: #333333;
+                    font-size: rem(28);
+                }
+                .on-sale-right-1{
+                    float: right;
+                    font-size: rem(24);
+                }
+                .c666{
+                    color: #666666;
+                }
+            }
+            .on-sale2-a:nth-child(1){
+                border-top: 0;
+            }
+        }
+        li.list-3{
+            margin-top: 0;
+            .on-sale-total{
+                padding: rem(10) 0;
+                box-sizing: content-box;
+                .on-sale-name{
+                    line-height: rem(50);
+                    height: rem(50);
+                    font-size: rem(28);
+                    .fl{
+                        float: left;
+                        display: inline;
+                    }
+                    .fr{
+                        float: right;
+                        display: inline;
+                    }
+                }
+                .on-sale-h-1{
+                    line-height: rem(48);
+                    height: rem(48);
+                    color: #666666;
+                    font-size: rem(24);
+                    .fl{
+                        float: left;
+                        display: inline;
+                    }
+                    .fr{
+                        float: right;
+                        display: inline;
+                    }
+                }
+                .gifts-money{
+                    clear: both;
+                    border-top: 1px solid #e9e9e9;
+                    text-align: right;
+                    line-height: rem(84);
+                    height: rem(84);
+                    margin-top: rem(8);
+                    color: #333333;
+                    font-size: rem(28);
+                    span{
+                        font-size: rem(34);
+                        color: #e6133c;
+                    }
+                }
+            }
+        }
+    }
+    .operation{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-top: 1px solid #d6d6d6;
+        height: rem(88);
+        .fr-button-2{
+            float: right;
+            font-size: 0;
+            button{
+                background: #e6133c;
+                color: #fff;
+                font-size: rem(36);
+                border: 0;
+                height: rem(88);
+                outline: none;
+                padding: 0 rem(40);
+            }
+            button.giftbutton{
+                font-size: rem(28);
+                color: #333333;
+                background: none;
+            }
+        }
+    }
+    .bg-color{
+        background: rgba(255,255,255,.9);
+    }
+    .operation-height{
+        height: rem(90);
+    }
+}
+//订单详情-赠送成功
+.gifts-header {
+    background: #FFFFFF;
+    height: rem(110);
+    box-sizing: content-box;
+    border-bottom: 1px solid #e9e9e9;
+    padding: 0 rem(20);
+    line-height: rem(110);
+    .gifts-header-fl{
+        float: left;
+        background: url(i/ricon.png) no-repeat left;
+        padding-left: rem(36);
+        background-size: rem(28) rem(28);
+        color: #666666;
+        font-size: rem(28);
+    }
+    .gifts-header-ficon{
+        font-size: rem(28);
+        color: #333333;
+        padding: 0 rem(40) 0 rem(152);
+        .fldiv{
+            float: left;
+            width: rem(76);
+            height: rem(76);
+            border: 1px solid #eeeeee;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top: rem(16);
+            line-height: 0;
+            font-size: 0;
+            img{
+                width: 100%;
+            }
+        }
+        .gifts-header-ficonname{
+            padding-left: rem(88);
+            font-size: rem(28);
+        }
+    }
+}
+//订单详情-收礼-待写地址/待发货
+.gifts-header-1 {
+    background: #FFF;
+    box-sizing: content-box;
+    border-bottom: 1px solid #e9e9e9;
+    padding: 0 rem(20);
+    line-height: rem(80);
+    position: relative;
+    .gifts-header-fl{
+        float: left;
+        background: url(i/ricon.png) no-repeat left;
+        padding-left: rem(36);
+        background-size: rem(28) rem(28);
+        color: #666666;
+        font-size: rem(28);
+    }
+    .arrow-back{
+        color: #a8a8a8;
+        font-size: rem(24);
+        @include transform(rotate(180deg));
+        float: right;
+        line-height: rem(80);
+    }
+    .gifts-header-ficon{
+        font-size: rem(28);
+        color: #333333;
+        line-height: rem(40);
+        padding: rem(20) rem(40) rem(20) rem(152);
+        p{
+            font-size: rem(24);
+            color: #666;
+        }
+    }
+}

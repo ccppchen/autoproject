@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "绑定会员卡",
+    "css": "css/bangding-memcard.css",
+    "requirejs": "js/bangding-memcard"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "绑定会员卡",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <!-- content -->
+    <div class="content">
+        <div class="memcard-pic">
+            <div class="lazy-box four-four"><img data-original="css/i/mencard-ban.jpg" alt="" class="lazy"></div>
+        </div>
+        <div class="an-wrap">
+            <ul class="an-form">
+                <li class="an-item">
+                    <div class="an-form-input j-form-input">
+                        <input type="text" placeholder="请输入手机号码" class="j-phone">
+                        <div class="form-close"></div>
+                    </div>
+                </li>
+            </ul>
+            <input type="button" class="an-submit" value="确 定" disabled>
+            <div class="an-agreement">
+                <label for="an-check">新用户注册视为同意<span>百联会员注册协议</span></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- content end -->
+</body>
+
+</html>

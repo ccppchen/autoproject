@@ -329,3 +329,6 @@ a{
     color: nth($placeholder,2);
   }
 }
+label > * {
+  pointer-events: none;
+}

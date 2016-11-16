@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+@@include('widget/head.html', {
+    "title": "绑定会员卡",
+    "css": "css/bangding-memcard.css",
+    "requirejs": "js/comm"
+})
+</head>
+
+<body>
+    @@include('widget/header.html', {
+        "left-icon": "arrow-back",
+        "bar-style": "bar-light",
+        "title": "绑定会员卡",
+        "nav": false,
+        "rightIconBool": false,
+        "rightIconBoolMore": false
+    })
+    <!-- content -->
+    <div class="content">
+        <div class="bl-msg">
+            <div class="bl-icon-area"><img class="bl-icon-success bl-icon-msg" src="css/i/bl-cardmsg.jpg" alt=""></div>
+            <div class="bl-text-area">
+              <h2 class="bl-msg-title">会员卡已绑定</h2>
+              <p class="bl-msg-desc">您已绑定过百联通会员卡</p>
+            </div>
+            <div class="bl-opr-area">
+              <p class="bl-btn-area">
+                <a href="javascript:;" class="bl-btn bl-btn-danger">立即使用</a>
+              </p>
+            </div>
+
+        </div>
+    </div>
+    <!-- content end -->
+</body>
+
+</html>

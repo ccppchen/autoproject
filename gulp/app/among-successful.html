@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    @@include('widget/head.html', { "title": "收礼成功", "css": "css/gift.css","requirejs": "js/gift" })
+</head>
+
+<body>
+    <header class="bar bar-header bar-dark">
+        <div class="bar-left">
+            <a href="javascript:history.go(-1)" class="button">
+                <div class="iconfont arrow-back"></div>返回
+            </a>
+        </div>
+        <h1 class="title">
+              赠送礼物
+          </h1>
+        <div class="bar-right">
+            <!-- <a href="javascript:;" class="button iconfont error"></a> -->
+            <a href="javascript:;" class="button iconfont more-v"></a>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- content Start -->
+    <!-- 成功收礼 Start -->
+    <div class="ceremony-icon">
+        <div>
+            <i><img src="css/i/ceremony-icon.png"></i>
+            <span>恭喜您，已成功收礼</span>
+        </div>
+    </div>
+    <!-- 成功收礼 End -->
+    <!-- 轮播 Start -->
+    <div class="ceremony-main-1">
+        <div class="swipe" id="mySwipe">
+            <div class="swipe-wrap">
+                <div>
+                    <a href="#" class="ceremony-img-1"><img src="images/gift/ceremony-pro-img.png" alt="" /></a>
+                </div>
+                <div style="display:none;">
+                    <a href="#" class="ceremony-img-1"><img src="images/gift/ceremony-pro-img.png" alt="" /></a>
+                </div>
+                <div style="display:none">
+                    <a href="#" class="ceremony-img-1"><img src="images/gift/ceremony-pro-img.png" alt="" /></a>
+                </div>
+                <div style="display:none;">
+                    <a href="#" class="ceremony-img-1"><img src="images/gift/ceremony-pro-img.png" alt="" /></a>
+                </div>
+            </div>
+            <ul class="arrow">
+            </ul>
+            <ul class="direction-button">
+                <li class="but-left"><img src="css/i/but-right.png"></li>
+                <li class="but-right"><img src="css/i/but-left.png"></li>
+            </ul>
+        </div>
+        <div class="ceremony-font-1">您的礼物包裹马上到家~</div>
+    </div>
+    <!-- 轮播 End -->
+    <!-- button Start -->
+    <div class="ceremony-button-1"><button type="button">查看我的礼物</button></div>
+    <div class="ceremony-button-2" style="display:none"><button type="button">看看大家手气</button></div>
+    <!-- button End -->
+    <!-- 分享 Start -->
+    <div class="ceremony-but-info">
+        <div class="btn-login"><span>分享朋友圈，炫耀一下</span><i><img src="css/i/fx-icon.png"></i></div>
+    </div>
+    <!-- 分享 End -->
+
+    <!-- content End -->
+</body>
+
+</html>

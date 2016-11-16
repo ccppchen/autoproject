@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		@@include('widget/head.html', { "title": "单品品详情", "css": "css/singleproduct-detail.css", "requirejs": "js/singleproduct-detail" })
+	</head>
+
+	<body id="singleproduct">
+		<div class="head-container">
+			<div class="single-head">
+				<div class=" iconfont arrow-back"></div>
+				<div class="head-link">
+					<a class="select" id="main">商品</a>
+					<a>详情</a>
+					<a id="parameter">参数</a>
+					<a>评论</a>
+				</div>
+				<div class="j-nav">
+					<div class="button iconfont more-v"></div>
+					<div class="button iconfont error"></div>
+				</div>
+				<nav class="j-navcontent">
+					<ul class="ul-nav">
+						<li>
+							<a href="javascript:;"><i class="iconfont ihome"></i>
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont isearch"></i>
+								<p>搜索</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont class"></i>
+								<p>分类</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont shop-car"></i>
+								<p>购物车</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;"><i class="iconfont iuser"></i>
+								<p>我的i百联</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class=" iconfont topshop-car shop-car"><span>2</span></div>
+			</div>
+		</div>
+		<!-- Swiper -->
+		<div id="pagemain">
+			<div class="swiper-container" id="touchSlide">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="javascript:;"><img class="lazy" _src="images/singleproduct-detail/product.png" alt=""></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="javascript:;"><img class="lazy" _src="images/singleproduct-detail/product.png" alt=""></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="javascript:;"><img class="lazy" _src="images/singleproduct-detail/product.png" alt=""></a>
+					</div>
+				</div>
+				<div class="swiper-pagination">
+					<ul></ul>
+				</div>
+			</div>
+			<!-- 10-14 chenpeng 加定金预售-->
+			<div class="presale-tag presale-sub">
+				<div class="panicbuying-left">
+					<strong>预售中</strong><span class="span-res">（每单限购:3件）</span>
+				</div>
+				<div class="panicbuying-right">
+					剩余：<strong id="panicbuying-time">2天10时07分21秒</strong>
+				</div>
+			</div>
+
+			<!-- 定金 -->
+			<div class="presale-main">
+				<div class="deposit">
+
+					<div class="deposit-price">
+						<div class="prermb">定金</div><i class="iconfont yt"></i>
+						<div class="presale-price"><em class="rmb">¥</em>99.00</div></div>
+					<div class="deposit-balance">
+						2,789人已支付定金
+					</div>
+				</div>
+				<div class="inner-posr">
+					<div class="presale-innner">
+						<div class="pre-inner-item">
+							<div class="inner-item-left">
+								<div class="item-name">预售价</div>
+								<div class="item-price"><em class="rmb">￥</em>2999.00</div>
+								<div class="item-name">销售价</div>
+								<div class="item-del"><del><em class="rmb">￥</em>9999.00</del></div>
+							</div>
+							<div class="inner-item-right">仅剩80件</div>
+						</div>
+						<div class="pre-inner-item">
+							<div class="inner-item-left"><div class="item-name">尾款</div><div class="item-price">￥2999.00</div><div class="item-time">(9月1日20:00-10月30日20:00)</div></div>
+							<div class="inner-item-right"><a href="javascript:;" class="arrow-right j-prerolus">预售规则</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- chenp end -->
+
+			<div class="product-name"><span>自营</span>AIR JORDAN 乔丹2 RETRO'DUNK 复刻设计 感受MJ的非凡凌跃
+			</div>
+			<div class="product-remind">
+				敬请于3月19日莅临，拥有属于你的凌跃鞋款。内部标签采用深藏 青和金属金配色，为篮球战靴引入“凌跃”概念
+			</div>
+			<div class="product-pad">
+				<div class="product-core">
+					<span>￥</span><span class="true-core">6999.00</span>
+					<span class="through-core">￥9999.00</span>
+					<span class="buy-before">预定</span>
+					<span class="shan">闪</span>
+					<span class="qiang">抢</span>
+					<div class="phone-special">
+						<div class="special-logo">手机专享</div>
+						比PC端省16元
+					</div>
+				</div>
+
+			</div>
+			<div class="get-ticket-container">
+				<div class="get-ticket">
+					<div class="operate-text">领券</div>
+					<div class="iconfont arrow-back"></div>
+					<div class="ticket-detail ">
+						<ul>
+							<li>
+								<div class="ticket-logo">
+									满100减40
+								</div>
+								<div class="ticket-text">
+									<div class="ticket-limit">
+										<p>每笔订单满100元可用</p>
+										<p>有效期：2016.06.08-2016.06.30</p>
+									</div>
+									<div class="get-button">
+										<a>领取</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="ticket-logo">
+									满100减40
+								</div>
+								<div class="ticket-text">
+									<div class="ticket-limit">
+										<p>每笔订单满100元可用</p>
+										<p>有效期：2016.06.08-2016.06.30</p>
+									</div>
+									<div class="get-button">
+										<a>领取</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="ticket-logo">
+									满100减40
+								</div>
+								<div class="ticket-text">
+									<div class="ticket-limit">
+										<p>每笔订单满100元可用</p>
+										<p>有效期：2016.06.08-2016.06.30</p>
+									</div>
+									<div class="get-button">
+										<a>领取</a>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+
+			</div>
+			<div class="get-ticket-container">
+				<div class="get-ticket">
+					<div class="operate-text">促销</div>
+					<div class="iconfont arrow-back"></div>
+					<div class="ticket-detail sales-detail">
+						<ul>
+							<li>
+								<div class="sales-logo">
+									满100减40
+								</div>
+								<div class="ticket-text">
+									<div class="sales-limit">
+										<p>每笔订单满100元可用</p>
+										<p>有效期：2016.06.08-2016.06.30有效期：2016.06.08-2016.06.30有效期：2016.06.08-2016.06.30</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="sales-logo">
+									满100减40
+								</div>
+								<div class="ticket-text">
+									<div class="sales-limit">
+										<p>每笔订单满100元可用</p>
+										<p>有效期：2016.06.08-2016.06.30</p>
+									</div>
+
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+
+			</div>
+			<div class="product-pad margin-config" id="choose">
+				<div class="choose-limit">
+					<div class="operate-cotainer">
+						<div class="operate-text">选择</div>
+						<div>规格 数量</div>
+					</div>
+					<div class="iconfont arrow-back icon-enter"></div>
+				</div>
+			</div>
+			<div class="product-pad margin-config" id="suit">
+				<div class="choose-limit">
+					<div class="operate-cotainer">
+						<div class="operate-text">优惠套装</div>
+						<div>最高省<span class="color-s">60.00</span>元</div>
+					</div>
+					<div class="right-enter">
+						<div class="total-num">共15款</div>
+						<div class="iconfont arrow-back icon-enter"></div>
+					</div>
+				</div>
+			</div>
+			<div class="bl-world margin-config">
+				<div class="top">
+					<div class="bl-logo"></div>
+					<div class="give-address">由宁波保税仓发货</div>
+				</div>
+				<div class="bottom">
+					<div class="bottom-li bg-1">
+						<div>正品保障</div>
+					</div>
+					<div class="bottom-li bg-2">
+						<div>精选商家</div>
+					</div>
+					<div class="bottom-li bg-3">
+						<div>透明税费</div>
+					</div>
+					<div class="bottom-li bg-4">
+						<div>贴心售后</div>
+					</div>
+				</div>
+			</div>
+			<div class="product-pad margin-config">
+				<div class="serve-offer">
+					<div class="operate-text">服务</div>
+					<div class="serve-contain">
+						<div class="serve-company">由百联提供发货</div>
+						<div>
+							<div class="serve-logo">满68元免运费</div>
+							<div class="serve-logo">7天无理由退换货</div>
+							<div class="serve-logo">上门自提</div>
+							<div class="serve-logo">货到付款</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="product-comment margin-config">
+				<ul>
+					<li>
+						<div class="left-head">
+							<div class="operate-text">评价</div>
+							<div><span>98%</span>好评率</div>
+						</div>
+						<div class="right-head">
+							<div class="comment-num">（9999条评论）</div>
+							<div class="iconfont arrow-back icon-enter"></div>
+						</div>
+					</li>
+					<li>
+						<div class="portrait"></div>
+						<div class="comment-container">
+							<div class="comment-head">
+								<div>w***f</div>
+								<div class="comment-star">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div class="ash-star"></div>
+								</div>
+							</div>
+							<div class="comment-text">
+								喜欢~是我想要的！太开心了~推荐给闺蜜了，她也觉得好看，果断下手吧~
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="portrait"></div>
+						<div class="comment-container">
+							<div class="comment-head">
+								<div>w***f</div>
+								<div class="comment-star">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div class="ash-star"></div>
+								</div>
+							</div>
+							<div class="comment-text">
+								喜欢~是我想要的！太开心了~推荐给闺蜜了，她也觉得好看，果断下手吧~
+							</div>
+							<div class="img-container">
+								<div class="img-single">
+									<img src="images/singleproduct-detail/comment.png" />
+								</div>
+								<div class="img-single">
+									<img src="images/singleproduct-detail/comment.png" />
+								</div>
+								<div class="img-single">
+									<img src="images/singleproduct-detail/comment.png" />
+								</div>
+								<div class="img-single">
+									<img src="images/singleproduct-detail/comment.png" />
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div> 有图评论</div>
+					</li>
+				</ul>
+			</div>
+			<div class="margin-config">
+				<img src="images/singleproduct-detail/banner.png" />
+			</div>
+			<div class="banner-enter margin-config">
+				<div class="logo-container">
+					<div class="banner-logo">
+						<img src="images/singleproduct-detail/enter-logo.png" />
+
+					</div>
+					<div class="logo-name">雅诗兰黛</div>
+				</div>
+				<div class="iconfont arrow-back"></div>
+			</div>
+			<div class="margin-config">
+				<img src="images/singleproduct-detail/banner.png" />
+			</div>
+			<!--<div class="recommend-head">
+		大家都在买
+	</div>-->
+			<div class="swiper-page">
+				<div class="select">买了还买</div>
+				<div>品类排行</div>
+				<div>看了又看</div>
+			</div>
+			<!-- Swiper -->
+			<div class="swiper-container margin-config" id="recommend-body">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<ul>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+							<li>
+								<div class="recommend-img">
+									<img src="images/singleproduct-detail/recommend-img.png" />
+								</div>
+								<div class="recommend-text">
+									诗篇2016英伦修身两粒扣薄款风（...
+								</div>
+								<div class="recommend-pay">
+									<span>￥</span>2690.00
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="swiper-pagination">
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+		<div class="button-container">
+			<div class="button-buy">
+				<a class="insert-cart pay-presale">
+					支付定金
+				</a>
+			</div>
+			<div class="config-buy">确认购买</div>
+			<div class="config-buy no-goods" style="display: block;">已售罄</div>
+		</div>
+		<!-- 篮筐 样式7 -->
+		<!-- <div class="pbasket" style="display: none">
+			<div class="pbasket-price">
+				<div class="baskets-box j-tigger-bask">
+					<div class="icon-basket"></div>
+					<div class="dege">10</div>
+				</div>
+			</div>
+			<div class="pbasket-group-btn">
+				<div class="bagoods-editprice">
+					<button class="editprice-btn basminus"></button>
+					<input class="basinput" type="text" name="" value="1" readonly>
+					<button class="editprice-btn basplus"></button>
+
+				</div>
+			</div>
+		</div> -->
+		<!-- END -->
+		<div class="sinle-detail">
+			<div class="fix-button">
+				<div class="semi-circle">
+					<div class="iconfont arrow-back "></div>
+				</div>
+			</div>
+			<div class="white-line"></div>
+			<div id="detail-container">
+				<div class="detail-top">
+					<div class="top-container">
+						<div class="top-img">
+							<img src="images/singleproduct-detail/top-img.png" alt="">
+						</div>
+						<div class="close-detail"></div>
+						<div class="top-text">
+							<div class="top-money-text">￥<span>4499.00</span></div>
+							<div class="top-limit-text">请选择 颜色 尺码</div>
+							<div class="top-good-text">有货，限购10件</div>
+						</div>
+					</div>
+				</div>
+				<div class="select-container">
+					<div class="detail-select">
+						<div class="select-top">
+							颜色
+						</div>
+						<div class="body-container">
+							<div class="select-body">
+								<div class="active">黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div class="cannot">黑色</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail-select">
+						<div class="select-top">
+							颜色
+						</div>
+						<div class="body-container">
+							<div class="select-body">
+								<div class="active">黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div class="cannot">黑色</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail-select">
+						<div class="select-top">
+							颜色
+						</div>
+						<div class="body-container">
+							<div class="select-body">
+								<div class="active">黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div class="cannot">黑色</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail-select">
+						<div class="select-top">
+							颜色
+						</div>
+						<div class="body-container">
+							<div class="select-body">
+								<div class="active">黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div class="cannot">黑色</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail-select">
+						<div class="select-top">
+							颜色
+						</div>
+						<div class="body-container">
+							<div class="select-body">
+								<div class="active">黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div>黑色</div>
+								<div class="cannot">黑色</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail-select">
+						<div class="select-top">
+							尺码
+						</div>
+						<div class="body-container">
+							<div class="select-body">
+								<div>XS/150</div>
+								<div>S/155</div>
+								<div>M/160</div>
+								<div>L/165</div>
+								<div class="cannot">XL/170</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="select-num">
+					数量
+					<div class="num-computer">
+						<div class="num-minus"></div>
+						<div class="num-show"><input type="text" name="" value="111" placeholder=""></div>
+						<div class="num-add"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="discount-suit">
+			<div class="suit-head">
+				优惠套装
+				<div class="close-suit"></div>
+			</div>
+			<div class="suit ">
+				<div class="pad-fix">
+					<div class="top">
+						<div class="top-left">
+							<div>优惠套装</div>
+							<div>韩国温和补水套装</div>
+						</div>
+						<div class="top-right">
+							<div>￥999.99</div>
+							<div class="iconfont arrow-back "></div>
+						</div>
+					</div>
+				</div>
+				<div class="suit-body retract">
+					<div class="body-ul">
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pad-fix">
+					<div class="bottom">
+						<div class="suit-pay">
+							<p>套装价：<span>￥5129.00</span></p>
+							<p>立省：￥60.00</p>
+						</div>
+						<div class="suit-button back-1">
+							<a>加入购物车</a>
+						</div>
+						<div class="suit-button back-2">
+							<a>立即购买</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="suit">
+				<div class="pad-fix">
+					<div class="top">
+						<div class="top-left">
+							<div>优惠套装</div>
+							<div>韩国温和补水套装</div>
+						</div>
+						<div class="top-right">
+							<div>￥999.99</div>
+							<div class="iconfont arrow-back"></div>
+						</div>
+					</div>
+				</div>
+				<div class="suit-body retract">
+					<div class="body-ul">
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+						<div class="body-li">
+							<div class="retract-float">
+								<div class="suit-img">
+
+								</div>
+								<div class="suit-detail">
+									<div class="name">
+										丽得姿（Leaders）AMINO补水滋润保湿亮肤舒缓控油面膜15片 韩国原料水光肌套装(...
+									</div>
+									<div class="limit">
+										<span>颜色：</span>
+										<div>红色</div>
+										<span>尺码：</span>
+										<div>s</div>
+									</div>
+								</div>
+							</div>
+							<div class="num">
+								<div>x2</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pad-fix">
+					<div class="bottom">
+						<div class="suit-pay">
+							<p>套装价：<span>￥5129.00</span></p>
+							<p>立省：￥60.00</p>
+						</div>
+						<div class="suit-button back-1">
+							<a>加入购物车</a>
+						</div>
+						<div class="suit-button back-2">
+							<a>立即购买</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="parameter">
+			<div class="top">
+				主体
+			</div>
+			<div class="body">
+				<ul>
+					<li>
+						<div class="name">产地</div>
+						<div class="detail">见包装</div>
+					</li>
+					<li>
+						<div class="name">产地</div>
+						<div class="detail">见包装</div>
+					</li>
+					<li>
+						<div class="name">产地</div>
+						<div class="detail">见包装</div>
+					</li>
+					<li>
+						<div class="name">产地</div>
+						<div class="detail">见包装</div>
+					</li>
+
+				</ul>
+			</div>
+			<div class="top">
+				参数
+			</div>
+			<div class="body">
+				<ul>
+					<li>
+						<div class="name">产地</div>
+						<div class="detail">见包装</div>
+					</li>
+					<li>
+						<div class="name">产地</div>
+						<div class="detail">见包装</div>
+					</li>
+					<li>
+						<div class="name">产地</div>
+						<div class="detail">见包装</div>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="mark"></div>
+		<div class="comment">
+			<div class="top-select">
+				<li class="select">
+					<div>全部</div>
+					<div>12345</div>
+				</li>
+				<li>
+					<div>好评</div>
+					<div>12345</div>
+				</li>
+				<li>
+					<div>中评</div>
+					<div>12345</div>
+				</li>
+				<li>
+					<div>差评</div>
+					<div>12345</div>
+				</li>
+				<li>
+					<div>有图</div>
+					<div>12345</div>
+				</li>
+			</div>
+			<div class="comment-label">
+				<div>包装挺好（99）</div>
+				<div class="select">物流快（99）</div>
+				<div>质量不错（99）</div>
+				<div>太薄（99）</div>
+				<div>有破损（99）</div>
+				<div>手感好（99）</div>
+			</div>
+			<div class="comment-body margin-config">
+				<div class="head">
+					<div class="head-left">
+						<div class="head-logo"></div>
+						<div>
+							w***f
+						</div>
+					</div>
+					<div class="head-right">
+						2015-12-28 06:52:28
+					</div>
+				</div>
+				<div class="star">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="ash"></div>
+				</div>
+				<div class="label-config">包装挺好 物流快</div>
+				<div class="comment-depict">
+					质量不错，这个价格非常划算了！春天秋天搭配衣服非常 赞，总之很百搭！
+				</div>
+				<div class="comment-picture">
+					<ul>
+						<li>
+							<img src="images/singleproduct-detail/comment.png">
+						</li>
+						<li>
+							<img src="images/singleproduct-detail/comment.png">
+						</li>
+						<li>
+							<img src="images/singleproduct-detail/comment.png">
+						</li>
+						<li>
+							<img src="images/singleproduct-detail/comment.png">
+						</li>
+						<li>
+							<img src="images/singleproduct-detail/comment.png">
+						</li>
+
+					</ul>
+				</div>
+				<div class="goods-num ">
+					<div class="left-num">
+						<p>购买日期：2015-12-26 14:12:18</p>
+
+						<p>尺码：M 颜色：白色</p>
+					</div>
+					<div class="right-num">
+						<div class="right-click "></div>
+						<div>(100)</div>
+					</div>
+				</div>
+				<div class="bl-back">
+					【百联回复】谢谢支持！祝购物愉快！
+				</div>
+				<div class="add-comment">
+					<span>【追评】</span>用过了，真的很不错！
+				</div>
+				<div class="bl-back">
+					【百联回复】谢谢支持！祝购物愉快！
+				</div>
+			</div>
+			<div class="comment-body margin-config">
+				<div class="head">
+					<div class="head-left">
+						<div class="head-logo"></div>
+						<div>
+							w***f
+						</div>
+					</div>
+					<div class="head-right">
+						2015-12-28 06:52:28
+					</div>
+				</div>
+				<div class="star">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="ash"></div>
+				</div>
+				<div class="label-config">包装挺好 物流快</div>
+				<div class="comment-depict">
+					质量不错，这个价格非常划算了！春天秋天搭配衣服非常 赞，总之很百搭！
+				</div>
+				<!--<div class="comment-picture">
+				<ul >
+					<li>
+					<img src="images/singleproduct-detail/comment.png">
+					</li>
+					<li>
+					<img src="images/singleproduct-detail/comment.png">
+					</li>
+					<li>
+					<img src="images/singleproduct-detail/comment.png">
+					</li>
+					<li>
+					<img src="images/singleproduct-detail/comment.png">
+					</li>
+					<li>
+					<img src="images/singleproduct-detail/comment.png">
+					</li>
+
+				</ul>
+			</div>-->
+				<div class="goods-num ">
+					<div class="left-num">
+						<p>购买日期：2015-12-26 14:12:18</p>
+
+						<p>尺码：M 颜色：白色</p>
+					</div>
+					<div class="right-num">
+						<div class="right-click has-click"></div>
+						<div>(100)</div>
+					</div>
+				</div>
+				<div class="bl-back">
+					【百联回复】谢谢支持！祝购物愉快！
+				</div>
+				<!--<div class="add-comment">
+				<span>【追评】</span>用过了，真的很不错！
+			</div>
+			<div class="bl-back">
+				【百联回复】谢谢支持！祝购物愉快！
+			</div>-->
+			</div>
+		</div>
+
+		<!-- 10-13 chenpeng 加定金预售 -->
+		<div class="premask"></div>
+		<div class="modal j-presale modal-out"><!-- class 为modal-in类是显示，modal-out是隐藏 -->
+			<div class="modal-close"></div>
+		    <div class="modal-inner">
+		        <div class="modal-title hairline">预售规则</div>
+		        <div class="modal-text">
+		<p>1.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作，货物配送到您手中的配送时间会有所不同，一般您下单支付成功后3-5个工作日左右发货。</p>
+		<p>2.如遇上海关国检抽检、节假日或其他不可抗力（海关系统维护、航班延误、地震、冰灾、交通事故等）导致的异常情况，将会影响订单发货时效。将会影响订单发货时效。</p>
+		<p>3.全球购跨境保税商品从不同保税区仓库发货，需要向海关及国检进行订单信息申报、备案及清关等操作</p>
+		        </div>
+		    </div>
+		    <div class="modal-buttons">
+		        <div class="modal-button j-know">知道了</div>
+		    </div>
+		</div>
+		<!-- <div class="button-container">
+			<div class="presale-bottom-box">
+				<div class="prebtn-mange">
+					<div class="mange-item">
+						<a href="javascript:;" class="z-link"></a>
+						<i class="iconfont attention"></i>
+						<div class="p">关注</div>
+					</div>
+					<div class="mange-item">
+						<a href="javascript:;" class="z-link"></a>
+						<i class="iconfont tab-shop"></i>
+						<div class="p">购物车</div>
+						<div class="deget">29</div>
+					</div>
+				</div>
+				<a class="prebtn-pay">支付定金</a>
+			</div>
+		</div> -->
+
+	</body>

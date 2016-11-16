@@ -10,12 +10,10 @@ require(['vendor/vendor.min'], function(FastClick) {
    * 7.商品数量加一
    */
 
-  require(['swiper_around_bl'], function() {
-    $('.swiper').swiper_around();
-  }); /* 1 */
+  require(['swiper_around_bl']); /* 1 */
 
   require(['fx_methods'], function(){
-    $('.j-tigger-bask').on('click', function() {
+    $('.j-tigger-bask,.mask').on('click', function() {
       $('.basket-edit').toggleClass('open');
       if ($('.basket-edit').is('.open')) {
         $('.mask').fadeIn();

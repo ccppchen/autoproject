@@ -1,282 +1,286 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-@@include('widget/head.html', {
-    "title": "优惠券",
-    "css": "css/discount.css",
-    "requirejs": "js/discount"
-})
+  @@include('widget/head.html', { "title": "优惠券", "css": "css/discount.css", "requirejs": "js/discount" })
 </head>
 
 <body>
-	    @@include('widget/header.html', {
-        "left-icon": "arrow-back",
-        "bar-style": "bar-light",
-        "title": "我的优惠券",
-        "nav": false,
-        "right-icon": false,
-        "rightIconBool": false,
-        "rightIconBoolMore": false,
-        "more-icon": ""
-    })
-
-<div class="header-class">
-	<ul>
-    	<li class="on"><a href="#">全部</a></li>
-        <li><a href="#">美食保健</a></li>
-        <li><a href="#">箱包配饰</a></li>
-        <li><a href="#">家居个护</a></li>
-        <li><a href="#">服装鞋靴</a></li>
+  @@include('widget/header.html', { "left-icon": "arrow-back", "bar-style": "bar-light", "title": "我的优惠券", "nav": false, "right-icon": false, "rightIconBool": false, "rightIconBoolMore": false, "more-icon": "" })
+  <div class="header-class">
+    <ul>
+      <li class="on"><a href="#">全部</a></li>
+      <li><a href="#">美食保健</a></li>
+      <li><a href="#">箱包配饰</a></li>
+      <li><a href="#">家居个护</a></li>
+      <li><a href="#">服装鞋靴</a></li>
     </ul>
-</div>
-<div class="header-nav">
-	<div class="on"><a href="#">未使用</a></div>
+  </div>
+  <div class="header-nav">
+    <div class="on"><a href="#">未使用</a></div>
     <span>|</span>
     <div><a href="#">已使用</a></div>
     <span>|</span>
     <div><a href="#">已过期</a></div>
-</div>
-<div class="discount-ul">
-	<ul>
-    	<li class="no-1">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">100</div>
-                    <div class="money-info">
-                        <div class="money-info-element">元</div>
-                        <div class="money-info-coupon">现金券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
+  </div>
+  <div class="discount-ul">
+    <ul>
+      <li class="no-1">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">100</div>
+            <div class="money-info">
+              <div class="money-info-element">元</div>
+              <div class="money-info-coupon">现金券</div>
             </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-2">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">50</div>
+            <div class="money-info">
+              <div class="money-info-element">元</div>
+              <div class="money-info-coupon">抵用券</div>
             </div>
-        </li>
-        <li class="no-2">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">50</div>
-                    <div class="money-info">
-                        <div class="money-info-element">元</div>
-                        <div class="money-info-coupon">抵用券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-3">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">P</div>
+            <div class="money-info">
+              <div class="money-info-element">arking</div>
+              <div class="money-info-coupon">停车券</div>
             </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-4">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">E</div>
+            <div class="money-info">
+              <div class="money-info-element">xchange</div>
+              <div class="money-info-coupon">兑换券</div>
             </div>
-        </li>
-        <li class="no-3">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">P</div>
-                    <div class="money-info">
-                        <div class="money-info-element">arking</div>
-                        <div class="money-info-coupon">停车券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-5">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">L</div>
+            <div class="money-info">
+              <div class="money-info-element">argess</div>
+              <div class="money-info-coupon">赠品券</div>
             </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道
-<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-6">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">100</div>
+            <div class="money-info">
+              <div class="money-info-element">元</div>
+              <div class="money-info-coupon">停车券</div>
             </div>
-        </li>
-        <li class="no-4">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">E</div>
-                    <div class="money-info">
-                        <div class="money-info-element">xchange</div>
-                        <div class="money-info-coupon">兑换券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-7">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">100</div>
+            <div class="money-info">
+              <div class="money-info-element">元</div>
+              <div class="money-info-coupon">抵用券</div>
             </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道
-<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-8">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">B</div>
+            <div class="money-info">
+              <div class="money-info-element">onus</div>
+              <div class="money-info-coupon">抽奖券</div>
             </div>
-        </li>
-        <li class="no-5">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">L</div>
-                    <div class="money-info">
-                        <div class="money-info-element">argess</div>
-                        <div class="money-info-coupon">赠品券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">分享好友</button>
+            <button type="button">立即抽奖</button>
+          </div>
+        </div>
+      </li>
+      <li class="no-9">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">100</div>
+            <div class="money-info">
+              <div class="money-info-element">元</div>
+              <div class="money-info-coupon">自提券</div>
             </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道
-<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <!-- 2016-09-29 chenpeng 加折扣券样式 -->
+      <li class="no-10">
+        <i class="i-top"></i>
+        <i class="i-bottom"></i>
+        <div class="discount-item-left">
+          <div class="discount-item-left-info">
+            <div class="money-int">5.6</div>
+            <div class="money-info">
+              <div class="money-info-element">折</div>
+              <div class="money-info-coupon">折扣券</div>
             </div>
-        </li>
-        <li class="no-6">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">100</div>
-                    <div class="money-info">
-                        <div class="money-info-element">元</div>
-                        <div class="money-info-coupon">停车券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
-            </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道
-<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
-            </div>
-        </li>
-        <li class="no-7">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-           <div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">100</div>
-                    <div class="money-info">
-                        <div class="money-info-element">元</div>
-                        <div class="money-info-coupon">抵用券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
-            </div>            
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道
-<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
-            </div>
-        </li>
-        <li class="no-8">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">B</div>
-                    <div class="money-info">
-                        <div class="money-info-element">onus</div>
-                        <div class="money-info-coupon">抽奖券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
-            </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道
-<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">分享好友</button>
-                    <button type="button">立即抽奖</button>
-                </div>
-            </div>
-        </li>
-          <li class="no-9">
-        	
-        	<i class="i-top"></i>
-            <i class="i-bottom"></i>
-        	<div class="discount-item-left">
-            	<div class="discount-item-left-info">
-                	<div class="money-int">100</div>
-                    <div class="money-info">
-                        <div class="money-info-element">元</div>
-                        <div class="money-info-coupon">自提券</div>
-                    </div>
-                </div>
-                <div class="coupon-time">2016.06.01-2016.06.30</div>
-            </div>
-            <div class="discount-item-right">
-            	<div class="discount-itemicon">使用规则</div>
-            	<div class="coupon-name">适用于百联到家频道
-<br>满<span>100</span>元可用</div>
-                <div class="coupon-button">
-                	<button type="button" class="but-1">门店扫码</button>
-                    <button type="button">适用商品</button>
-                </div>
-            </div>
-        </li>
+          </div>
+          <div class="coupon-time">2016.06.01-2016.06.30</div>
+        </div>
+        <div class="discount-item-right">
+          <div class="discount-itemicon">使用规则</div>
+          <div class="coupon-name">适用于百联到家频道
+            <br>满<span>100</span>元可用</div>
+          <div class="coupon-button">
+            <button type="button" class="but-1">门店扫码</button>
+            <button type="button">适用商品</button>
+          </div>
+        </div>
+      </li>
+      <!-- 加折扣券样式 END -->
     </ul>
-</div>
-<div class="fooder-height">
-	<a href="#" class="fooder-fixed">马上领取更多优惠券 <i class="iconfont arrow-back"></i></a>
-</div>
-<div class="stores-show">
-	<div class="stores-show-font">
-        <em class="yuan-1"></em>
-        <em class="yuan-2"></em>
-    	<i class="chacha"><img src="css/i/h5chacha.png"></i>
-        <div class="stores-show-title">供门店扫码使用</div>
-        <div class="ewm"><img src="css/i/h5ewm.png"></div>
-        <div class="stores-show-info">使用规则：百联到家满60减15元抵用券，适用于百联到家频道（限购商品除外），请在移动端使用，每笔订单金额满60减15元，不兑现，不找零，不可转让，百联到家服务仅支持已开通百联到家的门店周边3公里范围。</div>
+  </div>
+  <div class="fooder-height">
+    <a href="#" class="fooder-fixed">马上领取更多优惠券 <i class="iconfont arrow-back"></i></a>
+  </div>
+  <div class="stores-show">
+    <div class="stores-show-font">
+      <em class="yuan-1"></em>
+      <em class="yuan-2"></em>
+      <i class="chacha"><img src="css/i/h5chacha.png"></i>
+      <div class="stores-show-title">供门店扫码使用</div>
+      <div class="ewm"><img src="css/i/h5ewm.png"></div>
+      <div class="stores-show-info">使用规则：百联到家满60减15元抵用券，适用于百联到家频道（限购商品除外），请在移动端使用，每笔订单金额满60减15元，不兑现，不找零，不可转让，百联到家服务仅支持已开通百联到家的门店周边3公里范围。</div>
     </div>
-</div>
-<div class="stores-show stores-show2">
-	<div class="stores-show-font">
-        <em class="yuan-1"></em>
-        <em class="yuan-2"></em>
-    	<i class="chacha"><img src="css/i/h5chacha.png"></i>
-        <div class="stores-show-title">分享好友，大家一起领</div>
-        <div class="ewm2"><img src="css/i/h5ewm2.png"></div>
+  </div>
+  <div class="stores-show stores-show2">
+    <div class="stores-show-font">
+      <em class="yuan-1"></em>
+      <em class="yuan-2"></em>
+      <i class="chacha"><img src="css/i/h5chacha.png"></i>
+      <div class="stores-show-title">分享好友，大家一起领</div>
+      <div class="ewm2"><img src="css/i/h5ewm2.png"></div>
     </div>
-</div>
-
-
+  </div>
 </body>
+
 </html>

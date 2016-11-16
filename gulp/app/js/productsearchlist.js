@@ -136,6 +136,7 @@ require(['config'], function() {
       });
       $(".pro-header").find("span").click(function() {
         $("body").toggleClass("list-item");
+        $('.j-bli').toggle();
       });
       $(".pro-header").find("input").focus(function() {
         $(".mian-info").css("display", "none").siblings(".main-info-search").css("display", "block");
@@ -172,7 +173,7 @@ require(['config'], function() {
 
     $(function() {
 
-      var p = 0,
+      var
         t = 0,
         g = 0;
       var liHeight = $('.pro-ul ul li').height();
@@ -182,14 +183,14 @@ require(['config'], function() {
       var pageHeight = liHeight * 8;
       $(".pro-ul").css("margin-top", topFixH);
       $(window).on("scroll touchmove", function(e) {
-        p = $(this).scrollTop();
+       /* p = $(this).scrollTop();
         if (p > headerH) {
           $(".pro-ul").css("margin-top", saleH);
           $(".sale-form").css("position", "fixed");
         } else {
           $(".pro-ul").css("margin-top", "0");
           $(".sale-form").attr('style', 'display:inline-block');
-        }
+        }*/
         //     if (p > pageHeight) {
         //         if(t<=p){//下滚
         //             $('.topfix').css('-webkit-transform', 'translateY(-'+($(".topfix").height()-$('.pro-label').height())+'px)');

@@ -1,0 +1,105 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/nav/nav";
+@import "tobe/components/bar/bar";
+.bar.bar-dark {
+    @include bar-style(#1C1B1F, #1C1B1F, #ffffff);
+}
+
+.bar.bar-light {
+    background-color: #ffffff;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+#everybody-performance {
+    .content {
+        padding-top: rem(88);
+        .coupon-list {
+            padding: 0 rem(30);
+            ul {
+                li {
+                    border-bottom: 1px solid #EEEEEE;
+                    height: rem(130);
+                    padding: rem(22) 0;
+                    .le-money {
+                        float: left;
+                        line-height: rem(86);
+                        padding-right: rem(43);
+                        font-size: rem(48);
+                        color: #999999;
+                        span {
+                            font-size: rem(24);
+                        }
+                    }
+                    .le-fonts {
+                        float: left;
+                        // @extend %comm-flex;
+                        .font-1 {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            font-size: rem(28);
+                            color: #666666;
+                        }
+                        .font-2 {
+                            font-size: rem(24);
+                            color: #999999;
+                            span{
+                                border: 1px solid #E6133C;
+                                color: #E6133C;
+                                padding:0 rem(7);
+                                margin-left: rem(14);
+                            }
+                        }
+                    }
+                    label {
+                        box-sizing: content-box;
+                        float: right;
+                        .Cddd {
+                            background-color: #dddddd !important;
+                        }
+                        input[type="checkbox"] {
+                            -webkit-user-select: text;
+                            -ms-user-select: text;
+                            user-select: text;
+                            -webkit-appearance: none;
+                            position: relative;
+                            border: 1px solid #e7e7e7;
+                            -webkit-border-radius: 50%;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            vertical-align: middle;
+                            outline: none;
+                            float: left;
+                            margin-top: rem(22);
+                            width: rem(44);
+                            height: rem(44);
+                        }
+                        input[type="checkbox"]:checked:after {
+                            content: '';
+                            position: absolute;
+                            left: rem(8);
+                            top: rem(10);
+                            width: rem(24);
+                            height: rem(12);
+                            border-left: 1px solid #fff;
+                            border-bottom: 1px solid #fff;
+                            -webkit-transform: rotate(-45deg);
+                            -ms-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                        }
+                        input[type="checkbox"]:checked {
+                            border-color: #e1012a;
+                            background-color: #ff4141;
+                            width: rem(44);
+                            height: rem(44);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

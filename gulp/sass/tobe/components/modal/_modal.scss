@@ -199,7 +199,7 @@ $ios:              false !default;
         color: #666666;
         margin: rem(30) 0;
         max-height: rem(488);
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     .modal-buttons {
         height: rem(88);

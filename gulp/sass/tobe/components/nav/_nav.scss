@@ -1,4 +1,4 @@
-// nav  
+// nav
 .j-nav{
     width: rem(80);
     div.button{
@@ -12,6 +12,7 @@
         visibility: hidden;
         opacity: 0;
         color: #fe5b4a !important;
+        font-size: rem(35);
     }
     &.show-nav{
         .more-v{

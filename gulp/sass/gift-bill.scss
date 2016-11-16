@@ -1,0 +1,166 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+#gift-bill {
+    .content {
+        padding-top: rem(88);
+        position: relative;
+    }
+    .menu-box {
+        position: relative;
+        padding-top: rem(88);
+    }
+    .bill-menu {
+        background: #ffffff;
+        position: fixed;
+        top: rem(88);
+        left: 0;
+        right: 0;
+        height: rem(88);
+        box-shadow: 0 0 12px #CCCCCC;
+        li {
+            width: 50%;
+            height: rem(88);
+            float: left;
+            @extend %comm-flex;
+            @include justify-content(center);
+            div {
+                height: rem(88);
+                line-height: rem(88);
+                font-size: rem(32);
+            }
+        }
+        .select {
+            div {
+                border-bottom: 2px solid #e6133c;
+            }
+        }
+    }
+    .bill-list {
+        background: #ffffff;
+        padding: 0 rem(30);
+        margin-bottom: rem(20);
+        li {
+            border-bottom: 1px solid #e7e7e7;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .state {
+            @extend %comm-flex;
+            @include justify-content(space-between);
+            height: rem(68);
+            font-size: rem(24);
+        }
+        .state-detail {
+            color: #e6133c;
+        }
+        .logo-box {
+            @extend %comm-flex;
+        }
+        .caili-logo {
+            width: rem(36);
+            height: rem(36);
+            margin-right: rem(12);
+            background: url("i/give-gift/giftico.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .bill-gift {
+            padding: rem(20) 0;
+            overflow: hidden;
+            .img-box {
+                width: rem(120);
+                height: rem(120);
+                float: left;
+                border-radius: rem(8);
+                margin-right: rem(20);
+                overflow: hidden;
+            }
+        }
+        .much-gift {
+            overflow: hidden;
+            overflow-x: scroll;
+            .bill-gift {
+                white-space: nowrap;
+                overflow: auto;
+                .img-box {
+                    float: none;
+                    display: inline-block;
+                }
+            }
+        }
+        .name-num {
+            @extend %comm-flex;
+            @include justify-content(space-between);
+            overflow: hidden;
+            margin-bottom: rem(10);
+            .name {
+                width: rem(320);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                height: rem(64);
+                line-height: rem(32);
+                font-size: rem(24);
+            }
+            .num {
+                line-height: rem(32);
+                text-align: right;
+            }
+        }
+        .limit {
+            font-size: rem(24);
+            color: #999999;
+            line-height: rem(32);
+        }
+        .bill-pay {
+            height: rem(92);
+            @extend %comm-flex;
+            @include justify-content(space-between);
+            .pay-num {
+                max-width: rem(330);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                label {
+                    color: #e6133c;
+                }
+            }
+            .pay-button {
+                @extend %comm-flex;
+                button {
+                    width: rem(160);
+                    height: rem(56);
+                    border: 1px solid #cccccc;
+                    background: transparent;
+                    border-radius: rem(6);
+                    margin-left: rem(20);
+                    color: #999999;
+                    font-size: rem(24);
+                }
+                .red-button {
+                    border: none;
+                    background: #e6133c;
+                    color: #ffffff;
+                }
+            }
+            .time-logo{
+                width: rem(28);
+                height: rem(28);
+                margin-right: rem(12);
+                background: url("i/countdown-icon.png") no-repeat;
+                background-size: 100% 100%;
+            }
+            .time{
+                color: #e6133c;
+                line-height: 1;
+            }
+            .time-text{
+                color: #666666;
+                line-height: 1;
+            }
+        }
+    }
+}
