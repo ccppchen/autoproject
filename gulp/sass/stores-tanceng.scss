@@ -1,0 +1,236 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/nav/nav";
+@import "tobe/components/bar/bar";
+// 门店信息-展开
+// .stores-information{
+//     position: fixed;
+//         top: 0;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//         z-index: 9999;
+//         background: rgba(0,0,0,0.6);
+//         width: 100%;
+//         height: 100%;
+// }
+// 百联到家 content部分
+.bailian-home {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -200%;
+    z-index: 10010;
+    // background: rgba(0,0,0,0.6);
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    // 百联到家 配送部门部分
+    .tt-mendian {
+        position: relative;
+        //height: rem(88);
+        // border-bottom: 1px solid #E7E7E7;
+        @include display(flex);
+        @include align-items(center);
+        width: 100%;
+        .fonts {
+            display: inline-block;
+            position: absolute;
+            top: rem(20);
+        }
+        .fonts-1 {
+            font-size: rem(28);
+            color: #999999;
+            float: left;
+        }
+        .fonts-2 {
+            background: #FF8B4B;
+            padding: 0 rem(14);
+            font-size: rem(24);
+            color: #ffffff;
+            border-radius: rem(4);
+            margin: 0 rem(10) 0 rem(38);
+        }
+        .fonts-3 {
+            color: #2A2A2A;
+            font-size: rem(32);
+            float: left;
+        }
+    }
+    .img-mendian {
+        text-align: center;
+        img {
+            width: rem(210);
+            height: rem(210);
+            background-size: rem(210);
+            border: 1px solid #f3f3f3;
+            border-radius: rem(4);
+            margin: rem(30) 0;
+        }
+    }
+    .mendian-fonts {
+        // padding: 0 0 rem(30) 0;
+        // border-bottom: 1px solid #E7E7E7;
+        padding: 0 rem(100) rem(110);
+        .address {
+            text-align: center;
+            padding-bottom: rem(15);
+            color: #111111;
+            font-size: rem(30);
+        }
+        div {
+            color: #999999;
+            font-size: rem(28);
+            // line-height: rem(60);
+            span {
+                color: #666666;
+            }
+        }
+    }
+    // 附近门店部分
+    .near-mendian {
+        .line-title {
+            height: rem(44);
+            border-bottom: 1px solid #E2E2E2;
+            margin-bottom: rem(20);
+            margin-top: rem(50);
+            .near-title {
+                font-size: rem(28);
+                color: #999999;
+                margin: rem(60) 0 rem(20);
+                line-height: rem(88);
+                background-color: #ffffff;
+                padding-right: rem(11);
+            }
+        }
+        .ad-mendian {
+            margin-bottom: rem(20);
+            ul {
+                li {
+                    box-sizing: content-box;
+                    border-bottom: 1px solid #E7E7E7;
+                    padding: rem(20) 0;
+                    .mendian-fonttitle {
+                        display: inline-block;
+                        width: 100%;
+                        .fonttitle-left {
+                            float: left;
+                            font-size: rem(28);
+                            @include display(flex);
+                            @include align-items(center);
+                            span {
+                                // border-radius: rem(4);
+                                background: #ffb02d;
+                                color: #ffffff;
+                                font-size: rem(24);
+                                height: rem(36);
+                                line-height: rem(36);
+                                margin-right: rem(10);
+                                width: rem(118);
+                                text-align: center;
+                                position: relative;
+                                transform: scale(.83);
+                                display: inline-block;
+                                -webkit-transform: scale(0.83);
+                                i { 
+                                    border-top: rem(18) solid transparent;
+                                    border-bottom: rem(18) solid transparent;
+                                    border-left: rem(13) solid #ffb02d;
+                                    width: rem(13);
+                                    height: rem(35);
+                                    position: absolute;
+                                    right: rem(-13);
+                                }
+                            }
+                        }
+                        .fonttitle-right {
+                            float: right;
+                            font-size: rem(28);
+                            color: #111111;
+                        }
+                    }
+                    .manjian {
+                        font-size: rem(26);
+                        color: #666666;
+                        padding-left: rem(130);
+                    }
+                    .mendian-fonts {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+    // footer部分
+    .footer-close {
+        height: rem(258);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 0 rem(30);
+        box-shadow: 0 30px 30px 30px #cccccc;
+        background: #ffffff;
+        .footer-title-list {
+            overflow: hidden;
+            margin-bottom: rem(10);
+            ul {
+                li {
+                    float: left;
+                    width: 33.333%;
+                    text-align: center;
+                    font-size: rem(28);
+                    color: #42B9FF;
+                    padding: rem(34) 0;
+                    // .fonts{
+                    //     i{
+                    //         img{
+                    //             display: inline-block;
+                    //             width: rem(24);
+                    //             height: rem(26);
+                    //             margin-top: rem(-4);
+                    //             margin-right: rem(7);
+                    //         }
+                    //     }
+                    // }
+                    // .fonts01{
+                    //     text-align: center;
+                    // }
+                    .fonts03 {
+                        float: right;
+                    }
+                }
+            }
+        }
+        .btn-close {
+            text-align: center;
+            img {
+                width: rem(92);
+                height: rem(92);
+                background-size: rem(92);
+            }
+        }
+    }
+}
+.open-show {
+    transition: all ease 0.2s;
+    height: auto;
+    overflow: hidden;
+}
+.open-show.close {
+    height: 0;
+}
+.store-box {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    padding: 0 rem(30);
+}
+.store-box .all-store{
+    position: absolute;
+    left: rem(30);
+    right: rem(30);
+    top: 0;
+    bottom: rem(258);
+    overflow: auto;
+}

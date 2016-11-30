@@ -3,124 +3,132 @@
 
 @import "tobe/components/bar/bar";
 @import "tobe/components/nav/nav";
-
-
-.tab-group{
-	@extend %tab-group;
-}
-.arrow-white-right{
-	@extend %arrow-white-right;
-}
-body{
+body {
     background-color: #f7f7f7;
 }
 // 百联彩礼首页
 .swipe {
     width: 100%;
+    margin-top: rem(88);
     position: relative;
     overflow: hidden;
-    margin-top: rem(88);
-    .swipe-wrap{
+    .swipe-wrap {
         position: relative;
         overflow: hidden;
     }
-    .swipe-wrap > div{
+    .swipe-wrap > div {
         width: 100%;
         float: left;
         display: block;
         position: relative;
-        a{
+        a {
             width: 100%;
             float: left;
             display: block;
         }
+        a:after {
+            content: "";
+            display: block;
+            padding-top: 32%;
+        }
     }
-    img{
+    img {
+        position: absolute;
         width: 100%;
+        left: 50%;
+        top: 50%;
+        @include transform(translate3d(-50%,-50%,0));
+        z-index: 1;
     }
 }
-.banner-img{
-    .banner-box{
-        moz-box-shadow: 0 rem(-40) rem(80) rgba(0,0,0,.5) inset;
-        -webkit-box-shadow: 0 rem(-40) rem(80) rgba(0,0,0,.5) inset;
-        box-shadow: 0 rem(-40) rem(80) rgba(0,0,0,.5) inset;
-        width: 120%;
+.banner-img {
+    .banner-box {
+        moz-box-shadow: 0 rem(-28) rem(80) rgba(0,0,0,.5) inset;
+        -webkit-box-shadow: 0 rem(-28) rem(80) rgba(0,0,0,.5) inset;
+        box-shadow: 0 rem(-28) rem(40) rgba(0,0,0,.5) inset;
+        width: 100%;
         height: 100%;
         position: absolute;
-        left: -10%;
-        top: 0px;
+        top: 0;
         display: block;
-    }
-    img{
-        width: 100%;
+        z-index: 100;
     }
 }
-.swipe{
-    .arrow{
+.swipe {
+    .arrow {
         position: absolute;
         padding: 0;
         bottom: 10px;
-        left: 0px;
+        left: 0;
         width: 100%;
         text-align: center;
-        li{
+        li {
             display: inline-block;
             width: rem(16);
             margin: 0 rem(8);
             height: rem(16);
+            line-height: 1;
+            font-size: 0;
             border: 1px solid #ffffff;
             border-radius: 50%;
         }
-        li.active{
+        li.on {
             background: #fff;
         }
     }
 }
+.gift-title {
+    height: rem(68);
+    line-height: rem(68);
+    @include display(flex);
+    @include align-items(center);
+    color: #444444;
+    font-size: rem(32);
+    font-weight: 900;
+    div {
+        height: rem(32);
+        width: rem(7);
+        margin-right: rem(14);
+    }
+}
 // 送礼对象
-.gift-main{
+.gift-main {
     background: #fff;
     border-bottom: 1px solid #e9e9e9;
-    .gift-title{
-        height: rem(68);
-        line-height: rem(68);
-        i{
-            float: left;
-            height: rem(32);
-            width: rem(7);
-            display: inline-block;
-            margin-top: rem(18);
-        }
-        span{
-            margin-left: rem(14);
-            float: left;
-            color: #444444;
-            font-size: rem(32);
-            font-weight: 900;
-        }
-    }
-    .gift-ul{
-        ul{
-            li{
+    .gift-ul {
+        ul {
+            li {
                 float: left;
                 width: 25%;
                 text-align: center;
                 height: rem(180);
-                a:link{
+                a:link {
                     display: inline-block;
                     margin: 0 auto;
                 }
-                a:visited{
+                a:visited {
                     display: inline-block;
                     margin: 0 auto;
                 }
-                span{
+                span {
                     clear: both;
                     display: block;
-                    img{
-                        width: rem(136);
+                    width: rem(136);
+                    position: relative;
+                    img {
+                        position: absolute;
+                        width: 100%;
+                        left: 50%;
+                        top: 50%;
+                        @include transform(translate3d(-50%,-50%,0));
                     }
                 }
-                .gift-name{
+                span:after {
+                    content: "";
+                    display: block;
+                    padding-top: 100%;
+                }
+                .gift-name {
                     color: #444444;
                     font-size: rem(24);
                     line-height: rem(32);
@@ -128,46 +136,35 @@ body{
             }
         }
     }
-    &:after{
-        display:block;
-        content:" ";
-        height:0;
-        clear:both;
-        visibility:hidden
+    &:after {
+        display: block;
+        content: " ";
+        height: 0;
+        clear: both;
+        visibility: hidden;
     }
 }
 // 当季热销
-.recommend-main{
+.recommend-main {
     margin-top: rem(20);
     background: #ffffff;
     border-top: 1px solid #e9e9e9;
     border-bottom: 1px solid #e9e9e9;
-    .gift-title{
+    .gift-title {
         height: rem(68);
         line-height: rem(68);
-        i{
-            float: left;
-            height: rem(32);
-            width: rem(7);
-            display: inline-block;
-            margin-top: rem(18);
-        }
-        span{
-            margin-left: rem(14);
-            float: left;
-            color: #444444;
-            font-size: rem(32);
-            font-weight: 900;
-        }
     }
-    .recommend-info{
-        .recommend-info-banner{
+    .recommend-info {
+        .recommend-info-banner {
             border-radius: rem(16);
             font-size: 0;
+            height: rem(190);
             margin: 0 rem(20);
             position: relative;
             overflow: hidden;
-            .gift-benfont{
+            border-radius: rem(16);
+            z-index: 100;
+            .gift-benfont {
                 width: 100%;
                 position: absolute;
                 left: 0;
@@ -176,9 +173,9 @@ body{
                 font-size: rem(30);
                 text-align: center;
                 text-shadow: rem(2) rem(2) rem(2) #333333;
-                z-index: 2;
+                z-index: 20;
             }
-            .banner-box{
+            .banner-box {
                 moz-box-shadow: 0 rem(30) rem(60) rgba(0,0,0,.5) inset;
                 -webkit-box-shadow: 0 rem(30) rem(60) rgba(0,0,0,.5) inset;
                 box-shadow: 0 rem(-30) rem(60) rgba(0,0,0,.5) inset;
@@ -188,30 +185,47 @@ body{
                 left: -10%;
                 top: 0;
                 display: block;
+                z-index: 10;
             }
-            img{
+            img {
                 width: 100%;
             }
         }
-        .recommend-show{
+        .recommend-show {
             padding-top: rem(20);
-            .recommend-ul{
-                overflow: auto;
+            .recommend-ul {
+                overflow: hidden;
                 height: rem(280);
-                width: 100%;
-                box-sizing: content-box;
-                ul{
-                    margin-left: rem(-2);
-                    li{
-                        float: left;
+                overflow-x: scroll;
+                ul {
+                    white-space: nowrap;
+                    li {
+                        display: inline-block;
                         padding: 0 rem(20);
                         border-left: 1px solid #e9e9e9;
                         box-sizing: content-box;
                         width: rem(176);
-                        img{
-                            width: rem(176);
+                        font-size: 0;
+                        overflow: hidden;
+                        div:first-child {
+                            a {
+                                display: block;
+                                position: relative;
+                            }
+                            a:after {
+                                content: "";
+                                padding-top: 100%;
+                                display: block;
+                            }
+                            img {
+                                position: absolute;
+                                width: 100%;
+                                left: 50%;
+                                top: 50%;
+                                @include transform(translate3d(-50%,-50%,0));
+                            }
                         }
-                        .recommend-name{
+                        .recommend-name {
                             color: #333333;
                             font-size: rem(24);
                             margin-top: rem(12);
@@ -219,22 +233,22 @@ body{
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            a:link{
+                            a:link {
                                 color: #333333;
                                 text-decoration: none;
                             }
-                            a:visited{
+                            a:visited {
                                 color: #333333;
                                 text-decoration: none;
                             }
                         }
-                        .recommend-money{
+                        .recommend-money {
                             color: #e6133c;
                             font-size: rem(26);
                             text-align: center;
                             line-height: rem(32);
                             font-weight: 900;
-                            i{
+                            i {
                                 font-size: rem(24);
                                 font-style: normal;
                             }
@@ -253,66 +267,74 @@ body{
     height: rem(80);
     line-height: rem(80);
     clear: both;
-    .title-hot-top{
+    .title-hot-top {
         height: rem(38);
         border-bottom: 1px solid #e9e9e9;
         text-align: center;
         color: #444444;
         font-size: rem(32);
         font-weight: bold;
-        .title-hot-font{
+        .title-box {
+            @include display(flex);
+            @include align-items(center);
+        }
+        .title-hot-font {
             display: inline-block;
             margin: 0 auto;
             text-align: center;
             background: #f7f7f7;
             line-height: rem(80);
             padding: 0 rem(20);
-            i{
-                float: left;
-                display: inline-block;
-                font-size: 0;
-                img{
-                    height: rem(32);
-                    width: inherit;
-                }
-            }
-            span{
-                float: left;
-                margin-left: rem(12);
-                display: inline-block;
+            img {
+                height: rem(32);
+                width: auto;
+                margin-right: rem(12);
+                display: block;
             }
         }
     }
 }
 .bl-class {
     padding: 0 rem(5);
-    ul{
-        width: 50%;
-        float: left;
-        li{
-            padding: rem(6);
-            div{
+    ul {
+        li {
+            width: 50%;
+            padding: rem(5);
+            float: left;
+            box-sizing: border-box;
+            div {
                 border-radius: rem(8);
                 overflow: hidden;
-                img{
+                height: rem(117);
+                a {
+                    display: block;
+                    height: 100%;
+                    @extend %comm-flex;
+                }
+                img {
                     width: 100%;
                 }
             }
         }
+        li:first-child {
+            div{
+                 height: rem(244);
+            }
+        }
     }
 }
-.file-show{
+.file-show {
     height: rem(108);
     padding: 0;
-    .file-lshow{
+    .file-lshow {
         position: fixed;
         padding: 0;
         bottom: rem(16);
         width: 100%;
         left: 0;
         padding: 0 rem(8);
-        .file-ltop{
-            float: left;
+        z-index: 1000;
+        .file-ltop {
             width: rem(84);
             height: rem(84);
             background: rgba(0,0,0,.6);
@@ -321,19 +343,20 @@ body{
             margin-left: rem(16);
             display: inline-block;
             color: #fff;
-            line-height: rem(80);
             text-align: center;
             position: relative;
             font-size: 0;
-            a:link{
-                display: block;
-                font-size: 0;
+            a { 
+                width: rem(84);
+                height: rem(84);
+                @include display(flex);
+                @include align-items(center);
+                @include justify-content(center);
             }
-            a:visited{
-                display: block;
-                font-size: 0;
+            div{
+               
             }
-            i{
+            i {
                 height: rem(26);
                 text-align: center;
                 border-radius: rem(16);
@@ -348,12 +371,12 @@ body{
                 background: #e6133c;
                 font-style: normal;
             }
-            img{
+            img {
                 height: rem(40);
-                width: inherit;
+                width: auto;
             }
         }
-        .file-top{
+        .file-top {
             float: right;
             width: rem(84);
             height: rem(84);
@@ -366,14 +389,15 @@ body{
             line-height: rem(76);
             text-align: center;
             font-size: 0;
-            a:link{
-                display: block;
-            }
-            a:visited{
-                display: block;
-            }
-            img{
+            img {
                 width: rem(40);
+            }
+            a{
+                width: rem(84);
+                height: rem(84);
+                @include display(flex);
+                @include align-items(center);
+                @include justify-content(center);
             }
         }
     }

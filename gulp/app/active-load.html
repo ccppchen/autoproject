@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		@@include('widget/head.html', { "title": "活动登录页", "css": "css/active-load.css","requirejs": "js/active-load" })
+	</head>
+
+	<body id="acitve-load">
+		<div class="input-box">
+			<div class="all-box first-input">
+				<div>
+					<input placeholder="请输入优惠券券码" />
+				</div>
+			</div>
+		</div>
+		<div class="input-box">
+			<div class="all-box sec-input has-load">   <!--has-load和load-logo去掉就是未登录的样式-->
+				<div class="code-input">
+					<input placeholder="请输入手机号" value="18928273655"/>
+				</div>
+				<div class="load-logo">
+					<img src="css/i/active-load/load-logo.png" />
+				</div>
+			</div>
+		</div>
+		<div class="input-box">
+			<div class="all-box third-input">
+				<div class="code-input">
+					<input placeholder="请输入验证码" />
+					
+				</div>
+				<div class="code-button ">获取验证码</div>
+			</div>
+		</div>
+		<div class="input-box">
+			<div class="gray-line">
+				<img src="css/i/active-load/gray-line.png" />
+			</div>
+		</div>
+		<div class="input-box">
+			<div class="commit-button">
+				提交
+			</div>
+		</div>
+		<div class="limit-text">领取优惠券即视为同意并阅读百联通会员协议</div>
+		<div class="alert-box">
+			验证码错误！
+		</div>
+	</body>
+
+</html>

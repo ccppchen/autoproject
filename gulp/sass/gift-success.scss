@@ -1,0 +1,71 @@
+@charset "utf-8";
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/nav/nav";
+#gift-success {
+    .content {
+        padding-top: rem(88);
+    }
+    .succ-title {
+        margin-top: rem(88);
+        margin-bottom: rem(80);
+        @extend %comm-flex;
+        @include justify-content(center);
+        font-size: rem(40);
+        line-height: 1;
+        img {
+            width: rem(68);
+            height: rem(68);
+            margin-right: rem(26);
+        }
+    }
+    .code-box {
+        @extend %comm-flex;
+        @include justify-content(center);
+        margin-bottom: rem(50);
+        div {
+            width: rem(442);
+            height: rem(442);
+            padding: rem(26);
+            background: #ffffff;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    .cue {
+        text-align: center;
+        font-size: rem(32);
+        color: #666666;
+        line-height: 1;
+        margin-bottom: rem(80);
+    }
+    .succ-button {
+        padding: 0 rem(30);
+        margin-bottom: rem(80);
+        button,
+        a {
+            background: #FCCF5C;
+            border-radius: 4px;
+            height: rem(84);
+            font-size: rem(36);
+            line-height: rem(84);
+            display: block;
+            width: 100%;
+            border: none;
+            outline: none;
+        }
+    }
+    .share{
+        @extend %comm-flex;
+        @include justify-content(center);
+        line-height: 1;
+        font-size: rem(28);
+        color: #999999;
+        img{
+            width: rem(26);
+            height: rem(26);
+            margin-left: rem(12);
+        }
+    }
+}

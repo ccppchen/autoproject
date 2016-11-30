@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    @@include('widget/blhome-head.html', { "title": "搜索", "css": "css/blhome-search.css", "requirejs": "js/blhome-search" })
+</head>
+
+<body class="bg-white">
+    <header class="bar bar-header bar-orange">
+        <div class="bar-left">
+            <a href="javascript:history.go(-1)" class="button">
+                <div class="iconfont blhome-arrow-back"></div>
+            </a>
+        </div>
+       <div class="title">
+            <div class="search-frame">
+               <input type="text" placeholder="">
+           </div>
+       </div>
+        <div class="bar-right">       
+           <a class="search-cancel" href="javascript:void(0);">取消</a>
+        </div>
+    </header>
+    <!-- content -->
+    <div class="content">
+        <div class="search-empty"></div>
+        <div class="word-empty">啥都没有哦~</div>
+        <div class="word-change">换个关键词试试!</div>
+    </div>
+    <!-- content end -->
+</body>
+
+</html>

@@ -1,8 +1,8 @@
-require(['config','comm'], function(){
-    require(['vendor' , 'touchslider'], function() {
+require(['config', 'comm'], function() {
+    require(['vendor', 'touchslider'], function() {
         $(".sinle-detail").css("bottom", $(".button-buy").height() - $("#detail-container").height());
-        $(".sinle-detail").css("visibility","initial");
-        $(".get-ticket .arrow-back").click(function() {
+        $(".sinle-detail").css("visibility", "initial");
+        $(".dbuttom").click(function() {
             $(this).toggleClass("arrow-up")
             $(this).next().toggleClass("spread-ticket");
 
@@ -51,17 +51,17 @@ require(['config','comm'], function(){
             $(".config-buy").hide();
             $(".mark").hide();
         });
-        $('.j-nav').on('click', function(event) {
-            $(this).toggleClass('show-nav');
-            $(this).siblings('.j-navcontent').toggleClass('show-navcontent')
-        });
+        // $('.j-nav').on('click', function(event) {
+        //     $(this).toggleClass('show-nav');
+        //     $(this).siblings('.j-navcontent').toggleClass('show-navcontent')
+        // });
 
         // chenp
         $('.select-body').on('click', 'div', function(event) {
             $(this).not('.cannot').addClass('active').siblings().removeClass('active');
         });
 
-        function numPan(){
+        function numPan() {
             if ($('.num-show input').val() >= 98) {
                 $('.num-show input').val(99);
                 $('.select-num .num-add').css('backgroundColor', '#fbfbfb');
@@ -110,32 +110,32 @@ require(['config','comm'], function(){
         $("#main").click(function() {
             $(this).addClass("select").siblings().removeClass("select");
             $(".parameter").hide();
-             $("#pagemain").show();
+            $("#pagemain").show();
         });
 
         $(function() {
-			TouchSlide({
-				slideCell: "#touchSlide",
-				titCell: ".swiper-pagination ul",
-				mainCell: ".swiper-wrapper",
-				effect: "leftLoop",
-				autoPlay: false,
-				delayTime: 300,
-				interTime: 2000,
-				autoPage: true,
+            TouchSlide({
+                slideCell: "#touchSlide",
+                titCell: ".swiper-pagination ul",
+                mainCell: ".swiper-wrapper",
+                effect: "leftLoop",
+                autoPlay: false,
+                delayTime: 300,
+                interTime: 2000,
+                autoPage: true,
                 switchLoad: "_src"
-			});
-			TouchSlide({
-				slideCell: "#recommend-body",
-				titCell: ".swiper-pagination ul",
-				mainCell: ".swiper-wrapper",
-				effect: "leftLoop",
-				/*autoPlay: true,*/
-				delayTime: 300,
-				interTime: 2000,
-				autoPage: true
-			});
-		});
+            });
+            TouchSlide({
+                slideCell: "#recommend-body",
+                titCell: ".swiper-pagination ul",
+                mainCell: ".swiper-wrapper",
+                effect: "leftLoop",
+                /*autoPlay: true,*/
+                delayTime: 300,
+                interTime: 2000,
+                autoPage: true
+            });
+        });
 
         /* 10-13 chenpeng 加定金预售 */
         $('.modal-close,.j-know').on('click', function(event) {
@@ -146,8 +146,8 @@ require(['config','comm'], function(){
             $('.j-presale').removeClass('modal-out').addClass('modal-in');
             $('.premask').show();
         });
-        $(document).on("touchmove",function(e) {
-           if(e.target.className.indexOf("premask") >= 0 || e.target.className.indexOf("modal") >= 0) {
+        $(document).on("touchmove", function(e) {
+            if (e.target.className.indexOf("premask") >= 0 || e.target.className.indexOf("modal") >= 0) {
                 e.preventDefault();
             } else {
                 e.stopPropagation();
@@ -175,7 +175,22 @@ require(['config','comm'], function(){
         //     }
         // });
 
-
+        // 二级导航
+        $(".more-v").click(function() {
+            $(".navigation").show();
+            TouchSlide({
+                slideCell: "#nav-body",
+                titCell: "#nav-body .swiper-pagination ul",
+                mainCell: "#nav-body .swiper-wrapper",
+                effect: "leftLoop",
+                /*autoPlay: true,*/
+                delayTime: 300,
+                interTime: 2000,
+                autoPage: true
+            });
+        });
+        $(".error-alert-bottom").click(function() {
+            $(".navigation").hide();
+        });
     });
-
 });

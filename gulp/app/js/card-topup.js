@@ -1,6 +1,6 @@
 require(['config', 'comm'], function(){
     require(['vendor', 'touchslider'], function(){
-        
+
             // 选中充值金额时的状态
             $('.phoneMoney li a').on('click', function (){
                 $(this).addClass('curr').parent('li').siblings().children('a').removeClass('curr');
@@ -16,11 +16,11 @@ require(['config', 'comm'], function(){
                     $(this).val($(this).val() + ' ');
                 }else if(phoneNumLength > 4){
                     $('.phoneLink').show();
-                
+
                 }
                 if(phoneNumLength === 13){
                     $('.phoneLink').hide();
-                
+
                 }
             });
             $("#number").on('keyup', function(){
@@ -34,7 +34,7 @@ require(['config', 'comm'], function(){
                     }else{
                         $('#errorNumber').addClass('highRed').html('暂不支持此号码充值');
                     }
-                    
+
                 }
             })
             // 清空输入框
@@ -42,7 +42,7 @@ require(['config', 'comm'], function(){
                 $('#number').val('');
                 $(this).hide();
                 $('.phoneLink').hide();
-            
+
                 $('.icon-icon_userphone').show();
             });
             // 选择支付方式

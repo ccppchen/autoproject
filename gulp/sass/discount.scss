@@ -542,6 +542,10 @@ a.fooder-fixed:visited {
   background: url(i/qg-3.png) no-repeat left top;
   background-size: rem(88) auto;
 }
+.no-11 .discount-item-left {
+  background: url(i/yqg1.png) no-repeat left top;
+  background-size: rem(88) auto;
+}
 
 .discount-show {
   height: rem(96);
@@ -720,7 +724,7 @@ li {
 }
 
 .stores-show-font .yuan-2 {
-  height: .5rem;
+  height: rem(20);
   width: rem(20);
   display: inline-block;
   position: absolute;
@@ -809,12 +813,49 @@ li {
 
 
 /**/
-
 .discount-ul ul li.no-8 {
   background: #f2b1ed url(i/discount-bg-7.png) repeat-y 45% center;
   button {
     border: 1px solid #e773de;
     background: #e773de;
+    color: #FFF;
+  }
+  .coupon-button button.but-1 {
+    border: 1px solid #e773de;
+    background: #fff;
+    color: #e773de;
+  }
+  .coupon-time {
+    color: #ffe7fd;
+  }
+  .discount-itemicon {
+    background: #e773de;
+  }
+  .money-int {
+    float: left;
+    font-size: rem(130);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-right: 0;
+    line-height: rem(160);
+  }
+  .money-info-element {
+    font-size: rem(36);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: rem(48);
+  }
+  .money-info-coupon {
+    line-height: rem(60);
+    font-size: rem(60);
+  }
+}
+
+// 新增预约券样式
+.discount-ul ul li.no-11 {
+  background: #f2b1ed url(i/discount-bg-7.png) repeat-y 45% center;
+  button {
+    border: 1px solid #d359c1;
+    background: #d359c1;
     color: #FFF;
   }
   .coupon-button button.but-1 {
@@ -900,3 +941,40 @@ li {
   background: #e35d7c;
 }
 /* 加抵扣券 END */
+// 新增更新样式
+.gx{
+  font-size: rem(24);
+  text-align: center;
+  padding-bottom: rem(20);
+  a{
+    color: #999999;
+    i{
+      img{
+        width: rem(24);
+        height: rem(24);
+        background-size: rem(24);
+        display: inline-block;
+        margin-top: rem(-3);
+        margin-right: rem(6);
+      }
+    }
+  }
+}
+.ygx{
+  font-size: rem(24);
+  text-align: center;
+  padding-bottom: rem(20);
+  a{
+    color: #5b6f99;
+    i{
+      img{
+        width: rem(24);
+        height: rem(24);
+        background-size: rem(24);
+        display: inline-block;
+        margin-top: rem(-3);
+        margin-right: rem(6);
+      }
+    }
+  }
+}

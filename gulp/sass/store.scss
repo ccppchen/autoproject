@@ -1,0 +1,158 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+@import "tobe/components/bar/bar";
+@import "tobe/components/toast/toast";
+body {
+    background-color: #ffffff;
+}
+
+.bar.bar-light {
+    background-color: #ffffff;
+}
+
+.bar .button {
+    color: #333333;
+}
+
+.content {
+    padding-top: $bar-height;
+    overflow: hidden;
+}
+
+.header-nav {
+    height: rem(88);
+    line-height: rem(88);
+    background: #fff;
+    border-bottom: 1px solid #e7e7e7;
+    text-align: center;
+    box-sizing: content-box;
+    font-size: rem(28);
+    div {
+        float: left;
+        width: 33.333%;
+        text-align: center;
+        line-height: rem(88);
+        display: inline-block;
+        color: #333333;
+        a:link,
+        .header-nav div a:visited {
+            color: #333333;
+            display: block;
+        }
+        a:hover,
+        &.on,
+        &.on a:link,
+        &.on a:visited {
+            color: #e6133c;
+        }
+        &.on a:visited,
+        &.on a:link {
+            border-bottom: rem(4) solid #e6133c;
+            height: rem(85);
+            box-sizing: content-box;
+        }
+    }
+    span {
+        display: inline-block;
+        width: 2%;
+        text-align: center;
+        float: left;
+        line-height: rem(88);
+        color: #eeeeee;
+    }
+}
+
+.con-collection {
+    position: relative;
+    .con-collection-ul {
+        overflow: hidden;
+        position: relative;
+        ul {
+            padding-left: 0;
+            .on-2 {
+                border-bottom: none;
+            }
+            li {
+                margin-top: rem(20);
+                background: #ffffff;
+                padding: 0 rem(30);
+                a {
+                    display: inherit;
+                    .swiper-container {
+                        margin: 0 auto;
+                        position: relative;
+                        z-index: 1;
+                        .swiper-slide {
+                            color: #ffffff;
+                            .ul-pad-config {
+                                .new-pad {
+                                    .product-img-left {
+                                        padding: rem(30) 0;
+                                        // box-sizing: content-box;
+                                        clear: both;
+                                        height: rem(176);
+                                        position: relative;
+                                        .list-img {
+                                            float: left;
+                                            width: rem(110);
+                                            height: rem(110);
+                                            position: relative;
+                                            img {
+                                                border: 1px solid #ccc;
+                                                border-radius: rem(4);
+                                                position: relative;
+                                            }
+                                        }
+                                        .list-font-center {
+                                            margin-left: rem(138);
+                                            // padding-right: rem(150);
+                                            height: 100%;
+                                            .list-name {
+                                                color: #000000;
+                                                font-size: rem(28);
+                                                line-height: rem(56);
+                                            }
+                                            .phone {
+                                                font-size: rem(24);
+                                                color: #999999;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//滑动删除部分
+.swiper-owern {
+    position: absolute;
+    right: rem(-30);
+    top: 0;
+    bottom: 0;
+    @include transform(translate(100%));
+    font-size: 0;
+    width: rem(130);
+    .vebtn {
+        float: left;
+        height: 100%;
+        width: rem(130);
+        background-color: #CCCCCC;
+        font-size: rem(28);
+        color: #FFFFFF;
+        @include display(inline-flex);
+        @include justify-content(center);
+        @include align-items(center);
+        &.remove-btn {
+            background-color: #e6133c;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+}

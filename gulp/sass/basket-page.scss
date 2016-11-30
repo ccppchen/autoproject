@@ -126,9 +126,8 @@ body{
 			width: 100%;
 			display: inline-block;
 			position: relative;
-			margin-bottom: rem(30);
+			overflow-x:scroll; 
 			ul{
-				width: 100%;
 				display: inline-block;
 				padding: 0 rem(10);
 				display: -webkit-box;
@@ -142,9 +141,7 @@ body{
 				justify-content: center;
 				font-size: 0;
 				white-space: nowrap;
-				overflow: auto;
 				li{
-					float: left;
 					width: 50%;
 					padding: 0 rem(10);
 					img{
@@ -159,9 +156,20 @@ body{
                         .fonts{
                         	margin:rem(25) 0 0 rem(20);
                         }
+                        .fonts-1{
+                        	max-width: rem(280);
+                        	overflow: hidden;
+                        	white-space: nowrap;
+                        	text-overflow: ellipsis;
+                        }
 						.fonts-2{
 							letter-spacing: 0;
 							margin-top: 0;
+							max-width: rem(220);
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+
 						}
 						.xuangou{
 							background: #3A3A3A;

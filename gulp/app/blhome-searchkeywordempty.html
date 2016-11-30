@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    @@include('widget/blhome-head.html', { "title": "搜索", "css": "css/blhome-search.css", "requirejs": "js/blhome-search" })
+</head>
+
+<body class="bg-white">
+    <header class="bar bar-header bar-orange">
+        <div class="bar-left">
+            <a href="javascript:history.go(-1)" class="button">
+                <div class="iconfont blhome-arrow-back"></div>
+            </a>
+        </div>
+        <div class="title">
+            <div class="search-frame">
+                <input type="text" placeholder="">
+            </div>
+        </div>
+        <div class="bar-right">
+            <a class="search-cancel" href="javascript:void(0);">取消</a>
+        </div>
+    </header>
+    <!-- content -->
+    <div class="content">
+        <div class="lately">
+            <div class="search-title">
+                <div class="position-left"><i class="search-icon1"></i><span class="word">最近搜索</span></div>
+                <div class="position-right"><a class="search-icon2"></a></div>
+            </div>
+            <div class="search-wordlist">
+               <div class="empty">最近很懒，啥都没搜</div>
+            </div>
+        </div>
+        <div class="hot">
+            <div class="search-title">
+                <div class="position-left"><i class="search-icon3"></i><span class="word">最近搜索</span></div>
+            </div>
+            <div class="search-wordlist">
+                <a>洗洁精</a>
+                <a class="select">护发素</a>
+                <a>行车记录仪</a>
+                <a>小绵羊家纺</a>
+                <a>莫里斯安</a>
+                <a>联想</a>
+                <a>生姜护发洗发水</a>
+                <a>The North Face</a>
+                <a>最长十五个字哦啦啦啦啦啦啦啦啦</a>
+            </div>
+        </div>
+    </div>
+    <!-- content end -->
+</body>
+
+</html>

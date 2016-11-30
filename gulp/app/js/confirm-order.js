@@ -1,5 +1,5 @@
-require(['config', 'comm'], function(){
-    require(['vendor'], function(){
+require(['config', 'comm'], function() {
+    require(['vendor'], function() {
         // 点击收起和显示
         $('.click-up').on('click', function() {
             $(this).children('span').toggleClass('toggle-css');
@@ -10,6 +10,9 @@ require(['config', 'comm'], function(){
                 $(this).children('span').html('点击显示全部');
                 $(this).siblings('.list-good').children('ul').addClass('good-close');
             }
+        });
+        $(".ri-cart-font").click(function() {
+            $(".tt-date").remove();
         });
     });
 

@@ -1,0 +1,147 @@
+@charset "utf-8"; //cp
+@import "tobe/base";
+#acitve-load {
+    background: url("i/active-load/back.png") no-repeat;
+    background-size: 100%;
+    .input-box {
+        @include display(flex);
+        @include justify-content(center);
+    }
+    input {
+        background: none;
+        border: none;
+        outline: none;
+    }
+    .all-box {
+        width: rem(646);
+        height: rem(94);
+        border: 1px solid #ffffff;
+        border-radius: rem(10);
+        padding-left: rem(98);
+        box-shadow: 0 3px 3px #a94ada,3px 0 3px #a94ada,0px -3px 3px #a94ada, -3px 0 3px #a94ada,0 3px 3px #a94ada inset,3px 0 3px #a94ada inset,0px -3px 3px #a94ada inset, -3px 0 3px #a94ada inset;
+        @include display(flex);
+        @include align-items(center);
+        div {
+            height: rem(58);
+            width: 100%;
+            border-left: 1px solid #ffffff;
+            padding-left: rem(26);
+            padding-right: rem(30);
+        }
+        input {
+            height: rem(58);
+            line-height: rem(58);
+            width: 100%;
+            font-size: rem(32);
+            color: #ffffff;
+            text-shadow: 2px 2px 2px #3d205c;
+        }
+        input::-webkit-input-placeholder {
+            color: #ffffff !important;
+        }
+        input:-moz-placeholder {
+            color: #ffffff !important;
+        }
+        input::-moz-placeholder {
+            color: #ffffff !important;
+        }
+        input:-ms-input-placeholder {
+            color: #ffffff !important;
+        }
+    }
+    .first-input {
+        margin-top: rem(210);
+        margin-bottom: rem(66);
+        background: url("i/active-load/coupon.png") no-repeat rem(16) center rgba(169,74,218,0.3);
+        background-size: rem(68);
+    }
+    .sec-input {
+        margin-bottom: rem(66);
+        background: url("i/active-load/telephone.png") no-repeat rem(24) center rgba(169,74,218,0.3);
+        background-size: rem(52);
+    }
+    .has-load{
+        background: url("i/active-load/telephone.png") no-repeat rem(24) center rgba(150,126,163,0.65);
+        background-size: rem(52);
+        .load-logo{
+            width: rem(72);
+            padding: 0;
+            padding-right: rem(24);
+            border: none;
+            line-height: 1;
+            font-size: 0;
+            height: auto;
+        }
+    }
+    .third-input {
+        margin-bottom: rem(66);
+        background: url("i/active-load/code.png") no-repeat rem(18) center rgba(169,74,218,0.3);
+        background-size: rem(64);
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        
+        .code-button {
+            width: rem(210);
+            background: #c1246e;
+            padding: 0;
+            border: none;
+            height: rem(94);
+            z-index: 1;
+            text-align: center;
+            line-height: rem(94);
+            color: #ffffff;
+        }
+        .minus-time{
+            background: #74696e;
+            font-size: rem(24);
+        }
+    }
+    .gray-line{
+        width: rem(660);
+        line-height: 1px;
+        font-size: 0;
+        margin-bottom: rem(66);
+        img{
+            display: block;
+        }
+    }
+    .commit-button{
+        width: rem(550);
+        height: rem(104);
+        line-height: rem(104);
+        text-align: center;
+        background: url("i/active-load/commit-button.png") no-repeat;
+        background-size: 100%;
+        font-size: rem(42);
+        margin-bottom: rem(38);
+        color: #ffffff;
+        text-shadow: 1px 1px 1px #401957;
+    }
+    .limit-text{
+        font-size: rem(24);
+        color: #ffffff;
+        text-align: center;
+        line-height: 1;
+        text-shadow: 1px 1px 1px #4d1a2e;
+    }
+    .alert-box{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        @include transform(translate3d(-50%,-50%,0));
+        height: rem(88);
+        width: rem(594);
+        line-height: rem(88);
+        text-align: center;
+        font-size: rem(36);
+        box-shadow: 0 1px 3px #a94ada,1px 0 3px #a94ada,0px -1px 3px #a94ada, -1px 0 3px #a94ada;
+        background: rgba(255,255,255,.85);
+        border-radius: rem(10);
+    }
+    div.code-input{
+            @include flex(1);
+            width: initial;
+    }
+    
+}

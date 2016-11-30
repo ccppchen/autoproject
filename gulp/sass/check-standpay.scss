@@ -2,87 +2,120 @@
 @import 'tobe/base';
 @import 'tobe/components/bar/bar';
 @import 'tobe/components/list-between/list-between';
-
-.arrow-right{
+.arrow-right {
     background-size: rem(12) auto;
-
     @extend %arrow-right;
 }
-.content{
+
+.content {
     @extend %content;
 }
 
-body{
+body {
     background-color: #f2f2f2;
 }
-.card-pays{
+
+.card-pays {
     background: transparent;
-    .list-item{
+    .list-item {
         margin-top: rem(20);
         background-image: none;
-        &:first-child{
+        &:first-child {
             margin-top: 0;
         }
     }
 }
-.balance{
+
+.balance {
     margin: 0 rem(8);
 }
-.bl-cardpay{
-    .list-item{
-        padding-right: 0;
-        .list-right{
-            font-size: rem(24);
 
+.bl-cardpay {
+    .list-item {
+        padding-right: 0;
+        .list-right {
+            font-size: rem(24);
             margin-right: rem(30);
             padding-right: rem(30);
-
             color: #999;
         }
     }
-    .list-left{
+    .list-left {
         font-size: rem(28);
-
         color: #333;
     }
-    .cpay-bal{
+    .cpay-bal {
         font-size: rem(28);
         font-weight: bold;
-
         height: rem(75);
         padding: 0 rem(30);
-
         color: #999;
-
         @extend %comm-flex;
         @include justify-content(space-between);
-        .cpay-right{
+        .cpay-right {
             font-size: rem(24);
         }
     }
-    .cpay-order-balance{
+    .cpay-order-balance {
         font-size: rem(24);
-
         margin-left: rem(58);
-
         color: #666;
     }
-    %balance{
+    %balance {
         color: #e62233;
     }
-    .balance{
+    .balance {
         @extend %balance;
     }
-    .cpay-balance{
+    .cpay-balance {
         font-size: rem(32);
-
         color: #333;
-
         @extend %balance;
     }
-    .icon-card{
+    .icon-card {
         width: rem(50);
         height: rem(50);
         margin-right: rem(26);
+    }
+    .tt-date {
+        padding: rem(20) 0 rem(20) rem(64);
+        background: #feefb8;
+        line-height: rem(32);
+        font-size: rem(24);
+        position: relative;
+        &:after{
+        display:block;
+        content:" ";
+        height:0;
+        clear:both;
+        visibility:hidden
+    }
+        .le-cart-font {
+            float: left;
+            width: 87%;
+            i {
+                img {
+                    width: rem(23);
+                    height: rem(22);
+                    background-size: rem(23);
+                    position: absolute;
+                    left: rem(20);
+                    top: rem(38);
+                }
+            }
+        }
+        .ri-cart-font {
+            float: right;
+            width: rem(80);
+            height: rem(58);
+            border-left: 1px solid #edd6a7;
+            line-height: rem(58);
+            text-align: center;
+            img {
+                width: rem(20);
+                height: rem(20);
+                background-size: rem(20);
+            }
+        }
     }
 }

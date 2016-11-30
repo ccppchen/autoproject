@@ -1,0 +1,196 @@
+@charset "utf-8";
+@import "tobe/base";
+#bldj-class {
+    background: #f0f0f0;
+    .content {
+        position: relative;
+        padding-top: rem(88);
+    }
+    .address-logo {
+        width: rem(22);
+        height: rem(28);
+        background: url("i/blhome/blhome-location.png") no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .title-text {
+        font-size: rem(28);
+        max-width: rem(250);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1;
+    }
+    .title {
+        .arrow-back {
+            font-size: rem(24);
+            @include transform(rotate(180deg));
+        }
+    }
+    .bar-right {
+        font-size: 0.28rem;
+    }
+    .left-menu {
+        width: rem(200);
+        position: absolute;
+        top: rem(88);
+        left: 0;
+        bottom: rem(100);
+        overflow: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        .firstmenu {
+            padding-left: rem(15);
+            .menu-text {
+                padding: rem(30) 0;
+                div {
+                    padding-left: rem(24);
+                    line-height: rem(32);
+                    height: rem(32);
+                }
+            }
+            .secmenu{
+                display: none;
+                li{
+                    padding: rem(30) 0;
+                    padding-left: rem(36);
+                    line-height: 1;
+                }
+                .select{
+                    color: #FF6633;
+                }
+            }
+        }
+        .choosed {
+            background: #ffffff;
+            .menu-text {
+                div {
+                    padding-left: rem(16);
+                    border-left: rem(8) solid #FF6633;
+                }
+            }
+            .secmenu{
+                display: block;
+            }
+        }
+    }
+    .right-detail{
+        position: absolute;
+        top: rem(88);
+        left: rem(200);
+        right: 0;
+        bottom: rem(100);
+        overflow: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        background: #ffffff;
+        ul{
+            
+            padding-left: rem(20);
+            li{
+                padding: rem(30) 0;
+                border-bottom: 1px solid #e2e2e2;
+            }
+            .love-swiper{
+                @extend %comm-flex;
+            }
+           
+            .love-title{
+                max-width: rem(320);
+            }
+            .love-item-inner{
+                margin-left: rem(20);
+            }
+        }
+    }
+    .bottom-price{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: rem(100);
+        box-shadow: 0 0 6px #CCCCCC;
+        background: #ffffff;
+        z-index: 100;
+        .bottom-box{
+            position: relative;
+            height: 100%;
+        }
+        .basket-circle{
+            position: absolute;
+            width: rem(110);
+            height: rem(110);
+            border-radius: 100%;
+            left: 50%;
+            top: rem(-82);
+            z-index: 110;
+            box-shadow: 0 0 6px #CCCCCC;
+            @include transform(translateX(-50%));
+            background: url("i/blhome/home-shopbasket-empty.png") #ffffff no-repeat center rem(18) ;
+            background-size: rem(54);
+            .basket-num{
+                padding-top: rem(38);
+                color: #FF6633;
+                text-align: center;
+                line-height: 1;
+            }
+        }
+        .real-box{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #FFFFFF;
+            z-index: 111;
+            .price{
+                font-size: rem(32);
+                text-align: center;
+                line-height: 1;
+                font-weight: 700;
+                padding-top: rem(16);
+                margin-bottom: rem(8);
+            }
+            .discount{
+                color: #222222;
+                font-size: rem(24);
+                text-align: center;
+                line-height: 1;
+            }
+            
+        }
+    }
+    .mark{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 1000;
+    }
+    .hidemark{
+        display: none;
+    }
+    .screen-triangle{
+        width: 0;
+        height: 0;
+        border-left: rem(6) solid transparent;
+        border-right: rem(6) solid transparent;
+        border-bottom: rem(13) solid #ffffff;
+        position: absolute;
+        top: rem(-13);
+        right: rem(46);
+    }
+    .add-animate{
+        position: absolute;
+        bottom: rem(182);
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: rem(72);
+        color: #ff6633;
+        z-index: 1000;
+        transition: all ease 1s; 
+        opacity: 1;
+    }
+}

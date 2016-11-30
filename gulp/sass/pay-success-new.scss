@@ -1,48 +1,48 @@
 @charset "utf-8";
 @import "tobe/base";
 @import "tobe/components/bar/bar";
-
-.content{
+.content {
     position: relative;
     padding-top: rem(88);
 }
-.bar-right{
-    .button{
+
+.bar-right {
+    .button {
         font-size: rem(28);
     }
 }
-#paysuc{
+#paysuc {
     background-color: #f4f4f4;
-    .Payment-success{
+    .Payment-success {
         height: rem(300);
         background-color: #F13149;
-        .le-fonts{
+        .le-fonts {
             float: left;
             color: #ffffff;
             padding: rem(96) 0 0 rem(96);
-            .font-1{
+            .font-1 {
                 font-size: rem(48);
             }
-            .font-2{
+            .font-2 {
                 font-size: rem(24);
             }
         }
-        .ri-img{
+        .ri-img {
             float: right;
             padding: rem(56) rem(62) 0 0;
-            img{
+            img {
                 width: rem(281);
                 height: rem(219);
             }
         }
     }
-    .margin-config{
+    .margin-config {
         margin-bottom: rem(20);
     }
-    .success-container{
-        padding:0 rem(105);
+    .success-container {
+        padding: 0 rem(105);
         background: #FFFFFF;
-        .head{
+        .head {
             height: rem(176);
             @include display(flex);
             @include align-items(center);
@@ -51,52 +51,31 @@
             font-size: rem(48);
             border-bottom: 1px solid #E7E7E7;
         }
-        .success-logo{
-            height: rem(96);
-            width: rem(96);
-            background: url("i/pay-success/success.png") center center no-repeat;
-            background-size: 100%;
-            margin-right: rem(30);
-        }
-        .order-info{
-            @include display(flex);
-            @include align-items(center);
-            @include justify-content(space-between);
-            height: rem(88);
-            border-bottom: 1px solid #E7E7E7;
-        }
-        .remind{
-            padding: rem(14) 0;
-            font-size: rem(24);
-            color: #999999;
-            border-bottom: 1px solid #E7E7E7;
-        }
-        .amount{
+        .amount {
             font-size: rem(36);
             text-align: center;
             padding-top: rem(50);
-            span{
+            span {
                 font-size: rem(24);
             }
         }
-        .button-box{
+        .button-box {
             padding: rem(40) 0;
             @include display(flex);
             @include align-items(center);
             @include justify-content(space-between);
-            a{
+            a {
                 font-size: rem(32);
             }
-            .left-button{
+            .left-button {
                 height: rem(74);
                 line-height: rem(74);
                 width: rem(260);
-                // background: #E6133C;
                 text-align: center;
                 border: 1px solid #E7E7E7;
                 border-radius: rem(10);
             }
-            .right-button{
+            .right-button {
                 height: rem(74);
                 line-height: rem(74);
                 width: rem(260);
@@ -106,100 +85,63 @@
             }
         }
     }
-    #swipe-source{
-        // height: rem(170);
+    #swipe-source {
         overflow: hidden;
         position: relative;
-        .swiper-pagination{
+        .swiper-pagination {
             position: absolute;
-            // right: rem(24);
             bottom: rem(8);
             left: 50%;
             margin-left: rem(-25);
-            ul{
+            ul {
                 line-height: 1;
             }
             li {
-            display: inline-block;
-            width: rem(12);
-            height: rem(12);
-            @include border-radius(100%);
-            text-indent: -9999px;
-            overflow: hidden;
-            margin: 0 rem(6);
-            border: 1px solid #FFFFFF;
-            background: #FFFFFF;
-            &.on {
-                background: #E71740;
-                 border: 1px solid #E71740;
+                display: inline-block;
+                width: rem(12);
+                height: rem(12);
+                @include border-radius(100%);
+                text-indent: -9999px;
+                overflow: hidden;
+                margin: 0 rem(6);
+                border: 1px solid #FFFFFF;
+                background: #FFFFFF;
+                &.on {
+                    background: #E71740;
+                    border: 1px solid #E71740;
+                }
             }
         }
-        }
     }
-    .img-source{
-        height: rem(170);
-        overflow: hidden;
-        
-    }
-    .menu{
-        padding: rem(30) rem(24);
-        background: #FFFFFF;
-        overflow: hidden;
-        li{
-            width: 25%;
-            height: rem(132);
-            @include display(flex);
-            @include flex-direction(column);
-            @include align-items(center);
-            float: left;
-            a{
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
-        }
-        
-        .menu-img{
-            height: rem(90);
-            width: rem(90);
-            border-radius: 100%;
-            background: #54C5FA;
-            margin-bottom: rem(10);
-        }
-        .menu-name{
-            line-height: 1.3;
-            font-size: rem(24);
-        }
-    }
-    .recommend{
+    .recommend {
         height: rem(80);
         @include display(flex);
         @include justify-content(space-between);
         @include align-items(center);
-        .recommend-name{
+        .recommend-name {
             height: rem(40);
             @include display(flex);
             @include justify-content(space-between);
             @include align-items(center);
             margin: 0 auto;
         }
-        .recommend-logo{
+        .recommend-logo {
             width: rem(30);
             height: rem(30);
-            background: url("i/pull-icon@2x.png")  center bottom no-repeat;
+            background: url("i/pull-icon@2x.png") center bottom no-repeat;
             background-size: 100%;
             margin-right: rem(8);
         }
     }
-    .title-todynew{
+    .title-todynew {
         height: rem(88);
         background: #f4f4f4;
         padding: 0 rem(123);
-        div{
-            border-bottom:1px solid #D3D3D3;
+        div {
+            border-bottom: 1px solid #D3D3D3;
             height: rem(44);
             text-align: center;
-            span{
+            span {
                 line-height: rem(88);
                 text-align: center;
                 background: #f4f4f4;
@@ -209,45 +151,43 @@
             }
         }
     }
-    .list{
+    .list {
         overflow: hidden;
         padding: 0 rem(10);
-        ul{
+        ul {
             margin-right: rem(-10);
         }
-        
-        li{
+        li {
             width: 50%;
             padding-right: rem(10);
             float: left;
             margin-bottom: rem(10);
         }
-        .list-container{
+        .list-container {
             background: #FFFFFF;
             overflow: hidden;
             padding-bottom: rem(20);
         }
-        .list-image{
+        .list-image {
             margin: 0 rem(8);
             position: relative;
             margin-bottom: rem(10);
-            a{
+            a {
                 width: 100%;
-                
             }
-            img{
+            img {
                 position: absolute;
                 left: 50%;
                 top: 50%;
-                @include transform(translate3d(-50%,-50%,0));
+                @include transform(translate3d(-50%, -50%, 0));
             }
         }
-        .list-image:after{
+        .list-image:after {
             content: "";
             display: block;
             padding-top: 100%;
         }
-        .list-name{
+        .list-name {
             margin: 0 rem(28);
             font-size: rem(24);
             white-space: nowrap;
@@ -256,7 +196,7 @@
             line-height: 1.375;
             margin-bottom: rem(10);
         }
-        .list-num{
+        .list-num {
             margin: 0 rem(28);
             font-size: rem(24);
             padding-left: rem(14);
@@ -265,7 +205,7 @@
             line-height: 1;
             margin-bottom: rem(10);
         }
-        .list-button{
+        .list-button {
             margin: 0 rem(18);
             height: rem(50);
             line-height: rem(50);
@@ -274,33 +214,29 @@
             font-size: rem(32);
             text-align: center;
         }
-        .two-line{
-            // height: rem(66);
-            // line-height: rem(33);
+        .two-line {
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             white-space: initial;
-            
         }
-        .red-num{
+        .red-num {
             margin: 0 rem(28);
             font-size: rem(28);
             color: #E6133C;
             line-height: rem(40);
             height: rem(40);
         }
-        .list-money{
+        .list-money {
             margin: 0 rem(28);
             font-size: rem(28);
             color: #E6133C;
             height: rem(40);
             line-height: rem(40);
-            span{
+            span {
                 font-size: rem(24);
-               
             }
-            label{
+            label {
                 font-size: rem(24);
                 color: #999999;
                 margin-left: rem(20);
@@ -308,10 +244,10 @@
             }
         }
     }
-    .top-margin-fix{
+    .top-margin-fix {
         margin-top: rem(-10);
     }
-    .end{
+    .end {
         padding: 0 rem(268);
     }
 }
